@@ -158,7 +158,7 @@
 
                             </ul>
                         </div>
-                        <div/>
+                        </div>
 
                         <!-- .page-header -->
                     </div>
@@ -176,22 +176,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="clients-logo-wrapper">
-                                <?php
-                               echo do_shortcode('[My_Galerry]');
-//                                $logos = sogo_meta('logos');
-//                                if ($logos) {
-//                                    foreach ($logos as $id => $logo) {
-//                                        ?>
-<!--                                        <div class="col-md-2 col-xs-6">-->
-<!--                                            <div class="client-thumbnail-wrapper">-->
-<!--                                                --><?php //sogo_print_image($id, $logo); ?>
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                        --><?php
-//                                    }
-//                                }
-
-                                ?>
+                                <?php echo do_shortcode('[My_Galerry]');?>
                             </div>
                         </div>
                     </div>

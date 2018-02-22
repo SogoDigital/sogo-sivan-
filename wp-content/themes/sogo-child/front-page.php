@@ -6,7 +6,7 @@ get_header();
     <section id="home-floor-1" class="section floor active vertical-middle">
         <div class="fullscreen-bg">
             <?php if (!wp_is_mobile()): ?>
-                <video loop muted autoplay poster="" class="fullscreen-bg__video hidden-xs hidden-sm">
+                <video loop muted autoplay class="fullscreen-bg__video hidden-xs hidden-sm">
                     <source src="<?php echo get_stylesheet_directory_uri() ?>/images/home-video.mp4" type="video/mp4">
                 </video>
             <?php endif; ?>

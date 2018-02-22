@@ -162,7 +162,7 @@ $img = get_option('_matat_gallery_plugin', false);
             <?php
             foreach ($img as $src) {
                 ?>
-                <li><a href="#"><img src="<?php echo wp_get_attachment_url($src); ?>"/></a></li>
+                <li><a href="#"><img src="<?php echo wp_get_attachment_url($src); ?>" alt="SOGO Customers Logos" /></a></li>
                 <?php
             }
             ?>
@@ -209,6 +209,7 @@ $img = get_option('_matat_gallery_plugin', false);
         } );
 
     </script>
+    </section>
 <?php
 }
 add_shortcode( 'My_Galerry', 'wpmatat_Animated_Image_Grid_shorcode' );

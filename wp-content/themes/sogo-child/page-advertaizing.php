@@ -199,59 +199,5 @@
     </div>
 </section> <!-- #advertising-floor-6 -->
 
-<!--<section id="advertising-floor-7" class="section floor cover">-->
-<!--    <div class="container-fluid">-->
-<!--        <div class="row">-->
-<!--            <div class="col-md-12 text-center">-->
-<!--                <header class="page-header">-->
-<!--                    <h2 class="floor-title">--><?php //echo sogo_meta('section-7-title') ?><!--</h2>-->
-<!--                </header>-->
-<!--                <!-- .page-header -->
-<!--                <div class="row">-->
-<!--                    <div class="col-md-3 text-right z-index">-->
-<!--                        <div class="strategy strategy-left">-->
-<!--                            --><?php
-//                            $list = sogo_meta('strategy_left');
-//                            foreach ((array)$list as $l):
-//                                ?>
-<!--                                <p class="width-75 float-right">--><?php //echo $l['title'] ?><!--</p>-->
-<!--                            --><?php //endforeach; ?>
-<!--                        </div>-->
-<!---->
-<!--                    </div>-->
-<!--                    <div class="col-md-6">-->
-<!--                        <div class="center-img text-center"></div>-->
-<!--                    </div>-->
-<!--                    <div class="col-md-3 text-left z-index">-->
-<!--                        <div class="strategy">-->
-<!--                            --><?php
-//                            $list = sogo_meta('strategy_right');
-//                            foreach ((array)$list as $l):
-//                                ?>
-<!--                                <p class="width-75">--><?php //echo $l['title'] ?><!--</p>-->
-<!--                            --><?php //endforeach; ?>
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section> <!-- #advertising-floor-7 -->
-
-<!--<footer id="customers-logos" class="section fp-auto-height ">-->
-<!--    <ul class="flex-slider">-->
-<!--        --><?php
-//        $logos = sogo_meta('customers_logos');
-//        if ($logos) {
-//            foreach ($logos as $id => $logo) {
-//                echo "<li>";
-//                sogo_print_image($id, $logo);
-//                echo "</li>";
-//            }
-//        }
-//        ?>
-<!--    </ul>-->
-<!--</footer>-->
-
 
 <?php get_footer() ?>
