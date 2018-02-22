@@ -1,0 +1,143 @@
+/* plugins.less */
+#plugins-floor-1 {
+  background-image: url("images/plugin-bg-mobile.jpg");
+  padding: 100px 0 50px;
+  @media(min-width: 768px){
+    padding: 200px 0 180px;
+  }
+  @media (min-width: 992px) {
+    padding: 200px 0 100px;
+    background-image: url("images/plugins-bg.jpg");
+  }
+}
+
+.plugin-nav {
+  padding: 0;
+  direction: ltr;
+  text-align: left;
+  li {
+    display: inline-block;
+    background: @color-white;
+    margin: 10px 0 10px 0;
+    padding: 0 20px;
+    text-align: center;
+    @media (min-width: 992px) {
+
+    }
+    a {
+      line-height: 30px;
+      color: #444544;
+      font-size: 16px;
+      text-transform: uppercase;
+      &:hover {
+        color: @color-red;
+        text-decoration: none;
+      }
+    }
+    &.current-cat {
+      a {
+        color: @color-green;
+      }
+    }
+  }
+  .active {
+    a {
+      color: @color-red;
+    }
+  }
+}
+
+.plugin-box {
+  background: @color-white;
+  padding: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 6.15px 0.85px rgba(0, 0, 0, 0.1);
+  .thumbnail-wrapper {
+    overflow: hidden;
+    height: 227px;
+  }
+  a {
+    color: @color-green;
+    &:hover {
+      color: @color-red;
+      text-decoration: none;
+    }
+  }
+
+  .publish-wrapper {
+    padding-top: 20px;
+    span {
+      font-size: 0.929em;
+    }
+  }
+  .plugin-title {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin: 10px 0 0;
+    @media (min-width: 992px) {
+      margin: 20px 0 10px;
+      height: 4em;
+    }
+    span {
+      font-size: 15px;
+      font-weight: bold;
+      text-transform: uppercase;
+      @media (min-width: 992px) {
+        font-size: 20px;
+      }
+    }
+  }
+  .plugin-description {
+    padding-bottom: 0;
+    @media (min-width: 992px) {
+      padding-bottom: 30px;
+    }
+    p {
+      font-size: 0.9em;
+      @media (min-width: 992px) {
+        font-size: 1.143em;
+      }
+    }
+  }
+  //img {
+  //    @media (min-width: 768px) {
+  //      -webkit-filter: grayscale(100%);
+  //      filter: grayscale(100%);
+  //      &:hover {
+  //        -webkit-filter: grayscale(0%);
+  //        filter: grayscale(0%);
+  //      }
+  //    }
+  //}
+}
+
+#search-bar {
+  margin: 30px 0;
+  position: relative;
+  input {
+    text-align: left;
+    border-bottom: 1px solid #000;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: transparent;
+    width: 90%;
+    font-size: 16px;
+  }
+  span#search-id {
+    background: @color-green;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    line-height: 35px;
+    text-align: center;
+    font-size: 18px;
+    color: @color-white;
+    position: absolute;
+    right: 0;
+    top: -10px;
+  }
+}
+
+/* end plugins.less */

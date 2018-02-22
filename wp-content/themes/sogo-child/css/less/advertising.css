@@ -1,0 +1,109 @@
+/* advertising.less */
+#advertising-floor-1 {
+  background-image: url("images/advertising-floor-1.jpg");
+}
+#advertising-floor-2 {
+  background-image: url("images/advertising-floor-2.jpg");
+}
+#advertising-floor-4 {
+  background-image: url("images/advertising-floor-4.jpg");
+}
+#advertising-floor-5 {
+  background-image: url("images/advertising-floor-5.jpg");
+}
+#advertising-floor-6 {
+  background-image: url("images/advertising-floor-6.jpg");
+}
+#advertising-floor-7 {
+  background-image: url("images/advertising-floor-7.jpg");
+}
+.icon-box {
+  margin-bottom: 140px;
+  margin-top: 35px;
+}
+.icon-box .round-green {
+  min-width: 120px;
+  line-height: 70px;
+}
+.icon-box .round-white {
+  min-width: 65px;
+  line-height: 40px;
+  margin: 10px 0 0;
+}
+.hidden-icon-box {
+  position: absolute;
+  padding: 5px;
+  top: 35px;
+  left: 0;
+  opacity: 0;
+}
+.hidden-icon-box p.color-white {
+  font-size: 18px;
+  padding: 10px;
+}
+.icon-box:hover > .hidden-icon-box {
+  display: inline-block;
+  opacity: 1;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.icon-text-wrapper {
+  padding-top: 200px;
+  display: inline-block;
+  width: 100%;
+}
+.center-img {
+  background: url("images/horses.jpg") no-repeat;
+  height: 700px;
+  background-position: 50% 50%;
+}
+.strategy p:nth-child(4) {
+  position: absolute;
+  top: 95px;
+  left: -175px;
+}
+.strategy p:nth-child(3) {
+  position: absolute;
+  top: 250px;
+  left: -75px;
+}
+.strategy p:nth-child(2) {
+  position: absolute;
+  top: 412px;
+  left: -75px;
+}
+.strategy p:nth-child(1) {
+  position: absolute;
+  top: 560px;
+  left: -175px;
+}
+.strategy-left p:nth-child(1) {
+  position: absolute;
+  top: 85px;
+  right: -175px;
+  left: auto;
+}
+.strategy-left p:nth-child(2) {
+  position: absolute;
+  top: 247px;
+  right: -75px;
+  left: auto;
+}
+.strategy-left p:nth-child(3) {
+  position: absolute;
+  top: 412px;
+  right: -75px;
+  left: auto;
+}
+.strategy-left p:nth-child(4) {
+  position: absolute;
+  top: 555px;
+  right: -175px;
+  left: auto;
+}
+.box-icon-text .round-gray {
+  padding: 25px;
+}
+/* end advertising.less */

@@ -1,0 +1,1068 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Sogo ChildTheme\n"
+"POT-Creation-Date: 2015-10-29 14:17+0200\n"
+"PO-Revision-Date: 2015-10-29 14:17+0200\n"
+"Last-Translator: \n"
+"Language-Team: Sogo <wpmaster@sogoc.o.il>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: archive-business.php:103
+#, php-format
+msgid "View all post filed under %s"
+msgstr ""
+
+#: archive-events.php:53
+msgid "From Date:"
+msgstr "תאריך התחלה"
+
+#: archive-events.php:58
+msgid "To Date:"
+msgstr "תאריך סיום"
+
+#: category-35.php:32 category-909.old.php:70
+msgid "To News Letter"
+msgstr "לניוזלטר"
+
+#: comments.php:28
+msgid "comment"
+msgstr "תגובה"
+
+#: comments.php:37 comments.php:39
+msgid "Name"
+msgstr "שם"
+
+#: comments.php:43 comments.php:45
+msgid "Email"
+msgstr "אימייל"
+
+#: comments.php:84
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:85
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:86
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:95
+msgid "Comments are closed."
+msgstr ""
+
+#: content-business.php:12 taxonomy-business-cat.php:55
+#: taxonomy-business-city.php:58
+msgid "Enter"
+msgstr "היכנס"
+
+#: footer.php:7
+msgid "About and Help"
+msgstr "אודות ועזרה"
+
+#: footer.php:24
+msgid "Content Channels"
+msgstr "ערוצי תוכן"
+
+#: front-page.php:40
+msgid "Videos of Kan-Naim"
+msgstr "ווידאו כאן נעים"
+
+#: front-page.php:133 templates/category-with-children.php:206
+msgid "Daily Images"
+msgstr "תמונות היום"
+
+#: functions.php:56
+msgid "Primary Navigation Left"
+msgstr "תפריט ראשי שמאלי"
+
+#: functions.php:540
+msgid "You have News / Image / Movie?"
+msgstr "יש לך ידיעה / תמונה / סרט?"
+
+#: functions.php:542
+msgid "The Red Mail of Kan Naim"
+msgstr "האימייל האדום של כאן נעים"
+
+#: header.php:86
+msgid "Logout"
+msgstr "יציאה"
+
+#: header.php:92
+msgid "LogIn"
+msgstr "כניסה"
+
+#: header.php:100
+msgid "Add Naim Site To Your Favorite"
+msgstr "הוסף את אתר כאן נעים למועדפים"
+
+#: header.php:128
+msgid "Primary Menu"
+msgstr "תפריט ראשי"
+
+#: header.php:130 header.php:157
+msgid "Skip to content"
+msgstr "דלג למלל"
+
+#: lib/class/form.php:42
+msgid "Type Second Title Here"
+msgstr "כותרת משנה "
+
+#: lib/class/helper.php:15
+msgid "Type Title Here"
+msgstr "הכנס כותרת"
+
+#: lib/class/survey.php:74 lib/metaboxes/survey-metabox.php:39
+msgid "Vote"
+msgstr "הצבע"
+
+#: lib/class/survey.php:128
+msgid "Shimoshnaim"
+msgstr "שימושונעים"
+
+#: lib/metaboxes/birthday-meta-box.php:6 lib/metaboxes/user_metaboxes.php:12
+msgid "Birthday Day"
+msgstr "יום הולדת"
+
+#: lib/metaboxes/birthday-meta-box.php:15
+msgid "Day"
+msgstr "יום"
+
+#: lib/metaboxes/birthday-meta-box.php:23
+msgid "Month"
+msgstr "חודש"
+
+#: lib/metaboxes/birthday-meta-box.php:31
+msgid "year"
+msgstr "שנה"
+
+#: lib/metaboxes/contact-meta-box.php:6 lib/metaboxes/contact-meta-box.php:13
+msgid "Contact Title"
+msgstr "כותרת צור קשר"
+
+#: lib/metaboxes/daily-image-meta-box.php:6 lib/metaboxes/posts-meta-box.php:6
+#: lib/metaboxes/posts-meta-box.php:35
+msgid "Daily Image Settings"
+msgstr "הגדרות תמונת היום"
+
+#: lib/metaboxes/daily-image-meta-box.php:12
+msgid "Gallery"
+msgstr "גלרייה"
+
+#: lib/metaboxes/daily-image-meta-box.php:16
+#: lib/metaboxes/single-meta-box.php:31
+msgid "Image {#}"
+msgstr ""
+
+#: lib/metaboxes/daily-image-meta-box.php:17
+#: lib/metaboxes/single-meta-box.php:32
+msgid "Add Another Image"
+msgstr "הוסף עוד תמונה"
+
+#: lib/metaboxes/daily-image-meta-box.php:18
+#: lib/metaboxes/single-meta-box.php:33
+msgid "Remove Image"
+msgstr "הסר תמונה"
+
+#: lib/metaboxes/daily-image-meta-box.php:23
+#: lib/metaboxes/survey-metabox.php:29
+msgid "Image"
+msgstr "תמונה"
+
+#: lib/metaboxes/daily-image-meta-box.php:28
+#: lib/metaboxes/video-strip-meta-box.php:17
+#: lib/metaboxes/video-strip-meta-box.php:39
+msgid "URL"
+msgstr "קישור"
+
+#: lib/metaboxes/daily-image-meta-box.php:33
+msgid "New Window"
+msgstr ""
+
+#: lib/metaboxes/dover-meta-box.php:18
+msgid "Post Type"
+msgstr "סוג כתבה"
+
+#: lib/metaboxes/dover-meta-box.php:22
+msgid "post"
+msgstr "כתבה"
+
+#: lib/metaboxes/dover-meta-box.php:23
+msgid "events"
+msgstr "ארוע"
+
+#: lib/metaboxes/dover-meta-box.php:27
+msgid "Post Title, Of your choose, Mandatory field"
+msgstr "כותרת הכתבה, לבחירתך, שדה חובה:"
+
+#: lib/metaboxes/dover-meta-box.php:30
+msgid "Kfar Saaba, this is the title"
+msgstr ""
+
+#: lib/metaboxes/dover-meta-box.php:33
+msgid "Recommended Post Title, Name of city will appear automatically"
+msgstr "המלצה לכותרת ראשית: שם העיר, יופיע כחלק אינטגראלי בכותרת המומלצת לכתבה"
+
+#: lib/metaboxes/dover-meta-box.php:38
+msgid "Key words for google, as default by category name"
+msgstr "מילות מפתח עבור גוגל, כברירת מחדל לפי שם הקטגוריה, שדה חובה:"
+
+#: lib/metaboxes/dover-meta-box.php:43
+msgid "Article Excerpt, Mandatory Field"
+msgstr "תקציר הכתבה, שדה חובה:"
+
+#: lib/metaboxes/dover-meta-box.php:48
+msgid "Roof Title, Not Mandatory"
+msgstr "כותרת עליונה גג, לא חובה:"
+
+#: lib/metaboxes/dover-meta-box.php:53
+msgid "insert the content of the article, mandatory field"
+msgstr "הכנס תוכן הכתבה כאן , שדה חובה: "
+
+#: lib/metaboxes/dover-meta-box.php:64
+msgid "Post Country wide"
+msgstr "בקשה לפרסום הכתבה בפריסה ארצית של האתר:"
+
+#: lib/metaboxes/dover-meta-box.php:70 lib/metaboxes/user_metaboxes.php:34
+msgid "Select Taxonomy"
+msgstr "לשייך כתבה ל-"
+
+#: lib/metaboxes/dover-meta-box.php:79
+msgid "I agree i have read the terms of use"
+msgstr "שדה חובה: הנני מאשר כי קראתי, הבנתי והסכמתי לתנאי השימוש באתר כאן-נעים"
+
+#: lib/metaboxes/dover-meta-box.php:88
+msgid "Featured Image for New Post"
+msgstr ""
+
+#: lib/metaboxes/dover-meta-box.php:96
+msgid "Gallery Image  "
+msgstr "גלריית תמונות"
+
+#: lib/metaboxes/dover-meta-box.php:297
+#, php-format
+msgid "There was an error in the submission: %s"
+msgstr ""
+
+#: lib/metaboxes/dover-meta-box.php:306
+#, php-format
+msgid ""
+"Thank you%s, your new post has been submitted and is pending review by a "
+"site administrator."
+msgstr ""
+
+#: lib/metaboxes/dover-meta-box.php:311
+msgid "Submit Post"
+msgstr "הגש פוסט"
+
+#: lib/metaboxes/dover-meta-box.php:340
+msgid "Security check failed."
+msgstr ""
+
+#: lib/metaboxes/dover-meta-box.php:345
+msgid "New post requires a title."
+msgstr "פוסט חדש צריך כותרת"
+
+#: lib/metaboxes/dover-meta-box.php:349
+msgid "Please enter a new title."
+msgstr "אנא הזן כותרת חדשה"
+
+#: lib/metaboxes/events-meta-box.php:6
+msgid "Events Settings"
+msgstr "הגדרות אירוע"
+
+#: lib/metaboxes/events-meta-box.php:13
+msgid "Event Date"
+msgstr "תאריך ארוע"
+
+#: lib/metaboxes/events-meta-box.php:16 lib/metaboxes/survey-metabox.php:15
+msgid "d-m-Y"
+msgstr ""
+
+#: lib/metaboxes/events-meta-box.php:25
+msgid "Time"
+msgstr "שעה"
+
+#: lib/metaboxes/events-meta-box.php:35
+msgid "Event Adress"
+msgstr "כתובת ארוע"
+
+#: lib/metaboxes/events-meta-box.php:40
+msgid "Event Link"
+msgstr "לינק לאירוע"
+
+#: lib/metaboxes/events-meta-box.php:45
+msgid "Event Price"
+msgstr "מחיר האירוע"
+
+#: lib/metaboxes/events-meta-box.php:50
+msgid "Event Map"
+msgstr "מפת האירוע"
+
+#: lib/metaboxes/events-meta-box.php:55
+msgid "Is free event?"
+msgstr "האם זה חינם?"
+
+#: lib/metaboxes/events-meta-box.php:60
+msgid "Event Area"
+msgstr "אזור ארוע"
+
+#: lib/metaboxes/events-meta-box.php:65
+msgid "Event Roof Title"
+msgstr "כותרת גג של הארוע"
+
+#: lib/metaboxes/front-page-meta-box.php:61
+msgid "Article - "
+msgstr "כתבה-"
+
+#: lib/metaboxes/front-page-meta-box.php:62
+msgid "Start typing for auto complete"
+msgstr "התחל להקליד להשלמה אוטומטית"
+
+#: lib/metaboxes/front-page-meta-box.php:75
+msgid "Row 1 Settings"
+msgstr "הגדרות שורה 1"
+
+#: lib/metaboxes/front-page-meta-box.php:90
+msgid "Category settings Section 4"
+msgstr "הגדרות קטגוריה חלק 4"
+
+#: lib/metaboxes/front-page-meta-box.php:124
+msgid "Category settings Section 5"
+msgstr "הגדרות קטגוריה חלק 5"
+
+#: lib/metaboxes/front-page-meta-box.php:156
+msgid "Category settings Section 6"
+msgstr "הגדרות קטגוריה חלק 6"
+
+#: lib/metaboxes/front-page-meta-box.php:189
+msgid "Category settings Section 7"
+msgstr "הגדרות קטגוריה חלק 7"
+
+#: lib/metaboxes/naim-links-meta-box.php:6
+#: lib/metaboxes/naim-links-meta-box.php:12
+msgid "Second Title"
+msgstr "כותרת משנה "
+
+#: lib/metaboxes/naim-links-meta-box.php:18
+msgid "Link"
+msgstr "קישור"
+
+#: lib/metaboxes/posts-meta-box.php:12 lib/tax-boxes.php:47
+msgid "Roof Title"
+msgstr "כותרת גג עליונה"
+
+#: lib/metaboxes/posts-meta-box.php:17
+msgid "Credit"
+msgstr "קרדיט"
+
+#: lib/metaboxes/posts-meta-box.php:22
+msgid "Author Request To show on Home page"
+msgstr "בקשת המפרסם לפרסום בדף הבית"
+
+#: lib/metaboxes/single-meta-box.php:6 lib/metaboxes/single-meta-box.php:12
+msgid "Article Slider"
+msgstr "גלרית  כתבה"
+
+#: lib/metaboxes/single-meta-box.php:21
+msgid "Single Business Info"
+msgstr ""
+
+#: lib/metaboxes/single-meta-box.php:27
+msgid "Business Info"
+msgstr "מידע על העסק"
+
+#: lib/metaboxes/single-meta-box.php:38 lib/metaboxes/user_metaboxes.php:29
+msgid "Phone"
+msgstr "טלפון"
+
+#: lib/metaboxes/single-meta-box.php:43
+msgid "WebSite URL"
+msgstr "קישור לאתר"
+
+#: lib/metaboxes/single-meta-box.php:48
+msgid "Open Hours"
+msgstr "שעות פעילות"
+
+#: lib/metaboxes/single-meta-box.php:53 lib/metaboxes/user_metaboxes.php:24
+msgid "Address"
+msgstr "כתובת"
+
+#: lib/metaboxes/single-meta-box.php:68 lib/metaboxes/single-meta-box.php:92
+#: lib/metaboxes/single-meta-box.php:100 lib/metaboxes/single-meta-box.php:106
+msgid "Business Slider"
+msgstr "סלידר עסקים"
+
+#: lib/metaboxes/single-meta-box.php:75
+msgid "Slogan"
+msgstr "סיסמת פרסום"
+
+#: lib/metaboxes/single-meta-box.php:82
+#: lib/metaboxes/video-strip-meta-box.php:12
+#: lib/metaboxes/video-strip-meta-box.php:34
+msgid "Video"
+msgstr "סרטים"
+
+#: lib/metaboxes/single-meta-box.php:87
+msgid "Map"
+msgstr "מפה"
+
+#: lib/metaboxes/survey-metabox.php:5
+msgid "Title"
+msgstr "כותרת"
+
+#: lib/metaboxes/survey-metabox.php:20
+msgid "Votes"
+msgstr "הצבע"
+
+#: lib/metaboxes/survey-metabox.php:22
+msgid "Vote {#}"
+msgstr "הצבע"
+
+#: lib/metaboxes/survey-metabox.php:23
+msgid "Add Another Entry"
+msgstr "הכנס ערך נוסף"
+
+#: lib/metaboxes/survey-metabox.php:24
+msgid "Remove Entry"
+msgstr "הסר ערך"
+
+#: lib/metaboxes/survey-metabox.php:34
+msgid "Text"
+msgstr "טקסט"
+
+#: lib/metaboxes/user_metaboxes.php:19
+msgid "Tz"
+msgstr "תעודת זהות"
+
+#: lib/metaboxes/video-strip-meta-box.php:6
+#: lib/metaboxes/video-strip-meta-box.php:27
+msgid "Video Settings"
+msgstr "הגדרות וידאו"
+
+#: lib/post-type-init.php:9
+msgid "Events"
+msgstr "אירועים"
+
+#: lib/post-type-init.php:12
+msgid "event"
+msgstr "אירועים"
+
+#: lib/post-type-init.php:23
+msgid "Business"
+msgstr "אינדקס עסקים"
+
+#: lib/post-type-init.php:24
+msgid "business"
+msgstr "אינדקס-עסקים"
+
+#: lib/post-type-init.php:36
+msgid "Surveys"
+msgstr "סקרים"
+
+#: lib/post-type-init.php:37
+msgid "survey"
+msgstr "סקרים"
+
+#: lib/post-type-init.php:48
+msgid "Birthdays"
+msgstr "ימי הולדת"
+
+#: lib/post-type-init.php:58
+msgid "Notifications"
+msgstr "הודעות"
+
+#: lib/post-type-init.php:59
+msgid "notifications"
+msgstr "הודעות"
+
+#: lib/post-type-init.php:67
+msgid "Naim Links"
+msgstr "שימושונעים"
+
+#: lib/post-type-init.php:75
+msgid "Video Strip"
+msgstr "סרטים כאן נעים"
+
+#: lib/post-type-init.php:83
+msgid "Daily Image"
+msgstr "תמונת היום"
+
+#: lib/post-type-init.php:99
+msgid "Job Type"
+msgstr "תפקיד"
+
+#: lib/post-type-init.php:104
+msgid "Events Type"
+msgstr "סוג ארוע"
+
+#: lib/post-type-init.php:110
+msgid "Business Category"
+msgstr "קטגורית עסקים"
+
+#: lib/post-type-init.php:115
+msgid "City"
+msgstr "עיר"
+
+#: lib/tax-boxes.php:43
+msgid "Category Banner"
+msgstr "קטגוריה תמונה ראשית"
+
+#: lib/tax-boxes.php:44
+msgid "Category Background Image"
+msgstr "תמונת רקע קטגוריה"
+
+#: lib/tax-boxes.php:45
+msgid "Category thumbnail Image"
+msgstr "תמונה ראשית קטגוריה"
+
+#: lib/tax-boxes.php:46
+msgid "Top Banner ID On Category"
+msgstr ""
+
+#: lib/tax-boxes.php:48
+msgid "Color Picker"
+msgstr "בחר צבע"
+
+#: lib/tax-boxes.php:66
+msgid "Short Category Name"
+msgstr "שם קצר לקטגוריה"
+
+#: lib/tax-boxes.php:67
+msgid "Show Comments Bubble?"
+msgstr "הצג בועת תגובות"
+
+#: lib/tax-boxes.php:77
+msgid "Sub Cat"
+msgstr "קטגוריית משנה"
+
+#: lib/tax-boxes.php:80
+msgid "city?"
+msgstr "עיר?"
+
+#: lib/tax-boxes.php:82
+msgid "Mayor"
+msgstr "ראש העיר"
+
+#: lib/tax-boxes.php:83
+msgid "City Logo"
+msgstr "לוגו עיר"
+
+#: lib/tax-boxes.php:84
+msgid "City Image"
+msgstr "תמונה עיר"
+
+#: lib/tax-boxes.php:85
+msgid "County"
+msgstr "מחוז"
+
+#: lib/tax-boxes.php:86
+msgid "Foundation Date"
+msgstr "נוסד בתאריך"
+
+#: lib/tax-boxes.php:87
+msgid "Website"
+msgstr "אתר"
+
+#: lib/tax-boxes.php:88
+msgid "City Map"
+msgstr "מפת עיר"
+
+#: lib/tax-boxes.php:89
+msgid "Service link"
+msgstr "לינק שרות"
+
+#: lib/tax-boxes.php:90
+msgid "Information Link"
+msgstr "לינק מידע"
+
+#: lib/tax-boxes.php:110
+msgid "Event Cat Img"
+msgstr "תמונה קטגוריה ארועים"
+
+#: lib/widget.php:11
+msgid "header-right"
+msgstr "הדר ימין"
+
+#: lib/widget.php:19
+msgid "home-row-2-right"
+msgstr "בית - שורה 2 - ימין"
+
+#: lib/widget.php:27
+msgid "home-row-2-middle"
+msgstr "בית - שורה 2 - אמצע"
+
+#: lib/widget.php:35
+msgid "home-row-2-left"
+msgstr "בית - שורה 2 - שמאל"
+
+#: lib/widget.php:43
+msgid "Home - row - 3 - right"
+msgstr "בית - שורה 3 - ימין"
+
+#: lib/widget.php:51
+msgid "Home - row - 3 - left"
+msgstr "בית - שורה 3 - שמאל"
+
+#: lib/widget.php:59
+msgid "Home - row - 3 - middle bottom"
+msgstr "בית - שורה 3 - אמצע למטה"
+
+#: lib/widget.php:67
+msgid "Home - row - 4 - right"
+msgstr "בית - שורה 4 - ימין"
+
+#: lib/widget.php:75
+msgid "Home - row - 4 - middle - right"
+msgstr "דף בית - שורה 4 - אמצע - ימין"
+
+#: lib/widget.php:83
+msgid "Home - row - 4 - middle - left"
+msgstr "דף בית - שורה 4 - אמצע - שמאל"
+
+#: lib/widget.php:91
+msgid "Home - row - 5 - right"
+msgstr "דף בית - שורה 5 - ימין"
+
+#: lib/widget.php:99
+msgid "Home - row - 5 - middle"
+msgstr "דף בית - שורה 5 - אמצע"
+
+#: lib/widget.php:107
+msgid "Home - row - 5 - left"
+msgstr "דף בית - שורה 5 - שמאל"
+
+#: lib/widget.php:115
+msgid "Home - row - 6 - middle"
+msgstr "בית - שורה 6 - אמצע"
+
+#: lib/widget.php:123
+msgid "home-daily-right-row-7"
+msgstr "דף בית - שורה 7 - תמונת היום"
+
+#: lib/widget.php:131
+msgid "Home - row - 8 - right"
+msgstr "בית - שורה 8 - ימין"
+
+#: lib/widget.php:139
+msgid "Home - row - 8 - middle"
+msgstr "דף בית - שורה 8 - אמצע"
+
+#: lib/widget.php:147
+msgid "Home - row - 8 - left"
+msgstr "דף בית - שורה 8 - שמאל"
+
+#: lib/widget.php:155
+msgid "Home - row - 9 - right"
+msgstr "דף בית - שורה 9 - ימין"
+
+#: lib/widget.php:163
+msgid "Home - row - 10 - right"
+msgstr "דף בית - שורה 10 - ימין"
+
+#: lib/widget.php:171
+msgid "Home - row - 10 - middle"
+msgstr "דף בית - שורה 10 - אמצע"
+
+#: lib/widget.php:179
+msgid "Home - row - 10 - left"
+msgstr "דף בית - שורה 10 - שמאל"
+
+#: lib/widget.php:188
+msgid "Home - row - 11"
+msgstr "דף בית - שורה 11"
+
+#: lib/widget.php:197
+msgid "Home - row - 12"
+msgstr "דף בית - שורה 12 "
+
+#: lib/widget.php:210
+msgid "red-mail-right"
+msgstr "מייל אדום - ימין"
+
+#: lib/widget.php:218
+msgid "red-mail-left"
+msgstr "מייל אדום - ימין"
+
+#: lib/widget.php:226
+msgid "movies-right"
+msgstr "דף סרטים - ימין"
+
+#: lib/widget.php:234
+msgid "movies-left"
+msgstr "דף סרטים - שמאל"
+
+#: lib/widget.php:242
+msgid "movies-every-four"
+msgstr "סרטים כל ארבע"
+
+#: lib/widget.php:251
+msgid "single-right"
+msgstr "יחיד - ימין"
+
+#: lib/widget.php:259
+msgid "single-left"
+msgstr "יחיד שמאל"
+
+#: lib/widget.php:267
+msgid "single-event-top"
+msgstr "דף יחיד - ארועים - למעלה"
+
+#: lib/widget.php:275
+msgid "single-event-bottom"
+msgstr "דף יחיד - ארועים - למטה"
+
+#: lib/widget.php:283
+msgid "events-every-four"
+msgstr "ארועים  כל ארבע"
+
+#: lib/widget.php:291
+msgid "mivzakim-every-four"
+msgstr "מבזקים כל ארבע"
+
+#: lib/widget.php:300
+msgid "single-right-to-content"
+msgstr "יחיד - שמאל למלל"
+
+#: lib/widget.php:308
+msgid "contact-right"
+msgstr "צור קשר - ימין"
+
+#: lib/widget.php:316
+msgid "contact-left"
+msgstr "צור קשר - שמאל"
+
+#: lib/widget.php:324
+msgid "contact-bottom"
+msgstr "דף צור קשר - למטה"
+
+#: lib/widget.php:332
+msgid "city-info-left"
+msgstr "מידע של עיר - שמאל"
+
+#: lib/widget.php:340
+msgid "city-info-right"
+msgstr "מידע של עיר - ימין"
+
+#: lib/widget.php:349
+msgid "city-info-bottom-right"
+msgstr "מידע של עיר -למטה - ימין"
+
+#: lib/widget.php:357
+msgid "city-info-bottom-left"
+msgstr "מידע של עיר -למטה - שמאל"
+
+#: lib/widget.php:366
+msgid "category-left-1"
+msgstr "קטגוריה - שמאל  - 1"
+
+#: lib/widget.php:374
+msgid "category-right-1"
+msgstr "קטגוריה - ימין - 1"
+
+#: lib/widget.php:382
+msgid "category-left-3"
+msgstr "קטגוריה - שמאל  - 3"
+
+#: lib/widget.php:390
+msgid "category-right-4"
+msgstr "קטגוריה - ימין - 4"
+
+#: lib/widget.php:398
+msgid "category-right-4-middle-right"
+msgstr "קטגוריה - שורה 4 - אמצע - ימין"
+
+#: lib/widget.php:406
+msgid "category-right-4-middle-left"
+msgstr "קטגוריה - שורה 4 - אמצע - שמאל"
+
+#: lib/widget.php:414
+msgid "category-right-5-middle-right"
+msgstr "קטגוריה - שורה 5 - אמצע - ימין"
+
+#: lib/widget.php:422
+msgid "category-right-5-middle-left"
+msgstr "קטגוריה - שורה 5 - אמצע - שמאל"
+
+#: lib/widget.php:430
+msgid "category-left-6"
+msgstr "קטגוריה - שורה 6 - שמאל"
+
+#: lib/widget.php:439
+msgid "category - twitter"
+msgstr "קטגוריה - טוויטר"
+
+#: lib/widget.php:448
+msgid "category-row-6"
+msgstr "קטגוריה שורה 6"
+
+#: lib/widget.php:456
+msgid "Category-with-children-row-7"
+msgstr "קטגוריה עם ילדים - שורה - 7"
+
+#: lib/widget.php:464
+msgid "category-row-8"
+msgstr "קטגוריה - שורה 8 "
+
+#: lib/widget.php:473
+msgid "category-last-left-top"
+msgstr "קטגוריה אחרונה - שמאל למעלה"
+
+#: lib/widget.php:482
+msgid "category-last-right-top"
+msgstr "קטגוריה אחרונה - ימין  למעלה"
+
+#: lib/widget.php:490
+msgid "business-center"
+msgstr "עסקים אמצע"
+
+#: lib/widget.php:498
+msgid "business-left"
+msgstr "עסקים שמאל"
+
+#: lib/widget.php:506
+msgid "business-right"
+msgstr "עסקים ימין"
+
+#: lib/widget.php:514
+msgid "business-bottom-right"
+msgstr "עסקים - למטה - ימין"
+
+#: lib/widget.php:522
+msgid "business-bottom-middle"
+msgstr "עסקים - למטה - אמצע"
+
+#: lib/widget.php:530
+msgid "business-bottom-left"
+msgstr "עסקים - למטה - שמאל"
+
+#: lib/widget.php:538
+msgid "survey right"
+msgstr "סקרים - ימין"
+
+#: lib/widget.php:546
+msgid "survey left"
+msgstr "סקרים צד שמאל"
+
+#: lib/widget.php:554
+msgid "survey every four"
+msgstr "סקר כל ארבע"
+
+#: lib/widget.php:562
+msgid "Primary"
+msgstr "ראשי"
+
+#: lib/widget.php:570
+msgid "Notification"
+msgstr "הודעות"
+
+#: lib/widget.php:578
+msgid "Recent Posts"
+msgstr "פוסטים אחרונים"
+
+#: lib/widget.php:586
+msgid "Footer"
+msgstr "פוטר"
+
+#: lib/widget.php:594
+msgid "form-naim-right-top"
+msgstr "טופס נעים - ימין למעלה"
+
+#: lib/widget.php:602
+msgid "form-naim-right-bottom"
+msgstr "טופס נעים - ימין למטה"
+
+#: lib/widget.php:610
+msgid "form-naim-left"
+msgstr "טופס נעים - שמאל"
+
+#: lib/widget.php:618
+msgid "form-naim-center"
+msgstr "טופס נעים- אמצע"
+
+#: lib/widget.php:626
+msgid "mivzakim right"
+msgstr "מבזקים ימין"
+
+#: lib/widget.php:634
+msgid "mivzakim left"
+msgstr "מבזקים שמאל"
+
+#: page-dover.php:55
+msgid "Back to Home page"
+msgstr "לחזרה לעמוד הבית"
+
+#: page-dover.php:55 templates/category-with-children.php:241
+msgid "Press Here"
+msgstr "לחץ כאן"
+
+#: page-dover.php:57
+msgid "Add new Post"
+msgstr "הוסף פוסט חדש"
+
+#: page-mivzakim.php:77 templates/content-meta.php:10
+#: templates/content-meta.php:15
+msgid "Author"
+msgstr "מאת:"
+
+#: search.php:9
+#, php-format
+msgid "Search Results for: %s"
+msgstr "מציג תוצאות ל: %s"
+
+#: search.php:25
+#, php-format
+msgid "No Results found for: %s"
+msgstr ""
+
+#: single.php:54
+msgid "want more updates? join us on"
+msgstr "רוצים עוד עדכונים? הצטרפו "
+
+#: single.php:55
+msgid "facebook"
+msgstr "ל'פייסבוק' ול'טוויטר'"
+
+#: single.php:64
+msgid "did u find an error? it is not pleasant"
+msgstr "מצאתם טעות? זה לא נעים,"
+
+#: single.php:65
+msgid "Click Here"
+msgstr "לחצו כאן"
+
+#: single.php:66
+msgid "tell us and we will fix it"
+msgstr "ואנו נתקן"
+
+#: templates/category-with-children.php:56
+msgid "Videos"
+msgstr "ווידאו"
+
+#: templates/category-with-children.php:236
+msgid "my-naim-moment"
+msgstr "רגע נעים שלי"
+
+#: templates/category-with-children.php:238
+msgid ""
+"want to appear on my-naim-moment? take a picture and send, and ull appear "
+"here"
+msgstr "רוצה להופיע כאן ברגע נעים שלך, צלמי ושלחי ותופיעי כאן"
+
+#~ msgid "Hide Category"
+#~ msgstr "הסתר קטגוריה"
+
+#~ msgid "thx for your vote"
+#~ msgstr "תודה על השתתפותך"
+
+#~ msgid "you already voted"
+#~ msgstr "השתתפותך כבר התקבלה"
+
+#~ msgid "Category Class"
+#~ msgstr "סוג קטגוריה"
+
+#~ msgid "The Red Mail"
+#~ msgstr "המייל האדום"
+
+#~ msgid "single-business-right-bottom"
+#~ msgstr "יחיד - עסק - ימין - למטה"
+
+#~ msgid "single-business-left-bottom"
+#~ msgstr "יחיד - עסק - שמאל  - למטה"
+
+#~ msgid "red-mail-right-middle"
+#~ msgstr "מייל אדום - ימין - אמצע"
+
+#~ msgid "red-mail-right-bottom"
+#~ msgstr "מייל אדום - ימין - למטה"
+
+#~ msgid "category-last-right-bottom"
+#~ msgstr "קטגוריה אחרונה - ימין למטה"
+
+#~ msgid "Home - row - 6 - right"
+#~ msgstr "בית - שורה 6 - ימין"
+
+#~ msgid "Home - row - 7 - middle"
+#~ msgstr "בית - שורה 7- אמצע"
+
+#~ msgid "before-footer"
+#~ msgstr "לפני פוטר"
+
+#~ msgid "daily-right"
+#~ msgstr "יומי - ימין"
+
+#~ msgid "single-right-bottom"
+#~ msgstr "יחיד - ימין - למטה"
+
+#~ msgid "contact-right-bottom"
+#~ msgstr "צור קשר - ימין - למטה"
+
+#~ msgid "city-info"
+#~ msgstr "מידע עיר"
+
+#~ msgid "category-left-5"
+#~ msgstr "קטגוריה - שמאל  - 5"
+
+#~ msgid "category-row-7"
+#~ msgstr "קטגוריה שורה 7"
+
+#~ msgid "Title Description"
+#~ msgstr "תאור הכותרת:"
+
+#~ msgid "City Hall Kfar-Saba, Kfar-Saba "
+#~ msgstr "עיריית כפר סבא, כפר סבא"
+
+#~ msgid "Article Excerpt"
+#~ msgstr "תקציר הכתבה"
+
+#~ msgid "Date For Start Time"
+#~ msgstr "תאריך התחלה לתזמון:"
+
+#~ msgid "Test Multi Checkbox"
+#~ msgstr "מיקום לתזמון:"
+
+#~ msgid "Main Article - Top Part"
+#~ msgstr "כתבה ראשית - חלק עליון"
+
+#~ msgid "Article in Category"
+#~ msgstr "כתבה בקטגוריה"
+
+#~ msgid "Excerpt Article in 6 squares of sub-category"
+#~ msgstr "כתבת תקציר ב-6 הריבועים של תתי קטגוריות"
+
+#~ msgid "Save as draft, dont show article"
+#~ msgstr "שמור כטיוטה/הסתר ידיעה:"
+
+#~ msgid "Select Sub Taxonomy"
+#~ msgstr "לשייך כתבה ל-תת-"
+
+#~ msgid "Rami"
+#~ msgstr "רמי"
+
+#~ msgid "twitter"
+#~ msgstr "'טוויטר'"
+
+#~ msgid "Start Time"
+#~ msgstr "זמן התחלה"
+
+#~ msgid "End Time"
+#~ msgstr "זמן סיום"
+
+#~ msgid "Kan Naim On Facebook"
+#~ msgstr "כאן נעים ב-facebook"
+
+#~ msgid "Kan Naim On Twitter"
+#~ msgstr "כאן נעים ב-twitter  "
+
+#~ msgid "Team"
+#~ msgstr "צוות"

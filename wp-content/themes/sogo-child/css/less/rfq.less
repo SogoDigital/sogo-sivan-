@@ -1,0 +1,158 @@
+/* file name rfq.less */
+
+.rfq-btn {
+  background: @color-red;
+  color: white;
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  height: 105px;
+  width: 105px;
+  .border-radius(50%);
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  padding: 34px 25px;
+  text-align: center;
+  transition: all 0.5s;
+  @media(min-width: 992px){
+    bottom: 110px;
+  }
+  &:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 23px solid @color-red;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    -ms-transform: rotate(-40deg);
+    -webkit-transform: rotate(-40deg);
+    transform: rotate(-40deg);
+    transition: all 0.5s;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    background: white;
+    color: @color-red;
+    text-decoration: none;
+    &:after {
+      border-top-color: white;
+    }
+  }
+}
+
+.modal-open .modal {
+  @media(min-width: 768px){
+    overflow-y: hidden;
+  }
+}
+
+.modal {
+  &.rfq {
+    .modal-dialog {
+      margin: 80px auto;
+      width: 100%;
+      @media(min-width: 992px){
+        margin: 200px auto;
+      }
+    }
+    .modal-content {
+      background-image: url(images/rfq-bg.png);
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      background-color: #e7e7e7;
+      margin: 0 auto;
+      //height: auto;
+      width: 320px;
+      @media(min-width: 768px){
+        width: 700px;
+      }
+      @media(min-width: 992px){
+        height: 493px;
+      }
+      @media (min-width: 1200px) {
+        width: 1055px;
+      }
+    }
+    .modal-title {
+      font-size: 19px;
+      font-weight: bold;
+      margin: 15px 0 19px;
+      @media(min-width: 768px){
+        font-size: 29px;
+        margin: 25px 0 39px;
+      }
+    }
+    form {
+      input[type="text"],
+      input[type="tel"],
+      input[type="email"],
+      textarea{
+        background: transparent;
+        border: 1px solid #a4a4a4;
+        margin-bottom: 29px;
+        .border-radius(2px);
+        padding: 10px;
+        font-size: 15px;
+        &::-moz-placeholder{
+          color: black;
+        }
+        &::-webkit-input-placeholder{
+          color: black;
+        }
+        @media(min-width: 768px){
+          font-size: 20px;
+        }
+      }
+      input{
+        height: 30px;
+        width: 100%;
+        @media(min-width: 768px){
+          height: 60px;
+        }
+      }
+      input[type="submit"]{
+        font-size: 22px;
+        background: @color-red;
+        color: white;
+        font-weight: bold;
+        .border-radius(2px);
+        height: 50px;
+        transition: all 0.5s;
+        border: 1px solid transparent;
+        &:hover,
+        &:focus,
+        &:active{
+          background: transparent;
+          color: @color-red;
+          border: 1px solid @color-red;
+        }
+      }
+      textarea {
+        height: 130px;
+        width: 100%;
+        @media(min-width: 768px){
+          height: 239px;
+        }
+      }
+      span.wpcf7-not-valid-tip {
+        position: absolute;
+        top: 14px;
+        @media(min-width: 768px){
+          top: 30px;
+        }
+      }
+      div.wpcf7-response-output {
+        position: absolute;
+        bottom: -50px;
+        @media(min-width: 768px){
+          bottom: -30px;
+        }
+      }
+    }
+  }
+}

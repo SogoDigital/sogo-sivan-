@@ -1,0 +1,50 @@
+/* flip-mobile-btn.less */
+.navbar-toggle {
+  border: none;
+  //background: transparent !important;
+
+  &:hover {
+    //background: transparent !important;
+  }
+
+  .icon-bar {
+    width: 29px;
+    transition: all 1.0s;
+  }
+  .top-bar {
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -ms-transform-origin: 10% 10%; /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    -webkit-transform-origin: 10% 10%; /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+  .middle-bar {
+    opacity: 0;
+  }
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+    -ms-transform: rotate(-45deg); /* IE 9 */
+    -ms-transform-origin: 10% 90%; /* IE 9 */
+    -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+    -webkit-transform-origin: 10% 90%; /* Chrome, Safari, Opera */
+  }
+
+  &.collapsed {
+    .top-bar {
+      transform: rotate(0);
+      -ms-transform: rotate(0); /* IE 9 */
+      -webkit-transform: rotate(0); /* Chrome, Safari, Opera */
+    }
+    .middle-bar {
+      opacity: 1;
+    }
+    .bottom-bar {
+      transform: rotate(0);
+      -ms-transform: rotate(0); /* IE 9 */
+      -webkit-transform: rotate(0); /* Chrome, Safari, Opera */
+    }
+  }
+}
+/* end flip-mobile-btn.less */

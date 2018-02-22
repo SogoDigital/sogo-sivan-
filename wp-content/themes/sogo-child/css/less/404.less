@@ -1,0 +1,101 @@
+/* 404.less */
+#error-floor-1{
+  background: url("images/404.jpg");
+  background-position: 50% 50%;
+  z-index: 1;
+  height: 100vh;
+  background-size: cover;
+  @media(min-width: 768px){
+
+  }
+  @media(min-width: 992px){
+    background-position: 50% 100%;
+  }
+  @media(min-width: 1200px){
+    background-position: 50% 50%;
+  }
+  .oval-speech p {
+    font-size:22px;
+    margin: 0;
+    color: @color-white;
+    font-weight: bold;
+  }
+  .page-title {
+    margin-top: 90px;
+    margin-bottom: 0;
+    @media(min-width: 768px){
+      margin-top: 170px;
+    }
+  }
+  .page-sub-title {
+    font-size: 82px;
+    font-weight: bold;
+    line-height: 1.2;
+    @media(min-width: 768px){
+      font-size: 172px;
+    }
+  }
+}
+.oval-speech {
+  display: none;
+  @media(min-width: 768px){
+    display: inline-block;
+    position: absolute;
+    padding: 42px 24px;
+    margin: 1em auto 50px;
+    text-align: center;
+    color: @color-white;
+    background: @color-red;
+    border-radius: 50%;
+    right: 50%;
+    margin-right: -375px;
+    bottom: -250px;
+  }
+}
+
+
+
+/* creates part of the curve */
+.oval-speech:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: -35px;
+  right: 44%;
+  height: 35px;
+  border-right:55px solid @color-red;
+  background:#bbb;
+  /* css3 */
+  -webkit-border-bottom-right-radius:80px 50px;
+  -moz-border-radius-bottomright:80px 50px;
+  border-bottom-right-radius:80px 50px;
+  /* using translate to avoid undesired appearance in CSS2.1-capabable but CSS3-incapable browsers */
+  -webkit-transform:translate(0, -2px);
+  -moz-transform:translate(0, -2px);
+  -ms-transform:translate(0, -2px);
+  -o-transform:translate(0, -2px);
+  transform:translate(0, -2px);
+}
+
+/* creates part of the curved pointy bit */
+.oval-speech:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: -35px;
+  right: 53%;
+  width: 30px;
+  height: 35px;
+  background: url("images/baloon-bg.png");
+  /* css3 */
+  -webkit-border-bottom-right-radius:40px 50px;
+  -moz-border-radius-bottomright:40px 50px;
+  border-bottom-right-radius:40px 50px;
+  /* using translate to avoid undesired appearance in CSS2.1-capabable but CSS3-incapable browsers */
+  -webkit-transform:translate(-10px, -2px);
+  -moz-transform:translate(-10px, -2px);
+  -ms-transform:translate(-10px, -2px);
+  -o-transform:translate(-10px, -2px);
+  transform:translate(-10px, -2px);
+}
+/* end 404.less */

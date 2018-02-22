@@ -1,0 +1,23 @@
+
+/*
+ *	Backend Styles
+ *
+*/
+
+.main li {
+	display: inline-block;
+}
+.inside_gallery {
+	text-align: center;
+}
+.delete {
+	color: white;
+	position: absolute;
+	background: red;
+	border-radius: 100%;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	padding: 3px;
+	font-size: 16px;
+}

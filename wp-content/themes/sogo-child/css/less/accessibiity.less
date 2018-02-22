@@ -1,0 +1,296 @@
+/* file name accessibility.less */
+// Floor 1
+.page-template-page-accessibility {
+  @media (max-width: 991px) {
+    .floor {
+      min-height: 100vh;
+      padding: 0;
+    }
+  }
+}
+
+h3.access-sub-title {
+  font-weight: bold;
+  font-size: 1em;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 1.5px 2.598px 5px rgba(0, 0, 0, 0.137);
+  @media (min-width: 768px) {
+    font-size: 1.571em;
+  }
+}
+
+#accessibility-floor-1 {
+  background-image: url("images/bgs/mobile/acces-floor-1.jpg");
+  @media (min-width: 992px) {
+    background-image: url("images/access-floor-1.jpg");
+  }
+}
+
+// Floor 2
+#accessibility-floor-2 {
+  background-color: @color-red;
+  @media (max-width: 767px) {
+    padding-bottom: 0;
+    .col-md-6:last-child {
+      background-color: @color-green;
+      padding-bottom: 50px;
+      h2 {
+        display: inline-block;
+      }
+    }
+
+    .col-md-6 {
+      img {
+        width: 40%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    background-image: url("images/bgs/mobile/about-floor-2-mobile-bg.png");
+    background-position: 50% 60%;
+    padding-bottom: 0;
+  }
+  @media (min-width: 992px) {
+    background-image: url("images/about-floor-2.jpg");
+    background-position: 50% 50%;
+  }
+  p {
+    color: @color-white;
+  }
+}
+
+.accessibility-two-sections {
+  @media (min-width: 768px) {
+    margin: 90px 0;
+  }
+  @media (min-width: 992px) {
+    margin: 60px 0;
+  }
+  @media (min-width: 1200px) {
+    margin: 0;
+  }
+  p {
+    font-weight: 200;
+    @media (min-width: 992px) {
+      font-weight: 500;
+    }
+    @media (min-width: 1200px) {
+      font-weight: 200;
+    }
+  }
+  .icon-access {
+    padding-top: 50px;
+    @media (min-width: 992px) {
+      padding-top: 0;
+    }
+    @media (min-width: 1200px) {
+      padding-top: 50px;
+    }
+  }
+}
+
+// Floor 3
+#accessibility-floor-3 {
+  background-color: #e1e1e1;
+  @media (min-width: 992px) {
+    background-image: url("images/access-floor-3-en.png");
+    background-position: 80%;
+  }
+  .man-img {
+    img {
+      position: relative;
+      width: 70%;
+      @media (min-width: 992px) {
+        left: 40px;
+        bottom: -200px;
+        width: auto;
+      }
+      @media (min-width: 1200px) {
+        left: -40px;
+      }
+    }
+  }
+  .floor-title {
+    @media (min-width: 1200px) {
+      margin-left: 137px;
+    }
+  }
+  .adv-two-sections {
+    margin: 0;
+  }
+  .floor-header{
+    @media(min-width: 992px){
+      margin-left: 80px;
+    }
+    @media(min-width: 1200px){
+      margin-left: 0;
+    }
+  }
+}
+
+.floor-3-ul {
+  list-style: none;
+  li {
+    position: relative;
+    margin: 10px 20px;
+    @media (min-width: 1200px) {
+      margin: 45px 100px;
+    }
+    &:before {
+      content: url('images/check-floor-3-mob.png');
+      position: absolute;
+      left: -49px;
+      top: -5px;
+      @media (min-width: 1200px) {
+        left: -75px;
+        content: url('images/check-floor-3-ul.png');
+        top: 0;
+      }
+    }
+  }
+  h4.item-heading {
+    @media (min-width: 992px) {
+      font-size: 1em;
+    }
+    @media (min-width: 1200px) {
+      font-size: 24px;
+    }
+  }
+}
+
+h4.item-heading {
+  margin: 0;
+  font-size: 1em;
+  @media (min-width: 768px) {
+    font-size: 1.5em;
+  }
+  @media (min-width: 1200px) {
+    font-size: 24px;
+  }
+}
+
+p.item-text {
+  //margin: 0;
+  font-weight: 200;
+  line-height: 1;
+  font-size: 1em;
+  padding-top: 15px;
+  margin-right: -40px;
+  @media (min-width: 768px) {
+    margin: 0;
+  }
+  @media (min-width: 1200px) {
+    font-size: 1.329em;
+    padding-top: 0;
+  }
+}
+
+// Floor 4
+#accessibility-floor-4 {
+  background-color: @color-green;
+  .floor-title {
+    margin-top: 90px;
+    margin-bottom: 20px;
+  }
+  .icon-box {
+    height: auto;
+
+    h4 {
+      font-size: 22px;
+      margin: 58px 0 30px;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 200;
+    }
+    .round-white {
+      min-width: 118px;
+      line-height: 94px;
+      margin: 10px 0 0;
+      border: 2px solid #ffffff;
+      font-size: 60px;
+    }
+  }
+  .bx-wrapper {
+    .bx-pager.bx-default-pager {
+      margin: 20px 0 40px;
+      a {
+        background: #b3e5cc;
+        &:hover,
+        &.active {
+          background: @color-white;
+        }
+      }
+    }
+  }
+}
+
+// Floor 5
+#accessibility-floor-5 {
+  background-image: url("images/access-floor-5.png");
+  padding-bottom: 25vh;
+  @media (min-width: 992px) {
+    background-size: cover;
+    padding: 0;
+  }
+  .what-included-section {
+    @media (min-width: 1200px) {
+      margin-top: -270px;
+    }
+  }
+
+}
+
+.floor-5-ul {
+  list-style: none;
+  margin-top: 50px;
+  li {
+    position: relative;
+    margin: 25px 0;
+    @media (min-width: 768px) {
+      margin: 20px 20px;
+    }
+    &:before {
+      content: url('images/check-floor-5-ul.png');
+      position: absolute;
+      left: -39px;
+      top: -10px;
+      @media (min-width: 992px) {
+        left: -75px;
+        top: 0;
+      }
+    }
+  }
+  span.item-text {
+    font-size: 1em;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1;
+    @media (min-width: 992px) {
+      font-size: 19px;
+      font-weight: 200;
+    }
+  }
+}
+
+// Floor 6
+#accessibility-floor-6 {
+  background-image: url("images/bgs/mobile/access-floor-6.jpg");
+  background-size: contain;
+  background-position: bottom center;
+  background-color: #dedede;
+  @media (min-width: 768px) {
+    padding-bottom: 90vh;
+  }
+  @media (min-width: 992px) {
+    background-image: url("images/access-floor-6.jpg");
+    padding: 0;
+    background-position: center;
+  }
+  @media (min-width: 1200px) {
+    background-size: cover;
+    background-position: bottom center;
+  }
+}
