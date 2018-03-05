@@ -193,3 +193,38 @@ if ( $submission ) {
 }
 
 add_action( 'wpcf7_mail_sent', 'sogo_save_lead' );
+
+
+
+
+// contact form 7 thanks page after submitting the form
+
+function mycustom_wp_footer() {
+    ?>
+    <script type="text/javascript">
+        document.addEventListener( 'wpcf7mailsent', function( event ) {
+            if ( '618' == event.detail.contactFormId ) {
+                location = 'https://sogo.co.il/תודה-רבה/';
+            }
+            else if ( '125' == event.detail.contactFormId ) {
+                location = 'https://sogo.co.il/תודה-רבה/';
+            }
+            else if ( '134' == event.detail.contactFormId ) {
+                location = 'https://sogo.co.il/תודה-רבה/';
+            }
+            else if ( '124' == event.detail.contactFormId ) {
+                location = 'https://sogo.co.il/en/thank-you/';
+            }
+            else if ( '381' == event.detail.contactFormId ) {
+                location = 'https://sogo.co.il/en/thank-you/';
+            }
+            else if ( '31' == event.detail.contactFormId ) {
+                location = 'https://sogo.co.il/en/thank-you/';
+            }
+
+        }, false );
+    </script>
+    <?php
+}
+
+add_action( 'wp_footer', 'mycustom_wp_footer' );
