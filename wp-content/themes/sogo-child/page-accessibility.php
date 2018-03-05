@@ -31,7 +31,7 @@
                         <?php echo apply_filters('the_content', sogo_meta('left_text')) ?>
                     </div>
                     <div class="text-center icon-access">
-                        <img src="<?php echo sogo_meta('left_icon') ?>"/>
+                        <img src="<?php echo sogo_meta('left_icon') ?>" alt="sogo accessibility" />
                     </div>
                 </div>
 
@@ -47,7 +47,7 @@
                         <?php echo apply_filters('the_content', sogo_meta('right_text')) ?>
                     </div>
                     <div class="text-center icon-access">
-                        <img src="<?php echo sogo_meta('right_icon') ?>"/>
+                        <img src="<?php echo sogo_meta('right_icon') ?>" alt="sogo accessibility" />
                     </div>
                 </div>
                 <!-- .page-header -->
@@ -80,7 +80,7 @@
                 </div>
             </div>
             <div class="visible-sm visible-xs text-center man-img">
-                <img src="<?php echo sogo_meta('sec-3-picture') ?>"/>
+                <img src="<?php echo sogo_meta('sec-3-picture') ?>" alt="sogo accessibility" />
             </div>
 
         </div>

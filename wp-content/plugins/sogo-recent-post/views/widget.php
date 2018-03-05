@@ -42,7 +42,7 @@ if ( $the_query->have_posts() ) {
             </a>
 
             <div class="plugin-description text-center">
-                <p><?php the_excerpt() ?> </p>
+               <?php the_excerpt() ?>
             </div>
         </div>
         <?php

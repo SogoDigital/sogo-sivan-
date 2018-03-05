@@ -85,7 +85,7 @@
                         </a>
                     </div>
                     <div class="contact-box">
-                        <a target="_blank" href=https://www.facebook.com/sogopage/?fref=ts">
+                        <a target="_blank" href="https://www.facebook.com/sogopage/?fref=ts">
                             <div class="contact-label">
                                 <span><?php _e('Facebook:','sogoc')?></span>
                             </div>

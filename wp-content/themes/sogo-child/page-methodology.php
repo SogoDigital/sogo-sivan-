@@ -51,7 +51,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="cool-effect bg-green full-radius animated grow hidden-xs hidden-sm">
-                <img src="<?php echo get_stylesheet_directory_uri()  ?>/images/bulp.png">
+                <img src="<?php echo get_stylesheet_directory_uri()  ?>/images/bulp.png" alt="sogo methodology">
             </div>
             <div id="e3" class="circle bg-green full-radius animated grow hidden-xs hidden-sm hidden-md">
                 <span class="bold uppercase"></span>
@@ -170,7 +170,7 @@
                 <div class="user-wrapper">
                     <span class="comment bold uppercase bg-green animated pulse infinite hidden-xs hidden-sm">*</span>
                     <img class="float-left full-radius"
-                         src="<?php echo get_stylesheet_directory_uri()  ?>/images/user-1.png">
+                         src="<?php echo get_stylesheet_directory_uri()  ?>/images/user-1.png" alt="sogo methodology">
 
                     <div class="user-text-wrapper">
                         <span class="user-name bold uppercase"><?php _e('client:','sogoc')?></span>
@@ -183,7 +183,7 @@
             <div class="cool-effect-user bg-red animated fadeInLeft second-user hidden-xs hidden-sm">
                 <div class="user-wrapper">
                     <img class="float-right full-radius"
-                         src="<?php echo get_stylesheet_directory_uri()  ?>/images/user-2.png">
+                         src="<?php echo get_stylesheet_directory_uri()  ?>/images/user-2.png" alt="sogo methodology">
 
                     <div class="user-text-wrapper">
                         <span class="user-name bold uppercase"><?php echo sogo_meta('section-8-title') ?></span>
@@ -197,7 +197,7 @@
                 <div class="user-wrapper">
                     <span class="comment bold uppercase bg-green animated pulse infinite">*</span>
                     <img class="float-left full-radius"
-                         src="<?php echo get_stylesheet_directory_uri()  ?>/images/user-3.png">
+                         src="<?php echo get_stylesheet_directory_uri()  ?>/images/user-3.png" alt="sogo methodology">
 
                     <div class="user-text-wrapper">
                         <span class="user-name bold uppercase"><?php _e('client:','sogoc')?></span>
@@ -210,7 +210,7 @@
             <div class="cool-effect-user bg-red animated fadeInRight second-user hidden-xs hidden-sm">
                 <div class="user-wrapper">
                     <img class="float-right full-radius"
-                         src="<?php echo get_stylesheet_directory_uri()  ?>/images/user-4.png">
+                         src="<?php echo get_stylesheet_directory_uri()  ?>/images/user-4.png" alt="sogo methodology">
 
                     <div class="user-text-wrapper">
                         <span class="user-name bold uppercase"><?php _e('QA:','sogoc')?></span>
@@ -236,7 +236,7 @@
 <section id="methodology-floor-9" class="section floor <?php sogo_extra_class('section-9-align') ?>">
     <div class="container-fluid">
         <div class="cool-effect animated slideInLeft hidden-xs hidden-sm">
-            <span class=""><img src="<?php echo get_stylesheet_directory_uri()  ?>/images/car.png"></span>
+            <span class=""><img src="<?php echo get_stylesheet_directory_uri()  ?>/images/car.png" alt="sogo methodology"></span>
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
