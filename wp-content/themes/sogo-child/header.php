@@ -48,7 +48,7 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
                                 </button>
                             </div>
                             <a class="screen-reader-text skip-link"
-                               href="#content"><?php _e('Skip to content', 'sogoc'); ?></a>
+                               href="#main-content"><?php _e('Skip to content', 'sogoc'); ?></a>
 
                             <div class="collapse navbar-collapse primary-navigation-collapse">
                                 <?php
@@ -100,3 +100,4 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
         <!-- .container -->
     </header>
     <!-- #home-floor-1 -->
+    <span id="main-content"></span>
