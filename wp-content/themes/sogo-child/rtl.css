@@ -1,4 +1,5 @@
 /* general */
+
 body {
     font-family: 'Open Sans Hebrew Regular';
     font-size: 14px;
@@ -448,8 +449,10 @@ span.wpcf7-not-valid-tip {
 .col-xs-10,
 .col-xs-11,
 .col-xs-12 {
-    float: right;
+    float: right !important;
 }
+
+.navbar{ border:none;}
 
 @media (min-width: 768px) {
     .col-sm-1,
@@ -464,7 +467,7 @@ span.wpcf7-not-valid-tip {
     .col-sm-10,
     .col-sm-11,
     .col-sm-12 {
-        float: right;
+        float: right !important;
     }
 
     .col-sm-pull-12 {
