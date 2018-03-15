@@ -19,7 +19,7 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
 ?>
 <body <?php body_class($fullpage); ?>>
 <?php echo sogo_option('google_tag') ?>
-<div id="page" class="site">
+
 
     <header id="main-header">
 
@@ -47,8 +47,7 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
                                     <span class="icon-bar bottom-bar"></span>
                                 </button>
                             </div>
-                            <a class="screen-reader-text skip-link"
-                               href="#main-content"><?php _e('Skip to content', 'sogoc'); ?></a>
+
 
                             <div class="collapse navbar-collapse primary-navigation-collapse">
                                 <?php
@@ -100,4 +99,4 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
         <!-- .container -->
     </header>
     <!-- #home-floor-1 -->
-    <span id="main-content"></span>
+<div id="page" class="site">

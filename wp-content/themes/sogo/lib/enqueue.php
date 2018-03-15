@@ -90,7 +90,7 @@ function sogo_load_lightbox()
 function sogo_load_fullPage()
 {
     //wp_enqueue_script('slimscroll', get_template_directory_uri() . '/assets/js/fullpage/jquery.slimscroll.min.js', array('jquery'), '',true);
-    wp_enqueue_script('fullPage', 'https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.5/jquery.fullPage.min.js', array('jquery'), '', true);
+    wp_enqueue_script('fullPage', get_template_directory_uri(). '/assets/js/fullpage/jquery.fullPage.js', array('jquery'), '', true);
     wp_enqueue_style('fullPagecss', get_template_directory_uri() . '/assets/js/fullpage/jquery.fullPage.css', array(), '', 'all');
 
 }

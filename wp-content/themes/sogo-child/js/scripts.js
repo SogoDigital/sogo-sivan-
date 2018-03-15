@@ -39,7 +39,7 @@
         } else {
             $('.fullpage #page').fullpage({
 
-                fixedElements: '#main-header',
+            //    fixedElements: '#main-header',
                 navigation: true,
                 navigationPosition: 'right',
                 onLeave: function (index, nextIndex, direction) {
