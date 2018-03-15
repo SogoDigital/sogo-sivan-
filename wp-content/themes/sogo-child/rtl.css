@@ -19,12 +19,12 @@ body {
 }
 
 #logo {
-    float: left;
+    float: left !important;
 }
 
 @media (min-width: 992px) {
     .social-navigation {
-        float: left;
+        float: left !important;
     }
 }
 
@@ -586,82 +586,82 @@ span.wpcf7-not-valid-tip {
     .col-md-10,
     .col-md-11,
     .col-md-12 {
-        float: right;
+        float: right !important;
     }
 
     .col-md-pull-12 {
         left: 100%;
-        right: auto;
+        right: auto !important;
     }
 
     .col-md-pull-11 {
         left: 91.66666667%;
-        right: auto;
+        right: auto !important;
     }
 
     .col-md-pull-10 {
         left: 83.33333333%;
-        right: auto;
+        right: auto !important;
     }
 
     .col-md-pull-9 {
         left: 75%;
-        right: auto;
+        right: auto !important;
     }
 
     .col-md-pull-8 {
         left: 66.66666667%;
-        right: auto;
+        right: auto !important;
     }
 
     .col-md-pull-7 {
         left: 58.33333333%;
-        right: auto;
+        right: auto !important;
     }
 
     .col-md-pull-6 {
         left: 50%;
-        right: auto;
+        right: auto !important;
     }
 
     .col-md-pull-5 {
         left: 41.66666667%;
-        right: auto;
+        right: auto!important;
     }
 
     .col-md-pull-4 {
         left: 33.33333333%;
-        right: auto;
+        right: auto !important;
     }
 
     .col-md-pull-3 {
         left: 25%;
-        right: auto;
+        right: auto !important;
     }
 
     .col-md-pull-2 {
         left: 16.66666667%;
-        right: auto;
+        right: auto !important;
     }
 
     .col-md-pull-1 {
         left: 8.33333333%;
-        right: auto;
+        right: auto !important;
     }
 
     .col-md-pull-0 {
-        left: auto;
-        right: auto;
+        left: auto !important;
+        right: auto !important;
     }
 
     .col-md-push-12 {
-        right: 100%;
-        left: auto;
+        right: 100% !important;
+        left: auto !important;
     }
 
     .col-md-push-11 {
         right: 91.66666667%;
-        left: auto;
+        left: auto !important;
     }
 
     .col-md-push-10 {
