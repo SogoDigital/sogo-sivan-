@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sogo ChildTheme\n"
-"POT-Creation-Date: 2018-03-04 17:05+0200\n"
-"PO-Revision-Date: 2018-03-04 17:08+0200\n"
+"POT-Creation-Date: 2018-03-18 12:22+0200\n"
+"PO-Revision-Date: 2018-03-18 12:23+0200\n"
 "Last-Translator: \n"
 "Language-Team: Sogo <wpmaster@sogoc.o.il>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -114,58 +114,64 @@ msgstr "חפש בתוספים"
 msgid "view a project"
 msgstr "לצפייה בפרוייקט"
 
-#: content-excerpt.php:22 single (DESKTOP-I1EPJ0E's conflicted copy
-#: 2016-08-28).php:23 single-plugin.php:23 single-projectssss.php:19
+#: content-excerpt.php:22 single-plugin.php:23 single-projectssss.php:19
 #: single.php:30
 #, php-format
 msgid "Publish in: %s"
 msgstr "פורסם ב: %s"
 
-#: footer.php:11
+#: footer.php:10
 msgid "All right reserved."
 msgstr "כל הזכויות שמורות"
 
-#: footer.php:87
+#: footer.php:86
 msgid "Request for quotation"
 msgstr "הצעת מחיר"
 
-#: footer.php:88
+#: footer.php:87
 msgid "Get a Quote"
 msgstr "הצעת מחיר"
 
-#: footer.php:98
+#: footer.php:97
 msgid "To get a quotation, please fill up the form"
 msgstr "לקבלת הצעת מחיר מלאו את הפרטים"
 
-#: front-page.php:209
+#: front-page.php:210
 msgid "see full portfolio"
 msgstr "לצפייה בתיק עבודות"
 
-#: front-page.php:246 page-contact.php:20
+#: front-page.php:247 page-contact.php:20
 msgid "thank you!"
 msgstr "תודה רבה!"
 
-#: front-page.php:249
+#: front-page.php:250
 msgid ""
 "Your mail is sent, our representative will call you back within 24 hours"
 msgstr ""
 "פרטייך התקבלו בהצלחה, מחלקת השיווק תחזור אלייך בזמן הקצר ביותר, תודה על "
 "פנייתך."
 
+#: functions.php:52
+msgid "click to move to next slide"
+msgstr "לחץ בכדי לעבור לסליידר הבא"
+
+#: functions.php:53
+msgid "click to move to previous slide"
+msgstr "לחץ בכדי לעבור לסליידר הקודם"
+
 #: header.php:31
-msgid "Call now"
-msgstr "התקשר עכשיו"
+msgid "Go to home page"
+msgstr "חזרה לדף הבית"
 
 #: header.php:44
 msgid "Toggle navigation"
 msgstr "מתג נייוט"
 
-#: header.php:51
-msgid "Skip to content"
-msgstr "דלג למלל"
+#: header.php:69
+msgid "Call now"
+msgstr "התקשר עכשיו"
 
-#: home.php:44 page-blog.php:38 single (DESKTOP-I1EPJ0E's conflicted copy
-#: 2016-08-28).php:55 single-plugin.php:51 single-projectssss.php:41
+#: home.php:44 page-blog.php:38 single-plugin.php:51 single-projectssss.php:41
 #: single.php:67
 msgid "SEARCH IN BLOG"
 msgstr "חפש בבלוג"
@@ -515,19 +521,17 @@ msgstr "חזרה לדף הבית"
 msgid "Back to homepage"
 msgstr "חזרה לדף הבית"
 
-#: single (DESKTOP-I1EPJ0E's conflicted copy 2016-08-28).php:27
+#: single-page-case-dukim.php:74
+msgid "what our clients says"
+msgstr "לקוח אומר עלינו"
+
 #: single-plugin.php:27 single.php:36
 msgid "share"
 msgstr "שתף"
 
-#: single (DESKTOP-I1EPJ0E's conflicted copy 2016-08-28).php:45
 #: single-plugin.php:42 single-projectssss.php:32 single.php:57
 msgid "back to articles"
 msgstr "חזרה לבלוג"
-
-#: single-page-case-dukim.php:74
-msgid "what our clients says"
-msgstr "לקוח אומר עלינו"
 
 #: single-project.php:33
 msgid "previews project"
@@ -540,6 +544,9 @@ msgstr "פרויקט הבא"
 #: single.php:33
 msgid "By Sogo"
 msgstr "מאת- סוגו"
+
+#~ msgid "Skip to content"
+#~ msgstr "דלג למלל"
 
 #~ msgid "Facebook link error"
 #~ msgstr "קישור לפייסבוק שגוי"

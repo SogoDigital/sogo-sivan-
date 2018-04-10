@@ -15,7 +15,7 @@ get_header();
             <div class="row">
                 <div class="col-md-12 col-lg-12 text-center animated fadeInUp">
                     <header class="floor-header mobile-middle">
-                        <h1 class="page-title color-white">Welcome to Sogo</h1>
+                        <h1 class="page-title color-white" lang="en">Welcome to Sogo</h1>
                     </header>
                     <!-- .page-header -->
                     <p class="sub-title">
@@ -24,12 +24,13 @@ get_header();
                 </div>
             </div>
         </div>
-        <a href="<?php echo nl2br(sogo_meta('cta_link')) ?>"
-           class="continue call-to-action hidden-xs hidden-sm"><?php echo nl2br(sogo_meta('cta_text')) ?>
+
+        <span style="cursor: pointer;"
+           class="continue call-to-action hidden-xs hidden-sm">
             <span class="scroll-to continue animated bounce infinite">
                         <span class="fa fa-angle-down" aria-hidden="true"></span>
                     </span>
-        </a>
+        </span>
 
         <footer id="customers-logos" class="hidden-xs hidden-sm">
             <ul class="flex-slider">
@@ -79,7 +80,7 @@ if ($floors) {
                 </div>
             </div>
             <div class="continue-down hidden-xs hidden-sm">
-                     <span class="scroll-to continue">
+                     <span class="scroll-to continue" aria-hidden="true">
                          <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
                      </span>
             </div>
@@ -205,8 +206,7 @@ if ($floors) {
                 </div>
             </div>
             <div class="col-md-12 text-center">
-                <a class="btn-link see_all" href="<?php echo esc_url(sogo_meta('portfolio-page')) ?>"
-                   title="<?php _e("see full portfolio", 'sogoc') ?>"><?php _e("see full portfolio", 'sogoc') ?></a>
+                <a class="btn-link see_all" href="<?php echo esc_url(sogo_meta('portfolio-page')) ?>"><?php _e("see full portfolio", 'sogoc') ?></a>
             </div>
         </div>
         <div class="continue-down hidden-xs hidden-sm">

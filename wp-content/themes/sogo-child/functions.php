@@ -48,7 +48,9 @@ function sogo_child_scripts()
         wp_enqueue_script('sogo-child-scripts', get_stylesheet_directory_uri() . '/js/scripts.js', array('jquery'),'', true);
 
 
-        wp_localize_script('sogo-child-scripts', 'sogo', array(
+        wp_localize_script('sogo-child-scripts', 'sogoc', array(
+                'next' => __("click to move to next slide","sogoc"),
+                'prev' => __("click to move to previous slide","sogoc"),
 
         ));
 

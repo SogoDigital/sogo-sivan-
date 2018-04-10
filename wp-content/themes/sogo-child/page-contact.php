@@ -57,7 +57,7 @@
                                     <span><?php _e('E-MAIL:','sogoc')?></span>
                                 </div>
                                 <div class="contact-icon bg-green full-radius">
-                                    <i class="fa fa-envelope"></i>
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
                                 </div>
                                 <div class="text">
                                     <p itemprop="email">
@@ -75,7 +75,7 @@
                                 <span><?php _e('Phone:','sogoc')?></span>
                             </div>
                             <div class="contact-icon bg-green full-radius">
-                                <i class="fa fa-phone"></i>
+                                <i class="fa fa-phone" aria-hidden="true"></i>
                             </div>
                             <div itemprop="telephone" class="text">
                                 <p><?php _e('Office: 09-7719393','sogoc')?>  </p>
@@ -90,7 +90,7 @@
                                 <span><?php _e('Facebook:','sogoc')?></span>
                             </div>
                             <div class="contact-icon bg-red full-radius">
-                                <i class="fa fa-facebook"></i>
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
                             </div>
                             <div class="text">
                                 <p>

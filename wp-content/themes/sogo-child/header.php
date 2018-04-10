@@ -28,7 +28,7 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
         <div class="row">
             <div class="col-xs-3 col-xs-pull-9 col-md-pull-0 col-md-2    ">
                 <div id="logo">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" accesskey="H"><?php bloginfo( 'name' ); ?></a>
+                    <a title="<?php echo esc_attr(__('Go to home page','sogoc')) ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" accesskey="H"><?php bloginfo( 'name' ); ?></a>
                 </div>
                 <!-- #logo -->
             </div>

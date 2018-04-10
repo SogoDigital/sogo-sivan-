@@ -140,8 +140,8 @@
 
         $('.portfolio-slider').bxSlider({
             'mode': 'fade',
-            nextText: '<i class="fa fa-angle-right"></i>',
-            prevText: '<i class="fa fa-angle-left"></i>',
+            nextText: '<i class="fa fa-angle-right" aria-label="'+sogoc.next+'"></i>',
+            prevText: '<i class="fa fa-angle-left" aria-label="'+sogoc.prev+'"></i>',
             pager: false,
             speed: 2000
         });
