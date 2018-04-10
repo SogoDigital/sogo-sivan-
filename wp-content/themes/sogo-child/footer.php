@@ -51,38 +51,7 @@
 <a href="#" class="scrollup hidden-xs hidden-sm" style="">
     To Top
 </a>
-<!-- Google Code for &#1513;&#1497;&#1495;&#1492; &#1502;&#1492;&#1488;&#1514;&#1512; Conversion Page
-In your html page, add the snippet and call
-goog_report_conversion when someone clicks on the
-phone number link or button. -->
-<script type="text/javascript">
-    /* <![CDATA[ */
-    goog_snippet_vars = function () {
-        var w = window;
-        w.google_conversion_id = 963240097;
-        w.google_conversion_label = "X4IsCLzusGkQocGnywM";
-        w.google_remarketing_only = false;
-    }
-    // DO NOT CHANGE THE CODE BELOW.
-    goog_report_conversion = function (url) {
-        goog_snippet_vars();
-        window.google_conversion_format = "3";
-        var opt = new Object();
-        opt.onload_callback = function () {
-            if (typeof(url) != 'undefined') {
-                window.location = url;
-            }
-        }
-        var conv_handler = window['google_trackConversion'];
-        if (typeof(conv_handler) == 'function') {
-            conv_handler(opt);
-        }
-    }
-    /* ]]> */
-</script>
-<script type="text/javascript"
-        src="//www.googleadservices.com/pagead/conversion_async.js">
-</script>
+
 <a class="rfq-btn" data-toggle="modal" href="#rfq-modal" title="<?php _e( 'Request for quotation', 'sogoc' ) ?>">
 	<?php _e( 'Get a Quote', 'sogoc' ) ?>
 </a>
