@@ -10,6 +10,30 @@ License: Commercial Use only
 License URI: Commercial Use only
 Text Domain: sogo
 */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(https://fonts.gstatic.com/s/opensans/v15/mem6YaGs126MiZpBA-UFUK0Zdcg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Open Sans SemiBold Italic'), local('OpenSans-SemiBoldItalic'), url(https://fonts.gstatic.com/s/opensans/v15/memnYaGs126MiZpBA-UFUKXGUdhrIqY.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOUuhs.ttf) format('truetype');
+}
 /*  variables.less  */
 h1 {
   font-size: 5.5em;
@@ -1796,15 +1820,14 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
 }
-@media (min-aspect-ratio: 16/9) {
+@media (min-aspect-ratio: 1.77777778) {
   .fullscreen-bg__video {
     height: 300%;
     top: -100%;
   }
 }
-@media (max-aspect-ratio: 16/9) {
+@media (max-aspect-ratio: 1.77777778) {
   .fullscreen-bg__video {
     width: 300%;
     left: -100%;
@@ -1834,6 +1857,7 @@ ul.portfolio-slider li {
   height: 100%;
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 @media (min-width: 768px) {
   .flex-slider {
@@ -2175,14 +2199,11 @@ ul#menu-primary-menu:before {
   }
 }
 footer#customers-logos {
-  background-color: #fcfcfc;
+  background-color: #ffffff;
   position: absolute;
   height: 90px;
   bottom: 0;
   width: 100%;
-}
-footer#customers-logos ul {
-  list-style: none;
 }
 @media (min-width: 992px) {
   footer#customers-logos {
@@ -4521,19 +4542,10 @@ p.item-text {
 }
 /* end 404.less */
 /* file name rfq.less */
-.fullpage .rfq-btn {
-  position: absolute;
-  right: 30px;
-  bottom: 140px;
-}
-.fullpage.mobile .rfq-btn {
-  position: fixed !important;
-}
 .rfq-btn {
-  box-shadow: 0 4px 5px -1px rgba(0, 0, 0, 0.5);
   background: #ed1c24;
   color: white;
-  position: fixed;
+  position: absolute;
   right: 30px;
   bottom: 30px;
   height: 105px;
@@ -4550,7 +4562,7 @@ p.item-text {
 }
 @media (min-width: 992px) {
   .rfq-btn {
-    bottom: 140px;
+    bottom: 110px;
   }
 }
 .rfq-btn:after {
@@ -4692,11 +4704,6 @@ p.item-text {
 .modal.rfq form textarea {
   height: 130px;
   width: 100%;
-}
-@media (min-width: 768px) {
-  .modal.rfq form textarea {
-    height: 239px;
-  }
 }
 .modal.rfq form span.wpcf7-not-valid-tip {
   position: absolute;
