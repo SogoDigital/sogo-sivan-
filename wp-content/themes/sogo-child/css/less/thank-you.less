@@ -1,29 +1,36 @@
 /* thank-you.less */
-.modal-content
-{
+.modal-content {
   background-image: url("images/thanks-bg.jpg");
   width: 762px;
-  height: 560px;
+  height: auto;
+
+  @media (min-width: 992px) {
+    height: 560px;
+  }
 }
-.thank-you-content{
+
+.thank-you-content {
   background-image: url("images/thank-you-bg.png");
   width: 621px;
   height: 275px;
 
 }
+
 .modal-header,
-.thank-you-header{
+.thank-you-header {
   border-bottom: none;
 }
-.modal-dialog{
+
+.modal-dialog {
   margin: 300px auto;
   z-index: 9999;
 }
-.modal-title
-{
+
+.modal-title {
   font-size: 48px;
   margin: 25px 0 0;
 }
+
 .thank_you {
   float: right;
   .transition();
@@ -38,9 +45,11 @@
     font-size: 25px;
   }
 }
+
 .slideLeft {
   right: 0 !important;
 }
+
 .thank-you-header {
   position: relative;
   p {
@@ -51,6 +60,7 @@
     font-size: 16px;
   }
 }
+
 .thank-you-title {
   font-size: 40px;
   position: absolute;
@@ -58,13 +68,13 @@
   top: 80px;
 }
 
-.thanks-floor{
+.thanks-floor {
   background: url("images/thanks-bg-en.jpg");
   z-index: 1;
   background-size: cover;
   background-position: 52% 50%;
   padding-bottom: 96vh;
-  @media(min-width: 992px){
+  @media (min-width: 992px) {
     height: 100vh;
     background-position: 50% 50%;
     padding-bottom: 0;
@@ -72,35 +82,36 @@
   .page-title {
     margin-top: 90px;
     margin-bottom: 0;
-    @media(min-width: 768px){
+    @media (min-width: 768px) {
       margin-top: 130px;
     }
-    @media(min-width: 992px){
+    @media (min-width: 992px) {
       margin-top: 120px;
     }
-    @media(min-width: 1200px){
+    @media (min-width: 1200px) {
       margin-top: 130px;
     }
   }
-  .btn-wrapper{
+  .btn-wrapper {
     text-align: center;
   }
-  .btn-home{
+  .btn-home {
     background: @color-green;
     color: white;
     font-size: 2em;
     font-weight: bold;
     transition: 0.5s;
-    @media(min-width: 992px){
+    @media (min-width: 992px) {
       position: absolute;
       bottom: 60px;
       right: 15%;
     }
-    &:hover{
+    &:hover {
       background: transparent;
       border: 1px solid @color-green;
       color: @color-green;
     }
   }
 }
+
 /* end thank-you.less */

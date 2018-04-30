@@ -10,30 +10,7 @@ License: Commercial Use only
 License URI: Commercial Use only
 Text Domain: sogo
 */
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(https://fonts.gstatic.com/s/opensans/v15/mem6YaGs126MiZpBA-UFUK0Zdcg.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 600;
-  src: local('Open Sans SemiBold Italic'), local('OpenSans-SemiBoldItalic'), url(https://fonts.gstatic.com/s/opensans/v15/memnYaGs126MiZpBA-UFUKXGUdhrIqY.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOUuhs.ttf) format('truetype');
-}
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic';
 /*  variables.less  */
 h1 {
   font-size: 5.5em;
@@ -1821,13 +1798,13 @@ p {
   left: 0;
   width: 100%;
 }
-@media (min-aspect-ratio: 1.77777778) {
+@media (min-aspect-ratio: 16/9) {
   .fullscreen-bg__video {
     height: 300%;
     top: -100%;
   }
 }
-@media (max-aspect-ratio: 1.77777778) {
+@media (max-aspect-ratio: 16/9) {
   .fullscreen-bg__video {
     width: 300%;
     left: -100%;
@@ -2970,7 +2947,12 @@ h2.team-heading {
 .modal-content {
   background-image: url("images/thanks-bg.jpg");
   width: 762px;
-  height: 560px;
+  height: auto;
+}
+@media (min-width: 992px) {
+  .modal-content {
+    height: 560px;
+  }
 }
 .thank-you-content {
   background-image: url("images/thank-you-bg.png");
@@ -4545,7 +4527,7 @@ p.item-text {
 .rfq-btn {
   background: #ed1c24;
   color: white;
-  position: absolute;
+  position: fixed;
   right: 30px;
   bottom: 30px;
   height: 105px;
@@ -4721,6 +4703,16 @@ p.item-text {
 @media (min-width: 768px) {
   .modal.rfq form div.wpcf7-response-output {
     bottom: -30px;
+  }
+}
+.rfq .wpcf7-form-control-wrap .g-recaptcha iframe {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .rfq .wpcf7-form-control-wrap .g-recaptcha iframe {
+    position: relative;
   }
 }
 /* contact.less */
