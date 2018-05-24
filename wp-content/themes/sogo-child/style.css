@@ -1452,6 +1452,9 @@ a.scrollup:hover:before {
 .margin-bottom-25 {
   margin-bottom: 25px;
 }
+.margin-left-0 {
+  margin-left: 0 !important;
+}
 @media (min-width: 1200px) {
   h2.extra-margin {
     margin-top: 150px;
