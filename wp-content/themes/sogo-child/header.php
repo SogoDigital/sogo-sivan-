@@ -71,6 +71,7 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
                         </div>
 
 
+
                         <div class="collapse navbar-collapse primary-navigation-collapse">
 							<?php
 							// Social links navigation menu.
