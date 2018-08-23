@@ -53,8 +53,7 @@ function sogo_child_scripts()
                 'prev' => __("click to move to previous slide","sogoc"),
 
         ));
-
-        wp_enqueue_style('sogo-style', get_stylesheet_uri()  );
+	    wp_enqueue_style( 'sogo-style', get_stylesheet_uri(), array(), uniqid() );
 
     }
 }

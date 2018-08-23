@@ -61,7 +61,7 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div itemscope itemtype="http://schema.org/SiteNavigationElement" class="navbar-header">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                    data-target="#primary-navigation" style="border: none;top: -1px; right: -1px;">
+                                    data-target="#primary-navigation" style="border: none;">
 
                                 <span class="sr-only"><?php _e( 'Toggle navigation', 'sogoc' ); ?></span>
                                 <span class="icon-bar top-bar"></span>
