@@ -3,14 +3,16 @@ Contributors: orenhav
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Z5H7VVZLSPYUE
 Tags: accessibility
 Requires at least: 3.0.1
-Tested up to: 4.8.3
-Stable tag: 1.2.2
+Tested up to: 4.9.5
+Stable tag: 2.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 This plugin add accessibility menu to a WordPress Site, enable, black and white, contrasts, font size increase and more...
 
 == Description ==
+
+version 2.0.0 fixes few issues that were not fully align to the requirement of WCAG 2.0 level AA
 
 
 The plugin is using only JS and CSS to "fix" \ enable few accessibility features to the site front end
@@ -91,3 +93,12 @@ Fixed in version 1.0.1: load js in footer
 fixed in version 1.1.0, skiplinks with conflict with fullpage.js, fixed: load skiplinks only if user enable accessibility
 New in version 1.0.8: change default color for accessibility, close the accessibility when click on one of the buttons, fixed layout in 'middle' button set.
 New in version 1.0.7:  added option to use icon instate of text for the accessibility button
+
+= 2.0.0 =
+fixes few issues that were not fully align to the requirement of WCAG 2.0 level AA
+
+= 2.0.1 =
+add aria for the icon used in the plugin itself
+
+= 2.0.2 =
+fix icons

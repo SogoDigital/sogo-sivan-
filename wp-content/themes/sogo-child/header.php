@@ -7,11 +7,19 @@
     <link rel="icon" href="<?php echo get_stylesheet_directory_uri() ?>/favicon.png" type="image/x-icon"/>
 	<?php echo sogo_option( 'google_analytics' ) ?>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-PVP2NT');</script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PVP2NT');</script>
     <!-- End Google Tag Manager -->
 
 	<?php wp_head(); ?>
@@ -27,8 +35,10 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
 ?>
 <body <?php body_class( $fullpage ); ?>>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVP2NT"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVP2NT"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
 <!-- End Google Tag Manager (noscript) -->
 <?php echo sogo_option( 'google_tag' ) ?>
 
@@ -37,13 +47,14 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
 
     <div class="container-fluid mobile-white">
         <div class="row">
-            <div class="col-xs-3 col-xs-pull-9 col-md-pull-0 col-md-2    ">
+            <div class="col-xs-3 <?php echo ( is_rtl() ) ? 'col-xs-pull-9 col-md-pull-0' : 'col-xs-push-9 col-md-push-0'; ?>  col-md-2">
                 <div id="logo">
-                    <a title="<?php echo esc_attr(__('Go to home page','sogoc')) ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" accesskey="H"><?php bloginfo( 'name' ); ?></a>
+                    <a title="<?php echo esc_attr( __( 'Go to home page', 'sogoc' ) ) ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"
+                       accesskey="H"><?php bloginfo( 'name' ); ?></a>
                 </div>
                 <!-- #logo -->
             </div>
-            <div id="main-nav-container" class="col-xs-3 col-sm-3 col-md-7 col-md-push-0  col-xs-push-3">
+            <div id="main-nav-container" class="col-xs-3 col-sm-3 col-md-7 <?php echo is_rtl() ? 'col-xs-push-3 col-md-push-0' : 'col-xs-pull-3 col-md-pull-0'; ?>">
 
 				<?php if ( has_nav_menu( 'primary_menu' ) ) : ?>
                     <nav id="primary-navigation" class="navbar primary-navigation" role="navigation">

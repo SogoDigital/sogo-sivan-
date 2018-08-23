@@ -6,9 +6,9 @@ See wp-cache.php for author details.
 */
 
 $wpsc_last_post_update = 1506936775; //Added by WP-Cache Manager
-$wp_cache_mobile_groups = ''; //Added by WP-Cache Manager
-$wp_cache_home_path = '/'; //Added by WP-Cache Manager
-$wp_cache_slash_check = 1; //Added by WP-Cache Manager
+$wp_cache_mobile_groups = '';
+$wp_cache_home_path = '/';
+$wp_cache_slash_check = 1;
 $cache_page_secret = 'c23eeb543722161404ca8589e62a7e78'; //Added by WP-Cache Manager
 $cache_time_interval = 600; //Added by WP-Cache Manager
 if ( ! defined('WPCACHEHOME') )
@@ -45,7 +45,7 @@ if ( '/' != substr($cache_path, -1)) {
 
 $wp_cache_mobile = 0;
 $wp_cache_mobile_whitelist = 'Stand Alone/QNws';
-$wp_cache_mobile_browsers = '2.0 MMP, 240x320, 400X240, AvantGo, BlackBerry, Blazer, Cellphone, Danger, DoCoMo, Elaine/3.0, EudoraWeb, Googlebot-Mobile, hiptop, IEMobile, KYOCERA/WX310K, LG/U990, MIDP-2., MMEF20, MOT-V, NetFront, Newt, Nintendo Wii, Nitro, Nokia, Opera Mini, Palm, PlayStation Portable, portalmmm, Proxinet, ProxiNet, SHARP-TQ-GX10, SHG-i900, Small, SonyEricsson, Symbian OS, SymbianOS, TS21i-10, UP.Browser, UP.Link, webOS, Windows CE, WinWAP, YahooSeeker/M1A1-R2D2, iPhone, iPod, Android, BlackBerry9530, LG-TU915 Obigo, LGE VX, webOS, Nokia5800'; //Added by WP-Cache Manager
+$wp_cache_mobile_browsers = '2.0 MMP, 240x320, 400X240, AvantGo, BlackBerry, Blazer, Cellphone, Danger, DoCoMo, Elaine/3.0, EudoraWeb, Googlebot-Mobile, hiptop, IEMobile, KYOCERA/WX310K, LG/U990, MIDP-2., MMEF20, MOT-V, NetFront, Newt, Nintendo Wii, Nitro, Nokia, Opera Mini, Palm, PlayStation Portable, portalmmm, Proxinet, ProxiNet, SHARP-TQ-GX10, SHG-i900, Small, SonyEricsson, Symbian OS, SymbianOS, TS21i-10, UP.Browser, UP.Link, webOS, Windows CE, WinWAP, YahooSeeker/M1A1-R2D2, iPhone, iPod, iPad, Android, BlackBerry9530, LG-TU915 Obigo, LGE VX, webOS, Nokia5800';
 
 // change to relocate the supercache plugins directory
 $wp_cache_plugins_dir = WPCACHEHOME . 'plugins';
@@ -101,8 +101,8 @@ $wp_cache_preload_on = 0;
 $wp_cache_preload_taxonomies = 0;
 $wp_cache_preload_email_me = 0;
 $wp_cache_preload_email_volume = 'none';
-$wp_cache_mobile_prefixes = 'w3c , w3c-, acs-, alav, alca, amoi, audi, avan, benq, bird, blac, blaz, brew, cell, cldc, cmd-, dang, doco, eric, hipt, htc_, inno, ipaq, ipod, jigs, kddi, keji, leno, lg-c, lg-d, lg-g, lge-, lg/u, maui, maxo, midp, mits, mmef, mobi, mot-, moto, mwbp, nec-, newt, noki, palm, pana, pant, phil, play, port, prox, qwap, sage, sams, sany, sch-, sec-, send, seri, sgh-, shar, sie-, siem, smal, smar, sony, sph-, symb, t-mo, teli, tim-, tosh, tsm-, upg1, upsi, vk-v, voda, wap-, wapa, wapi, wapp, wapr, webc, winw, winw, xda , xda-'; //Added by WP-Cache Manager
-$cached_direct_pages = array(  ); //Added by WP-Cache Manager
+$wp_cache_mobile_prefixes = 'w3c , w3c-, acs-, alav, alca, amoi, audi, avan, benq, bird, blac, blaz, brew, cell, cldc, cmd-, dang, doco, eric, hipt, htc_, inno, ipaq, ipod, jigs, kddi, keji, leno, lg-c, lg-d, lg-g, lge-, lg/u, maui, maxo, midp, mits, mmef, mobi, mot-, moto, mwbp, nec-, newt, noki, palm, pana, pant, phil, play, port, prox, qwap, sage, sams, sany, sch-, sec-, send, seri, sgh-, shar, sie-, siem, smal, smar, sony, sph-, symb, t-mo, teli, tim-, tosh, tsm-, upg1, upsi, vk-v, voda, wap-, wapa, wapi, wapp, wapr, webc, winw, winw, xda , xda-';
+$cached_direct_pages = array(  );
 $wpsc_served_header = false;
 $cache_gc_email_me = 0; //Added by WP-Cache Manager
 $wpsc_save_headers = 0; //Added by WP-Cache Manager

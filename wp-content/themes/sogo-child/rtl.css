@@ -452,7 +452,10 @@ span.wpcf7-not-valid-tip {
     float: right !important;
 }
 
-.navbar{ border:none;}
+.navbar{
+    border:none;
+    right: 0;
+}
 
 @media (min-width: 768px) {
     .col-sm-1,

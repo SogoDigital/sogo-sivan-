@@ -3,42 +3,51 @@
 
     $(document).ready(function () {
 
-
         var body = $('body');
         if (readCookie('sogo_accessibility')) {
             body.addClass('sogo_accessibility');
+            $('.accessibility_menu').setup_navigation();
         }
+
         if (readCookie('sogo_bnc')) {
             body.addClass('sogo_blank_white');
         }
+
         if (readCookie('sogo_sogo_readable_font')) {
             body.addClass('sogo_readable_font');
         }
+
         if (readCookie('sogo_underline_links')) {
             body.addClass('sogo_underline_links');
         }
+
         if (readCookie('sogo_contrasts')) {
             body.addClass('sogo_contrasts');
             var file = $('#contrasts').data('css');
             loadjscssfile(file, 'css', 'sogo_contrasts_css');
         }
+
         if (readCookie('sogo_contrasts_white')) {
             body.addClass('sogo_contrasts_white');
             var file = $('#contrasts_white').data('css');
             loadjscssfile(file, 'css','sogo_contrasts_css_white');
         }
+
         if (readCookie('sogo_font_2')) {
             body.addClass('sogo_font_2');
         }
+
         if (readCookie('sogo_font_3')) {
             body.addClass('sogo_font_3');
         }
+
         sogo_change_fonts();
 
         // open socgoacc
         $('.toggle_sogoacc').click(function () {
             $('#sogoacc').slideToggle();
             body.addClass('sogo_accessibility');
+           setTimeout(function(){  $('#b_n_c').focus(); }, 500);
         });
 
         $('a[href="#sogo_access_statement"]').click(function(e){
@@ -179,8 +188,6 @@
         }
 
         function sogo_set_accessibility(){
-            // remove link targets
-            $('a[target="_blank"]').removeAttr('target');
 
 
             // Thanks to WebAIM.org
@@ -203,8 +210,8 @@
         // set image alt
         $("img").each(function () {
             var img = $(this);
-            if (!img.attr("alt") || img.attr("alt") == "")
-                img.attr("alt", " ");
+            if (!img.attr("alt") )
+                img.attr("alt", "");
         });
 
     });

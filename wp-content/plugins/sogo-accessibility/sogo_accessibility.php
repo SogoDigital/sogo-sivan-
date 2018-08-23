@@ -12,7 +12,7 @@
  * Plugin Name:       SOGO  Accessibility
  * Plugin URI:        http://sogo.co.il
  * Description:       ALLOW PEOPLE WITH DISABILITIES TO ENJOY THE SAME THINGS THAT PEOPLE WITHOUT DISABILITIES MAKE
- * Version:           1.2.2
+ * Version:           2.0.5
  * Author:            Sogo
  * Author URI:        http://sogo.co.il
  * License:           GPL-2.0+

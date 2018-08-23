@@ -216,7 +216,7 @@
         });
 
         // this is for the city page
-        $('a[rel="prettyPhoto"]').fancybox();
+     //   $('a[rel="prettyPhoto"]').fancybox();
 
 
         /*
