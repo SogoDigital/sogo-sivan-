@@ -22,21 +22,21 @@
     }
   }
   .primary-navigation,
-  .social-navigation{
+  .social-navigation {
     ul {
 
-      @media(min-width: 1200px){
+      @media (min-width: 1200px) {
 
       }
     }
   }
-  .social-navigation{
-    ul{
-      li{
-        @media(min-width: 992px){
+  .social-navigation {
+    ul {
+      li {
+        @media (min-width: 992px) {
           margin: 0 3%;
         }
-        @media(min-width: 1200px){
+        @media (min-width: 1200px) {
           margin: 0 3.5%;
         }
       }
@@ -55,9 +55,11 @@
     display: none;
   }
 }
-.single-project #site-footer a.scrollup{
+
+.single-project #site-footer a.scrollup {
   display: none;
 }
+
 a.scrollup {
   display: none;
   float: right;
@@ -71,10 +73,10 @@ a.scrollup {
   padding: 16px 8px 0;
   position: fixed;
   right: 20px;
-  bottom: 10px;
+  bottom: 10vh;
   background: #fff;
   z-index: 100;
-  &:hover{
+  &:hover {
     text-decoration: none;
   }
   &:before {
@@ -85,23 +87,25 @@ a.scrollup {
     left: 18px;
     font-size: 18px;
   }
-  &:hover:before{
+  &:hover:before {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    animation-iteration-count:infinite;
-    -webkit-animation-iteration-count:infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
     -webkit-animation-name: bounce_small;
     animation-name: bounce_small;
 
   }
 }
-.scrollActive{
-  a.scrollup{
+
+.scrollActive {
+  a.scrollup {
     display: block;
   }
 }
+
 /* Back to top button*/
 
 

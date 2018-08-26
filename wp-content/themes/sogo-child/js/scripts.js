@@ -62,7 +62,7 @@
                     if ($("#site-footer").hasClass("active")) {
                         $('a.scrollup').css('bottom','90px');
                     }else{
-                        $('a.scrollup').css('bottom','10px');
+                        $('a.scrollup').css('bottom','10vh');
                     }
 
                     //     loadedSection.find('.ani').addClass(myclass);
@@ -294,5 +294,9 @@
     }
 })(jQuery);
 
-
-
+//chat
+Tawk_API.onLoad = function(){
+    setTimeout(function(){
+        Tawk_API.toggle();
+        }, 5000);
+};
