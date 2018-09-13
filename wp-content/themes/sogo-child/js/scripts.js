@@ -295,8 +295,8 @@
 })(jQuery);
 
 //chat
-Tawk_API.onLoad = function(){
-    setTimeout(function(){
-        Tawk_API.toggle();
-        }, 5000);
-};
+// Tawk_API.onLoad = function(){
+//     setTimeout(function(){
+//         Tawk_API.toggle();
+//         }, 5000);
+// };
