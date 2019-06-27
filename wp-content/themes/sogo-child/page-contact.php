@@ -45,8 +45,8 @@
                                     <i class="fa fa-map-marker "></i>
                                 </div>
                                 <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="text">
-                                    <p itemprop="addressLocality"><?php _e('Israel, Kefar Saba,','sogoc')?></p>
-                                    <p  itemprop="streetAddress"><?php _e('Ha Ta’as st. 10','sogoc')?></p>
+                                    <p itemprop="addressLocality"><?php _e('Israel, Rosh Haayin,','sogoc')?></p>
+                                    <p  itemprop="streetAddress"><?php _e('Ha melacha 15','sogoc')?></p>
 
                                 </div>
                             </a>
@@ -54,7 +54,7 @@
                         <div class="contact-box">
                             <a href="mailto:Support@sogo.co.il?subject=hello" target="_top">
                                 <div class="contact-label">
-                                    <span><?php _e('E-MAIL:','sogoc')?></span>
+                                    <span><?php _e('Support:','sogoc')?></span>
                                 </div>
                                 <div class="contact-icon bg-green full-radius">
                                     <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -79,7 +79,7 @@
                             </div>
                             <div itemprop="telephone" class="text">
                                 <p><?php _e('Office: 09-7719393','sogoc')?>  </p>
-                                <p><?php _e('Fax: 09-7665724','sogoc')?>  </p>
+<!--                                <p>--><?php //_e('Fax: 09-7665724','sogoc')?><!--  </p>-->
 
                             </div>
                         </a>
