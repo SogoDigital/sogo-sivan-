@@ -110,7 +110,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="map-wrapper">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3377.143343193658!2d34.927959484568355!3d32.17340912182267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d39bce2b622f5%3A0xc40fc0e9bfa367c3!2z15TXqteiItepIDEwLCDXm9ek16gg16HXkdeQ!5e0!3m2!1siw!2sil!4v1448366562435" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3379.5253837854584!2d34.9705473845144!3d32.10911072504577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d30c123080faf%3A0x4d7a88983c06c938!2z15TXntec15DXm9eUIDE1LCDXqNeQ16kg15TXoteZ158!5e0!3m2!1siw!2sil!4v1561882439787!5m2!1siw!2sil" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
 
