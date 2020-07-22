@@ -7,7 +7,7 @@ get_header();
         <div class="fullscreen-bg">
             <?php if (!wp_is_mobile()): ?>
                 <video loop muted autoplay class="fullscreen-bg__video hidden-xs hidden-sm">
-                    <source src="<?php echo get_stylesheet_directory_uri() ?>/images/home-video.mp4" type="video/mp4">
+                    <source src="<?php echo get_stylesheet_directory_uri() ?>/images/face cover sogo.mp4" type="video/mp4">
                 </video>
             <?php endif; ?>
         </div>
