@@ -45,8 +45,8 @@
                                     <i class="fa fa-map-marker "></i>
                                 </div>
                                 <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="text">
-                                    <p itemprop="addressLocality"><?php _e('Israel, Rosh Haayin,','sogoc')?></p>
-                                    <p  itemprop="streetAddress"><?php _e('Ha melacha 15','sogoc')?></p>
+                                    <p itemprop="addressLocality"><?php _e('Israel, Kfar Saaba,','sogoc')?></p>
+                                    <p  itemprop="streetAddress"><?php _e('Atir Yeda 1','sogoc')?></p>
 
                                 </div>
                             </a>
