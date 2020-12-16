@@ -19,6 +19,26 @@ $meta_boxes[] = array(
             'id' => $meta_prefix . 'sub_title',
             'type' => 'textarea',
         ),
+        array(
+            'name' => 'bg desktop',
+            'id' => $meta_prefix . "section-1-bg",
+            'type' => 'file',
+        ),
+        array(
+            'name' => 'bg mobile',
+            'id' => $meta_prefix . "section-1-bg-mobile",
+            'type' => 'file',
+        ),
+        array(
+            'name' => 'color 1',
+            'id' => $meta_prefix . "color-1",
+            'type' => 'text',
+        ),
+        array(
+            'name' => 'color 2',
+            'id' => $meta_prefix . "color-2",
+            'type' => 'text',
+        ),
     )
 );
 
@@ -32,6 +52,11 @@ for ($i = 2; $i <= 9; $i++) {
         'context' => 'normal',
         'priority' => 'default',
         'fields' => array(
+            array(
+                'name' => 'hide',
+                'id' => $meta_prefix . "section-$i-hide",
+                'type' => 'checkbox',
+            ),
             array(
                 'name' => 'Title',
                 'id' => $meta_prefix . "section-$i-title",
@@ -47,6 +72,15 @@ for ($i = 2; $i <= 9; $i++) {
                 'id' => $meta_prefix . "section-$i-align",
                 'type' => 'select',
                 'options' => array('-1'=>'','vertical-top'=>'top','vertical-middle'=>'middle', 'vertical-bottom'=>'bottom'),
+            ),
+            array(
+                'name' => 'bg desktop',
+                'id' => $meta_prefix . "section-$i-bg",
+                'type' => 'file',
+            ),  array(
+                'name' => 'bg mobile',
+                'id' => $meta_prefix . "section-$i-bg-mobile",
+                'type' => 'file',
             ),
         )
     );
