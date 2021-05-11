@@ -102,7 +102,7 @@ function sogo_single_cpt_template( $templates = '' ){
 
     return $templates;
 }
-add_filter( 'single_template', 'sogo_single_cpt_template' );
+//add_filter( 'single_template', 'sogo_single_cpt_template' );
 
 
 add_filter('next_post_link','add_css_class_to_next_post_link');
