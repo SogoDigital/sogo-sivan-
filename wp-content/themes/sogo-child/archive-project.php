@@ -16,6 +16,27 @@
 </section> <!-- #contact-floor-1 -->
 <section id="projects-floor-2" class="section bg-light-gray">
     <div class="container-fluid">
+        <div class="project_cat_filter">
+            <ul class="tab-list px-1">
+                <li><?php get_post_type_archive_link("project");?></li>
+                <li class="in pl-2"><a class="selectRecipeType" name='all' href="javascript:;"><span class="px-2 p font-weight-bold pb-1">כל המתכונים</span></a></li>
+
+                <?php
+                $terms = get_terms(array('taxonomy' => 'project-cat'));
+
+                foreach ($terms as $term) :
+
+                    $link = get_post_type_archive_link( $term->name );
+                    //var_dump($term);
+                    ?>
+
+                    <li class="pl-2"><a class="selectRecipeType" name='<?php echo $term->name;?>' href="javascript:;"><span class="px-2 p font-weight-bold pb-1"><?php echo $term->name;?></span></a></li>
+
+                <?php
+                endforeach;
+                ?>
+            </ul>
+        </div>
         <div class="row">
             <?php while (have_posts()): the_post(); ?>
                 <div class="col-md-4 col-sm-6 col-lg-3">
@@ -29,7 +50,10 @@
                             </a>
                             <figure>
                                 <img itemprop="image" src="<?php echo wp_get_attachment_url(get_post_thumbnail_id()) ?>" alt="<?php echo esc_attr(get_the_title())?>">
-                                <div class="project-title text-center">
+                                <div class="project-small-title text-right">
+                                    <span itemprop="sub_title"><?php echo get_field('sogo_subtitle_main_page'); ?></span>
+                                </div>
+                                <div class="project-title text-right">
                                     <span itemprop="name"><?php the_title() ?></span>
                                 </div>
                             </figure>
