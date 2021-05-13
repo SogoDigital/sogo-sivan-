@@ -271,6 +271,10 @@
         $(window).resize();
     });
 
+    $(document).on('click','.selectProjectType', function(){
+       console.log($(this).attr('name'));
+    });
+
     function fix_portfolio_controls() {
         var img = $('.portfolio-slider img');
         if (img.length > 0) {

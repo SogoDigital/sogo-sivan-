@@ -139,9 +139,38 @@
 .project_cat_filter {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 
   & ul.tab-list {
     list-style-type: none;
+    padding-right: 0;
+
+    & li {
+      display: inline;
+      margin: 0 18px;
+
+      & a {
+        color: @color-gray;
+
+        &.active {
+          color: @color-red;
+          border-bottom: 2px solid @color-red;
+          padding-bottom: 5px;
+          text-decoration: none;
+        }
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        & span.font-weight-bold {
+          font-weight: bold;
+        }
+      }
+
+
+
+    }
   }
 }
 
