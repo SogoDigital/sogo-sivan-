@@ -136,7 +136,14 @@
 
 
         //   $('#home-floor-3').parallax();
-
+        $('.js_gallery_kobi').bxSlider({
+            'mode': 'fade',
+            // nextText: '<i class="fa fa-angle-right" aria-label="'+sogoc.next+'"></i>',
+            // prevText: '<i class="fa fa-angle-left" aria-label="'+sogoc.prev+'"></i>',
+            pager: true,
+            controls:false,
+            speed: 2000
+        });
 
         $('.portfolio-slider').bxSlider({
             'mode': 'fade',
