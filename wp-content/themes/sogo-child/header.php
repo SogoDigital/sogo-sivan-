@@ -77,7 +77,8 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
 							// Social links navigation menu.
 							wp_nav_menu( array(
 								'theme_location' => 'primary_menu',
-								'link_before'    => '<span class="screen-reader-text">',
+								'link_before'    => '<span class="">',
+//								'link_before'    => '<span class="screen-reader-text">',
 								'link_after'     => '</span>',
 
 							) );
