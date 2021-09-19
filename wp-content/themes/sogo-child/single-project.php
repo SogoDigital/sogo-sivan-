@@ -7,4 +7,5 @@ if(!$template ||$template === 'single-project.php' ){
 }
 
 
+
  include $template;

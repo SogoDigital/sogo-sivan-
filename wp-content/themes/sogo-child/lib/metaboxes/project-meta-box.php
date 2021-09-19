@@ -19,8 +19,9 @@ $meta_boxes[] = array(
       'type' => 'select',
       'options' => array(
         'template-single-1.php' => 'Single Project',
-          'single-page-case-dukim.php' => 'Dukim Template',
+        'single-page-case-dukim.php' => 'Dukim Template',
         'template-single-2.php' => 'Version 2',
+        'template-single-3.php' => 'Version 3',
       )
     ),
     array(
