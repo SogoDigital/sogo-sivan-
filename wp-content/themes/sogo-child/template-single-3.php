@@ -24,7 +24,7 @@ $col = wp_is_mobile() ? 'col-md-12' : 'col-md-4';
             </div>
         </div>
     </section>
-    <section id="floor2" class="relative">
+    <section id="floor2" class="relative text-center">
         <?php echo wp_get_attachment_image(get_field('_sogo_ver3_floor2_image'), 'full', false, array('class'=> 'img-fluid')) ; ?>
     </section>
     <section id="floor3" class="relative">
