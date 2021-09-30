@@ -14,25 +14,29 @@ Text Domain: sogo
   font-family: 'Open Sans';
   font-style: italic;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/opensans/v23/mem6YaGs126MiZpBA-UFUK0Zdcg.ttf) format('truetype');
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v26/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWVAexQ.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Open Sans';
   font-style: italic;
   font-weight: 600;
-  src: url(https://fonts.gstatic.com/s/opensans/v23/memnYaGs126MiZpBA-UFUKXGUdhrIqY.ttf) format('truetype');
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v26/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjWVAexQ.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/opensans/v23/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v26/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVc.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
-  src: url(https://fonts.gstatic.com/s/opensans/v23/mem5YaGs126MiZpBA-UNirkOUuhs.ttf) format('truetype');
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v26/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4gaVc.ttf) format('truetype');
 }
 /*  variables.less  */
 h1 {
@@ -3414,6 +3418,12 @@ div.mob_xy_align {
 .align-items-center {
   align-items: center;
 }
+.position-relative {
+  position: relative;
+}
+.position-absolute {
+  position: absolute;
+}
 .single_project_rep_row {
   min-width: 100%;
   margin-top: 50px;
@@ -5608,16 +5618,60 @@ form div.wpcf7-mail-sent-ok {
   background-size: cover;
 }
 #floor1 .row {
-  min-height: 50vh;
+  min-height: 70vh;
 }
-@media (min-width: 768px) {
-  #floor1 .row {
-    min-height: 30vh;
-  }
+#floor1 .row .floor1-right {
+  display: none;
 }
 @media (min-width: 992px) {
-  #floor1 .row {
-    min-height: 70vh;
+  #floor1 .row .floor1-right {
+    display: block;
+  }
+}
+#floor1 .row .floor1-left > .row {
+  align-items: flex-end;
+}
+@media (min-width: 992px) {
+  #floor1 .row .floor1-left > .row {
+    align-items: center;
+  }
+}
+#floor1 .row .floor1-left .floor1-title {
+  font-size: 26px;
+  margin-bottom: 40px;
+}
+@media (min-width: 992px) {
+  #floor1 .row .floor1-left .floor1-title {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+}
+#floor1 .row .floor1-left .floor1-title .horizontal-line {
+  right: -10rem;
+  top: 1.2rem;
+  display: none;
+}
+@media (min-width: 1200px) {
+  #floor1 .row .floor1-left .floor1-title .horizontal-line {
+    display: block;
+  }
+}
+#floor1 .row .floor1-left .floor1-text {
+  display: none;
+}
+@media (min-width: 992px) {
+  #floor1 .row .floor1-left .floor1-text {
+    display: block;
+  }
+}
+#floor1 .row .floor1-left .vertical-line {
+  bottom: 4rem;
+  right: 1rem;
+  display: none;
+}
+@media (min-width: 1200px) {
+  #floor1 .row .floor1-left .vertical-line {
+    display: block;
   }
 }
 #floor1 h1 {
@@ -5654,6 +5708,20 @@ form div.wpcf7-mail-sent-ok {
     height: 75px;
     bottom: 30px;
   }
+}
+#floor1-mobile {
+  display: block;
+}
+@media (min-width: 992px) {
+  #floor1-mobile {
+    display: none;
+  }
+}
+#floor1-mobile .floor1-text {
+  padding: 3rem 5.5rem;
+}
+#floor1-mobile .mobile-line {
+  margin-top: -7px;
 }
 #floor3 {
   margin: 9rem 0;
