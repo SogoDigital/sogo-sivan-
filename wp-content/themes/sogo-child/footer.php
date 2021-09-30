@@ -19,7 +19,8 @@
 							// Social links navigation menu.
 							wp_nav_menu( array(
 								'theme_location' => 'primary_menu',
-								'link_before'    => '<span class="screen-reader-text">',
+								'link_before'    => '<span class="">',
+//								'link_before'    => '<span class="screen-reader-text">',
 								'link_after'     => '</span>',
 							) );
 							?>
@@ -51,7 +52,7 @@
 <a href="#" class="scrollup hidden-xs hidden-sm" style="">
     To Top
 </a>
- 
+
 <a class="rfq-btn" data-toggle="modal" href="#rfq-modal" title="<?php _e( 'Request for quotation', 'sogoc' ) ?>">
 	<?php _e( 'Get a Quote', 'sogoc' ) ?>
 </a>
