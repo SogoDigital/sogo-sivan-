@@ -43,7 +43,12 @@ $col = $is_mobile ? 'col-md-12' : 'col-md-4';
         </div>
     </section>
     <section id="floor2" class="relative text-center">
-        <?php echo wp_get_attachment_image(get_field('_sogo_ver3_floor2_image'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+        <?php
+            $floor2_image_desktop = get_field('_sogo_ver3_floor2_image');
+            $floor2_image_mobile = (get_field('_sogo_ver3_floor2_image_mobile')) ? get_field('_sogo_ver3_floor2_image_mobile') : $floor2_image_desktop;
+        ?>
+        <?php $floor2_image = ($is_mobile) ? $floor2_image_mobile : $floor2_image_desktop; ?>
+        <?php echo wp_get_attachment_image($floor2_image, 'full', false, array('class'=> 'img-fluid')) ; ?>
     </section>
     <section id="floor3" class="relative">
         <div class="continer-fluid">
