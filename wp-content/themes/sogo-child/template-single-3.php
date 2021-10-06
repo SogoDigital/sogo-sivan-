@@ -54,8 +54,15 @@ $col = $is_mobile ? 'col-md-12' : 'col-md-4';
         <div class="continer-fluid">
             <div class="row d-flex align-items-center justify-content-center">
                 <div class="col-xs-12 col-lg-6 text-center">
-                    <h2 class=""><?php echo get_field('_sogo_ver3_floor3_title') ?></h2>
-                    <img src="<?php echo get_stylesheet_directory_uri();?>/images/floor3-divider.png">
+                    <?php $floor3_text_color = (get_field('_sogo_ver3_floor3_text_color')) ? get_field('_sogo_ver3_floor3_text_color') : '#274c8c' ?>
+
+                    <h2 class="" style="color: <?php echo $floor3_text_color ?>"><?php echo get_field('_sogo_ver3_floor3_title') ?></h2>
+                    <?php $floor3_image = get_field('_sogo_ver3_floor3_line'); ?>
+                    <?php if($floor3_image) : ?>
+                        <?php echo wp_get_attachment_image($floor3_image, 'full', false, array('class'=> 'img-fluid')) ; ?>
+                    <?php else: ?>
+                        <img src="<?php echo get_stylesheet_directory_uri();?>/images/floor3-divider.png">
+                    <?php endif; ?>
                     <div><?php echo get_field('_sogo_ver3_floor3_text') ?></div>
                 </div>
             </div>
@@ -94,7 +101,7 @@ $col = $is_mobile ? 'col-md-12' : 'col-md-4';
                         <div class="col-md-12">
                             <div class="d-flex align-items-center justify-content-center flex-wrap">
                                 <?php while (have_rows('icons')): the_row(); ?>
-                                    <?php echo wp_get_attachment_image(get_sub_field('icon'), 'full', false, array('class'=> 'img-fluid p-2 ')) ; ?>
+                                    <?php echo wp_get_attachment_image(get_sub_field('icon'), 'full', false, array('class'=> 'img-fluid p-2 floor-icon')) ; ?>
                                 <?php endwhile; ?>
                             </div>
                         </div>

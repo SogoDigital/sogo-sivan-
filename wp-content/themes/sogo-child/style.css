@@ -5616,6 +5616,12 @@ form div.wpcf7-mail-sent-ok {
   padding: 6rem 4rem 0rem;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: 53px;
+}
+@media (min-width: 992px) {
+  #floor1 {
+    margin-top: 86px;
+  }
 }
 #floor1 .row {
   min-height: 70vh;
@@ -5741,5 +5747,10 @@ form div.wpcf7-mail-sent-ok {
 @media (min-width: 992px) {
   .floor-repeater .images2 {
     flex-direction: row;
+  }
+}
+@media (max-width: 768px) {
+  .floor-repeater .floor-icon {
+    width: 50%;
   }
 }

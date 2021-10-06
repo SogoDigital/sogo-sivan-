@@ -2,7 +2,10 @@
   padding: 6rem 4rem 0rem;
   background-repeat: no-repeat;
   background-size: cover;
-
+  margin-top: 53px;
+  @media (min-width: 992px) {
+    margin-top: 86px;
+  }
   & .row {
     min-height: 70vh;
 
@@ -125,6 +128,11 @@
     flex-direction: column;
     @media (min-width: 992px){
       flex-direction: row;
+    }
+  }
+  .floor-icon{
+    @media (max-width: 768px){
+      width: 50%;
     }
   }
 }
