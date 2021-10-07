@@ -5728,6 +5728,14 @@ form div.wpcf7-mail-sent-ok {
 #floor1-mobile .mobile-line {
   margin-top: -7px;
 }
+#floor2 img {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  #floor2 img {
+    width: auto;
+  }
+}
 #floor3 {
   margin: 4rem 0;
   padding: 0 4rem;
