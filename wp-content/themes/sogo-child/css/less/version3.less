@@ -67,7 +67,7 @@
   }
 
   & p {
-    color: @color-bright;
+    //color: @color-bright;
     font-size: @font-18;
   }
 
@@ -112,18 +112,31 @@
   }
 }
 #floor3{
-  margin: 9rem 0;
+  margin: 4rem 0;
   padding: 0 4rem;
   h2{
     font-weight: bold;
     margin-bottom: 2.5rem;
     color: #274C8C;
+    font-size: 24px;
+    @media (min-width: 768px){
+      font-size: 30px;
+    }
   }
   img{
     margin-bottom: 3rem;
   }
+  @media (min-width: 768px){
+    margin: 9rem 0;
+  }
 }
 .floor-repeater{
+  .one-image{
+    width: 100%;
+    @media (min-width: 768px){
+      width: auto;
+    }
+  }
   .images2{
     flex-direction: column;
     @media (min-width: 992px){

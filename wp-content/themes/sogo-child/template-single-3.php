@@ -20,11 +20,13 @@ $col = $is_mobile ? 'col-md-12' : 'col-md-4';
                 <div class="col-12 col-lg-6 floor1-left">
                     <div class="row d-flex align-items-center">
                         <div class="col-12 col-lg-8 position-relative">
-                            <h1 class="h1 font-weight-bold floor1-title position-relative">
+                            <?php $floor1_title_color = (get_field('_sogo_ver3_floor1_title_desktop_color')) ? get_field('_sogo_ver3_floor1_title_desktop_color') : '#fdfdfc'; ?>
+                            <h1 style="color: <?php echo ($is_mobile) ? '#fdfdfc' : $floor1_title_color; ?>" class="h1 font-weight-bold floor1-title position-relative">
                                 <?php echo get_field('_sogo_ver3_floor1_title') ?>
                                 <img class="position-absolute horizontal-line position-absolute" src="<?php echo get_stylesheet_directory_uri() . '/images/horizental_line.png' ?>">
                             </h1>
-                            <div class="floor1-text"><?php echo get_field('_sogo_ver3_floor1_text') ?></div>
+                            <?php $floor1_text_color = (get_field('_sogo_ver3_floor1_text_desktop_color')) ? get_field('_sogo_ver3_floor1_text_desktop_color') : '#fdfdfc'; ?>
+                            <div class="floor1-text" style="color: <?php echo $floor1_text_color; ?>"><?php echo get_field('_sogo_ver3_floor1_text') ?></div>
                         </div>
                         <img class="position-absolute vertical-line position-absolute" src="<?php echo get_stylesheet_directory_uri() . '/images/vertical_line.png' ?>">
                     </div>
@@ -78,7 +80,7 @@ $col = $is_mobile ? 'col-md-12' : 'col-md-4';
                             $desktop_one_image = get_sub_field('one_image');
                             $mobile_one_image = (get_sub_field('one_image_mobile')) ? get_sub_field('one_image_mobile') : get_sub_field('one_image');
                             ?>
-                            <?php echo wp_get_attachment_image(($is_mobile) ? $mobile_one_image : $desktop_one_image, 'full', false, array('class'=> 'img-fluid')) ; ?>
+                            <?php echo wp_get_attachment_image(($is_mobile) ? $mobile_one_image : $desktop_one_image, 'full', false, array('class'=> 'img-fluid one-image')) ; ?>
                         </div>
                     </div>
                 </div>

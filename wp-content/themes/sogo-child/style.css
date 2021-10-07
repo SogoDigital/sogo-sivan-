@@ -5684,7 +5684,6 @@ form div.wpcf7-mail-sent-ok {
   color: #fdfdfc;
 }
 #floor1 p {
-  color: #fdfdfc;
   font-size: 18px;
 }
 #floor1 .project_seperator {
@@ -5730,16 +5729,35 @@ form div.wpcf7-mail-sent-ok {
   margin-top: -7px;
 }
 #floor3 {
-  margin: 9rem 0;
+  margin: 4rem 0;
   padding: 0 4rem;
 }
 #floor3 h2 {
   font-weight: bold;
   margin-bottom: 2.5rem;
   color: #274C8C;
+  font-size: 24px;
+}
+@media (min-width: 768px) {
+  #floor3 h2 {
+    font-size: 30px;
+  }
 }
 #floor3 img {
   margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  #floor3 {
+    margin: 9rem 0;
+  }
+}
+.floor-repeater .one-image {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .floor-repeater .one-image {
+    width: auto;
+  }
 }
 .floor-repeater .images2 {
   flex-direction: column;
