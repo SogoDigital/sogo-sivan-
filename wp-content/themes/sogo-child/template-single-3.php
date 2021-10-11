@@ -12,7 +12,7 @@ $col = $is_mobile ? 'col-md-12' : 'col-md-4';
 ?>
     <section id="floor1" class="relative"
              style="background: url('<?php echo $bg; ?>'); background-repeat: no-repeat;
-                     background-size: cover;">
+                     background-size: cover; background-position: center right">
 
         <div class="container-fluid">
             <div class="row d-flex align-items-center justify-content-center">
