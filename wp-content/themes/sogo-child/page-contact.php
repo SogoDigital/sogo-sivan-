@@ -110,13 +110,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="map-wrapper">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3379.5253837854584!2d34.9705473845144!3d32.10911072504577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d30c123080faf%3A0x4d7a88983c06c938!2z15TXntec15DXm9eUIDE1LCDXqNeQ16kg15TXoteZ158!5e0!3m2!1siw!2sil!4v1561882439787!5m2!1siw!2sil" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=100%&amp;height=450&amp;hl=en&amp;q=atir%20yeda%201%20+()&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
                     </div>
                 </div>
-
             </div>
         </div>
-    </section> <!-- #contact-floor-3 -->
+    </section>
+<!-- #contact-floor-3 -->
 
 
 <!--    <footer id="customers-logos" class="section fp-auto-height">-->

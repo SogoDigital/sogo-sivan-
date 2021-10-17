@@ -4899,6 +4899,7 @@ p.item-text {
   background: transparent;
   border: 1px solid #a4a4a4;
   margin-bottom: 29px;
+  direction: rtl;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
