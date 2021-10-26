@@ -161,10 +161,11 @@ if ( $submission ) {
     $formdata = $submission->get_posted_data();
 
 
-    $name = isset($formdata['your-name'])?$formdata['your-name']: $formdata['full-name'];
-    $email = isset($formdata['your-email'])?$formdata['your-email']: $formdata['email'];
-    $phone = isset($formdata['your-phone'])?$formdata['your-phone'] : $formdata['phone'];
+    $name = isset($formdata['your-name'])?$formdata['your-name']: $formdata['contact-name'];
+    $email = isset($formdata['your-email'])?$formdata['your-email']: $formdata['contact-email'];
+    $phone = isset($formdata['your-phone'])?$formdata['your-phone'] : $formdata['contact-phone'];
     $comments = isset($formdata['message'])?  $formdata['message']: '';
+
 
 
     $arr = array(

@@ -36,7 +36,7 @@
 						wp_nav_menu( array(
 							'theme_location' => 'social_menu',
 							'depth'          => 1,
-							'link_before'    => '<span class="screen-reader-text">',
+							'link_before'    => '<span class="screen-reader-text px-2">',
 							'link_after'     => '</span>',
 							'walker'         => new sogo_social_walker_nav_menu()
 						) );
