@@ -64,7 +64,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-sogo_accessibility.php';
  */
 function run_sogo_accessibility() {
 	// this is the URL our updater / license checker pings. This should be the URL of the site with EDD installed
-	define( 'EDD_SOGO_ACC_STORE_URL', 'https://pluginsmarket.com/downloads/accessibility-plugin/' ); // you should use your own CONSTANT name, and be sure to replace it throughout this file
+	define( 'EDD_SOGO_ACC_STORE_URL', 'https://sogomatic.com' ); // you should use your own CONSTANT name, and be sure to replace it throughout this file
 
 // the name of your product. This should match the download name in EDD exactly
 	define( 'EDD_SOGO_ACC_ITEM_NAME', 'Accessibility Plugin' ); // you should use your own CONSTANT name, and be sure to replace it throughout this file
