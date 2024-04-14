@@ -96,7 +96,7 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
             <!-- .col-md-8 -->
 
             <!-- .col-md-2 -->
-            <div class="col-md-3 col-sm-2   " style="padding: 0">
+            <div class="col-md-3 col-sm-2">
 				<?php if ( has_nav_menu( 'social_menu' ) ) : ?>
                     <nav id="social-navigation" class="social-navigation" role="navigation">
 						<?php

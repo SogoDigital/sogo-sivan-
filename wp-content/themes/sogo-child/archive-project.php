@@ -2,8 +2,8 @@
 <?php get_header() ?>
 
 <section id="projects-floor-1" class="section">
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-fluid h-100">
+        <div class="row h-100 d-flex align-items-center">
             <div itemscope itemtype="https://schema.org/WebPage" class="col-md-8 col-md-offset-2 text-center">
                 <header class="page-header">
                     <h1 itemprop="headline"
