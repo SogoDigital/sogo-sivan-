@@ -7,7 +7,7 @@
  * Date: 11/30/2015
  * Time: 6:32 PM
  */ ?>
-<div class="col-md-4 col-sm-6 col-lg-3">
+<div class="col-12 col-sm-6 col-md-4" style="margin-bottom: 30px">
     <div class="plugin-box">
         <div itemscope itemtype="http://schema.org/CreativeWork" class="thumbnail-wrapper">
             <a href="<?php the_permalink()?>" title="<?php echo esc_attr(get_the_title())?>">

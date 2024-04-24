@@ -321,12 +321,12 @@ span.wpcf7-not-valid-tip {
 
 .plugin-nav {
     direction: rtl;
-    text-align: right;
+    /*text-align: center;*/
 }
 
 /* Blog */
 .single-article-wrapper h1 {
-    text-align: right;
+    /*text-align: right;*/
 }
 
 /* contact page*/

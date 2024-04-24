@@ -12,25 +12,39 @@
 }
 
 .plugin-nav {
+  margin-top: 30px;
   padding: 0;
   direction: ltr;
-  text-align: left;
+  text-align: center;
   li {
     display: inline-block;
-    background: @color-white;
-    margin: 10px 0 10px 0;
-    padding: 0 20px;
+    //background: @color-white;
+    //margin: 10px 0 10px 0;
+    //padding: 0 20px;
     text-align: center;
+    margin: 10px 4px;
+    padding: 3px 48px;
+    border-radius: 2rem;
+    background-color: rgba(181, 181, 172, 0.3);
+
     @media (min-width: 992px) {
 
     }
     a {
       line-height: 30px;
       color: #444544;
-      font-size: 16px;
+      font-size: 18px;
       text-transform: uppercase;
-      &:hover {
-        color: @color-red;
+      font-weight: bold;
+      //&:hover {
+      //  color: white;
+      //  text-decoration: none;
+      //}
+    }
+    &:hover {
+      background-color: @color-red;
+      a{
+        color: white;
         text-decoration: none;
       }
     }
@@ -49,15 +63,23 @@
 
 .plugin-box {
   background: @color-white;
-  padding: 10px;
-  margin-bottom: 30px;
-  box-shadow: 0 0 6.15px 0.85px rgba(0, 0, 0, 0.1);
+  //padding: 10px;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 100%;
+  //margin-bottom: 30px;
+  &:hover {
+    //box-shadow: 0 0 6.15px 0.85px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px 0 rgba(6, 19, 43, 0.15);
+    cursor: pointer;
+  }
   .thumbnail-wrapper {
     overflow: hidden;
     height: 227px;
   }
   a {
-    color: @color-green;
+    color: initial;
+    //color: @color-green;
     &:hover {
       color: @color-red;
       text-decoration: none;
@@ -65,7 +87,7 @@
   }
 
   .publish-wrapper {
-    padding-top: 20px;
+    //padding-top: 20px;
     span {
       font-size: 0.929em;
     }
@@ -74,10 +96,11 @@
     display: inline-block;
     text-align: center;
     width: 100%;
-    margin: 10px 0 0;
+    margin: 10px 0;
     @media (min-width: 992px) {
       margin: 20px 0 10px;
-      height: 4em;
+      //height: 4em;
+      padding: 0 10px;
     }
     span {
       font-size: 15px;
@@ -115,6 +138,10 @@
 #search-bar {
   margin: 30px 0;
   position: relative;
+  width: 100%;
+  @media (min-width: 992px) {
+    width: 50%;
+  }
   input {
     text-align: left;
     border-bottom: 1px solid #000;
@@ -124,6 +151,9 @@
     background: transparent;
     width: 90%;
     font-size: 16px;
+    &:focus-visible{
+      outline: none;
+    }
   }
   span#search-id {
     background: @color-green;
