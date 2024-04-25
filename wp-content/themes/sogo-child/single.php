@@ -102,7 +102,7 @@ the_post(); ?>
                                         foreach( $related as $item ) :
                                             setup_postdata($item);?>
                                             <div class="col-12 col-md-4 mb-3 mb-md-0">
-                                                <a class="d-block related-item" href="<?php echo get_permalink($item->ID)?>">
+                                                <a class="d-block related-item h-100" href="<?php echo get_permalink($item->ID)?>">
                                                     <?php echo get_the_post_thumbnail($item->ID, 'full', array('class'=> 'img-fluid p-0')) ; ?>
                                                     <span class="related-title"><?php echo get_the_title($item->ID); ?></span>
                                                 </a>

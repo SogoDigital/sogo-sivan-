@@ -2829,10 +2829,23 @@ h2.team-heading {
 #single-floor-1 .single-recent {
   margin-bottom: 40px;
 }
+@media (min-width: 768px) {
+  #single-floor-1 .single-recent {
+    margin-bottom: 80px;
+  }
+}
 #single-floor-1 .single-recent .single-recent-title {
   font-weight: 700;
   margin-bottom: 24px;
   margin-top: 40px;
+}
+#single-floor-1 .single-recent .related-posts {
+  display: block;
+}
+@media (min-width: 768px) {
+  #single-floor-1 .single-recent .related-posts {
+    display: flex;
+  }
 }
 #single-floor-1 .single-recent .related-posts .related-item {
   display: block;
@@ -2842,6 +2855,9 @@ h2.team-heading {
 #single-floor-1 .single-recent .related-posts .related-item img {
   margin-bottom: 8px;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
 }
 #single-floor-1 .single-recent .related-posts .related-item .related-title {
   color: initial;
@@ -2960,7 +2976,8 @@ h2.team-heading {
   }
 }
 .single-article-wrapper .entry-content a {
-  color: #2bb673;
+  color: initial;
+  text-decoration: underline;
 }
 .single-article-wrapper .entry-content a:hover {
   color: #47a848;
