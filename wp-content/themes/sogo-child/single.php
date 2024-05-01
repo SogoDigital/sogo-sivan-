@@ -11,26 +11,31 @@ the_post(); ?>
     <section id="single-floor-1" class="margin-top-75">
         <div class="container-fluid">
             <div class="row d-flex justify-content-center">
-                <div class="col-md-8">
+                <div class="col-12 col-md-8 col-xl-8 col-lg-5">
                     <div class="single-article-wrapper">
 <!--                        <div class="white-box">-->
                             <article itemscope itemtype="http://schema.org/Periodical">
                                 <header>
                                     <div class="thumbnail-wrapper text-center">
-                                        <img itemtype="http://schema.org/ImageObject" itemprop="image"
-                                             src="<?php echo wp_get_attachment_url(get_post_thumbnail_id()) ?>"
-                                             alt="<?php echo esc_attr(get_the_title()) ?>">
+<!--                                        <img itemtype="http://schema.org/ImageObject" itemprop="image"-->
+<!--                                             src="--><?php //echo wp_get_attachment_url(get_post_thumbnail_id()) ?><!--"-->
+<!--                                             alt="--><?php //echo esc_attr(get_the_title()) ?><!--">-->
                                     </div>
                                     <h1 itemprop="headline" class="article text-center">
                                         <?php the_title() ?>
                                     </h1>
                                 </header>
-                                <div class="publish-wrapper">
+                                <div class="publish-wrapper text-center">
                                     <span class=""><?php the_date(get_option('date_format')) ?> </span>
                                     <span class="" itemprop="author" itemscope
                                           itemtype="http://schema.org/LocalBusiness"> |     <span itemprop="name"><?php _e('By Sogo','sogoc')?></span></span></span>
 
 
+                                </div>
+                                <div class="text-center">
+                                    <img class="width-75" itemtype="http://schema.org/ImageObject" itemprop="image"
+                                         src="<?php echo wp_get_attachment_url(get_post_thumbnail_id()) ?>"
+                                         alt="<?php echo esc_attr(get_the_title()) ?>" style="border-radius: 16px">
                                 </div>
                                 <div class="entry-content" itemprop="mainEntityOfPage">
                                     <?php the_content() ?>
