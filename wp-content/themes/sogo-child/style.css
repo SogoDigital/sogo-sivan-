@@ -3179,7 +3179,7 @@ h2.team-heading {
 /* end thank-you.less */
 /* blog.less */
 #blog-floor-1 {
-  background-image: url("images/blog-bg-mobile.jpg");
+  background-image: url("images/blog-bg-mobile-2024.png");
   padding: 100px 0 50px;
 }
 @media (min-width: 768px) {
@@ -3189,7 +3189,7 @@ h2.team-heading {
 }
 @media (min-width: 992px) {
   #blog-floor-1 {
-    background-image: url("images/blog-bg.jpg");
+    background-image: url("images/blog-bg-2024.png");
     padding: 200px 0 100px;
   }
 }
