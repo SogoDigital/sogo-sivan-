@@ -24,16 +24,27 @@ the_post(); ?>
                                     <h1 itemprop="headline" class="article text-center">
                                         <?php the_title() ?>
                                     </h1>
-                                </header>
-                                <div class="publish-wrapper text-center">
-                                    <span class=""><?php the_date(get_option('date_format')) ?> </span>
-                                    <span class="" itemprop="author" itemscope
-                                          itemtype="http://schema.org/LocalBusiness"> |     <span itemprop="name"><?php _e('By Sogo','sogoc')?></span></span></span>
+                                    <?php if(get_field('_sogo_single_subtitle')): ?>
+                                        <h2 class="single-article-subtitle text-center">
+                                            <?php echo get_field('_sogo_single_subtitle'); ?>
+                                        </h2>
+                                    <?php endif; ?>
 
+                                </header>
+                                <div class="publish-wrapper d-flex justify-content-center align-items-center">
+                                    <span class="publish-wrapper-icon"><?php echo do_shortcode('[avatar]'); ?></span>
+                                    <span class="publish-wrapper-author"><?php echo get_the_author(); ?></span>
+                                    <span class="publish-wrapper-calendar">
+                                        <img class="" src="<?php echo get_stylesheet_directory_uri() . '/images/calendar.png' ?>">
+                                    </span>
+<!--                                    <span class="">--><?php //the_date(get_option('date_format')) ?><!-- </span>-->
+                                    <span class="publish-wrapper-date"><?php echo get_the_date('d/m/Y'); ?></span>
+<!--                                    <span class="" itemprop="author" itemscope-->
+<!--                                          itemtype="http://schema.org/LocalBusiness"> |     <span itemprop="name">--><?php //_e('By Sogo','sogoc')?><!--</span></span></span>-->
 
                                 </div>
                                 <div class="text-center">
-                                    <img class="width-75" itemtype="http://schema.org/ImageObject" itemprop="image"
+                                    <img class="" itemtype="http://schema.org/ImageObject" itemprop="image"
                                          src="<?php echo wp_get_attachment_url(get_post_thumbnail_id()) ?>"
                                          alt="<?php echo esc_attr(get_the_title()) ?>" style="border-radius: 16px">
                                 </div>
@@ -41,30 +52,23 @@ the_post(); ?>
                                     <?php the_content() ?>
                                 </div>
                                 <div class="publish-wrapper">
-                                    <span class="publish-wrapper-category"> <?php echo sprintf(('%s'), get_the_category_list(' ')); ?></span>
-
-                                    <div class="socials-share inline-block float-right">
-<!--                                        <span class="inline-block">--><?php //_e('share', 'sogoc') ?><!--:</span>-->
-                                        <a href="<?php the_permalink() ?>"
-                                           class=" facebook-share"><span class="inline-block"><i
-                                                        class="fa fa-facebook"></i>  </span></a>
-                                        <a href="https://twitter.com/share" class=""><span
-                                                    class="inline-block"><i
-                                                        class="fa fa-twitter witter-share-button"></i> </span></a>
-
-                                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink() ?>&summary=<?php echo esc_url(get_the_title()) ?>&source=LinkedIn"
-                                           class="">
-                                            <span class="inline-block"><i
-                                                        class="fa fa-linkedin"></i></span>
-                                        </a>
+                                    <?php $tags = get_the_tags(); ?>
+                                    <?php if($tags): ?>
+                                        <div class="tags">
+                                            <p>תגיות:</p>
+                                            <?php foreach ( $tags as $tag ) { ?>
+                                                <a class="tag-item" href="<?php echo get_tag_link( $tag->term_id ); ?>" rel="tag"><?php echo $tag->name; ?></a>
+                                            <?php } ?>
+                                        </div>
+                                    <?php endif; ?>
+<!--                                    <span class="publish-wrapper-category"> --><?php //echo sprintf(('%s'), get_the_category_list(' ')); ?><!--</span>-->
+                                    <div class="mt-5">
+                                        <p class="text-center">מכירים מישהו שצריך לקרוא את הפוסט? שתפו אותו. 💪</p>
+                                        <?php echo sharethis_inline_buttons(); ?>
                                     </div>
                                 </div>
-<!--                                <div class=" text-center">-->
-<!--                                    <a class="btn-link margin"-->
-<!--                                       href="--><?php //echo get_permalink(get_option('page_for_posts')) ?><!--">-->
-<!--                                        --><?php //_e('back to articles', 'sogoc') ?>
-<!--                                    </a>-->
-<!--                                </div>-->
+
+
                             </article>
 <!--                        </div>-->
                     </div>
@@ -105,13 +109,17 @@ the_post(); ?>
                                 <div class="row related-posts">
                                     <?php if( $related ) :
                                         foreach( $related as $item ) :
-                                            setup_postdata($item);?>
-                                            <div class="col-12 col-md-4 mb-3 mb-md-0">
-                                                <a class="d-block related-item h-100" href="<?php echo get_permalink($item->ID)?>">
-                                                    <?php echo get_the_post_thumbnail($item->ID, 'full', array('class'=> 'img-fluid p-0')) ; ?>
-                                                    <span class="related-title"><?php echo get_the_title($item->ID); ?></span>
-                                                </a>
-                                            </div>
+                                            setup_postdata($item);
+                                            set_query_var( 'post_id', $item->ID );
+                                            get_template_part('content', 'excerpt');
+                                        ?>
+
+<!--                                            <div class="col-12 col-md-4 mb-3 mb-md-0">-->
+<!--                                                <a class="d-block related-item h-100" href="--><?php //echo get_permalink($item->ID)?><!--">-->
+<!--                                                    --><?php //echo get_the_post_thumbnail($item->ID, 'full', array('class'=> 'img-fluid p-0')) ; ?>
+<!--                                                    <span class="related-title">--><?php //echo get_the_title($item->ID); ?><!--</span>-->
+<!--                                                </a>-->
+<!--                                            </div>-->
                                         <?php endforeach;
                                         wp_reset_postdata();
                                     endif; ?>

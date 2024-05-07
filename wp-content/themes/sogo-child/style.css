@@ -2880,8 +2880,17 @@ h2.team-heading {
 .publish-wrapper span {
   font-size: 1em;
 }
+.catchProgressbar {
+  display: none !important;
+}
+@media (min-width: 992px) {
+  .catchProgressbar {
+    display: block !important;
+    top: 86px !important;
+  }
+}
 .single-article-wrapper {
-  margin: 30px 0;
+  margin: 60px 0;
 }
 .single-article-wrapper .thumbnail-wrapper img {
   margin-bottom: 24px;
@@ -2894,14 +2903,54 @@ h2.team-heading {
     padding: 20px;
   }
 }
-.single-article-wrapper h1 {
+.single-article-wrapper .single-article-subtitle {
+  color: #6e7181;
   font-size: 20px;
+  line-height: 1.5;
+  margin-top: 0;
+}
+.single-article-wrapper h1 {
+  text-shadow: none;
+  font-size: 20px;
+  color: #191919;
 }
 @media (min-width: 768px) {
   .single-article-wrapper h1 {
-    font-size: 48px;
-    margin-bottom: 30px;
+    font-size: 40px;
+    margin-bottom: 14px;
   }
+}
+.single-article-wrapper .publish-wrapper .tags {
+  margin-bottom: 50px;
+}
+.single-article-wrapper .publish-wrapper .tags .tag-item {
+  color: #19c5a4;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px;
+  border: 1px solid #19c5a4;
+  margin: 0 0 0 5px;
+}
+.single-article-wrapper .publish-wrapper .publish-wrapper-icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-left: 8px;
+  box-shadow: 0 0 3px #acacac;
+}
+.single-article-wrapper .publish-wrapper .publish-wrapper-author {
+  font-size: 18px;
+}
+.single-article-wrapper .publish-wrapper .publish-wrapper-calendar img {
+  width: 18px;
+  margin-right: 16px;
+  margin-top: -4px;
+  margin-left: 4px;
+}
+.single-article-wrapper .publish-wrapper .publish-wrapper-date {
+  font-size: 18px;
+  margin-right: 3px;
 }
 .single-article-wrapper .publish-wrapper .publish-wrapper-category a {
   background-color: #f0f0f0;
@@ -2925,7 +2974,8 @@ h2.team-heading {
   padding-bottom: 15px;
 }
 .single-article-wrapper .entry-content p {
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 1.5;
 }
 .single-article-wrapper .entry-content h1 {
   font-size: 20px;
@@ -2941,6 +2991,8 @@ h2.team-heading {
 @media (min-width: 768px) {
   .single-article-wrapper .entry-content h2 {
     font-size: 35px;
+    font-weight: 600;
+    margin: 40px 0 20px;
   }
 }
 .single-article-wrapper .entry-content h3 {
@@ -2976,14 +3028,14 @@ h2.team-heading {
   }
 }
 .single-article-wrapper .entry-content a {
-  color: initial;
+  color: #09332b;
   text-decoration: underline;
-}
-.single-article-wrapper .entry-content a:hover {
-  color: #47a848;
-}
-.single-article-wrapper .entry-content a:visited {
-  color: #ed1c24;
+  font-weight: 600;
+  text-decoration-color: #28d1b0;
+  text-decoration-thickness: 3px;
+  -webkit-text-decoration: underline;
+  -webkit-text-decoration-color: #28d1b0;
+  -webkit-text-decoration-thickness: 3px;
 }
 .single-article-wrapper .entry-content ol li,
 .single-article-wrapper .entry-content li li {
@@ -2993,6 +3045,14 @@ h2.team-heading {
   max-width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+.single-article-wrapper .entry-content figure figcaption {
+  font-size: 15px;
+  line-height: 1.5em;
+  color: #5e5e5e;
+  margin-top: 5px;
+  padding: 0;
+  font-style: normal;
 }
 .single-article-wrapper .entry-content .alignleft {
   float: left;
@@ -3036,6 +3096,28 @@ h2.team-heading {
   line-height: 0.1em;
   margin-left: 0.15em;
   vertical-align: -0.7em;
+}
+.single-article-wrapper .entry-content #ez-toc-container {
+  direction: rtl;
+  background: transparent;
+  padding: 25px;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+.single-article-wrapper .entry-content #ez-toc-container .ez-toc-title-container .ez-toc-title {
+  font-weight: bold;
+}
+.single-article-wrapper .entry-content #ez-toc-container .ez-toc-title-container .ez-toc-title-toggle {
+  display: none;
+}
+.single-article-wrapper .entry-content #ez-toc-container nav {
+  margin-top: 16px;
+}
+.single-article-wrapper .entry-content #ez-toc-container nav .ez-toc-list li .ez-toc-link {
+  font-size: 18px;
+  font-weight: normal;
+  color: #333333;
+  text-decoration: underline;
 }
 .single-article-wrapper .plugin-box .publish-wrapper {
   padding: 5px 10px;
