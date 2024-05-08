@@ -19,7 +19,7 @@ $blog_page = get_post($blog_page_id);
     </div>
 </section> <!-- #contact-floor-1 -->
 
-<section id="blog-floor-2" class="" style="background-color: #f1f1f1">
+<section id="tag-floor-2" class="" style="background-color: #f1f1f1">
     <div class="container-fluid">
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-lg-8">

@@ -35,7 +35,7 @@ the_post(); ?>
                                     <span class="publish-wrapper-icon"><?php echo do_shortcode('[avatar]'); ?></span>
                                     <span class="publish-wrapper-author"><?php echo get_the_author(); ?></span>
                                     <span class="publish-wrapper-calendar">
-                                        <img class="" src="<?php echo get_stylesheet_directory_uri() . '/images/calendar.png' ?>">
+                                        <img class="" src="<?php echo get_stylesheet_directory_uri() . '/images/calander.png' ?>">
                                     </span>
 <!--                                    <span class="">--><?php //the_date(get_option('date_format')) ?><!-- </span>-->
                                     <span class="publish-wrapper-date"><?php echo get_the_date('d/m/Y'); ?></span>
@@ -63,7 +63,7 @@ the_post(); ?>
                                     <?php endif; ?>
 <!--                                    <span class="publish-wrapper-category"> --><?php //echo sprintf(('%s'), get_the_category_list(' ')); ?><!--</span>-->
                                     <div class="mt-5">
-                                        <p class="text-center">מכירים מישהו שצריך לקרוא את הפוסט? שתפו אותו. 💪</p>
+                                        <p class="text-center"><?php echo get_field('_sogo_posts_share_title', 'option'); ?></p>
                                         <?php echo sharethis_inline_buttons(); ?>
                                     </div>
                                 </div>

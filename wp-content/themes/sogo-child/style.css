@@ -3282,6 +3282,9 @@ h2.team-heading {
   text-transform: uppercase;
   margin-bottom: 30px;
 }
+#tag-floor-2 {
+  padding: 30px 0;
+}
 /* end blog.less */
 /* projects.less */
 #projects-floor-1 {
