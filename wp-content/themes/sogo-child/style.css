@@ -1130,6 +1130,39 @@ h6 {
     font-size: 1.286em;
   }
 }
+.social-card {
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+}
+.social-card .social-hover-icon {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  z-index: 99;
+  transition: all 0.3s ease-in-out;
+}
+.social-card:hover .social-hover-icon {
+  opacity: 1;
+}
+.contact-header {
+  width: 100px;
+  height: 40px;
+  border-radius: 2rem;
+  background: #ed1d24;
+  background: linear-gradient(90deg, #ed1d24 0%, #ee2a7b 17%, #8a5ba5 38%, #00addc 60%, #2bb673 80%, #ffc906 100%);
+}
+.contact-header .contact-header-inner {
+  background-color: white;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  border-radius: 2rem;
+}
 /* footer.less */
 #site-footer {
   background-color: #565555;

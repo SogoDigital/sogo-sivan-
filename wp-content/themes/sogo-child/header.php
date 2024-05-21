@@ -97,25 +97,43 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
 
             <!-- .col-md-2 -->
             <div class="col-md-3 col-sm-2">
-				<?php if ( has_nav_menu( 'social_menu' ) ) : ?>
-                    <nav id="social-navigation" class="social-navigation" role="navigation">
-						<?php
-						// Social links navigation menu.
-						wp_nav_menu( array(
-							'theme_location' => 'social_menu',
-							'depth'          => 1,
-							'link_before'    => '<span class="screen-reader-text">',
-							'link_after'     => '</span>',
-							'walker'         => new sogo_social_walker_nav_menu()
-						) );
-						?>
-                    </nav><!-- .social-navigation -->
-				<?php endif; ?>
-                <div class="phone-num hidden-xs hidden-sm hidden-md">
-                    <a href="tel:<?php echo sogo_option( 'phone_num' ) ?>">
-                        <span><?php echo sogo_option( 'phone_num' ) ?></span>
-                    </a>
+                <div class="d-flex align-items-center">
+                    <?php while (have_rows('_sogo_header_social', 'option')): the_row(); ?>
+                        <div class="social-card">
+                            <a href="<?php echo get_sub_field( 'link' ) ?>">
+                                <img class="social-icon" src="<?php echo get_sub_field( 'image' ) ?>" alt="">
+                                <img class="social-hover-icon" src="<?php echo get_sub_field( 'hover_image' ) ?>" alt="">
+                            </a>
+                        </div>
+                    <?php endwhile; ?>
+                    <p class="margin-bottom-0">צרו קשר</p>
+                    <div class="contact-header position-relative">
+
+                        <div class="contact-header-inner">
+
+                        </div>
+
+                    </div>
                 </div>
+<!--				--><?php //if ( has_nav_menu( 'social_menu' ) ) : ?>
+<!--                    <nav id="social-navigation" class="social-navigation" role="navigation">-->
+<!--						--><?php
+//						// Social links navigation menu.
+//						wp_nav_menu( array(
+//							'theme_location' => 'social_menu',
+//							'depth'          => 1,
+//							'link_before'    => '<span class="screen-reader-text">',
+//							'link_after'     => '</span>',
+//							'walker'         => new sogo_social_walker_nav_menu()
+//						) );
+//						?>
+<!--                    </nav>
+<!--				--><?php //endif; ?>
+<!--                <div class="phone-num hidden-xs hidden-sm hidden-md">-->
+<!--                    <a href="tel:--><?php //echo sogo_option( 'phone_num' ) ?><!--">-->
+<!--                        <span>--><?php //echo sogo_option( 'phone_num' ) ?><!--</span>-->
+<!--                    </a>-->
+<!--                </div>-->
             </div>
             <!-- .col-md-2 -->
         </div>
