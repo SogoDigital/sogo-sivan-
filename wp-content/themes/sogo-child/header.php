@@ -42,91 +42,186 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
 <!-- End Google Tag Manager (noscript) -->
 <?php echo sogo_option( 'google_tag' ) ?>
 
-
-<header id="main-header">
-
-    <div class="container-fluid mobile-white">
-        <div class="row">
-            <div class="col-xs-3 <?php echo ( is_rtl() ) ? 'col-xs-pull-9 col-md-pull-0' : 'col-xs-push-9 col-md-push-0'; ?>  col-md-2">
-                <div id="logo">
-                    <a title="<?php echo esc_attr( __( 'Go to home page', 'sogoc' ) ) ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"
-                       accesskey="H"><?php bloginfo( 'name' ); ?></a>
-                </div>
-                <!-- #logo -->
-            </div>
-            <div id="main-nav-container" class="col-xs-3 col-sm-3 col-md-7 <?php echo is_rtl() ? 'col-xs-push-3 col-md-push-0' : 'col-xs-pull-3 col-md-pull-0'; ?>">
-
-				<?php if ( has_nav_menu( 'primary_menu' ) ) : ?>
-                    <nav id="primary-navigation" class="navbar primary-navigation" role="navigation">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <div itemscope itemtype="http://schema.org/SiteNavigationElement" class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                    data-target="#primary-navigation" style="border: none;">
-
-                                <span class="sr-only"><?php _e( 'Toggle navigation', 'sogoc' ); ?></span>
-                                <span class="icon-bar top-bar"></span>
-                                <span class="icon-bar middle-bar"></span>
-                                <span class="icon-bar bottom-bar"></span>
-                            </button>
+<header>
+<!--  Desktop Header -->
+    <div class="desktop-header container-fluid hidden-xs hidden-sm visible-md-block visible-lg-block">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-lg-10">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-md-2 d-flex">
+                        <div id="logo">
+                            <a title="<?php echo esc_attr( __( 'Go to home page', 'sogoc' ) ) ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"
+                               accesskey="H"><?php bloginfo( 'name' ); ?></a>
                         </div>
+                    </div>
+                    <div class="col-md-8 d-flex justify-content-center">
+                        <div class="desktop-menu">
+                            <?php
+                            wp_nav_menu( array(
+                                'theme_location' => 'primary_menu',
+                                'link_before'    => '<span class="">',
+    //								'link_before'    => '<span class="screen-reader-text">',
+                                'link_after'     => '</span>',
 
-
-
-                        <div class="collapse navbar-collapse primary-navigation-collapse">
-							<?php
-							// Social links navigation menu.
-							wp_nav_menu( array(
-								'theme_location' => 'primary_menu',
-								'link_before'    => '<span class="">',
-//								'link_before'    => '<span class="screen-reader-text">',
-								'link_after'     => '</span>',
-
-							) );
-							?>
+                            ) );
+                            ?>
                         </div>
-                    </nav><!-- .social-navigation -->
-				<?php endif; ?>
-            </div>
-            <div class="call-now visible-xs col">
-                <a href="tel:<?php echo sogo_option( 'phone_num' ) ?>">
-                    <i class="fa fa-mobile" aria-hidden="true"></i>
-                    <span><?php _e( 'Call now', 'sogoc' ) ?></span>
-                </a>
-            </div>
-            <!-- .col-md-8 -->
+                    </div>
+                    <div class="col-md-2">
+                        <div class="d-flex align-items-center justify-content-end">
+                            <?php while (have_rows('_sogo_header_social', 'option')): the_row(); ?>
+                                <div class="social-card">
+                                    <a href="<?php echo get_sub_field( 'link' ) ?>">
+                                        <img class="social-icon" src="<?php echo get_sub_field( 'image' ) ?>" alt="">
+                                        <img class="social-hover-icon" src="<?php echo get_sub_field( 'hover_image' ) ?>" alt="">
+                                    </a>
+                                </div>
+                            <?php endwhile; ?>
 
-            <!-- .col-md-2 -->
-            <div class="col-md-3 col-sm-2">
-                <div class="d-flex align-items-center">
-                    <?php while (have_rows('_sogo_header_social', 'option')): the_row(); ?>
-                        <div class="social-card">
-                            <a href="<?php echo get_sub_field( 'link' ) ?>">
-                                <img class="social-icon" src="<?php echo get_sub_field( 'image' ) ?>" alt="">
-                                <img class="social-hover-icon" src="<?php echo get_sub_field( 'hover_image' ) ?>" alt="">
-                            </a>
+                            <div class="contact-header position-relative">
+                                <a href="#">
+                                    <div class="contact-header-inner d-flex justify-content-center align-items-center">
+                                        <p class="margin-bottom-0">צרו קשר</p>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                    <?php endwhile; ?>
-                    <p class="margin-bottom-0">צרו קשר</p>
-                    <div class="contact-header position-relative">
-
-                        <div class="contact-header-inner">
-
-                        </div>
-
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <!--  Mobile Header -->
+    <div class="mobile-header container-fluid visible-xs-block visible-sm-block hidden-md hidden-lg">
+        <div class="row d-flex">
+            <div class="col-xs-12 position-relative">
+                <div class="d-flex justify-content-between h-100">
+                    <div class="h-100">
+                        <div class="h-100 d-flex align-items-center">
+                                <a class="nav-button ml-auto mr-4">
+                                    <span id="nav-icon3">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </span>
+                                </a>
+                        </div> <!--navbar end-->
+                        <div class="fixed-top dineuron-menu">
+                            <div class="flex-center p-5">
+                                <?php
+                                wp_nav_menu( array(
+                                    'theme_location' => 'primary_menu',
+                                    'link_before'    => '<span class="">',
+                                    //								'link_before'    => '<span class="screen-reader-text">',
+                                    'link_after'     => '</span>',
+
+                                ) );
+                                ?>
+<!--                                <ul class="nav flex-column">-->
+<!--                                    <li class="nav-item delay-1"><a class="nav-link" href="#">HOME</a></li>-->
+<!--                                    <li class="nav-item delay-2"><a class="nav-link" href="#">ABOUT US</a></li>-->
+<!--                                    <li class="nav-item delay-3"><a class="nav-link" href="#">PRODUCTS</a></li>-->
+<!--                                    <li class="nav-item delay-4"><a class="nav-link" href="#">APPLICATIONS</a></li>-->
+<!--                                    <li class="nav-item delay-5"><a class="nav-link" href="#">FACILITIES</a></li>-->
+<!--                                    <li class="nav-item delay-6"><a class="nav-link" href="#">QUALITY</a></li>-->
+<!--                                    <li class="nav-item delay-7"><a class="nav-link" href="#">CAREER</a></li>-->
+<!--                                    <li class="nav-item delay-8"><a class="nav-link" href="#">CONTACT US</a></li>-->
+<!--                                </ul>-->
+                            </div>
+                        </div> <!--dineuron-menu end-->
+                    </div>
+                    <div id="logo">
+                        <a title="<?php echo esc_attr( __( 'Go to home page', 'sogoc' ) ) ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"
+                           accesskey="H"><?php bloginfo( 'name' ); ?></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--<header id="main-header">-->
+<!---->
+<!--    <div class="container-fluid mobile-white">-->
+<!--        <div class="row">-->
+<!--            <div class="col-xs-3 --><?php //echo ( is_rtl() ) ? 'col-xs-pull-9 col-md-pull-0' : 'col-xs-push-9 col-md-push-0'; ?><!--  col-md-2">-->
+<!--                <div id="logo">-->
+<!--                    <a title="--><?php //echo esc_attr( __( 'Go to home page', 'sogoc' ) ) ?><!--" href="--><?php //echo esc_url( home_url( '/' ) ); ?><!--" rel="home"-->
+<!--                       accesskey="H">--><?php //bloginfo( 'name' ); ?><!--</a>-->
+<!--                </div>-->
+                <!-- #logo -->
+<!--            </div>-->
+<!--            <div id="main-nav-container" class="col-xs-3 col-sm-3 col-md-7 --><?php //echo is_rtl() ? 'col-xs-push-3 col-md-push-0' : 'col-xs-pull-3 col-md-pull-0'; ?><!--">-->
+<!---->
+<!--				--><?php //if ( has_nav_menu( 'primary_menu' ) ) : ?>
+<!--                    <nav id="primary-navigation" class="navbar primary-navigation" role="navigation">-->
+<!--                        <div itemscope itemtype="http://schema.org/SiteNavigationElement" class="navbar-header">-->
+<!--                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"-->
+<!--                                    data-target="#primary-navigation" style="border: none;">-->
+<!---->
+<!--                                <span class="sr-only">--><?php //_e( 'Toggle navigation', 'sogoc' ); ?><!--</span>-->
+<!--                                <span class="icon-bar top-bar"></span>-->
+<!--                                <span class="icon-bar middle-bar"></span>-->
+<!--                                <span class="icon-bar bottom-bar"></span>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!---->
+<!---->
+<!---->
+<!--                        <div class="collapse navbar-collapse primary-navigation-collapse">-->
+<!--							--><?php
+//							// Social links navigation menu.
+//							wp_nav_menu( array(
+//								'theme_location' => 'primary_menu',
+//								'link_before'    => '<span class="">',
+////								'link_before'    => '<span class="screen-reader-text">',
+//								'link_after'     => '</span>',
+//
+//							) );
+//							?>
+<!--                        </div>-->
+<!--                    </nav>-->
+<!--    				--><?php //endif; ?>
+<!--            </div>-->
+<!--            <div class="call-now visible-xs col">-->
+<!--                <a href="tel:--><?php //echo sogo_option( 'phone_num' ) ?><!--">-->
+<!--                    <i class="fa fa-mobile" aria-hidden="true"></i>-->
+<!--                    <span>--><?php //_e( 'Call now', 'sogoc' ) ?><!--</span>-->
+<!--                </a>-->
+<!--            </div>-->
+            <!-- .col-md-8 -->
+<!---->
+            <!-- .col-md-2 -->
+<!--            <div class="col-md-3 col-sm-2">-->
+<!--                <div class="d-flex align-items-center">-->
+<!--                    --><?php //while (have_rows('_sogo_header_social', 'option')): the_row(); ?>
+<!--                        <div class="social-card">-->
+<!--                            <a href="--><?php //echo get_sub_field( 'link' ) ?><!--">-->
+<!--                                <img class="social-icon" src="--><?php //echo get_sub_field( 'image' ) ?><!--" alt="">-->
+<!--                                <img class="social-hover-icon" src="--><?php //echo get_sub_field( 'hover_image' ) ?><!--" alt="">-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                    --><?php //endwhile; ?>
+<!---->
+<!--                    <div class="contact-header position-relative">-->
+<!--                        <div class="contact-header-inner">-->
+<!--                            <p class="margin-bottom-0">צרו קשר</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 <!--				--><?php //if ( has_nav_menu( 'social_menu' ) ) : ?>
 <!--                    <nav id="social-navigation" class="social-navigation" role="navigation">-->
 <!--						--><?php
 //						// Social links navigation menu.
-//						wp_nav_menu( array(
-//							'theme_location' => 'social_menu',
-//							'depth'          => 1,
-//							'link_before'    => '<span class="screen-reader-text">',
-//							'link_after'     => '</span>',
-//							'walker'         => new sogo_social_walker_nav_menu()
-//						) );
-//						?>
+////						wp_nav_menu( array(
+////							'theme_location' => 'social_menu',
+////							'depth'          => 1,
+////							'link_before'    => '<span class="screen-reader-text">',
+////							'link_after'     => '</span>',
+////							'walker'         => new sogo_social_walker_nav_menu()
+////						) );
+////						?>
 <!--                    </nav>
 <!--				--><?php //endif; ?>
 <!--                <div class="phone-num hidden-xs hidden-sm hidden-md">-->
@@ -134,12 +229,27 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
 <!--                        <span>--><?php //echo sogo_option( 'phone_num' ) ?><!--</span>-->
 <!--                    </a>-->
 <!--                </div>-->
-            </div>
+<!--            </div>-->
             <!-- .col-md-2 -->
-        </div>
+<!--        </div>-->
         <!-- .row -->
-    </div>
+<!--    </div>-->
     <!-- .container -->
-</header>
+<!--</header>-->
 <!-- #home-floor-1 -->
+
+<script>
+    let $ = jQuery;
+    $(document).ready(function() {
+
+        $(document).ready(function(){
+            $('.nav-button').click(function(){
+                $('body').toggleClass('nav-open');
+            });
+        });
+
+    });
+</script>
+
 <div id="page" class="site">
+
