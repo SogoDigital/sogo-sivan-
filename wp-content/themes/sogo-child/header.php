@@ -79,9 +79,9 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
                             <?php endwhile; ?>
 
                             <div class="contact-header position-relative">
-                                <a href="#">
+                                <a href="<?php echo get_field('_sogo_header_contact_link', 'option')?>">
                                     <div class="contact-header-inner d-flex justify-content-center align-items-center">
-                                        <p class="margin-bottom-0">צרו קשר</p>
+                                        <span class="margin-bottom-0">צרו קשר</span>
                                     </div>
                                 </a>
                             </div>
@@ -118,16 +118,6 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
 
                                 ) );
                                 ?>
-<!--                                <ul class="nav flex-column">-->
-<!--                                    <li class="nav-item delay-1"><a class="nav-link" href="#">HOME</a></li>-->
-<!--                                    <li class="nav-item delay-2"><a class="nav-link" href="#">ABOUT US</a></li>-->
-<!--                                    <li class="nav-item delay-3"><a class="nav-link" href="#">PRODUCTS</a></li>-->
-<!--                                    <li class="nav-item delay-4"><a class="nav-link" href="#">APPLICATIONS</a></li>-->
-<!--                                    <li class="nav-item delay-5"><a class="nav-link" href="#">FACILITIES</a></li>-->
-<!--                                    <li class="nav-item delay-6"><a class="nav-link" href="#">QUALITY</a></li>-->
-<!--                                    <li class="nav-item delay-7"><a class="nav-link" href="#">CAREER</a></li>-->
-<!--                                    <li class="nav-item delay-8"><a class="nav-link" href="#">CONTACT US</a></li>-->
-<!--                                </ul>-->
                             </div>
                         </div> <!--dineuron-menu end-->
                     </div>
@@ -237,19 +227,6 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
     <!-- .container -->
 <!--</header>-->
 <!-- #home-floor-1 -->
-
-<script>
-    let $ = jQuery;
-    $(document).ready(function() {
-
-        $(document).ready(function(){
-            $('.nav-button').click(function(){
-                $('body').toggleClass('nav-open');
-            });
-        });
-
-    });
-</script>
 
 <div id="page" class="site">
 
