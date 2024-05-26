@@ -42,19 +42,19 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
 <!-- End Google Tag Manager (noscript) -->
 <?php echo sogo_option( 'google_tag' ) ?>
 
-<header>
+<header id="header">
 <!--  Desktop Header -->
     <div class="desktop-header container-fluid hidden-xs hidden-sm visible-md-block visible-lg-block">
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-lg-10">
-                <div class="row d-flex justify-content-center align-items-center">
-                    <div class="col-md-2 d-flex">
+                <div class="d-flex justify-content-between align-items-center">
+<!--                    <div class="col-md-2 d-flex">-->
                         <div id="logo">
                             <a title="<?php echo esc_attr( __( 'Go to home page', 'sogoc' ) ) ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"
                                accesskey="H"><?php bloginfo( 'name' ); ?></a>
                         </div>
-                    </div>
-                    <div class="col-md-8 d-flex justify-content-center">
+<!--                    </div>-->
+<!--                    <div class="col-md-8 d-flex justify-content-center">-->
                         <div class="desktop-menu">
                             <?php
                             wp_nav_menu( array(
@@ -66,8 +66,8 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
                             ) );
                             ?>
                         </div>
-                    </div>
-                    <div class="col-md-2">
+<!--                    </div>-->
+<!--                    <div class="col-md-2">-->
                         <div class="d-flex align-items-center justify-content-end">
                             <?php while (have_rows('_sogo_header_social', 'option')): the_row(); ?>
                                 <div class="social-card">
@@ -86,7 +86,7 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
                                 </a>
                             </div>
                         </div>
-                    </div>
+<!--                    </div>-->
                 </div>
             </div>
         </div>
