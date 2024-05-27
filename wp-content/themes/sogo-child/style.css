@@ -3722,19 +3722,24 @@ h2.team-heading {
   justify-content: center;
   margin-top: 23px;
   margin-bottom: 14px;
+  overflow: hidden !important;
 }
 .project_cat_filter ul.tab-list {
   list-style-type: none;
   padding-right: 0;
+  display: block;
+  overflow: auto !important;
 }
 .project_cat_filter ul.tab-list li {
-  display: inline;
   margin: 0 18px;
+  display: table-cell;
+  padding: 0 18px;
 }
 .project_cat_filter ul.tab-list li a {
   color: #565555;
   transition: all 0.2s ease;
   font-size: 18px;
+  white-space: nowrap;
 }
 .project_cat_filter ul.tab-list li a.active,
 .project_cat_filter ul.tab-list li a:hover {

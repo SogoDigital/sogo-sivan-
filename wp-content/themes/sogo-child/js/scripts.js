@@ -304,29 +304,31 @@
         }
     }
 
-    var leftPos, newWidth, $magicLine;
+    if ($(".menu .current-menu-item")[0]) {
+        var leftPos, newWidth, $magicLine;
 
-    $('.menu').append("<li id='magic-line'></li>");
-    $magicLine = $('#magic-line');
-    $magicLine.width($('.current-menu-item').width())
-        .css('left', $('.current-menu-item a').position().left)
-        .data('origWidth', $magicLine.width());
+        $('.menu').append("<li id='magic-line'></li>");
+        $magicLine = $('#magic-line');
+        $magicLine.width($('.current-menu-item').width())
+            .css('left', $('.current-menu-item a').position().left)
+            .data('origWidth', $magicLine.width());
 
-    /*Magicline hover animation*/
-    $('.menu li').find('a').hover(function() {
-        var $thisBar = $(this);
-        leftPos = $thisBar.position().left;
-        newWidth = $thisBar.parent().width();
-        $magicLine.css({
-            "left": leftPos,
-            "width": newWidth
+        /*Magicline hover animation*/
+        $('.menu li').find('a').hover(function () {
+            var $thisBar = $(this);
+            leftPos = $thisBar.position().left;
+            newWidth = $thisBar.parent().width();
+            $magicLine.css({
+                "left": leftPos,
+                "width": newWidth
+            });
+        }, function () {
+            $magicLine.css({
+                "left": $('.current-menu-item').position().left,
+                "width": $magicLine.data('origWidth')
+            });
         });
-    }, function() {
-        $magicLine.css({
-            "left": $('.current-menu-item').position().left,
-            "width": $magicLine.data('origWidth')
-        });
-    });
+    }
 
     $('.nav-button').click(function(){
         $('body').toggleClass('nav-open');
