@@ -291,16 +291,17 @@
                 if ($(this).width() > 0)
                     w = $(this).width() + 100;
             });
+            if ($(window).width() > 992) {
+                var controls = $('.portfolio-slider-wrapper').find('.bx-controls');
 
-            var controls = $('.portfolio-slider-wrapper').find('.bx-controls');
-
-            controls.css(
-                {
-                    'width': w,
-                    'left': '50%',
-                    'margin-left': "-" + w / 2 + "px"
-                }
-            );
+                controls.css(
+                    {
+                        'width': w,
+                        'left': '50%',
+                        'margin-left': "-" + w / 2 + "px"
+                    }
+                );
+            }
         }
     }
 

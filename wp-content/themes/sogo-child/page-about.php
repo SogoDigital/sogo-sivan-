@@ -7,9 +7,9 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <header itemprop="mainEntityOfPage" itemscope itemtype="https://schema.org/AboutPage"  class="page-header mobile-middle">
-                        <h1  itemprop="headline"  class="page-title color-red"><?php the_title() ?></h1>
+                        <h1  itemprop="headline"  class="page-title color-white"><?php the_title() ?></h1>
 
-                        <p itemprop="description" class="page-sub-title">
+                        <p itemprop="description" class="page-sub-title color-white">
                             <?php echo nl2br(sogo_meta('sub_title')) ?>
                         </p>
                     </header>

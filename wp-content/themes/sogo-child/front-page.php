@@ -135,46 +135,47 @@ if ($floors) {
         </div>
     </section> <!-- #home-floor-5 -->
 
-    <section id="home-floor-6" class="split-floor section floor cover vertical-top">
-        <div id="man" class="fadeInLeftBig animated hidden-xs hidden-sm"><img
-              src="<?php echo get_stylesheet_directory_uri() ?>/images/bgs/man.png" alt="man image"/></div>
-        <div id="woman" class="fadeInRightBig animated hidden-xs hidden-sm"><img
-              src="<?php echo get_stylesheet_directory_uri() ?>/images/bgs/woman.png" alt="woman image"/></div>
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="side-padding-text">
-                    <div class="col-md-6 text-center">
-                        <div class="fadeInLeftBig animated">
-                            <header class="floor-header">
-                                <p class="floor-title color-white"><?php echo sogo_meta('section-6-title-1') ?></p>
-                            </header>
+<!--    <section id="home-floor-6" class="split-floor section floor cover vertical-top">-->
+<!--        <div id="man" class="fadeInLeftBig animated hidden-xs hidden-sm"><img-->
+<!--              src="--><?php //echo get_stylesheet_directory_uri() ?><!--/images/bgs/man.png" alt="man image"/></div>-->
+<!--        <div id="woman" class="fadeInRightBig animated hidden-xs hidden-sm"><img-->
+<!--              src="--><?php //echo get_stylesheet_directory_uri() ?><!--/images/bgs/woman.png" alt="woman image"/></div>-->
+<!---->
+<!--        <div class="container-fluid">-->
+<!--            <div class="row">-->
+<!--                <div class="side-padding-text">-->
+<!--                    <div class="col-md-6 text-center">-->
+<!--                        <div class="fadeInLeftBig animated">-->
+<!--                            <header class="floor-header">-->
+<!--                                <p class="floor-title color-white">--><?php //echo sogo_meta('section-6-title-1') ?><!--</p>-->
+<!--                            </header>-->
                             <!-- .floor-header -->
-                            <p class="color-white">
-                                <?php echo nl2br(sogo_meta('section-6-text-1')) ?>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 text-center">
-                        <div class="fadeInRightBig animated">
-                            <header class="floor-header">
-                                <p class="floor-title color-white"><?php echo sogo_meta('section-6-title-2') ?></p>
-                            </header>
+<!--                            <p class="color-white">-->
+<!--                                --><?php //echo nl2br(sogo_meta('section-6-text-1')) ?>
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-6 text-center">-->
+<!--                        <div class="fadeInRightBig animated">-->
+<!--                            <header class="floor-header">-->
+<!--                                <p class="floor-title color-white">--><?php //echo sogo_meta('section-6-title-2') ?><!--</p>-->
+<!--                            </header>-->
                             <!-- .floor-header -->
-                            <p class="color-white">
-                                <?php echo nl2br(sogo_meta('section-6-text-2')) ?>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="continue-down hidden-xs hidden-sm">
-         <span class="scroll-to continue">
-             <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-         </span>
-        </div>
-    </section> <!-- #home-floor-6 -->
+<!--                            <p class="color-white">-->
+<!--                                --><?php //echo nl2br(sogo_meta('section-6-text-2')) ?>
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="continue-down hidden-xs hidden-sm">-->
+<!--         <span class="scroll-to continue">-->
+<!--             <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>-->
+<!--         </span>-->
+<!--        </div>-->
+<!--    </section> -->
+    <!-- #home-floor-6 -->
     <section id="home-floor-7"
              class="section floor text-center cover fp-auto-height vertical-middle">
         <div class="container-fluid">
@@ -188,7 +189,7 @@ if ($floors) {
                         <?php echo nl2br(sogo_meta('section-7-text')) ?>
                     </p>
                 </div>
-                <div class="col-md-12 hidden-xs">
+                <div class="col-md-12">
                     <div class="portfolio-slider-wrapper">
                         <ul class="portfolio-slider">
                             <?php

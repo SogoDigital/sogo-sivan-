@@ -1325,24 +1325,24 @@ h6 {
   -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
   transition: transform 0.2s, opacity 0.2s;
 }
-.nav-open #nav-icon3 span:nth-child(1) {
+.nav-open #header .mobile-header .nav-button #nav-icon3 span:nth-child(1) {
   top: 9px;
   width: 0;
   left: 50%;
 }
-.nav-open #nav-icon3 span:nth-child(2) {
+.nav-open #header .mobile-header .nav-button #nav-icon3 span:nth-child(2) {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-.nav-open #nav-icon3 span:nth-child(3) {
+.nav-open #header .mobile-header .nav-button #nav-icon3 span:nth-child(3) {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-.nav-open #nav-icon3 span:nth-child(4) {
+.nav-open #header .mobile-header .nav-button #nav-icon3 span:nth-child(4) {
   top: 9px;
   width: 0;
   left: 50%;
@@ -2449,14 +2449,8 @@ ul#menu-primary-menu:before {
   }
 }
 #home-floor-7 {
-  background-image: url("images/home-floor-7-mobile.jpg");
-  padding-bottom: 70vh;
-}
-@media (min-width: 768px) {
-  #home-floor-7 {
-    background-image: url("images/bgs/tablet/home-floor-7-tablet.png");
-    padding-bottom: 10vh;
-  }
+  background-image: url("images/bgs/tablet/home-floor-7-tablet.png");
+  padding-bottom: 10vh;
 }
 @media (min-width: 992px) {
   #home-floor-7 {
@@ -2804,12 +2798,12 @@ footer#customers-logos {
 }
 /* about.less */
 #about-floor-1 {
-  background-image: url("images/about-floor-1-mobile.jpg");
+  background-image: url("images/about-floor-4-mobile.png");
   padding-bottom: 50vh;
 }
 @media (min-width: 992px) {
   #about-floor-1 {
-    background-image: url("images/about-floor-1.jpg");
+    background-image: url("images/about-floor-4.png");
     padding-bottom: 0;
     background-position: 20%;
   }
