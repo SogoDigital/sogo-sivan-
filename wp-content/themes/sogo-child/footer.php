@@ -4,48 +4,47 @@
 <footer id="site-footer" class="site-footer section fp-auto-height" role="contentinfo">
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3">
-                <div id="rights">
-                    &copy; <?php echo date( 'Y' ); ?> SOGO <?php _e( 'All right reserved.', 'sogoc' ) ?>
-                </div> <!-- #rights -->
-            </div><!-- .col-md-2 -->
-            <div class="col-md-7 hidden-xs hidden-sm">
-
-				<?php if ( has_nav_menu( 'primary_menu' ) ) : ?>
-                    <nav class="primary-navigation navbar" role="navigation">
-                        <div class=" primary-navigation">
-							<?php
-							// Social links navigation menu.
-							wp_nav_menu( array(
-								'theme_location' => 'primary_menu',
-								'link_before'    => '<span class="">',
-//								'link_before'    => '<span class="screen-reader-text">',
-								'link_after'     => '</span>',
-							) );
-							?>
+        <div class="row d-flex justify-content-center">
+            <div class="col-xs-12 col-md-10">
+                <div class="d-flex justify-content-between site-footer-wrapper">
+                    <div class="d-flex site-footer-nav-wrapper">
+<!--                        <div id="logo">-->
+<!--                            <a title="--><?php //echo esc_attr( __( 'Go to home page', 'sogoc' ) ) ?><!--" href="--><?php //echo esc_url( home_url( '/' ) ); ?><!--" rel="home"-->
+<!--                               accesskey="H">--><?php //bloginfo( 'name' ); ?><!--</a>-->
+<!--                        </div>-->
+                        <?php if ( has_nav_menu( 'primary_menu' ) ) : ?>
+                            <nav class="navbar" role="navigation">
+                                <div class="footer-navigation">
+                                    <?php
+                                    wp_nav_menu( array(
+                                        'theme_location' => 'primary_menu',
+                                        'link_before'    => '<span class="">',
+                                        'link_after'     => '</span>',
+                                    ) );
+                                    ?>
+                                </div>
+                            </nav><!-- .social-navigation -->
+                        <?php endif; ?>
+                        <div class="d-flex align-items-center justify-content-end">
+                            <?php while (have_rows('_sogo_header_social', 'option')): the_row(); ?>
+                                <div class="social-card">
+                                    <a href="<?php echo get_sub_field( 'link' ) ?>">
+                                        <img class="social-icon" src="<?php echo get_sub_field( 'image' ) ?>" alt="">
+                                        <img class="social-hover-icon" src="<?php echo get_sub_field( 'hover_image' ) ?>" alt="">
+                                    </a>
+                                </div>
+                            <?php endwhile; ?>
                         </div>
-                    </nav><!-- .social-navigation -->
-				<?php endif; ?>
-            </div><!-- .col-md-8 -->
-            <div class="col-md-2 hidden-xs hidden-sm">
-				<?php if ( has_nav_menu( 'social_menu' ) ) : ?>
-                    <nav class="social-navigation" role="navigation">
-						<?php
-						// Social links navigation menu.
-						wp_nav_menu( array(
-							'theme_location' => 'social_menu',
-							'depth'          => 1,
-							'link_before'    => '<span class="screen-reader-text px-2">',
-							'link_after'     => '</span>',
-							'walker'         => new sogo_social_walker_nav_menu()
-						) );
-						?>
-                    </nav><!-- .social-navigation -->
-				<?php endif; ?>
-            </div><!-- .col-md-2 -->
-        </div><!-- .row -->
-    </div><!-- .container -->
+                    </div>
+                    <div id="rights">
+                        &copy; <?php echo date( 'Y' ); ?> SOGO <?php _e( 'All right reserved.', 'sogoc' ) ?>
+                    </div> <!-- #rights -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </footer><!-- .site-footer -->
 </div><!-- .site -->
 

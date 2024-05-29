@@ -3,7 +3,7 @@
 
 get_header();
 ?>
-    <section id="home-floor-1" class="section floor active vertical-middle">
+    <section id="home-floor-1" class="section floor active vertical-middle d-flex justify-content-center align-items-center">
         <div class="fullscreen-bg">
             <?php if (!wp_is_mobile()): ?>
                 <video loop muted autoplay class="fullscreen-bg__video hidden-xs hidden-sm">
@@ -54,7 +54,7 @@ if ($floors) {
     foreach ($floors as $key => $floor) {
         ?>
         <section id="<?php echo $floor['id'] ?>"
-                 class="section floor <?php echo $floor['align'] . " " . $floor['background-size'] ?>">
+                 class="d-flex justify-content-start <?php echo ($floor['id'] != 'home-floor-4') ? 'align-items-center' : ''; ?> section floor <?php echo $floor['align'] . " " . $floor['background-size'] ?>">
             <div
               class="bg-image hidden-xs hidden-sm moving-bg  <?php echo $floor['align'] . " " . $floor['background-size'] ?>"
               style="background-image: url('<?php echo $floor['background'] ?>')">
@@ -66,7 +66,7 @@ if ($floors) {
                         style="background-image: url(\'' . $floor['overlay-image'] . '\');"></div>';
             }
             ?>
-            <div class="container-fluid">
+            <div class="container-fluid w-100">
                 <div class="row">
                     <div class="<?php echo $floor['col'] ?>">
                         <header class="floor-header">
@@ -174,8 +174,8 @@ if ($floors) {
 <!--             <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>-->
 <!--         </span>-->
 <!--        </div>-->
-<!--    </section> -->
-    <!-- #home-floor-6 -->
+<!--    </section>
+ #home-floor-6 -->
     <section id="home-floor-7"
              class="section floor text-center cover fp-auto-height vertical-middle">
         <div class="container-fluid">
@@ -189,7 +189,7 @@ if ($floors) {
                         <?php echo nl2br(sogo_meta('section-7-text')) ?>
                     </p>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12 hidden-xs">
                     <div class="portfolio-slider-wrapper">
                         <ul class="portfolio-slider">
                             <?php
@@ -216,7 +216,7 @@ if ($floors) {
          </span>
         </div>
     </section> <!-- #home-floor-7 -->
-    <section id="home-floor-8" class="section floor fp-auto-height vertical-middle moving-bg">
+    <section id="home-floor-8" class="section floor fp-auto-height vertical-middle">
         <div
           class="bg-image moving-bg hidden-xs hidden-sm"
           style="background-image: url('<?php echo sogo_meta('section-8-bg') ?>')">
@@ -257,5 +257,5 @@ if ($floors) {
         </div>
         <!-- /.modal -->
     </section>
-   
+
 <?php get_footer() ?>

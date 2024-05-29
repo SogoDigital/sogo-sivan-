@@ -1,8 +1,8 @@
 <?php // Template Name: advertising page ?>
 <?php get_header() ?>
 
-<section id="advertising-floor-1" class="section floor cover">
-    <div class="container-fluid">
+<section id="advertising-floor-1" class="section floor cover d-flex justify-content-center align-items-center">
+    <div class="container-fluid w-100">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center animated fadeInUp">
                 <header class="floor-header mobile-middle">
@@ -17,7 +17,7 @@
         </div>
     </div>
 </section> <!-- #advertising-floor-1 -->
-<section id="advertising-floor-2" class="section floor cover ">
+<section id="advertising-floor-2" class="section floor cover d-flex justify-content-center align-items-center">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
@@ -30,7 +30,7 @@
                     <span class="bold uppercase">Share</span>
                 </div>
             </div>
-            <div class="col-md-2 text-left">
+            <div class="col-md-2 text-left hidden">
                 <div id="d3" class="circle bg-green full-radius animated fadeInDownBig hidden-xs hidden-sm">
                     <span class="bold uppercase">Like</span>
                 </div>
@@ -62,8 +62,8 @@
     </div>
 </section> <!-- #advertising-floor-2 -->
 
-<section id="advertising-floor-3" class="section floor cover ">
-    <div class="container-fluid">
+<section id="advertising-floor-3" class="section floor cover d-flex justify-content-center align-items-center">
+    <div class="container-fluid w-100">
         <div class="row">
             <div class="col-md-12 text-center">
                 <header class="floor-header">
@@ -110,8 +110,8 @@
     </div>
 </section> <!-- #advertising-floor-3 -->
 
-<section id="advertising-floor-4" class="section floor cover">
-    <div class="container-fluid">
+<section id="advertising-floor-4" class="section floor cover d-flex justify-content-center align-items-center">
+    <div class="container-fluid w-100">
         <div class="row">
             <div class="col-md-4 col-md-push-7">
                 <header class="page-header">
@@ -127,8 +127,8 @@
     </div>
 </section> <!-- #advertising-floor-4 -->
 
-<section id="advertising-floor-5" class="section floor cover">
-    <div class="container-fluid">
+<section id="advertising-floor-5" class="section floor cover d-flex justify-content-center align-items-center">
+    <div class="container-fluid w-100">
         <div class="row">
             <div class="col-md-6 text-center">
                 <div class="adv-two-sections">
