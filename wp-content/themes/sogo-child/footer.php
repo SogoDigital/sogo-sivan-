@@ -1,6 +1,10 @@
 <?php echo sogo_option( 'google_remarketing' ) ?>
 
-
+<div class="footer-form" style="background-image: url(<?php echo get_field('_sogo_footer_bg', 'option'); ?>); ">
+    <div class="footer-form-wrapper">
+fghjfgh
+    </div>
+</div>
 <footer id="site-footer" class="site-footer section fp-auto-height" role="contentinfo">
 
     <div class="container-fluid">
