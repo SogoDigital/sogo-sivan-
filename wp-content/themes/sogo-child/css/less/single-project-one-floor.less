@@ -1,5 +1,66 @@
 /* single-project-one-floor.less */
 .single-project{
+  .prev-single-project, .next-single-project{
+    display: none;
+    position: fixed;
+    width: 30rem;
+    height: 40px;
+    text-align: center;
+    top: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 2rem;
+    border: 1px solid #ddd;
+    padding: 0.5rem 2rem;
+    font-family: 'OpenSansHebrewCondensed';
+    color: #2D2D2F;
+    font-size: 18px;
+    transition: all 0.5s;
+    @media(min-width: 768px){
+      display: block;
+    }
+    span{
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all 0.5s;
+      &.prev-single-project-bottom, &.next-single-project-bottom{
+        opacity: 0;
+      }
+    }
+  }
+  .prev-single-project{
+    left: -10rem;
+    transform: translateY(-50%) rotate(-90deg);
+    &:hover{
+      background-color: rgba(255, 255, 255, 1);
+      span{
+        &.prev-single-project-top{
+          opacity: 0;
+        }
+        &.prev-single-project-bottom{
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .next-single-project{
+    right: -10rem;
+    transform: translateY(-50%) rotate(90deg);
+    &:hover{
+      background-color: rgba(255, 255, 255, 1);
+      span{
+        &.next-single-project-top{
+          opacity: 0;
+        }
+        &.next-single-project-bottom{
+          opacity: 1;
+        }
+      }
+    }
+  }
   #fp-nav{
     display:none;
   }
@@ -12,7 +73,6 @@
   .entry-content{
     @media(min-width: 992px){
       padding-top: 10px;
-
     }
   }
   //margin-top: 86px;

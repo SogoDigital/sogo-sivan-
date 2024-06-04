@@ -139,16 +139,147 @@ a.scrollup {
 
 /* Back to top button*/
 
-
 .footer-form{
-  min-height: 1080px;
+  height: 1080px;
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
+
   .footer-form-wrapper{
     margin: 0 auto;
-    max-width: 900px;
-    position: relative;
+    max-width: 790px;
     width: 100%;
+    height: 100%;
+    position: relative;
+    .footer-form-tofes{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      //z-index: 1;
+      left: 0;
+      max-width: 360px;
+      border-radius: 30px;
+      border: 1px solid #979797;
+      background: linear-gradient(195deg, #FFF 1.32%, rgba(255, 255, 255, 0.30) 99.29%);
+      box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.12);
+      backdrop-filter: blur(25px);
+      padding: 24px;
+      right: 0;
+      margin: auto;
+      @media (min-width: 768px) {
+        right: auto;
+      }
+      .footer-tofes-title{
+        font-size: 24px;
+        font-weight: 800;
+        font-family: "OpenSansHebrewCondensed";
+        span.footer-tofes-title-black{
+          color: #2D2D2F;
+        }
+        span.footer-tofes-title-gradient{
+          background: linear-gradient(90deg, #ED1D24 0%, #EE2A7B 17.5%, #8A5BA5 37.5%, #00ADDC 59.5%, #2BB673 79.5%, #FFC906 100%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+      .footer-tofes-subtitle{
+        color: #4D4D51;
+        font-family: "OpenSansHebrewCondensed";
+        font-size: 18px;
+        font-weight: 400;
+      }
+      .footer-tofes{
+        label{
+          color: #2D2D2F;
+          font-family: "OpenSansHebrewCondensed";
+          font-size: 16px;
+          font-weight: 700;
+        }
+        input{
+          width: 100%;
+          height: 50px;
+          padding: 8px 12px;
+          border-radius: 5px;
+          border: 1px solid #B5B5B5;
+          background-color: transparent;
+          &:focus-visible{
+            outline: none;
+          }
+        }
+        button.wpcf7-submit{
+          border-radius: 100px;
+          background: linear-gradient(88deg, #ED1D24 0.78%, #EE2A7B 33.91%, #8A5BA5 74.46%, #00ADDC 99.68%);
+          color: #FFF;
+          font-family: "OpenSansHebrewCondensed";
+          font-size: 16px;
+          font-weight: 700;
+          width: 100%;
+          padding: 16px 32px;
+          border: 0;
+          margin-top: 30px;
+        }
+      }
+    }
+    .footer-form-blur{
+      display: none;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 480px;
+      height: 480px;
+      border-radius: 250px;
+      border: 1px solid rgba(255, 255, 255, 0.80);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(166, 166, 166, 0.30) 100%);
+      box-shadow: 0px 0px 27.087px 0px rgba(0, 0, 0, 0.12);
+      backdrop-filter: blur(35px);
+      @media (min-width: 768px) {
+        display: block;
+      }
+      .red-ball-wrapper{
+        position: absolute;
+        right: -5rem;
+      }
+      .green-ball-wrapper{
+        position: absolute;
+        left: 5rem;
+        bottom: -15rem;
+      }
+      .footer-blur-image{
+        margin: 40px 0;
+      }
+      .footer-blur-title{
+        color: #FFF;
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+        font-family: 'Open Sans Hebrew Regular';
+        font-size: 48px;
+        font-weight: 900;
+        line-height: 1;
+        padding: 0 5rem;
+      }
+      .footer-blur-subtitle{
+        background: linear-gradient(275deg, #00ADDC 1.81%, #8A5BA5 23.18%, #EE2A7B 57.55%, #ED1D24 85.63%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Open Sans Hebrew Regular';
+        font-size: 25px;
+        font-weight: 900;
+        line-height: 1.5;
+        margin-bottom: 2rem;
+      }
+      .footer-blur-address{
+        color: #FFF;
+        font-family: "OpenSansHebrewCondensed";
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 3rem;
+      }
+      .footer-blur-social{
+        a{
+          margin: 0 8px;
+        }
+      }
+    }
   }
 }
