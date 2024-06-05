@@ -216,46 +216,6 @@ if ($floors) {
          </span>
         </div>
     </section> <!-- #home-floor-7 -->
-    <section id="home-floor-8" class="section floor fp-auto-height vertical-middle">
-        <div
-          class="bg-image moving-bg hidden-xs hidden-sm"
-          style="background-image: url('<?php echo sogo_meta('section-8-bg') ?>')">
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3 ">
-                    <header class="floor-header text-center start-form-margin">
-                        <h2 class="floor-title"><?php echo sogo_meta('section-8-title') ?></h2>
-                    </header>
-                    <!-- .floor-header -->
-                    <p class="text-center">
-                        <?php echo nl2br(sogo_meta('section-8-text')) ?>
-                    </p>
 
-                    <div class="start_form"><?php echo do_shortcode(sogo_meta('section-8-form')) ?></div>
-
-                </div>
-            </div>
-        </div>
-        <a class="btn btn-primary hidden" data-toggle="modal" href="#thank-you-id">need to be submit btn</a>
-
-        <div class="thank_you hidden-xs hidden-sm hidden-md" id="thank-you-id">
-            <div class="thank-you-dialog">
-                <div class="thank-you-content text-center">
-                    <div class="thank-you-header">
-                        <button type="button" class="close">&times;</button>
-                        <h4 class="thank-you-title uppercase "><?php _e('thank you!', 'sogoc') ?></h4>
-
-                        <p>
-                            <?php _e('Your mail is sent, our representative will call you back within 24 hours', 'sogoc') ?>
-                        </p>
-                    </div>
-                </div>
-                <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-        </div>
-        <!-- /.modal -->
-    </section>
 
 <?php get_footer() ?>

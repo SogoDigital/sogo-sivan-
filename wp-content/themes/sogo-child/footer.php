@@ -1,45 +1,49 @@
 <?php echo sogo_option( 'google_remarketing' ) ?>
 
-<div class="footer-form" style="background-image: url(<?php echo get_field('_sogo_footer_bg', 'option'); ?>); ">
-    <div class="footer-form-wrapper">
+<?php if(!is_page_template('page-contact.php')) { ?>
+    <div class="footer-form" style="background-image: url(<?php echo get_field('_sogo_footer_bg', 'option'); ?>); ">
+        <div class="footer-form-wrapper">
 
-        <div class="footer-form-blur text-center">
-            <div class="position-relative">
-                <div class="red-ball-wrapper">
-                    <?php echo wp_get_attachment_image(get_field('_sogo_footer_red_ball', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?>
-                </div>
-                <div class="green-ball-wrapper">
-                    <?php echo wp_get_attachment_image(get_field('_sogo_footer_green_ball', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?>
-                </div>
-                <div class="footer-blur-image">
-                    <?php echo wp_get_attachment_image(get_field('_sogo_footer_blur_image', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?>
-                </div>
-                <p class="footer-blur-title"><?php echo get_field('_sogo_footer_blur_title', 'option') ?></p>
-                <p class="footer-blur-subtitle"><?php echo get_field('_sogo_footer_blur_subtitle', 'option') ?></p>
-                <p class="footer-blur-address"><?php echo get_field('_sogo_footer_blur_address', 'option') ?></p>
-                <div class="footer-blur-social d-flex justify-content-center align-items-center">
-                    <?php while (have_rows('_sogo_footer_blur_social', 'option')): the_row(); ?>
-                            <a href="<?php echo get_sub_field( 'link' ) ?>">
-                                <?php echo wp_get_attachment_image(get_sub_field('icon'), 'full', false, array('class'=> 'img-fluid')) ; ?>
-                            </a>
-                    <?php endwhile; ?>
+            <div class="footer-form-circle text-center">
+                <div class="footer-form-circle-blur"></div>
+                <div class="position-relative">
+                    <div class="red-ball-wrapper">
+                        <?php echo wp_get_attachment_image(get_field('_sogo_footer_red_ball', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+                    </div>
+                    <div class="green-ball-wrapper">
+                        <?php echo wp_get_attachment_image(get_field('_sogo_footer_green_ball', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+                    </div>
+                    <div class="footer-blur-image">
+                        <?php echo wp_get_attachment_image(get_field('_sogo_footer_blur_image', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+                    </div>
+                    <p class="footer-blur-title"><?php echo get_field('_sogo_footer_blur_title', 'option') ?></p>
+                    <p class="footer-blur-subtitle"><?php echo get_field('_sogo_footer_blur_subtitle', 'option') ?></p>
+                    <p class="footer-blur-address"><?php echo get_field('_sogo_footer_blur_address', 'option') ?></p>
+                    <div class="footer-blur-social d-flex justify-content-center align-items-center">
+                        <?php while (have_rows('_sogo_footer_blur_social', 'option')): the_row(); ?>
+                                <a href="<?php echo get_sub_field( 'link' ) ?>">
+                                    <?php echo wp_get_attachment_image(get_sub_field('icon'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+                                </a>
+                        <?php endwhile; ?>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-form-tofes">
-            <p class="footer-tofes-title">
-                <span class="footer-tofes-title-black"><?php echo get_field('_sogo_footer_tofes_title', 'option') ?></span>
-                <span class="footer-tofes-title-gradient"><?php echo get_field('_sogo_footer_tofes_title_gradient', 'option') ?></span>
-            </p>
-            <p class="footer-tofes-subtitle">
-                <?php echo get_field('_sogo_footer_tofes_subtitle', 'option') ?>
-            </p>
-            <div>
-                <?php echo do_shortcode('[contact-form-7 id="8e7cc49" title="Footer Form"]'); ?>
+            <div class="footer-form-tofes">
+                <div class="footer-form-tofes-blur"></div>
+                <p class="footer-tofes-title">
+                    <span class="footer-tofes-title-black"><?php echo get_field('_sogo_footer_tofes_title', 'option') ?></span>
+                    <span class="footer-tofes-title-gradient"><?php echo get_field('_sogo_footer_tofes_title_gradient', 'option') ?></span>
+                </p>
+                <p class="footer-tofes-subtitle">
+                    <?php echo get_field('_sogo_footer_tofes_subtitle', 'option') ?>
+                </p>
+                <div>
+                    <?php echo do_shortcode('[contact-form-7 id="' . get_field('_sogo_footer_form', 'option') . '" title="Footer Form"]'); ?>
+                </div>
             </div>
         </div>
     </div>
-</div>
+<?php } ?>
 <footer id="site-footer" class="site-footer section fp-auto-height" role="contentinfo">
 
     <div class="container-fluid">

@@ -1211,9 +1211,6 @@ h6 {
   color: #2D2D2F;
   font-size: 18px;
 }
-#header .mobile-header #logo {
-  padding: 10px 0;
-}
 #header .mobile-header .nav-button {
   position: relative;
   z-index: 1111;
@@ -1556,10 +1553,15 @@ a.scrollup:hover:before {
 }
 /* Back to top button*/
 .footer-form {
-  height: 1080px;
+  height: 800px;
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+@media (min-width: 768px) {
+  .footer-form {
+    height: 1080px;
+  }
 }
 .footer-form .footer-form-wrapper {
   margin: 0 auto;
@@ -1578,7 +1580,6 @@ a.scrollup:hover:before {
   border: 1px solid #979797;
   background: linear-gradient(195deg, #FFF 1.32%, rgba(255, 255, 255, 0.3) 99.29%);
   box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.12);
-  backdrop-filter: blur(25px);
   padding: 24px;
   right: 0;
   margin: auto;
@@ -1587,6 +1588,16 @@ a.scrollup:hover:before {
   .footer-form .footer-form-wrapper .footer-form-tofes {
     right: auto;
   }
+}
+.footer-form .footer-form-wrapper .footer-form-tofes .footer-form-tofes-blur {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  backdrop-filter: blur(25px);
+  border-radius: 30px;
 }
 .footer-form .footer-form-wrapper .footer-form-tofes .footer-tofes-title {
   font-size: 24px;
@@ -1637,7 +1648,16 @@ a.scrollup:hover:before {
   border: 0;
   margin-top: 30px;
 }
-.footer-form .footer-form-wrapper .footer-form-blur {
+.footer-form .footer-form-wrapper .footer-form-tofes .footer-tofes .wpcf7-not-valid-tip {
+  position: absolute;
+  bottom: -32px;
+  left: 0;
+  font-size: 14px;
+}
+.footer-form .footer-form-wrapper .footer-form-tofes .wpcf7-response-output {
+  display: none;
+}
+.footer-form .footer-form-wrapper .footer-form-circle {
   display: none;
   position: absolute;
   top: 50%;
@@ -1648,26 +1668,35 @@ a.scrollup:hover:before {
   border: 1px solid rgba(255, 255, 255, 0.8);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(166, 166, 166, 0.3) 100%);
   box-shadow: 0px 0px 27.087px 0px rgba(0, 0, 0, 0.12);
-  backdrop-filter: blur(35px);
 }
 @media (min-width: 768px) {
-  .footer-form .footer-form-wrapper .footer-form-blur {
+  .footer-form .footer-form-wrapper .footer-form-circle {
     display: block;
   }
 }
-.footer-form .footer-form-wrapper .footer-form-blur .red-ball-wrapper {
+.footer-form .footer-form-wrapper .footer-form-circle .footer-form-circle-blur {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  backdrop-filter: blur(35px);
+  border-radius: 250px;
+}
+.footer-form .footer-form-wrapper .footer-form-circle .red-ball-wrapper {
   position: absolute;
   right: -5rem;
 }
-.footer-form .footer-form-wrapper .footer-form-blur .green-ball-wrapper {
+.footer-form .footer-form-wrapper .footer-form-circle .green-ball-wrapper {
   position: absolute;
   left: 5rem;
   bottom: -15rem;
 }
-.footer-form .footer-form-wrapper .footer-form-blur .footer-blur-image {
+.footer-form .footer-form-wrapper .footer-form-circle .footer-blur-image {
   margin: 40px 0;
 }
-.footer-form .footer-form-wrapper .footer-form-blur .footer-blur-title {
+.footer-form .footer-form-wrapper .footer-form-circle .footer-blur-title {
   color: #FFF;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
   font-family: 'Open Sans Hebrew Regular';
@@ -1676,7 +1705,7 @@ a.scrollup:hover:before {
   line-height: 1;
   padding: 0 5rem;
 }
-.footer-form .footer-form-wrapper .footer-form-blur .footer-blur-subtitle {
+.footer-form .footer-form-wrapper .footer-form-circle .footer-blur-subtitle {
   background: linear-gradient(275deg, #00ADDC 1.81%, #8A5BA5 23.18%, #EE2A7B 57.55%, #ED1D24 85.63%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -1687,14 +1716,14 @@ a.scrollup:hover:before {
   line-height: 1.5;
   margin-bottom: 2rem;
 }
-.footer-form .footer-form-wrapper .footer-form-blur .footer-blur-address {
+.footer-form .footer-form-wrapper .footer-form-circle .footer-blur-address {
   color: #FFF;
   font-family: "OpenSansHebrewCondensed";
   font-size: 18px;
   font-weight: 400;
   margin-bottom: 3rem;
 }
-.footer-form .footer-form-wrapper .footer-form-blur .footer-blur-social a {
+.footer-form .footer-form-wrapper .footer-form-circle .footer-blur-social a {
   margin: 0 8px;
 }
 /* mobile-menu.css */

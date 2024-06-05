@@ -140,11 +140,13 @@ a.scrollup {
 /* Back to top button*/
 
 .footer-form{
-  height: 1080px;
+  height: 800px;
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
-
+  @media (min-width: 768px) {
+    height: 1080px;
+  }
   .footer-form-wrapper{
     margin: 0 auto;
     max-width: 790px;
@@ -162,12 +164,21 @@ a.scrollup {
       border: 1px solid #979797;
       background: linear-gradient(195deg, #FFF 1.32%, rgba(255, 255, 255, 0.30) 99.29%);
       box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.12);
-      backdrop-filter: blur(25px);
       padding: 24px;
       right: 0;
       margin: auto;
       @media (min-width: 768px) {
         right: auto;
+      }
+      .footer-form-tofes-blur{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        backdrop-filter: blur(25px);
+        border-radius: 30px;
       }
       .footer-tofes-title{
         font-size: 24px;
@@ -219,9 +230,18 @@ a.scrollup {
           border: 0;
           margin-top: 30px;
         }
+        .wpcf7-not-valid-tip{
+          position: absolute;
+          bottom: -32px;
+          left: 0;
+          font-size: 14px;
+        }
+      }
+      .wpcf7-response-output{
+        display: none;
       }
     }
-    .footer-form-blur{
+    .footer-form-circle{
       display: none;
       position: absolute;
       top: 50%;
@@ -232,9 +252,19 @@ a.scrollup {
       border: 1px solid rgba(255, 255, 255, 0.80);
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(166, 166, 166, 0.30) 100%);
       box-shadow: 0px 0px 27.087px 0px rgba(0, 0, 0, 0.12);
-      backdrop-filter: blur(35px);
+      //backdrop-filter: blur(35px);
       @media (min-width: 768px) {
         display: block;
+      }
+      .footer-form-circle-blur{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        backdrop-filter: blur(35px);
+        border-radius: 250px;
       }
       .red-ball-wrapper{
         position: absolute;
