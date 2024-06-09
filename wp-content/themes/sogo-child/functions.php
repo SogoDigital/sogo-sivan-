@@ -214,6 +214,9 @@ function mycustom_wp_footer() {
             else if ( '134' == event.detail.contactFormId ) {
                 location = 'https://sogo.co.il/תודה-רבה/';
             }
+            else if ( '2304' == event.detail.contactFormId ) {
+                location = 'https://sogo.co.il/תודה-רבה/';
+            }
             else if ( '124' == event.detail.contactFormId ) {
                 location = 'https://sogo.co.il/en/thank-you/';
             }
