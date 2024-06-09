@@ -12,10 +12,14 @@
 }
 
 .plugin-nav {
+  display: none;
   margin-top: 30px;
   padding: 0;
   direction: ltr;
   text-align: center;
+  @media (min-width: 992px) {
+    display: block;
+  }
   li {
     display: inline-block;
     //background: @color-white;
@@ -60,6 +64,24 @@
     }
   }
 }
+
+#post-category-select{
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 4rem auto 0;
+  padding: 10px 15px;
+  border-radius: 3rem;
+  line-height: 30px;
+  color: #444544;
+  font-size: 18px;
+  font-weight: bold;
+  @media (min-width: 992px) {
+    display: none;
+  }
+
+}
+
 
 .plugin-box {
   background: @color-white;

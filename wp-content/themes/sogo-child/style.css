@@ -2963,6 +2963,7 @@ footer#customers-logos {
 }
 .portfolio-slider-wrapper img {
   max-height: 65vh;
+  border-radius: 30px;
 }
 .portfolio-slider-wrapper .bx-controls.bx-has-controls-direction {
   position: absolute;
@@ -6247,10 +6248,16 @@ form div.wpcf7-mail-sent-ok {
   }
 }
 .plugin-nav {
+  display: none;
   margin-top: 30px;
   padding: 0;
   direction: ltr;
   text-align: center;
+}
+@media (min-width: 992px) {
+  .plugin-nav {
+    display: block;
+  }
 }
 .plugin-nav li {
   display: inline-block;
@@ -6279,6 +6286,23 @@ form div.wpcf7-mail-sent-ok {
 }
 .plugin-nav .active a {
   color: #ed1c24;
+}
+#post-category-select {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 4rem auto 0;
+  padding: 10px 15px;
+  border-radius: 3rem;
+  line-height: 30px;
+  color: #444544;
+  font-size: 18px;
+  font-weight: bold;
+}
+@media (min-width: 992px) {
+  #post-category-select {
+    display: none;
+  }
 }
 .plugin-box {
   background: #fff;

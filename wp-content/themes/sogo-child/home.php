@@ -23,7 +23,7 @@ $blog_page = get_post($blog_page_id);
 <section id="blog-floor-2" class="" style="background-color: #f1f1f1">
     <div class="container-fluid">
         <div class="row d-flex justify-content-center">
-            <div class="col-12 col-lg-8">
+            <div class="col-xs-12 col-md-8">
                 <div class="row">
                     <div class="col-md-12">
                         <!-- CAT NAVIGATION -->
@@ -37,6 +37,31 @@ $blog_page = get_post($blog_page_id);
                             );
                             ?>
                         </ul>
+                        <!-- CAT NAVIGATION MOBILE -->
+                        <select name="post-category-select" id="post-category-select" class="text-center">
+
+                            <?php $current_all = is_home() ? 'current-item' : ''; ?>
+
+                            <option class="<?php echo $current_all; ?> text-center text-p no-wrap ml-2 mb-2 mb-lg-0"
+                                    value="<?php echo get_post_type_archive_link( 'post' ); ?>">
+                                <p>כל כתבות</p>
+                                <?php //echo get_field( '_sogo_blog_all_articles', 'option' ) ?>
+                            </option>
+
+                            <?php
+                            foreach ( get_categories() as $category ) :
+                                $current   = get_queried_object_id() == $category->term_id ? 'selected' : '';
+                                printf(
+                                    '<option %s class="blog-cat mb-2 mb-md-0 px-4 py-1 mx-1" value="%s">%s</option>',
+
+                                    $current,
+                                    esc_url( get_category_link( $category ) ),
+                                    esc_html( $category->name )
+                                );
+                            endforeach;
+                            ?>
+                        </select>
+
                         <!-- CAT CONTENT -->
                     </div>
                     <div class="col-md-12 d-flex justify-content-center">

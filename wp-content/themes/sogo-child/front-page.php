@@ -4,7 +4,7 @@
 get_header();
 ?>
     <section id="home-floor-1" class="section floor active vertical-middle d-flex justify-content-center align-items-center">
-        <div class="fullscreen-bg">
+        <div class="">
             <?php if (!wp_is_mobile()): ?>
                 <video loop muted autoplay class="fullscreen-bg__video hidden-xs hidden-sm">
                     <source src="<?php echo get_stylesheet_directory_uri() ?>/images/home-video.mp4" type="video/mp4">

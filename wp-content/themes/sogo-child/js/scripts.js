@@ -134,6 +134,18 @@
             });
         });
 
+        /*******************************************/
+        /* BLOG */
+        /*******************************************/
+
+        $('.blog-cat').on('click', function () {
+            $('.blog-cat').removeClass('current-cat');
+            $(this).addClass('current-cat');
+        })
+        $('#post-category-select').on('change', function () {
+            location = $(this).val();
+        });
+
 
         //   $('#home-floor-3').parallax();
         $('.js_gallery_kobi').bxSlider({
