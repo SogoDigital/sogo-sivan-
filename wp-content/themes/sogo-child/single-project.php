@@ -156,7 +156,10 @@ if($prev_post) {
     <a rel="prev" href="<?php echo get_permalink($prev_post->ID) ?>" title="<?php echo $prev_title ?>" class="d-none d-md-block prev-single-project">
         <div class="position-relative w-100 h-100">
             <span class="prev-single-project-top">פרויקט קודם</span>
-            <span class="prev-single-project-bottom"><?php echo $prev_title ?></span>
+            <span class="prev-single-project-bottom">
+                <i class="fa fa-angle-right"></i>
+                <?php echo $prev_title ?>
+            </span>
         </div>
     </a>
 <?php
@@ -169,7 +172,10 @@ if($next_post) {
     <a rel="next" href="<?php echo get_permalink($next_post->ID) ?>" title="<?php echo $next_title ?>" class="d-none d-md-block next-single-project">
         <div class="position-relative w-100 h-100">
             <span class="next-single-project-top">פרויקט הבא</span>
-            <span class="next-single-project-bottom"><?php echo $next_title ?></span>
+            <span class="next-single-project-bottom">
+                <?php echo $next_title ?>
+                <i class="fa fa-angle-left"></i>
+            </span>
         </div>
     </a>
 <?php

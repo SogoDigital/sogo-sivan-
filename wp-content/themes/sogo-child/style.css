@@ -3248,12 +3248,11 @@ h2.team-heading {
 .single-project .next-single-project {
   display: none;
   position: fixed;
-  width: 30rem;
+  width: 15rem;
   height: 40px;
   text-align: center;
-  top: 50%;
+  top: 72px;
   background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 2rem;
   border: 1px solid #ddd;
   padding: 0.5rem 2rem;
   font-family: 'OpenSansHebrewCondensed';
@@ -3284,8 +3283,8 @@ h2.team-heading {
   opacity: 0;
 }
 .single-project .prev-single-project {
-  left: -10rem;
-  transform: translateY(-50%) rotate(-90deg);
+  right: 0;
+  border-radius: 0 0 0 12px;
 }
 .single-project .prev-single-project:hover {
   background-color: #ffffff;
@@ -3296,9 +3295,12 @@ h2.team-heading {
 .single-project .prev-single-project:hover span.prev-single-project-bottom {
   opacity: 1;
 }
+.single-project .prev-single-project:hover span.prev-single-project-bottom i {
+  padding-left: 5px;
+}
 .single-project .next-single-project {
-  right: -10rem;
-  transform: translateY(-50%) rotate(90deg);
+  left: 0;
+  border-radius: 0 0 12px 0;
 }
 .single-project .next-single-project:hover {
   background-color: #ffffff;
@@ -3308,6 +3310,9 @@ h2.team-heading {
 }
 .single-project .next-single-project:hover span.next-single-project-bottom {
   opacity: 1;
+}
+.single-project .next-single-project:hover span.next-single-project-bottom i {
+  padding-right: 5px;
 }
 .single-project #fp-nav {
   display: none;
@@ -6411,7 +6416,7 @@ form div.wpcf7-mail-sent-ok {
 }
 @media (min-width: 992px) {
   #floor1 {
-    margin-top: 86px;
+    margin-top: 72px;
   }
 }
 #floor1 .row {

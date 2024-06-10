@@ -3,12 +3,11 @@
   .prev-single-project, .next-single-project{
     display: none;
     position: fixed;
-    width: 30rem;
+    width: 15rem;
     height: 40px;
     text-align: center;
-    top: 50%;
+    top: 72px;
     background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 2rem;
     border: 1px solid #ddd;
     padding: 0.5rem 2rem;
     font-family: 'OpenSansHebrewCondensed';
@@ -32,8 +31,9 @@
     }
   }
   .prev-single-project{
-    left: -10rem;
-    transform: translateY(-50%) rotate(-90deg);
+    right: 0;
+    border-radius: 0 0 0 12px;
+    //transform: translateY(-50%) rotate(-90deg);
     &:hover{
       background-color: rgba(255, 255, 255, 1);
       span{
@@ -42,13 +42,17 @@
         }
         &.prev-single-project-bottom{
           opacity: 1;
+          i{
+            padding-left: 5px;
+          }
         }
       }
     }
   }
   .next-single-project{
-    right: -10rem;
-    transform: translateY(-50%) rotate(90deg);
+    left: 0;
+    border-radius: 0 0 12px 0;
+    //transform: translateY(-50%) rotate(90deg);
     &:hover{
       background-color: rgba(255, 255, 255, 1);
       span{
@@ -57,6 +61,9 @@
         }
         &.next-single-project-bottom{
           opacity: 1;
+          i{
+            padding-right: 5px;
+          }
         }
       }
     }
