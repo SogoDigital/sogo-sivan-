@@ -150,17 +150,17 @@ $col = $is_mobile ? 'col-md-12' : 'col-md-4';
 
 <?php
 $prev_post = get_previous_post();
+var_dump($prev_post);
 if($prev_post) {
     $prev_title = strip_tags(str_replace('"', '', $prev_post->post_title));
     ?>
-    <a rel="prev" href="<?php echo get_permalink($prev_post->ID) ?>" title="<?php echo $prev_title ?>" class="d-none d-md-block prev-single-project">
-        <div class="position-relative w-100 h-100">
-            <span class="prev-single-project-top">פרויקט קודם</span>
+    <a rel="prev" href="<?php echo get_permalink($prev_post->ID) ?>" title="<?php echo $prev_title ?>" class="d-none d-md-block btnControl prev-single-project">
+        <span class="position-relative w-100 h-100 displayTable">
+            <span class="prev-single-project-top"><?php echo $prev_title ?></span>
             <span class="prev-single-project-bottom">
-                <i class="fa fa-angle-right"></i>
-                <?php echo $prev_title ?>
+                <?php echo get_the_post_thumbnail( $prev_post->ID, 'thumbnail', array( 'class' => 'alignleft' ) ); ?>
             </span>
-        </div>
+        </span>
     </a>
 <?php
 }
@@ -169,14 +169,13 @@ $next_post = get_next_post();
 if($next_post) {
     $next_title = strip_tags(str_replace('"', '', $next_post->post_title));
 ?>
-    <a rel="next" href="<?php echo get_permalink($next_post->ID) ?>" title="<?php echo $next_title ?>" class="d-none d-md-block next-single-project">
-        <div class="position-relative w-100 h-100">
-            <span class="next-single-project-top">פרויקט הבא</span>
+    <a rel="next" href="<?php echo get_permalink($next_post->ID) ?>" title="<?php echo $next_title ?>" class="d-none d-md-block btnControl next-single-project">
+        <span class="position-relative w-100 h-100 displayTable">
             <span class="next-single-project-bottom">
-                <?php echo $next_title ?>
-                <i class="fa fa-angle-left"></i>
+                <?php echo get_the_post_thumbnail( $next_post->ID, 'thumbnail', array( 'class' => 'alignleft' ) ); ?>
             </span>
-        </div>
+            <span class="next-single-project-top"><?php echo $next_title ?></span>
+        </span>
     </a>
 <?php
 }

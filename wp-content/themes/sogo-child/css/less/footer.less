@@ -218,7 +218,7 @@ a.scrollup {
             outline: none;
           }
         }
-        button.wpcf7-submit{
+        input.wpcf7-submit{
           border-radius: 100px;
           background: linear-gradient(88deg, #ED1D24 0.78%, #EE2A7B 33.91%, #8A5BA5 74.46%, #00ADDC 99.68%);
           color: #FFF;
@@ -228,7 +228,12 @@ a.scrollup {
           width: 100%;
           padding: 16px 32px;
           border: 0;
-          margin-top: 30px;
+          //margin-top: 30px;
+        }
+        .wpcf7-spinner{
+          position: absolute;
+          left: 0;
+          top: 50%;
         }
         .wpcf7-not-valid-tip{
           position: absolute;
@@ -239,6 +244,9 @@ a.scrollup {
       }
       .wpcf7-response-output{
         display: none;
+      }
+      .wpcf7-form.submitting .wpcf7-submit {
+        pointer-events: none;
       }
     }
     .footer-form-circle{

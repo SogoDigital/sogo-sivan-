@@ -41,6 +41,30 @@
             </ul>
         </div>
 
+
+        <select name="post-category-select" id="post-category-select" class="text-center">
+
+            <?php $current_all = is_home() ? 'current-item' : ''; ?>
+
+            <option class="<?php echo $current_all; ?> text-center text-p no-wrap ml-2 mb-2 mb-lg-0"
+                    value="<?php echo get_post_type_archive_link( 'post' ); ?>">
+                <p>כל הפרויקטים</p>
+            </option>
+
+            <?php
+            foreach ( $terms as $term ) :
+                $current   = get_queried_object_id() == $term->term_id ? 'selected' : '';
+                printf(
+                    '<option %s class="blog-cat mb-2 mb-md-0 px-4 py-1 mx-1" value="%s">%s</option>',
+
+                    $current,
+                    esc_url( get_term_link( $term ) ),
+                    esc_html( $term->name )
+                );
+            endforeach;
+            ?>
+        </select>
+
         <div class="row projects_grid_con">
             <div class="col-md-11">
                 <div class="row d-flex archive-projects">

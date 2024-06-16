@@ -144,6 +144,18 @@
       background-color: @color-red;
     }
   }
+  .project_cat_filter{
+    display: none;
+    @media (min-width: 768px) {
+      display: flex;
+    }
+  }
+  #post-category-select{
+    display: block;
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
 }
 
 .project_cat_filter {
@@ -152,28 +164,28 @@
   margin-top: 23px;
   margin-bottom: 14px;
 
-  overflow: hidden !important;
+  //overflow: hidden !important;
 
   & ul.tab-list {
     list-style-type: none;
     padding-right: 0;
 
-    display: block;
-    overflow: auto !important;
+    //display: block;
+    //overflow: auto !important;
 
     & li {
-      //display: inline;
+      display: inline;
       margin: 0 18px;
 
-      display: table-cell;
-      padding: 0 18px;
+      //display: table-cell;
+      //padding: 0 18px;
 
       & a {
         color: @color-gray;
         transition: all 0.2s ease;
         font-size: @font-18;
 
-        white-space: nowrap;
+        //white-space: nowrap;
 
         &.active,
         &:hover {
