@@ -156,10 +156,10 @@ if($prev_post) {
     ?>
     <a rel="prev" href="<?php echo get_permalink($prev_post->ID) ?>" title="<?php echo $prev_title ?>" class="d-none d-md-block btnControl prev-single-project">
         <span class="position-relative w-100 h-100 displayTable">
-            <span class="prev-single-project-top"><?php echo $prev_title ?></span>
             <span class="prev-single-project-bottom">
                 <?php echo get_the_post_thumbnail( $prev_post->ID, 'thumbnail', array( 'class' => 'alignleft' ) ); ?>
             </span>
+            <span class="prev-single-project-top"><?php echo $prev_title ?></span>
         </span>
     </a>
 <?php
@@ -171,10 +171,10 @@ if($next_post) {
 ?>
     <a rel="next" href="<?php echo get_permalink($next_post->ID) ?>" title="<?php echo $next_title ?>" class="d-none d-md-block btnControl next-single-project">
         <span class="position-relative w-100 h-100 displayTable">
+            <span class="next-single-project-top"><?php echo $next_title ?></span>
             <span class="next-single-project-bottom">
                 <?php echo get_the_post_thumbnail( $next_post->ID, 'thumbnail', array( 'class' => 'alignleft' ) ); ?>
             </span>
-            <span class="next-single-project-top"><?php echo $next_title ?></span>
         </span>
     </a>
 <?php

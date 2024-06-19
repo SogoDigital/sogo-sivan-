@@ -3292,31 +3292,31 @@ h2.team-heading {
   }
 }
 .single-project .btnControl.prev-single-project {
-  right: 0;
-}
-.single-project .btnControl.prev-single-project:before {
-  transform: rotate(180deg);
-}
-.single-project .btnControl.prev-single-project .displayTable {
-  right: 30px;
-}
-@media (min-width: 768px) {
-  .single-project .btnControl.prev-single-project .displayTable {
-    right: 65px;
-  }
-}
-.single-project .btnControl.next-single-project {
   left: 0;
 }
-.single-project .btnControl.next-single-project:before {
+.single-project .btnControl.prev-single-project:before {
   float: left;
 }
-.single-project .btnControl.next-single-project .displayTable {
+.single-project .btnControl.prev-single-project .displayTable {
   left: 30px;
 }
 @media (min-width: 768px) {
-  .single-project .btnControl.next-single-project .displayTable {
+  .single-project .btnControl.prev-single-project .displayTable {
     left: 65px;
+  }
+}
+.single-project .btnControl.next-single-project {
+  right: 0;
+}
+.single-project .btnControl.next-single-project:before {
+  transform: rotate(180deg);
+}
+.single-project .btnControl.next-single-project .displayTable {
+  right: 30px;
+}
+@media (min-width: 768px) {
+  .single-project .btnControl.next-single-project .displayTable {
+    right: 65px;
   }
 }
 .single-project .btnControl .displayTable {
@@ -3347,7 +3347,7 @@ h2.team-heading {
   vertical-align: middle;
 }
 .single-project .btnControl .displayTable .prev-single-project-top:before {
-  content: "Previous Project";
+  content: "Next Project";
   display: block;
   font: 0.6em 'Webnar W00 Bold', Arial;
   color: #97cce5;
@@ -3361,7 +3361,7 @@ h2.team-heading {
   vertical-align: middle;
 }
 .single-project .btnControl .displayTable .next-single-project-top:before {
-  content: "Next Project";
+  content: "Previous Project";
   display: block;
   font: 0.6em 'Webnar W00 Bold', Arial;
   color: #97cce5;
