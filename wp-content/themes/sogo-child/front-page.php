@@ -180,7 +180,10 @@ if ($floors) {
              class="section floor text-center cover fp-auto-height vertical-middle">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12  text-center">
+
+
+
+                <div class="col-xs-12 text-center">
                     <header class="floor-header">
                         <h2 class="floor-title"><?php echo sogo_meta('section-7-title') ?></h2>
                     </header>
@@ -189,22 +192,35 @@ if ($floors) {
                         <?php echo nl2br(sogo_meta('section-7-text')) ?>
                     </p>
                 </div>
-                <div class="col-md-12 hidden-xs">
-                    <div class="portfolio-slider-wrapper">
-                        <ul class="portfolio-slider">
-                            <?php
-                            $portfolio = sogo_meta('section-7-gallery');
-                            if ($portfolio) {
-                                foreach ($portfolio as $id => $image) {
-                                    echo "<li>";
-                                    sogo_print_image($id, $image);
-                                    echo "</li>";
-                                }
-                            }
-                            ?>
-                        </ul>
+
+                <?php
+                $portfolio = sogo_meta('section-7-gallery');
+                ?>
+                <div class="col-xs-12">
+                    <div class="floor7-portfolio-slider js-portfolio-slider">
+                        <?php
+                        foreach ($portfolio as $id => $image) {?>
+                            <img src="<?php echo $image?>" alt="">
+                        <?php }
+                        ?>
                     </div>
                 </div>
+
+<!--                <div class="col-md-12 hidden-xs">-->
+<!--                    <div class="portfolio-slider-wrapper">-->
+<!--                        <ul class="portfolio-slider">-->
+<!--                            --><?php
+//                            if ($portfolio) {
+//                                foreach ($portfolio as $id => $image) {
+//                                    echo "<li>";
+//                                    sogo_print_image($id, $image);
+//                                    echo "</li>";
+//                                }
+//                            }
+//                            ?>
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
             <div class="col-md-12 text-center">
                 <a class="btn-link see_all" href="<?php echo esc_url(sogo_meta('portfolio-page')) ?>"><?php _e("see full portfolio", 'sogoc') ?></a>

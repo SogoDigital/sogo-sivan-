@@ -1,4 +1,7 @@
 (function ($) {
+
+
+
     var mobile = $('body').hasClass('mobile');
     var fix_floor = function fix_floor() {
         console.log($(window).width());
@@ -218,6 +221,19 @@
             infiniteLoop: false
         });
 
+        $('.js-portfolio-slider').slick({
+            rtl: true,
+            arrows: true,
+            dots: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            // nextArrow: $('.homepage-slider-next.homepage-testimonial-next'),
+            // prevArrow: $('.homepage-slider-prev.homepage-testimonial-prev'),
+            nextArrow: '<i class="portfolio-slider-prev fa fa-angle-left"></i>',
+            prevArrow: '<i class="portfolio-slider-next fa fa-angle-right"></i>',
+        });
+
         $("form :input").focus(function () {
             $("label[for='" + this.id + "']").addClass("labelfocus");
         }).blur(function () {
@@ -346,6 +362,8 @@
     $('.nav-button').click(function(){
         $('body').toggleClass('nav-open');
     });
+
+
 
 })(jQuery);
 
