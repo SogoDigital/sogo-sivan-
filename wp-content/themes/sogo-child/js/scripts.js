@@ -228,6 +228,8 @@
             slidesToShow: 1,
             slidesToScroll: 1,
             infinite: true,
+            fade: true,
+            cssEase: 'linear',
             // nextArrow: $('.homepage-slider-next.homepage-testimonial-next'),
             // prevArrow: $('.homepage-slider-prev.homepage-testimonial-prev'),
             nextArrow: '<i class="portfolio-slider-prev fa fa-angle-left"></i>',

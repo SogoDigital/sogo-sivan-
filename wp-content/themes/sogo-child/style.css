@@ -2569,7 +2569,7 @@ ul#menu-primary-menu:before {
   background-position: 50% 100%;
   padding-bottom: 330px;
   background-size: contain;
-  background-color: #E1E1E1;
+  background-color: #F7FAFF;
 }
 @media (min-width: 992px) {
   #home-floor-2 {
@@ -2674,23 +2674,16 @@ ul#menu-primary-menu:before {
   }
 }
 #home-floor-7 {
-  background-image: url("images/bgs/tablet/home-floor-7-tablet.png");
   padding-bottom: 10vh;
 }
 @media (min-width: 992px) {
   #home-floor-7 {
-    background-image: url("images/bgs/home-floor-7.jpg");
-    padding-bottom: 0;
+    padding-bottom: 40px;
     background-position: 34% 100%;
   }
 }
 #home-floor-7 .floor-header {
   padding-top: 70px;
-}
-@media (min-width: 1200px) {
-  #home-floor-7 .floor-header {
-    padding-top: 0;
-  }
 }
 #home-floor-7 .floor7-portfolio-slider {
   margin: auto;
@@ -2708,6 +2701,12 @@ ul#menu-primary-menu:before {
   #home-floor-7 .floor7-portfolio-slider {
     width: 50%;
   }
+}
+#home-floor-7 .floor7-portfolio-slider .slick-list {
+  padding: 0 15px;
+}
+#home-floor-7 .floor7-portfolio-slider img {
+  border-radius: 30px;
 }
 #home-floor-7 .floor7-portfolio-slider .portfolio-slider-prev,
 #home-floor-7 .floor7-portfolio-slider .portfolio-slider-next {
