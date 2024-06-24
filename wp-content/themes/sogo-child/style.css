@@ -2564,6 +2564,14 @@ ul#menu-primary-menu:before {
     padding-bottom: 0;
   }
 }
+#home-floor-1 .home-floor1-video {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
 #home-floor-2 {
   background-image: url("images/home-floor-2-tablet.jpg");
   background-position: 50% 100%;
@@ -2675,6 +2683,21 @@ ul#menu-primary-menu:before {
 }
 #home-floor-7 {
   padding-bottom: 10vh;
+}
+#home-floor-7 .homepage-all-projects {
+  border-radius: 100px;
+  padding: 24px 32px;
+  background: linear-gradient(88deg, #ED1D24 0%, #EE2A7B 34%, #8A5BA5 75%, #00ADDC 100%);
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 700;
+  width: 300px;
+  font-family: 'OpenSansHebrewCondensed';
+  display: block;
+  margin: auto;
+}
+#home-floor-7 .homepage-all-projects:hover {
+  text-decoration: none;
 }
 @media (min-width: 992px) {
   #home-floor-7 {

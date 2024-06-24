@@ -6,7 +6,7 @@ get_header();
     <section id="home-floor-1" class="section floor active vertical-middle d-flex justify-content-center align-items-center">
         <div class="">
             <?php if (!wp_is_mobile()): ?>
-                <video loop muted autoplay class="fullscreen-bg__video hidden-xs hidden-sm">
+                <video loop muted autoplay class="home-floor1-video hidden-xs hidden-sm">
                     <source src="<?php echo get_stylesheet_directory_uri() ?>/images/home-video.mp4" type="video/mp4">
                 </video>
             <?php endif; ?>
@@ -87,7 +87,9 @@ get_header();
             </div>
 
             <div class="col-md-12 text-center">
-                <a class="btn-link see_all" href="<?php echo esc_url(sogo_meta('portfolio-page')) ?>"><?php _e("see full portfolio", 'sogoc') ?></a>
+                <a class="homepage-all-projects" href="<?php echo esc_url(sogo_meta('portfolio-page')) ?>">
+                    <span>לכל הפרויקטים של סוגו</span>
+                </a>
             </div>
         </div>
         <!--        <div class="continue-down hidden-xs hidden-sm">-->
