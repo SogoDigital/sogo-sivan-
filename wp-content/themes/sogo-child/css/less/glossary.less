@@ -1,0 +1,55 @@
+.glossary-intro{
+  .shortcuts{
+    overflow: auto!important;
+    display: flex;
+    @media (min-width: 992px) {
+      overflow: unset;
+      display: block;
+    }
+    a{
+      border: 1px solid transparent;
+      display: inline-block;
+      line-height: 1;
+      font-weight: normal;
+      color: purple;
+      &:hover{
+        border: 1px solid purple;
+        background-color: white;
+      }
+      &.active-letter{
+        border: 1px solid purple;
+        background-color: purple;
+        color: white;
+      }
+    }
+  }
+  &.sticky {
+    position: fixed;
+    top: 60px;
+    background: white;
+    z-index: 5;
+    width: 100%;
+    @media (min-width: 992px) {
+      top: 90px;
+    }
+  }
+}
+
+.glossary-block {
+  scroll-margin-top: 200px;
+  .glossary-letter{
+    border: 1px solid;
+    display: inline-block;
+    padding: 1rem;
+    background: white;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .glossary-block-item{
+    margin-bottom: 2rem;
+    &:last-child{
+      margin-bottom: 6rem;
+    }
+  }
+}

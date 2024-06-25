@@ -2573,7 +2573,7 @@ ul#menu-primary-menu:before {
   object-fit: cover;
 }
 #home-floor-2 {
-  background-image: url("images/home-floor-2-tablet.jpg");
+  background-image: url("images/home-floor-2-tablet.png");
   background-position: 50% 100%;
   padding-bottom: 330px;
   background-size: contain;
@@ -2600,7 +2600,7 @@ ul#menu-primary-menu:before {
 }
 @media (min-width: 992px) {
   #home-floor-3 {
-    background-color: #f6f6f6;
+    background-color: white;
     background-image: none;
     padding-bottom: 0;
     background-size: cover;
@@ -6682,4 +6682,60 @@ form div.wpcf7-mail-sent-ok {
   .floor-repeater .floor-icon {
     width: 50%;
   }
+}
+.glossary-intro .shortcuts {
+  overflow: auto!important;
+  display: flex;
+}
+@media (min-width: 992px) {
+  .glossary-intro .shortcuts {
+    overflow: unset;
+    display: block;
+  }
+}
+.glossary-intro .shortcuts a {
+  border: 1px solid transparent;
+  display: inline-block;
+  line-height: 1;
+  font-weight: normal;
+  color: purple;
+}
+.glossary-intro .shortcuts a:hover {
+  border: 1px solid purple;
+  background-color: white;
+}
+.glossary-intro .shortcuts a.active-letter {
+  border: 1px solid purple;
+  background-color: purple;
+  color: white;
+}
+.glossary-intro.sticky {
+  position: fixed;
+  top: 60px;
+  background: white;
+  z-index: 5;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .glossary-intro.sticky {
+    top: 90px;
+  }
+}
+.glossary-block {
+  scroll-margin-top: 200px;
+}
+.glossary-block .glossary-letter {
+  border: 1px solid;
+  display: inline-block;
+  padding: 1rem;
+  background: white;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+}
+.glossary-block .glossary-block-item {
+  margin-bottom: 2rem;
+}
+.glossary-block .glossary-block-item:last-child {
+  margin-bottom: 6rem;
 }

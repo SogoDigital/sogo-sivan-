@@ -236,3 +236,11 @@ function mycustom_wp_footer() {
 }
 
 add_action( 'wp_footer', 'mycustom_wp_footer' );
+
+function utfOrd($c) {
+    return intval(array_pop(unpack('H*', $c)),16);
+}
+
+function utfChr($c) {
+    return pack('H*', base_convert("$c", 10, 16));
+}

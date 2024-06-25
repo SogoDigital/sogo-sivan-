@@ -88,7 +88,7 @@ get_header();
 
             <div class="col-md-12 text-center">
                 <a class="homepage-all-projects" href="<?php echo esc_url(sogo_meta('portfolio-page')) ?>">
-                    <span>לכל הפרויקטים של סוגו</span>
+                    <span>צפו בפרויקטים</span>
                 </a>
             </div>
         </div>
@@ -132,11 +132,11 @@ if ($floors) {
                     </div>
                 </div>
             </div>
-            <div class="continue-down hidden-xs hidden-sm">
-                     <span class="scroll-to continue" aria-hidden="true">
-                         <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-                     </span>
-            </div>
+<!--            <div class="continue-down hidden-xs hidden-sm">-->
+<!--                     <span class="scroll-to continue" aria-hidden="true">-->
+<!--                         <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>-->
+<!--                     </span>-->
+<!--            </div>-->
         </section> <!-- /floor- -->
         <?php
     }
@@ -181,11 +181,11 @@ if ($floors) {
                 </div>
             </div>
         </div>
-        <div class="continue-down hidden-xs hidden-sm">
-         <span class="scroll-to continue">
-             <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-         </span>
-        </div>
+<!--        <div class="continue-down hidden-xs hidden-sm">-->
+<!--         <span class="scroll-to continue">-->
+<!--             <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>-->
+<!--         </span>-->
+<!--        </div>-->
     </section> <!-- #home-floor-5 -->
 
 <!--    <section id="home-floor-6" class="split-floor section floor cover vertical-top">-->
