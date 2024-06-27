@@ -1129,7 +1129,7 @@ h6 {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 10;
   background: white;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -2758,7 +2758,7 @@ ul#menu-primary-menu:before {
     background-size: contain;
   }
 }
-.continue.call-to-action {
+.call-to-action {
   font-size: 4.5em;
   display: block;
   color: #fff;
@@ -2771,25 +2771,28 @@ ul#menu-primary-menu:before {
   bottom: 0;
 }
 @media (min-width: 768px) {
-  .continue.call-to-action {
+  .call-to-action {
     bottom: 70px;
   }
 }
 @media (min-width: 992px) {
-  .continue.call-to-action {
+  .call-to-action {
     bottom: 40px;
     font-size: 5.714em;
     color: rgba(0, 0, 0, 0.4);
   }
 }
 @media (min-width: 1200px) {
-  .continue.call-to-action {
+  .call-to-action {
     bottom: 80px;
     color: #fff;
   }
 }
-.continue.call-to-action:hover {
+.call-to-action:hover,
+.call-to-action:focus,
+.call-to-action:visited {
   text-decoration: none;
+  color: white;
 }
 .btn-link.see_all {
   min-width: 170px;
@@ -5668,10 +5671,10 @@ p.item-text {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
-  line-height: 1;
-  padding: 34px 25px;
+  line-height: 1.2;
+  padding: 20px 15px;
   text-align: center;
   transition: all 0.5s;
 }
@@ -6683,6 +6686,16 @@ form div.wpcf7-mail-sent-ok {
     width: 50%;
   }
 }
+.glossary-page {
+  background-color: #fff;
+}
+.glossary-page #search-criteria {
+  outline: none;
+  border: 2px solid #b5b5ac;
+  border-radius: 5px;
+  height: 40px;
+  background-color: #fafafa;
+}
 .glossary-intro .shortcuts {
   overflow: auto!important;
   display: flex;
@@ -6698,31 +6711,35 @@ form div.wpcf7-mail-sent-ok {
   display: inline-block;
   line-height: 1;
   font-weight: normal;
-  color: purple;
+  color: #ed1c24;
 }
 .glossary-intro .shortcuts a:hover {
-  border: 1px solid purple;
+  border: 1px solid #ed1c24;
   background-color: white;
+  text-decoration: none;
+  border-radius: 5px;
 }
 .glossary-intro .shortcuts a.active-letter {
-  border: 1px solid purple;
-  background-color: purple;
+  border: 1px solid #ed1c24;
+  background-color: #ed1c24;
   color: white;
+  text-decoration: none;
+  border-radius: 5px;
 }
 .glossary-intro.sticky {
   position: fixed;
-  top: 60px;
+  top: 97px;
   background: white;
   z-index: 5;
   width: 100%;
 }
 @media (min-width: 992px) {
   .glossary-intro.sticky {
-    top: 90px;
+    top: 72px;
   }
 }
 .glossary-block {
-  scroll-margin-top: 200px;
+  scroll-margin-top: 240px;
 }
 .glossary-block .glossary-letter {
   border: 1px solid;
@@ -6732,10 +6749,19 @@ form div.wpcf7-mail-sent-ok {
   font-size: 32px;
   font-weight: 700;
   line-height: 1;
+  border-radius: 5px;
+  color: #ed1c24;
 }
 .glossary-block .glossary-block-item {
   margin-bottom: 2rem;
+  border: 1px solid #b5b5ac;
+  padding: 2rem;
+  border-radius: 5px;
 }
 .glossary-block .glossary-block-item:last-child {
   margin-bottom: 6rem;
+}
+.glossary-block .glossary-block-item h4 {
+  color: black;
+  font-weight: 700;
 }

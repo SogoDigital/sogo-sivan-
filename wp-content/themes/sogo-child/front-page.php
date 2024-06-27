@@ -24,13 +24,11 @@ get_header();
                 </div>
             </div>
         </div>
-
-        <span style="cursor: pointer;"
-           class="continue call-to-action hidden-xs hidden-sm">
-            <span class="scroll-to continue animated bounce infinite">
-                        <span class="fa fa-angle-down" aria-hidden="true"></span>
-                    </span>
-        </span>
+        <a href="#home-floor-7" style="cursor: pointer;" class="call-to-action hidden-xs hidden-sm">
+            <span class="scroll-to animated bounce infinite">
+                <span class="fa fa-angle-down" aria-hidden="true"></span>
+            </span>
+        </a>
 
         <footer id="customers-logos" class="hidden-xs hidden-sm">
             <ul class="flex-slider">

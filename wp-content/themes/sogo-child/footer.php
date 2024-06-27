@@ -97,7 +97,8 @@
 </a>
 
 <a class="rfq-btn" data-toggle="modal" href="#rfq-modal" title="<?php _e( 'Request for quotation', 'sogoc' ) ?>">
-	<?php _e( 'Get a Quote', 'sogoc' ) ?>
+	<?php echo get_field('_sogo_get_quote', 'option')?>
+<!--	--><?php //_e( 'Get a Quote', 'sogoc' ) ?>
 </a>
 
 <div class="modal fade rfq" id="rfq-modal">

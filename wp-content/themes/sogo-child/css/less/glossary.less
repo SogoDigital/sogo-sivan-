@@ -1,3 +1,13 @@
+.glossary-page{
+  background-color: #fff;
+  #search-criteria{
+    outline: none;
+    border: 2px solid rgb(181, 181, 172);
+    border-radius: 5px;
+    height: 40px;
+    background-color: #fafafa;
+  }
+}
 .glossary-intro{
   .shortcuts{
     overflow: auto!important;
@@ -11,32 +21,36 @@
       display: inline-block;
       line-height: 1;
       font-weight: normal;
-      color: purple;
+      color: #ed1c24;
       &:hover{
-        border: 1px solid purple;
+        border: 1px solid #ed1c24;
         background-color: white;
+        text-decoration: none;
+        border-radius: 5px;
       }
       &.active-letter{
-        border: 1px solid purple;
-        background-color: purple;
+        border: 1px solid #ed1c24;
+        background-color: #ed1c24;
         color: white;
+        text-decoration: none;
+        border-radius: 5px;
       }
     }
   }
   &.sticky {
     position: fixed;
-    top: 60px;
+    top: 97px;
     background: white;
     z-index: 5;
     width: 100%;
     @media (min-width: 992px) {
-      top: 90px;
+      top: 72px;
     }
   }
 }
 
 .glossary-block {
-  scroll-margin-top: 200px;
+  scroll-margin-top: 240px;
   .glossary-letter{
     border: 1px solid;
     display: inline-block;
@@ -45,11 +59,20 @@
     font-size: 32px;
     font-weight: 700;
     line-height: 1;
+    border-radius: 5px;
+    color: #ed1c24;
   }
   .glossary-block-item{
     margin-bottom: 2rem;
+    border: 1px solid rgb(181, 181, 172);
+    padding: 2rem;
+    border-radius: 5px;
     &:last-child{
       margin-bottom: 6rem;
+    }
+    h4{
+      color: black;
+      font-weight: 700;
     }
   }
 }
