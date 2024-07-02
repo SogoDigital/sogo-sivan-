@@ -150,7 +150,6 @@ $col = $is_mobile ? 'col-md-12' : 'col-md-4';
 
 <?php
 $prev_post = get_previous_post();
-var_dump($prev_post);
 if($prev_post) {
     $prev_title = strip_tags(str_replace('"', '', $prev_post->post_title));
     ?>
