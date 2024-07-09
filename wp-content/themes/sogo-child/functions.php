@@ -244,3 +244,12 @@ function utfOrd($c) {
 function utfChr($c) {
     return pack('H*', base_convert("$c", 10, 16));
 }
+
+function cc_mime_types($mimes)
+{
+    $mimes['svg'] = 'image/svg+xml';
+
+    return $mimes;
+}
+
+add_filter('upload_mimes', 'cc_mime_types');

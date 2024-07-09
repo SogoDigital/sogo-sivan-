@@ -51,7 +51,9 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
 <!--                    <div class="col-md-2 d-flex">-->
                         <div id="logo">
                             <a title="<?php echo esc_attr( __( 'Go to home page', 'sogoc' ) ) ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"
-                               accesskey="H"><?php bloginfo( 'name' ); ?></a>
+                               accesskey="H">
+                                <?php echo wp_get_attachment_image(get_field('_sogo_logo', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+                            </a>
                         </div>
 <!--                    </div>-->
 <!--                    <div class="col-md-8 d-flex justify-content-center">-->
@@ -123,7 +125,9 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
                     </div>
                     <div id="logo">
                         <a title="<?php echo esc_attr( __( 'Go to home page', 'sogoc' ) ) ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"
-                           accesskey="H"><?php bloginfo( 'name' ); ?></a>
+                           accesskey="H">
+                            <?php echo wp_get_attachment_image(get_field('_sogo_logo', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+                        </a>
                     </div>
                 </div>
             </div>

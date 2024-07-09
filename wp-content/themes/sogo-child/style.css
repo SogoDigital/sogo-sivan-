@@ -925,12 +925,10 @@ h6 {
   }
 }
 #logo a {
-  background: url("images/sogo_logo.svg") no-repeat;
   width: 80px;
   height: 62px;
   vertical-align: middle;
   display: inline-block;
-  text-indent: -9999px;
   background-position: center;
 }
 @media (min-width: 992px) {
@@ -2639,11 +2637,8 @@ ul#menu-primary-menu:before {
 }
 @media (min-width: 992px) {
   #home-floor-5 {
-    background-image: url("images/bgs/home-floor-5-man.png");
-    vertical-align: middle;
+    background-image: none;
     padding-bottom: 0;
-    background-size: cover;
-    background-position: 40% 100%;
   }
 }
 #home-floor-6 {
@@ -3983,10 +3978,9 @@ h2.team-heading {
 /* projects.less */
 #projects-floor-1 {
   background-repeat: no-repeat;
-  background-image: url('images/projects-bg-mobile.jpg');
   height: 480px;
-  background-size: contain;
-  background-position: 50% 100%;
+  background-size: cover;
+  background-position: center;
   background-color: #DFDFDF;
 }
 @media (min-width: 768px) {

@@ -169,20 +169,20 @@ span.wpcf7-not-valid-tip {
     }
 }
 
-@media (min-width: 768px) {
-    #home-floor-5 {
-        background-image: url("images/bgs/tablet/home-floor-5-tablet.jpg");
-        vertical-align: middle;
-    }
-}
+/*@media (min-width: 768px) {*/
+/*    #home-floor-5 {*/
+/*        background-image: url("images/bgs/tablet/home-floor-5-tablet.jpg");*/
+/*        vertical-align: middle;*/
+/*    }*/
+/*}*/
 
-@media (min-width: 992px) {
-    #home-floor-5 {
-        background-image: url("images/bgs/home-floor-5-man-he.png");
-        vertical-align: middle;
-        background-position: 80% 100%;
-    }
-}
+/*@media (min-width: 992px) {*/
+/*    #home-floor-5 {*/
+/*        background-image: url("images/bgs/home-floor-5-man-he.png");*/
+/*        vertical-align: middle;*/
+/*        background-position: 80% 100%;*/
+/*    }*/
+/*}*/
 
 #home-floor-8 {
     background-image: url("images/bgs/mobile/home-start-bg-he.jpg");
