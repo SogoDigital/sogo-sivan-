@@ -141,52 +141,20 @@ if ($floors) {
 }
 ?>
     <section id="home-floor-5" class="section vertical-top cover position-relative">
-<!--        <div class="position-absolute">-->
-        <?php echo wp_get_attachment_image(get_field('_sogo_homepage_floor5_circles'), 'full', false, array('class'=> 'img-fluid w-100')) ; ?>
-<!--        </div>-->
+
+        <?php echo wp_get_attachment_image(get_field('_sogo_homepage_floor5_circles'), 'full', false, array('class'=> 'img-fluid w-100 home-floor5-desktop-bg')) ; ?>
+        <?php echo wp_get_attachment_image(get_field('_sogo_homepage_floor5_circles_mobile'), 'full', false, array('class'=> 'img-fluid w-100 home-floor5-mobile-bg')) ; ?>
+
         <div class="container-fluid position-absolute w-100" style="top: 0">
             <div class="row d-flex justify-content-center">
-<!--                <div class="col-md-2 col-md-offset-1">-->
-<!--                    <div id="c1" class="circle bg-red full-radius animated grow hidden-xs hidden-sm">-->
-<!--                        <span class="bold uppercase">CSS</span>-->
-<!--                    </div>-->
-<!--                </div>-->
-                <div class="col-md-6  text-center">
+                <div class="col-md-6 text-center">
                     <header class="">
-                        <h2 class="floor-title" style="margin-top: 2vw"><?php echo sogo_meta('section-5-title') ?></h2>
+                        <h2 class="home-floor5-title"><?php echo sogo_meta('section-5-title') ?></h2>
                     </header>
-<!--                     .floor-header -->
-                    <p>
-                        <?php echo nl2br(sogo_meta('section-5-text')) ?>
-                    </p>
-
+                    <p class="home-floor5-subtitle"><?php echo nl2br(sogo_meta('section-5-text')) ?></p>
                 </div>
-<!--                <div class="col-md-2">-->
-<!--                    <div id="c2" class="circle bg-green full-radius animated grow hidden-xs hidden-sm">-->
-<!--                        <span class="bold uppercase">WordPress</span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="row">-->
-<!--                <div class="col-md-5  col-md-offset-4 text-right">-->
-<!--                    <div id="c3" class="circle bg-red full-radius animated grow hidden-xs hidden-sm small-font">-->
-<!--                        <span class="bold uppercase">Angular</span>-->
-<!--                    </div>-->
-<!---->
-<!--                </div>-->
-<!--                <div class="col-md-12 text-center">-->
-<!--                    <div id="c4" class="circle bg-green full-radius animated grow hidden-xs hidden-sm">-->
-<!--                        <span class="bold uppercase">HTML</span>-->
-<!--                    </div>-->
-<!---->
-<!--                </div>-->
             </div>
         </div>
-<!--        <div class="continue-down hidden-xs hidden-sm">-->
-<!--         <span class="scroll-to continue">-->
-<!--             <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>-->
-<!--         </span>-->
-<!--        </div>-->
     </section> <!-- #home-floor-5 -->
 
 <!--    <section id="home-floor-6" class="split-floor section floor cover vertical-top">-->

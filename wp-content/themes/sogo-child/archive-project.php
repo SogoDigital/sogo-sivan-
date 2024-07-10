@@ -3,13 +3,13 @@
 
 <section id="projects-floor-1" class="section" style="background-image: url('<?php echo get_field('_sogo_projects_bg', 'option')?>')">
     <div class="container-fluid h-100">
-        <div class="row h-100 d-flex align-items-center">
-            <div itemscope itemtype="https://schema.org/WebPage" class="col-md-8 col-md-offset-2 text-center">
+        <div class="row h-100 d-flex align-items-start justify-content-center">
+            <div itemscope itemtype="https://schema.org/WebPage" class="col-xs-10 col-sm-8 col-lg-5 text-center">
                 <header class="page-header">
                     <h1 itemprop="headline"
-                        class="page-title margin-top-250"><?php echo sogo_option('projects_title') ?></h1>
+                        class="page-title text-white"><?php echo sogo_option('projects_title') ?></h1>
                     <p itemprop="description"
-                       class="page-sub-title"><?php echo nl2br(sogo_option('projects_text')) ?> </p>
+                       class="page-sub-title text-white"><?php echo nl2br(sogo_option('projects_text')) ?> </p>
                 </header>
                 <!-- .page-header -->
             </div>

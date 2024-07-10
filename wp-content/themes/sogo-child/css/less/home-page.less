@@ -64,21 +64,28 @@
 }
 
 #home-floor-5 {
-  background-image: url("images/home-floor-5-mobile.jpg");
-  padding-bottom: 330px;
-  background-size: contain;
-  background-position: 50% 100%;
-  background-color: #ededed;
-  @media (min-width: 768px) {
-    padding-bottom: 740px;
+  .home-floor5-title{
+    margin-top: 2vw;
+    font-weight: bold;
+    font-size: 2em;
   }
-  @media (min-width: 992px) {
-    background-image: none;
-    //background-image: url("images/bgs/bg-home-floor5-full.png");
-    //vertical-align: middle;
-    padding-bottom: 0;
-    //background-size: cover;
-    //background-position: top center;
+  .home-floor5-subtitle{
+    font-size: clamp(1em, 4vw, 20px);
+    @media (min-width: 992px) {
+      font-size: 1.5em
+    }
+  }
+  .home-floor5-desktop-bg{
+    display: none;
+    @media (min-width: 992px) {
+      display: block;
+    }
+  }
+  .home-floor5-mobile-bg{
+    display: block;
+    @media (min-width: 992px) {
+      display: none;
+    }
   }
 }
 
