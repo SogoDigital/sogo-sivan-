@@ -56,7 +56,7 @@ $rtl = is_rtl();
                     </div>
                 <?php endif;
             } ?>
-            <div class="no-match">No Matches</div>
+            <div class="no-match">חיפשנו בכל הפינות, אבל לא מצאני כלום! נסו מושג אחר</div>
         </div>
     </div>
 </main>
