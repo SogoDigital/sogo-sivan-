@@ -338,14 +338,14 @@
     if ($(".menu .current-menu-item")[0]) {
         var leftPos, newWidth, $magicLine;
 
-        $('.menu').append("<li id='magic-line'></li>");
+        $('.desktop-menu .menu').append("<li id='magic-line'></li>");
         $magicLine = $('#magic-line');
         $magicLine.width($('.current-menu-item').width())
             .css('left', $('.current-menu-item a').position().left)
             .data('origWidth', $magicLine.width());
 
         /*Magicline hover animation*/
-        $('.menu li').find('a').hover(function () {
+        $('.desktop-menu .menu li').find('a').hover(function () {
             var $thisBar = $(this);
             console.log($thisBar)
             leftPos = $thisBar.position().left;

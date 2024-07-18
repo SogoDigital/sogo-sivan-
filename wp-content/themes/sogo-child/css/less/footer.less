@@ -22,10 +22,11 @@
   }
   nav.navbar {
     margin: 0 0 16px 0;
-    display: flex;
+    display: none;
     align-items: center;
     padding-left: 0;
     @media (min-width: 992px) {
+      display: flex;
       padding-left: 16px;
       margin: 0;
     }
@@ -84,6 +85,34 @@
   }
   .desktop-call {
     display: none;
+  }
+  .bottom-footer-columns{
+    .bottom-footer-menu{
+      .footer-first, .footer-second, .footer-third, .footer-fourth{
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+      .footer-widget-title{
+        color: #2D2D2F;
+        font-family: 'OpenSansHebrewCondensed';
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .widget-content{
+        ul{
+          list-style: none;
+          padding-right: 0;
+          li{
+            a{
+              color: #2D2D2F;
+              font-family: 'OpenSansHebrewCondensed';
+              font-size: 18px;
+              font-weight: normal;
+            }
+          }
+        }
+      }
+    }
   }
 }
 

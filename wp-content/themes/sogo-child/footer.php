@@ -47,6 +47,38 @@
 
 <footer id="site-footer" class="site-footer section fp-auto-height" role="contentinfo">
 
+    <div class="container-fluid py-2 py-lg-4">
+        <div class="row d-flex bottom-footer-columns justify-content-center">
+            <div class="bottom-footer-menu col-xs-12 col-lg-10 col-xxl-8">
+                <div class="row">
+                    <?php if ( is_active_sidebar( 'footer-col-1' ) ) :  ?>
+                        <div class="col-xs-6 col-lg-3 footer-first">
+                            <?php dynamic_sidebar( 'footer-col-1' ); ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ( is_active_sidebar( 'footer-col-2' ) ) :  ?>
+                        <div class="col-xs-6 col-lg-3 footer-second">
+                            <?php dynamic_sidebar( 'footer-col-2' ); ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ( is_active_sidebar( 'footer-col-3' ) ) :  ?>
+                        <div class="col-xs-6 col-lg-3 footer-third">
+                            <?php dynamic_sidebar( 'footer-col-3' ); ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ( is_active_sidebar( 'footer-col-4' ) ) :  ?>
+                        <div class="col-xs-6 col-lg-3 footer-fourth">
+                            <?php dynamic_sidebar( 'footer-col-4' ); ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container-fluid">
         <div class="row d-flex justify-content-center">
             <div class="col-xs-12 col-md-10">
