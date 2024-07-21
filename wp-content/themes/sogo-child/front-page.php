@@ -7,23 +7,23 @@ get_header();
         <div class="">
             <?php if (!wp_is_mobile()): ?>
                 <video loop muted autoplay class="home-floor1-video hidden-xs hidden-sm">
-                    <source src="<?php echo get_stylesheet_directory_uri() ?>/images/home-video.mp4" type="video/mp4">
+                    <source src="<?php echo get_stylesheet_directory_uri() ?>/images/main-video.mp4" type="video/mp4">
                 </video>
             <?php endif; ?>
         </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 col-lg-12 text-center animated fadeInUp">
-                    <header class="floor-header mobile-middle">
-                        <h1 class="page-title color-white" lang="en">Welcome to Sogo</h1>
-                    </header>
+<!--        <div class="container-fluid">-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-12 col-lg-12 text-center animated fadeInUp">-->
+<!--                    <header class="floor-header mobile-middle">-->
+<!--                        <h1 class="page-title color-white" lang="en">Welcome to Sogo</h1>-->
+<!--                    </header>-->
                     <!-- .page-header -->
-                    <p class="sub-title">
-                        <?php echo nl2br(sogo_meta('text')) ?>
-                    </p>
-                </div>
-            </div>
-        </div>
+<!--                    <p class="sub-title">-->
+<!--                        --><?php //echo nl2br(sogo_meta('text')) ?>
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
         <a href="#home-floor-7" style="cursor: pointer;" class="call-to-action hidden-xs hidden-sm">
             <span class="scroll-to animated bounce infinite">
                 <span class="fa fa-angle-down" aria-hidden="true"></span>
