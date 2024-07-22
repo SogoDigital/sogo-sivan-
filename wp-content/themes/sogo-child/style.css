@@ -2576,23 +2576,22 @@ ul#menu-primary-menu:before {
 }
 /* home-page.less  */
 #home-floor-1 {
-  background-image: url("images/home-floor-1-mobile.jpg");
-  padding-bottom: 186px;
-}
-@media (min-width: 992px) {
-  #home-floor-1 {
-    z-index: 0;
-    background-image: url("images/home-floor-1-tab.jpg");
-    padding-bottom: 0;
-  }
+  padding-bottom: 0;
 }
 #home-floor-1 .home-floor1-video {
-  height: 100vh;
   width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  object-fit: cover;
+  padding-top: 97px;
+}
+@media (min-width: 992px) {
+  #home-floor-1 .home-floor1-video {
+    padding-top: 0;
+    height: calc(100vh - 72px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: top;
+  }
 }
 #home-floor-2 {
   background-image: url("images/home-floor-2-tablet.png");
@@ -2734,9 +2733,6 @@ ul#menu-primary-menu:before {
     padding-bottom: 40px;
     background-position: 34% 100%;
   }
-}
-#home-floor-7 .floor-header {
-  padding-top: 70px;
 }
 #home-floor-7 .floor7-portfolio-slider {
   margin: auto;

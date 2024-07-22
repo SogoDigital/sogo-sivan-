@@ -9,6 +9,10 @@ get_header();
                 <video loop muted autoplay class="home-floor1-video hidden-xs hidden-sm">
                     <source src="<?php echo get_stylesheet_directory_uri() ?>/images/main-video.mp4" type="video/mp4">
                 </video>
+            <?php else: ?>
+                <video loop muted autoplay class="home-floor1-video">
+                    <source src="<?php echo get_stylesheet_directory_uri() ?>/images/main-video-mobile.mp4" type="video/mp4">
+                </video>
             <?php endif; ?>
         </div>
 <!--        <div class="container-fluid">-->
