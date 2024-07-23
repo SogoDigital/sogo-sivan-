@@ -10,7 +10,7 @@
             </a>
         </div>
     </div>
-    <div class="project-title text-right">
+    <div class="project-title">
         <span itemprop="name"><?php echo esc_attr(get_the_title($post_id)) ?></span>
     </div>
     <div class="project-small-title text-right">

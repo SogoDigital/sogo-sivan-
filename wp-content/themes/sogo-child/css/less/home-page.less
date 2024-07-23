@@ -70,7 +70,8 @@
     font-size: 2em;
   }
   .home-floor5-subtitle{
-    font-size: clamp(1em, 4vw, 20px);
+    font-size: 18px;
+    //font-size: clamp(1em, 4vw, 20px);
     @media (min-width: 992px) {
       font-size: 1.5em
     }
@@ -469,4 +470,16 @@ footer#customers-logos {
 }
 .glyphicon {
   z-index: 999;
+}
+.homepage-section-header{
+  @media (max-width: 768px) {
+    text-align: center;
+    margin: 40px 0 20px 0;
+  }
+}
+.homepage-section-text{
+  @media (max-width: 768px) {
+    font-size: 18px;
+    text-align: center;
+  }
 }

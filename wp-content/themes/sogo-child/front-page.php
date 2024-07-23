@@ -10,7 +10,7 @@ get_header();
                     <source src="<?php echo get_stylesheet_directory_uri() ?>/images/main-video.mp4" type="video/mp4">
                 </video>
             <?php else: ?>
-                <video loop muted autoplay class="home-floor1-video">
+                <video playsinline loop muted autoplay class="home-floor1-video">
                     <source src="<?php echo get_stylesheet_directory_uri() ?>/images/main-video-mobile.mp4" type="video/mp4">
                 </video>
             <?php endif; ?>
@@ -124,11 +124,11 @@ if ($floors) {
             <div class="container-fluid w-100">
                 <div class="row">
                     <div class="<?php echo $floor['col'] ?>">
-                        <header class="floor-header">
+                        <header class="floor-header homepage-section-header">
                             <h2 class="floor-title"><?php echo $floor['title'] ?></h2>
                         </header>
                         <!-- .floor-header -->
-                        <p>
+                        <p class="homepage-section-text">
                             <?php echo nl2br($floor['text']) ?>
                         </p>
                     </div>
@@ -152,7 +152,7 @@ if ($floors) {
         <div class="container-fluid position-absolute w-100" style="top: 0">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-6 text-center">
-                    <header class="">
+                    <header class="homepage-section-header">
                         <h2 class="home-floor5-title"><?php echo sogo_meta('section-5-title') ?></h2>
                     </header>
                     <p class="home-floor5-subtitle"><?php echo nl2br(sogo_meta('section-5-text')) ?></p>
