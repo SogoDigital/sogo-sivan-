@@ -2610,9 +2610,10 @@ ul#menu-primary-menu:before {
 #home-floor-3 {
   background-image: url("images/bgs/tablet/home-floor-3-tablet.jpg");
   overflow: hidden;
-  padding-bottom: 330px;
+  padding-bottom: 360px;
   background-size: contain;
   background-position: 50% 100%;
+  background-color: #f6f6f6;
 }
 @media (min-width: 768px) {
   #home-floor-3 {
@@ -2644,6 +2645,14 @@ ul#menu-primary-menu:before {
     background: none;
     padding-bottom: 0;
     background-size: cover;
+  }
+}
+#home-floor-5 .home-floor-5-container {
+  position: relative;
+}
+@media (min-width: 992px) {
+  #home-floor-5 .home-floor-5-container {
+    position: absolute;
   }
 }
 #home-floor-5 .home-floor5-title {
@@ -3558,6 +3567,12 @@ h2.team-heading {
 #single-floor-1 {
   background: linear-gradient(180deg, #f0f0ee 0%, white 100%);
 }
+#single-floor-1 .single-floor-1-wrapper {
+  margin: 0 auto;
+  max-width: 900px;
+  position: relative;
+  width: 100%;
+}
 #single-floor-1 .single-recent {
   margin-bottom: 40px;
 }
@@ -3623,6 +3638,7 @@ h2.team-heading {
 }
 .single-article-wrapper {
   margin: 60px 0;
+  padding: 0 16px;
 }
 .single-article-wrapper .thumbnail-wrapper img {
   margin-bottom: 24px;
@@ -3643,13 +3659,31 @@ h2.team-heading {
 }
 .single-article-wrapper h1 {
   text-shadow: none;
-  font-size: 20px;
+  font-size: 30px;
   color: #191919;
 }
 @media (min-width: 768px) {
   .single-article-wrapper h1 {
     font-size: 40px;
     margin-bottom: 14px;
+  }
+}
+.single-article-wrapper .publish-wrapper {
+  flex-direction: column;
+  align-items: flex-start;
+}
+@media (min-width: 768px) {
+  .single-article-wrapper .publish-wrapper {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.single-article-wrapper .publish-wrapper .publish-wrapper-icon-author {
+  margin-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .single-article-wrapper .publish-wrapper .publish-wrapper-icon-author {
+    margin-bottom: 0;
   }
 }
 .single-article-wrapper .publish-wrapper .tags {
@@ -3661,7 +3695,10 @@ h2.team-heading {
   font-weight: bold;
   padding: 8px;
   border: 1px solid #19c5a4;
-  margin: 0 0 0 5px;
+  margin: 0 0 10px 10px;
+}
+.single-article-wrapper .publish-wrapper .publish-wrapper-icon {
+  flex: none;
 }
 .single-article-wrapper .publish-wrapper .publish-wrapper-icon img {
   width: 40px;
@@ -3676,9 +3713,14 @@ h2.team-heading {
 }
 .single-article-wrapper .publish-wrapper .publish-wrapper-calendar img {
   width: 18px;
-  margin-right: 16px;
+  margin-right: 10px;
   margin-top: -4px;
   margin-left: 4px;
+}
+@media (min-width: 768px) {
+  .single-article-wrapper .publish-wrapper .publish-wrapper-calendar img {
+    margin-right: 16px;
+  }
 }
 .single-article-wrapper .publish-wrapper .publish-wrapper-date {
   font-size: 18px;
@@ -5711,54 +5753,24 @@ p.item-text {
 /* end 404.less */
 /* file name rfq.less */
 .rfq-btn {
-  background: #ed1c24;
-  color: white;
   position: fixed;
   right: 30px;
   bottom: 30px;
-  height: 105px;
-  width: 105px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 1.2;
-  padding: 20px 15px;
-  text-align: center;
-  transition: all 0.5s;
+  transition: all 1s;
 }
 @media (min-width: 992px) {
   .rfq-btn {
     bottom: 110px;
   }
 }
-.rfq-btn:after {
-  content: '';
-  width: 0;
-  height: 0;
-  border-left: 14px solid transparent;
-  border-right: 14px solid transparent;
-  border-top: 23px solid #ed1c24;
+.rfq-btn .footer-tell-us-image-hover {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  -ms-transform: rotate(-40deg);
-  -webkit-transform: rotate(-40deg);
-  transform: rotate(-40deg);
+  top: 0;
+  opacity: 0;
   transition: all 0.5s;
 }
-.rfq-btn:hover,
-.rfq-btn:focus,
-.rfq-btn:active {
-  background: white;
-  color: #ed1c24;
-  text-decoration: none;
-}
-.rfq-btn:hover:after,
-.rfq-btn:focus:after,
-.rfq-btn:active:after {
-  border-top-color: white;
+.rfq-btn:hover .footer-tell-us-image-hover {
+  opacity: 1;
 }
 @media (min-width: 768px) {
   .modal-open .modal {
@@ -6413,24 +6425,50 @@ form div.wpcf7-mail-sent-ok {
   }
 }
 .plugin-nav {
-  display: none;
   margin-top: 30px;
   padding: 0;
   direction: ltr;
   text-align: center;
 }
+.plugin-nav .blog-cat-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #f1f1f1;
+  font-size: 28px;
+  border-radius: 100px;
+  width: 38px;
+  height: 38px;
+  display: none !important;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1;
+  box-shadow: 0px 0px 15px 0px #cccccc;
+}
 @media (min-width: 992px) {
-  .plugin-nav {
-    display: block;
+  .plugin-nav .blog-cat-slider-arrow {
+    display: flex !important;
   }
+}
+.plugin-nav .blog-cat-next {
+  left: -2rem;
+}
+.plugin-nav .blog-cat-prev {
+  right: -2rem;
 }
 .plugin-nav li {
   display: inline-block;
   text-align: center;
   margin: 10px 4px;
-  padding: 3px 48px;
+  padding: 3px 20px;
   border-radius: 2rem;
-  background-color: rgba(181, 181, 172, 0.3);
+  background-color: white;
+}
+@media (min-width: 992px) {
+  .plugin-nav li {
+    padding: 3px 48px;
+  }
 }
 .plugin-nav li a {
   line-height: 30px;
@@ -6456,7 +6494,7 @@ form div.wpcf7-mail-sent-ok {
   display: block;
   width: 100%;
   max-width: 300px;
-  margin: 4rem auto 0;
+  margin: 4rem auto;
   padding: 10px 15px;
   border-radius: 3rem;
   line-height: 30px;
@@ -6481,7 +6519,6 @@ form div.wpcf7-mail-sent-ok {
 }
 .plugin-box .thumbnail-wrapper {
   overflow: hidden;
-  height: 227px;
 }
 .plugin-box a {
   color: initial;
@@ -6490,23 +6527,30 @@ form div.wpcf7-mail-sent-ok {
   color: #ed1c24;
   text-decoration: none;
 }
+.plugin-box .publish-wrapper .publish-wrapper-date {
+  margin-bottom: 10px;
+}
 .plugin-box .publish-wrapper span {
-  font-size: 0.929em;
+  font-size: 16px;
+}
+.plugin-box .publish-wrapper span:last-child {
+  float: none !important;
 }
 .plugin-box .plugin-title {
   display: inline-block;
   text-align: center;
   width: 100%;
-  margin: 10px 0;
+  margin: 10px 0 30px;
+  padding: 0 16px;
 }
 @media (min-width: 992px) {
   .plugin-box .plugin-title {
-    margin: 20px 0 10px;
+    margin: 10px 0 30px;
     padding: 0 10px;
   }
 }
 .plugin-box .plugin-title span {
-  font-size: 15px;
+  font-size: 22px;
   font-weight: bold;
   text-transform: uppercase;
 }

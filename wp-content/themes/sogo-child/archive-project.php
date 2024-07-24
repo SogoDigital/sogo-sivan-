@@ -67,7 +67,7 @@
 
         <div class="row projects_grid_con">
             <div class="col-md-11">
-                <div class="row d-flex archive-projects">
+                <div class="row d-flex justify-content-center archive-projects">
                 <?php while (have_posts()): the_post(); ?>
                     <?php echo get_template_part('template-arcive-project'); ?>
                 <?php endwhile; ?>

@@ -145,11 +145,7 @@ if ($floors) {
 }
 ?>
     <section id="home-floor-5" class="section vertical-top cover position-relative">
-
-        <?php echo wp_get_attachment_image(get_field('_sogo_homepage_floor5_circles'), 'full', false, array('class'=> 'img-fluid w-100 home-floor5-desktop-bg')) ; ?>
-        <?php echo wp_get_attachment_image(get_field('_sogo_homepage_floor5_circles_mobile'), 'full', false, array('class'=> 'img-fluid w-100 home-floor5-mobile-bg')) ; ?>
-
-        <div class="container-fluid position-absolute w-100" style="top: 0">
+        <div class="container-fluid home-floor-5-container w-100" style="top: 0">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-6 text-center">
                     <header class="homepage-section-header">
@@ -159,6 +155,10 @@ if ($floors) {
                 </div>
             </div>
         </div>
+
+        <?php echo wp_get_attachment_image(get_field('_sogo_homepage_floor5_circles'), 'full', false, array('class'=> 'img-fluid w-100 home-floor5-desktop-bg')) ; ?>
+        <?php echo wp_get_attachment_image(get_field('_sogo_homepage_floor5_circles_mobile'), 'full', false, array('class'=> 'img-fluid w-100 home-floor5-mobile-bg')) ; ?>
+
     </section> <!-- #home-floor-5 -->
 
 <!--    <section id="home-floor-6" class="split-floor section floor cover vertical-top">-->

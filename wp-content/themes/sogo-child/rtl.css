@@ -941,11 +941,11 @@ span.wpcf7-not-valid-tip {
 }
 
 .blog .plugin-box .publish-wrapper span:last-child {
-    float: left !important;
+    /*float: left !important;*/
 }
 
 .blog .plugin-box .publish-wrapper span:first-child {
-    float: right !important;
+    /*float: right !important;*/
     direction: rtl;
 }
 

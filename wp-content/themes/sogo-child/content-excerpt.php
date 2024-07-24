@@ -16,13 +16,16 @@
             </a>
         </div>
         <div class="publish-wrapper">
-            <span class="float-left">
+            <div itemprop="datePublished" class="publish-wrapper-date">
+                <span>פורסם בתאריך: <?php echo get_the_date('d/m/Y', $post_id); ?></span>
+            </div>
+
+            <div class="">
                 <span itemprop="author" class="">
                     <?php
                     $tax = get_post_type() == 'post'? 'category': 'plugin-cat';
-                    echo sprintf(__('Publish in: %s','sogoc'),get_the_term_list( $post_id, $tax, null,',' )); ?></span>
-            </span>
-            <span itemprop="datePublished" class="float-right"><?php echo get_the_date('d/m/Y', $post_id); ?></span>
+                    echo sprintf(__('קטגוריות: %s'),get_the_term_list( $post_id, $tax, null,', ' )); ?></span>
+            </div>
 <!--            <span itemprop="datePublished" content="--><?php //the_time(get_option('date_format')) ?><!--" class="float-right">-->
 <!--                --><?php //the_time(get_option('date_format')) ?>
 <!--            </span>-->
