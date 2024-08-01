@@ -128,25 +128,22 @@
     To Top
 </a>
 
-<a class="rfq-btn" data-toggle="modal" data-target="#rfq-modal" href="#" title="<?php _e( 'Request for quotation', 'sogoc' ) ?>">
+<a class="rfq-btn" data-toggle="modal" data-target="#popup-form" href="#" title="<?php _e( 'Request for quotation', 'sogoc' ) ?>">
     <div class="footer-tell-us-image"><?php echo wp_get_attachment_image(get_field('_sogo_footer_tell_us_image', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?></div>
     <div class="footer-tell-us-image-hover"><?php echo wp_get_attachment_image(get_field('_sogo_footer_tell_us_image_hover', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?></div>
 	<?php //echo get_field('_sogo_get_quote', 'option')?>
 <!--	--><?php //_e( 'Get a Quote', 'sogoc' ) ?>
 </a>
 
-<div class="modal fade rfq" id="rfq-modal">
+<div class="modal fade" id="popup-form">
     <div class="modal-dialog">
         <div class="modal-content text-center">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <div class="col-md-10 col-md-offset-1">
-                    <h3 class="modal-title uppercase">
-						<?php _e( 'To get a quotation, please fill up the form', 'sogoc' ) ?>
-                    </h3>
 
                     <div class="modal-form">
-						<?php echo do_shortcode( sogo_meta( 'modal_form', get_option( 'page_on_front' ) ) ) ?>
+						<?php echo do_shortcode( '[contact-form-7 id="07fdc94" title="Popup Form"]' ) ?>
                     </div>
                 </div>
             </div>
@@ -156,6 +153,8 @@
     <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
+
+
 
 <?php wp_footer(); ?>
 </body>

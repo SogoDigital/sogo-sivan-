@@ -3921,16 +3921,6 @@ h2.team-heading {
 }
 /* end single-article.less */
 /* thank-you.less */
-.modal-content {
-  background-image: url("images/thanks-bg.jpg");
-  width: 762px;
-  height: auto;
-}
-@media (min-width: 992px) {
-  .modal-content {
-    height: 560px;
-  }
-}
 .thank-you-content {
   background-image: url("images/thank-you-bg.png");
   width: 621px;
@@ -3939,14 +3929,6 @@ h2.team-heading {
 .modal-header,
 .thank-you-header {
   border-bottom: none;
-}
-.modal-dialog {
-  margin: 300px auto;
-  z-index: 9999;
-}
-.modal-title {
-  font-size: 48px;
-  margin: 25px 0 0;
 }
 .thank_you {
   float: right;
@@ -5913,6 +5895,25 @@ p.item-text {
   .rfq .wpcf7-form-control-wrap .g-recaptcha iframe {
     position: relative;
   }
+}
+#popup-form .modal-dialog {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 9999;
+}
+#popup-form .modal-dialog .modal-content {
+  background-color: white;
+  width: 930px;
+  height: auto;
+}
+@media (min-width: 992px) {
+  #popup-form .modal-dialog .modal-content {
+    height: 560px;
+  }
+}
+#popup-form .modal-dialog .modal-content .modal-header .modal-form input {
+  width: 100%;
 }
 /* contact.less */
 #contact-floor-1 {

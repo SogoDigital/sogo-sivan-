@@ -192,3 +192,29 @@
     }
   }
 }
+
+#popup-form{
+  .modal-dialog{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+      z-index: 9999;
+    .modal-content{
+        background-color: white;
+        width: 930px;
+        height: auto;
+        @media (min-width: 992px) {
+          height: 560px;
+        }
+
+      .modal-header{
+        .modal-form{
+          input{
+            width: 100%;
+          }
+        }
+
+      }
+    }
+  }
+}
