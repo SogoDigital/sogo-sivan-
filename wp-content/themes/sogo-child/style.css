@@ -5896,24 +5896,153 @@ p.item-text {
     position: relative;
   }
 }
+#popup-form {
+  font-family: "OpenSansHebrewCondensed";
+}
+#popup-form .modal-backdrop.in {
+  opacity: 0.85;
+}
+@media (min-width: 992px) {
+  #popup-form .vertical-alignment-helper {
+    display: table;
+    height: 100%;
+    width: 100%;
+  }
+  #popup-form .vertical-alignment-helper .vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+#popup-form p {
+  margin-bottom: 0;
+}
 #popup-form .modal-dialog {
   display: flex;
   justify-content: center;
   width: 100%;
   z-index: 9999;
+  margin: 0;
 }
 #popup-form .modal-dialog .modal-content {
+  margin: 0 auto;
   background-color: white;
-  width: 930px;
+  width: 830px;
   height: auto;
+  border-radius: 30px;
+  border: 0;
+}
+#popup-form .modal-dialog .modal-content .modal-body {
+  padding: 5rem 2rem;
+}
+#popup-form .modal-dialog .modal-content .modal-body button.close {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  color: #ED1D24;
+  opacity: 1;
+}
+#popup-form .modal-dialog .modal-content .modal-body button.close .fa-close {
+  font-size: 24px;
+}
+#popup-form .modal-dialog .modal-content .modal-body .popup-top-text {
+  color: #2D2D2F;
+  font-size: 36px;
+  font-weight: 300;
+}
+#popup-form .modal-dialog .modal-content .modal-body .popup-title {
+  font-size: 64px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ED1D24 0%, #EE2A7B 18%, #8A5BA5 38%, #00ADDC 60%, #2BB673 80%, #FFC906 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  margin-bottom: 4rem;
+}
+#popup-form .modal-dialog .modal-content .modal-body .modal-form .popup-tofes .s-input-group {
+  padding: 0 1.5rem;
+  text-align: start;
+  position: relative;
+  margin-bottom: 2rem;
+}
+#popup-form .modal-dialog .modal-content .modal-body .modal-form .popup-tofes .s-input-group label {
+  font-size: 18px;
+  font-weight: 700;
+}
+#popup-form .modal-dialog .modal-content .modal-body .modal-form .popup-tofes .s-input-group input {
+  direction: rtl;
+  width: 100%;
+  padding: 8px 12px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #b5b5b5;
+  background-color: #FFF;
+}
+#popup-form .modal-dialog .modal-content .modal-body .modal-form .popup-tofes .s-input-group input.wpcf7-submit {
+  border: 0;
+  border-radius: 100px;
+  background: linear-gradient(88deg, #ED1D24 0.78%, #EE2A7B 34%, #8A5BA5 74.46%, #00ADDC 99.68%);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+#popup-form .modal-dialog .modal-content .modal-body .modal-form .popup-tofes .s-input-group .wpcf7-spinner {
+  position: absolute;
+  left: 5px;
+  bottom: 12px;
+}
+#popup-form .modal-dialog .modal-content .modal-body .modal-form .popup-tofes .s-input-group .wpcf7-not-valid-tip {
+  position: absolute;
+  padding: 0;
+  font-size: 16px;
+}
+#popup-form .modal-dialog .modal-content .modal-body .modal-form .popup-tofes .s-input-group.wpcf7-submit {
+  margin-bottom: 0;
+}
+#popup-form .modal-dialog .modal-content .modal-body .modal-form .wpcf7-response-output {
+  display: none;
+}
+#popup-form .modal-dialog .modal-content .modal-body .popup-blue-ball {
+  position: absolute;
+  left: -5rem;
+  top: -12rem;
+  display: none;
 }
 @media (min-width: 992px) {
-  #popup-form .modal-dialog .modal-content {
-    height: 560px;
+  #popup-form .modal-dialog .modal-content .modal-body .popup-blue-ball {
+    display: block;
   }
 }
-#popup-form .modal-dialog .modal-content .modal-header .modal-form input {
-  width: 100%;
+#popup-form .modal-dialog .modal-content .modal-body .popup-red-ball {
+  position: absolute;
+  right: -6rem;
+  bottom: 0;
+  display: none;
+}
+@media (min-width: 992px) {
+  #popup-form .modal-dialog .modal-content .modal-body .popup-red-ball {
+    display: block;
+  }
+}
+#popup-form .modal-dialog .modal-content .modal-body .popup-airplane {
+  position: absolute;
+  right: 12rem;
+  bottom: 3rem;
+  display: none;
+}
+@media (min-width: 992px) {
+  #popup-form .modal-dialog .modal-content .modal-body .popup-airplane {
+    display: block;
+  }
+}
+#popup-form .modal-dialog .popup-man {
+  display: none;
+}
+@media (min-width: 992px) {
+  #popup-form .modal-dialog .popup-man {
+    display: block;
+  }
 }
 /* contact.less */
 #contact-floor-1 {

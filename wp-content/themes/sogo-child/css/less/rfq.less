@@ -68,6 +68,7 @@
 }
 
 .modal {
+
   &.rfq {
     .modal-dialog {
       margin: 80px auto;
@@ -194,26 +195,159 @@
 }
 
 #popup-form{
+  //display: block !important;
+  font-family: "OpenSansHebrewCondensed";
+  .modal-backdrop.in{
+    opacity: 0.85;
+  }
+  .vertical-alignment-helper{
+    @media (min-width: 992px) {
+      display:table;
+      height: 100%;
+      width: 100%;
+      .vertical-align-center {
+        /* To center vertically */
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+  }
+  p{
+    margin-bottom: 0;
+  }
   .modal-dialog{
     display: flex;
     justify-content: center;
     width: 100%;
-      z-index: 9999;
+    z-index: 9999;
+    margin: 0;
     .modal-content{
+      margin: 0 auto;
         background-color: white;
-        width: 930px;
+        width: 830px;
         height: auto;
+        border-radius: 30px;
+      border: 0;
         @media (min-width: 992px) {
-          height: 560px;
+          //height: 560px;
         }
 
-      .modal-header{
+      .modal-body{
+        padding: 5rem 2rem;
+        button.close{
+          position: absolute;
+          right: 2rem;
+          top: 2rem;
+          color: #ED1D24;
+          opacity: 1;
+          .fa-close{
+            font-size: 24px;
+          }
+        }
+        .popup-top-text{
+          color: #2D2D2F;
+          font-size: 36px;
+          font-weight: 300;
+        }
+        .popup-title{
+          font-size: 64px;
+          font-weight: 800;
+          background: linear-gradient(90deg, #ED1D24 0%, #EE2A7B 18%, #8A5BA5 38%, #00ADDC 60%, #2BB673 80%, #FFC906 100%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          line-height: 1;
+          margin-bottom: 4rem;
+        }
         .modal-form{
-          input{
-            width: 100%;
+          .popup-tofes {
+            .popup-tofes-line:not(:last-child){
+
+            }
+            .s-input-group {
+              padding: 0 1.5rem;
+              text-align: start;
+              position: relative;
+              margin-bottom: 2rem;
+
+              label {
+                font-size: 18px;
+                font-weight: 700;
+                //font-family: "OpenSansHebrewCondensed";
+              }
+
+              input {
+                direction: rtl;
+                width: 100%;
+                padding: 8px 12px;
+                height: 50px;
+                border-radius: 5px;
+                border: 1px solid rgba(181, 181, 181, 1);
+                background-color: #FFF;
+
+                &.wpcf7-submit {
+                  border: 0;
+                  border-radius: 100px;
+                  background: linear-gradient(88deg, #ED1D24 0.78%, #EE2A7B 34%, #8A5BA5 74.46%, #00ADDC 99.68%);
+                  color: white;
+                  font-size: 16px;
+                  font-weight: 700;
+
+                }
+              }
+              .wpcf7-spinner{
+                position: absolute;
+                left: 5px;
+                bottom: 12px;
+              }
+              .wpcf7-not-valid-tip{
+                position: absolute;
+                padding: 0;
+                font-size: 16px;
+              }
+              &.wpcf7-submit{
+                margin-bottom: 0;
+              }
+            }
+          }
+          .wpcf7-response-output{
+            display: none;
           }
         }
 
+        .popup-blue-ball{
+          position: absolute;
+          left: -5rem;
+          top: -12rem;
+          display: none;
+          @media (min-width: 992px) {
+            display: block;
+          }
+        }
+        .popup-red-ball{
+          position: absolute;
+          right: -6rem;
+          bottom: 0;
+          display: none;
+          @media (min-width: 992px) {
+            display: block;
+          }
+        }
+        .popup-airplane{
+          position: absolute;
+          right: 12rem;
+          bottom: 3rem;
+          display: none;
+          @media (min-width: 992px) {
+            display: block;
+          }
+        }
+      }
+    }
+    .popup-man{
+      display: none;
+      @media (min-width: 992px) {
+        display: block;
       }
     }
   }
