@@ -95,6 +95,10 @@ function sogo_load_fullPage()
     wp_enqueue_script('fullPage', get_template_directory_uri(). '/assets/js/fullpage/jquery.fullPage.js', array('jquery'), '', true);
     wp_enqueue_style('fullPagecss', get_template_directory_uri() . '/assets/js/fullpage/jquery.fullPage.css', array(), '', 'all');
 
+//    wp_enqueue_script('fullPageCDN', 'https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.22/fullpage.js', array('jquery'), '', true);
+//    wp_enqueue_style('fullPagecssCDN', 'https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.22/fullpage.css', array(), '', 'all');
+
+
 }
 /*
  * load ScrollMagic script
