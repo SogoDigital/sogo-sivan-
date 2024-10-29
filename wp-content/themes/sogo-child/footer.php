@@ -1,7 +1,7 @@
 <?php echo sogo_option( 'google_remarketing' ) ?>
 
 <?php if(!(is_page_template('page-contact.php') || is_page_template('page-thanks.php'))) { ?>
-    <div class="footer-form" style="background-image: url(<?php echo get_field('_sogo_footer_bg', 'option'); ?>); ">
+    <div id="footer-form" class="footer-form" style="background-image: url(<?php echo get_field('_sogo_footer_bg', 'option'); ?>); ">
         <div class="footer-form-wrapper">
 
             <div class="footer-form-circle text-center">
