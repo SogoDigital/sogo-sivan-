@@ -6992,28 +6992,26 @@ form div.wpcf7-mail-sent-ok {
 .campaigne-page {
   font-family: 'OpenSansHebrewCondensed';
 }
-.campaigne-page .campaigne-floor1 {
+.campaigne-page .campaigne-floor1 .video-container {
+  height: 700px;
+  overflow: hidden;
+  position: relative;
+}
+.campaigne-page .campaigne-floor1 .full-width-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+}
+.campaigne-page .campaigne-floor1 .campaigne-floor1-wrapper {
   padding-top: 64px;
   padding-bottom: 64px;
-}
-.campaigne-page .campaigne-floor1 .video-container {
-  position: relative;
-}
-.campaigne-page .campaigne-floor1 .video-container .wp-video {
-  width: 100% !important;
-  position: relative;
-  z-index: 1;
-  margin: auto;
-}
-@media (min-width: 992px) {
-  .campaigne-page .campaigne-floor1 .video-container .wp-video {
-    width: 70% !important;
-  }
-}
-.campaigne-page .campaigne-floor1 .video-container .wp-video .full-width-video {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
+  width: 70%;
 }
 .campaigne-page .campaigne-floor1 .campaigne-floor1-top {
   font-size: 48px;
@@ -7081,6 +7079,9 @@ form div.wpcf7-mail-sent-ok {
   background: linear-gradient(90deg, #ED1D24 0%, #EE2A7B 18%, #8A5BA5 38%, #00ADDC 60%, #2BB673 80%, #FFC906 100%);
   filter: blur(12.5px);
   height: 50px;
+  position: relative;
+  z-index: 1;
+  margin-top: -16px;
 }
 .campaigne-page .campaigne-floor2 {
   margin-top: -40px;

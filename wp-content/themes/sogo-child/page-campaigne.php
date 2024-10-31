@@ -10,17 +10,19 @@ $rtl = is_rtl();
 <main class="campaigne-page" style="margin-top: 72px; ">
     <div class="campaigne-floor1 container-fluid">
         <div class="row flex-column-reverse flex-lg-row justify-content-center">
-            <div class="d-none d-lg-block col-lg-1"></div>
-            <div class="col-12 col-lg-3">
-                <p class="mb-0 campaigne-floor1-top"><?php echo get_field('campaigne_floor1_top')?></p>
-                <p class="campaigne-floor1-title"><?php echo get_field('campaigne_floor1_title')?></p>
-                <div class="campaigne-floor1-text"><?php the_content(); ?></div>
-                <a class="campaigne-floor1-button d-flex justify-content-center align-items-center" href="#footer-form">
-                    <span><?php echo get_field('campaigne_floor1_button_text')?></span>
-                    <?php echo wp_get_attachment_image(get_field('campaigne_floor1_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
-                </a>
+<!--            <div class="d-none d-lg-block col-lg-1"></div>-->
+            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
+                <div class="campaigne-floor1-wrapper">
+                    <p class="mb-0 campaigne-floor1-top"><?php echo get_field('campaigne_floor1_top')?></p>
+                    <p class="campaigne-floor1-title"><?php echo get_field('campaigne_floor1_title')?></p>
+                    <div class="campaigne-floor1-text"><?php the_content(); ?></div>
+                    <a class="campaigne-floor1-button d-flex justify-content-center align-items-center" href="#footer-form">
+                        <span><?php echo get_field('campaigne_floor1_button_text')?></span>
+                        <?php echo wp_get_attachment_image(get_field('campaigne_floor1_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+                    </a>
+                </div>
             </div>
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-lg-6 px-lg-0">
                 <div class="text-center">
                     <div class="video-container">
                         <?php
@@ -35,15 +37,6 @@ $rtl = is_rtl();
                         ?>
                     </div>
                 </div>
-    <!--            --><?php //if (!wp_is_mobile()): ?>
-    <!--                <video loop muted autoplay class="home-floor1-video hidden-xs hidden-sm">-->
-    <!--                    <source src="--><?php //echo get_stylesheet_directory_uri() ?><!--/images/main-video.mp4" type="video/mp4">-->
-    <!--                </video>-->
-    <!--            --><?php //else: ?>
-    <!--                <video playsinline loop muted autoplay class="home-floor1-video">-->
-    <!--                    <source src="--><?php //echo get_stylesheet_directory_uri() ?><!--/images/main-video-mobile.mp4" type="video/mp4">-->
-    <!--                </video>-->
-    <!--            --><?php //endif; ?>
             </div>
         </div>
     </div>
