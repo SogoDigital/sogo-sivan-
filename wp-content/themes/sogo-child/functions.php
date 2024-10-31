@@ -256,3 +256,12 @@ function cc_mime_types($mimes)
 }
 
 add_filter('upload_mimes', 'cc_mime_types');
+
+add_filter('wp_video_shortcode', function ($output) {
+    if (!is_page_template('page-champion-toolkit.php')) {
+        $output = str_replace('controls="controls"', 'playsinline', $output);
+        return $output;
+    }
+    $output = str_replace('<video', '<video playsinline', $output);
+    return $output;
+});

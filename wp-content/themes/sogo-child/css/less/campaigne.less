@@ -1,45 +1,50 @@
 .campaigne-page{
   font-family: 'OpenSansHebrewCondensed';
+  background-color: #f6f7f8;
   .campaigne-floor1{
-
-    .video-container {
-      height: 700px;
-      overflow: hidden;
+    background-color: white;
+    .video-container{
       position: relative;
+      .wp-video {
+        width: 100% !important;
+        position: relative;
+        z-index: 1;
+        margin: auto;
+        @media(min-width: 992px){
+          width: 100% !important;
+        }
+        .full-width-video {
+          width: 100%;
+          max-width: 100%;
+          height: auto;
+        }
+      }
     }
+    @media (min-width: 992px){
+      .video-container {
+        height: 700px;
+        overflow: hidden;
+        position: relative;
+        .wp-video {
+          position: unset;
+          .full-width-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+          }
+        }
+      }
 
-    .full-width-video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      object-fit: cover;
     }
-    //.video-container{
-    //  position: relative;
-    //  .wp-video {
-    //    width: 100% !important;
-    //    position: relative;
-    //    z-index: 1;
-    //    margin: auto;
-    //    @media(min-width: 992px){
-    //      width: 100% !important;
-    //    }
-    //    .full-width-video {
-    //      width: 100%;
-    //      max-width: 100%;
-    //      height: auto;
-    //    }
-    //  }
-    //}
     .campaigne-floor1-wrapper{
-      padding-top: 64px;
+      padding-top: 48px;
       padding-bottom: 64px;
-      width: 70%;
+      @media (min-width: 992px){
+        padding-top: 64px;
+      }
     }
     .campaigne-floor1-top{
       //font-size: 3.2vw;
@@ -102,46 +107,56 @@
         margin-right: 16px;
       }
     }
+    .campaigne-floor1-arrow-down{
+      width: 30px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
   }
-  .campaigne-logos-gradient{
-    opacity: 0.25;
-    background: linear-gradient(90deg, #ED1D24 0%, #EE2A7B 18%, #8A5BA5 38%, #00ADDC 60%, #2BB673 80%, #FFC906 100%);
-    filter: blur(12.5px);
-    height: 50px;
-    position: relative;
-    z-index: 1;
-    margin-top: -16px;
-  }
+
   .campaigne-floor2{
-    margin-top: -40px;
     background-color: white;
-    z-index: 1;
-    position: relative;
-    padding-top: 64px;
-    padding-bottom: 64px;
+    background: linear-gradient(180deg, #F6F7F8 0%, #FFF 24.57%);
+    padding-top: 48px;
+    padding-bottom: 48px;
+    @media (min-width: 992px){
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
     .campaigne-floor2-title{
-      font-size: 64px;
+      font-size: 48px;
       font-weight: 800;
       line-height: 1;
       background: linear-gradient(88deg, #ED1D24 36%, #EE2A7B 45%, #8A5BA5 55%, #00ADDC 62%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+    .campaigne-floor2-subtitle{
       margin-bottom: 64px;
     }
   }
   .campaigne-floor3{
     background-color: #f6f7f8;
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    @media (min-width: 992px){
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
     .campaigne-floor3-title{
-      font-size: 64px;
+      font-size: 48px;
       font-weight: 800;
       line-height: 1;
       background: linear-gradient(88deg, #ED1D24 36%, #EE2A7B 45%, #8A5BA5 55%, #00ADDC 62%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+    .campaigne-floor3-subtitle{
       margin-bottom: 64px;
     }
     .campaigne-floor3-project{
@@ -159,30 +174,32 @@
     }
   }
   .campaigne-floor4{
-    background-color: #f6f7f8;
-    padding-bottom: 64px;
+    //background-color: #f6f7f8;
+    background: linear-gradient(180deg, #F6F7F8 0%, #FFF 24.57%);
+    //padding-bottom: 64px;
     @media(min-width: 992px){
       padding-top: 64px;
     }
     .campaigne-floor4-title{
-      font-size: 64px;
+      font-size: 48px;
       font-weight: 800;
       line-height: 1;
       background: linear-gradient(88deg, #ED1D24 36%, #EE2A7B 45%, #8A5BA5 55%, #00ADDC 62%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+    .campaigne-floor4-subtitle{
       margin-bottom: 64px;
     }
     .campaigne-floor4-service-wrapper{
-      margin-bottom: 64px;
+      margin-bottom: 96px;
       .campaigne-floor4-service{
         .campaigne-floor4-service-top-wrapper{
           width: fit-content;
-          background: linear-gradient(#f6f7f8, #f6f7f8) padding-box,
-          linear-gradient(88deg, #ED1D24 1%, #EE2A7B 34%, #8A5BA5 75%, #00ADDC 100%) border-box;
-          border: 2px solid transparent;
-          border-radius: 4px;
+          background: #F0F0F0;
+          border: 1px solid #EEDDE5;
+          border-radius: 100px;
           padding: 16px 24px;
           margin-bottom: 25px;
           .campaigne-floor4-service-top{
@@ -195,6 +212,28 @@
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+          }
+          .campaigne-floor4-service-gift{
+            display: none;
+            max-width: 50%;
+            top: 0%;
+            right: 0%;
+            transform: translateY(-70%) translateX(50%);
+            animation: giftfloat 2s ease-in-out infinite;
+            @media(min-width: 992px){
+              display: block;
+            }
+          }
+          @keyframes giftfloat {
+            0% {
+              transform: translateY(-70%) translateX(50%);
+            }
+            50% {
+              transform: translateY(-65%) translateX(50%);
+            }
+            100% {
+              transform: translateY(-70%) translateX(50%);
+            }
           }
         }
 
@@ -212,7 +251,7 @@
           }
         }
         .campaigne-floor4-service-text{
-          color: #555;
+          color: #333;
           font-size: 18px;
           font-weight: normal;
           line-height: 1.5;
@@ -225,10 +264,11 @@
             font-size: 18px;
             font-weight: bold;
             line-height: 1;
-            background: linear-gradient(88deg, #ED1D24 1%, #EE2A7B 34%, #8A5BA5 75%, #00ADDC 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #111;
+            //background: linear-gradient(88deg, #ED1D24 1%, #EE2A7B 34%, #8A5BA5 75%, #00ADDC 100%);
+            //background-clip: text;
+            //-webkit-background-clip: text;
+            //-webkit-text-fill-color: transparent;
             margin-left: 16px;
           }
           &:after{
@@ -243,35 +283,64 @@
           }
         }
       }
-      .campaigne-floor4-service-image{
-        border-radius: 32px;
-        overflow: hidden;
-        img{
+      .campaigne-floor4-service-image-wrapper{
+        .campaigne-floor4-service-image{
           width: 100%;
+          border-radius: 32px;
         }
+        .campaigne-floor4-service-lamp{
+          display: none;
+          max-width: 15%;
+          top: 0%;
+          left: 0%;
+          transform: translateY(-50%) translateX(-50%);
+          animation: float 2s ease-in-out infinite;
+          @media(min-width: 992px){
+            display: block;
+          }
+        }
+        @keyframes float {
+          0% {
+            transform: translateY(-50%) translateX(-50%);
+          }
+          50% {
+            transform: translateY(-45%) translateX(-50%);
+          }
+          100% {
+            transform: translateY(-50%) translateX(-50%);
+          }
+        }
+
       }
     }
 
   }
   .campaigne-floor5{
     background-color: #f6f7f8;
-    padding-bottom: 64px;
+    padding-top: 48px;
+    padding-bottom: 48px;
     @media(min-width: 992px){
       padding-top: 64px;
+      padding-bottom: 64px;
     }
     .campaigne-floor5-title{
-      font-size: 64px;
+      font-size: 48px;
       font-weight: 800;
       line-height: 1;
       background: linear-gradient(88deg, #ED1D24 36%, #EE2A7B 45%, #8A5BA5 55%, #00ADDC 62%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+    .campaigne-floor5-subtitle{
       margin-bottom: 64px;
     }
     .faq-content {
       .questions-accord {
         .panel {
+          //padding: 12px 24px;
+          border-radius: 8px;
+          box-shadow: 0px 3.153px 18.916px 0px rgba(242, 64, 64, 0.05);
           .panel-heading {
             cursor: pointer;
             padding: 12px 24px;
@@ -280,6 +349,8 @@
                 font-size: 18px;
                 font-weight: bold;
                 text-decoration: none;
+                margin-right: 10px;
+                line-height: 1.5;
               }
               span {
                 transition: 0.2s ease-in-out;
@@ -292,6 +363,8 @@
                 transform-origin: center center;
                 transform: rotate(45deg);
                 line-height: 0;
+                color: #FF3434;
+                font-size: 24px;
               }
             }
 
@@ -310,6 +383,7 @@
             padding: 12px 24px;
             p{
               font-size: 18px;
+              color: black;
             }
             ul{
               li{
