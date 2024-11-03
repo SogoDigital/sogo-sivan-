@@ -38,12 +38,18 @@ $rtl = is_rtl();
             $glossary = get_field('_sogo_glossary');
             foreach( $glossary as $letter => $repeater ){
 
-                $order = array();
-                foreach( $repeater as $i => $row ) {
-                    $order[ $i ] = $row['title'];
+                if (!is_array($repeater) || empty($repeater)) {
+                    continue;
                 }
-//                var_dump($order);
-                array_multisort( $order, SORT_ASC, $repeater );
+
+                // Extract titles for sorting
+                $titles = array_map(function($item) {
+                    return strtolower($item['title'] ?? ''); // Convert to lowercase for better sorting
+                }, $repeater);
+
+                // Sort both arrays
+                array_multisort($titles, SORT_ASC, SORT_STRING, $repeater);
+
                 if( $repeater ):?>
                     <div id="<?php echo $letter ?>" class="glossary-block">
                         <p class="glossary-letter uppercase mb-5"><?php echo $letter;?></p>
