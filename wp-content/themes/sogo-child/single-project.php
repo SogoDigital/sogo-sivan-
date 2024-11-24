@@ -127,12 +127,7 @@ $col = $is_mobile ? 'col-md-12' : 'col-md-4';
 
 <?php $category = get_the_terms( $post->ID, 'project-cat' )[0]; ?>
 <?php $related = get_field('_sogo_related_projects', $category->taxonomy . '_' . $category->term_id)?>
-<?php 
-if(is_bool($related)){
-    $related = [];
-}
-
-unset($related[array_search($post->ID, $related)]);?>
+<?php unset($related[array_search($post->ID, $related)]);?>
 <?php shuffle($related); ?>
 <?php $related =  array_slice($related, 0, 3); // get first three only; ?>
 
