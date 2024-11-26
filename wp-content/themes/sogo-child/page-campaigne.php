@@ -11,7 +11,7 @@ $rtl = is_rtl();
     <div class="campaigne-floor1 container-fluid position-relative">
         <div class="row flex-column-reverse flex-lg-row justify-content-center h-100">
             <div class="d-none d-lg-block col-lg-1"></div>
-            <div class="col-12 col-lg-3 d-flex justify-content-start align-items-center">
+            <div class="col-12 col-lg-4 d-flex justify-content-start align-items-center">
                 <div class="campaigne-floor1-wrapper">
                     <p class="mb-0 campaigne-floor1-top"><?php echo get_field('campaigne_floor1_top')?></p>
                     <p class="campaigne-floor1-title"><?php echo get_field('campaigne_floor1_title')?></p>
@@ -22,7 +22,7 @@ $rtl = is_rtl();
                     </a>
                 </div>
             </div>
-            <div class="col-12 col-lg-8 px-lg-0">
+            <div class="col-12 col-lg-7 px-lg-0">
                 <div class="text-center">
                     <div class="video-container">
                         <?php
@@ -45,10 +45,11 @@ $rtl = is_rtl();
 
     <div class="campaigne-floor2 container-fluid">
         <div class="row justify-content-center">
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-lg-6">
                 <p class="campaigne-floor2-title text-center"><?php echo get_field('campaigne_floor2_title')?></p>
                 <p class="campaigne-floor2-subtitle text-center"><?php echo get_field('campaigne_floor2_subtitle')?></p>
-
+            </div>
+            <div class="col-12 col-lg-8">
                 <div class="row mb-5">
                     <?php while (have_rows("campaigne_floor2_logos")) : the_row(); ?>
                         <div class="col-4 col-md-2 text-center mb-5 campaigne-floor2-logos-item">
@@ -67,12 +68,14 @@ $rtl = is_rtl();
 
     <div class="campaigne-floor3 container-fluid">
         <div class="row justify-content-center">
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-lg-6">
                 <p class="campaigne-floor3-title text-center"><?php echo get_field('campaigne_floor3_title')?></p>
                 <p class="campaigne-floor3-subtitle text-center"><?php echo get_field('campaigne_floor3_subtitle')?></p>
+            </div>
+            <div class="col-12 col-lg-8">
                 <div class="row mb-5">
                     <?php while (have_rows("campaigne_floor3_projects")) : the_row(); ?>
-                        <div class="col-6 mb-4">
+                        <div class="col-12 col-md-6 mb-5 mb-md-4">
                             <a class="campaigne-floor3-project" href="<?php echo get_sub_field('link'); ?>">
                                 <?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid')) ; ?>
                             </a>
@@ -86,57 +89,70 @@ $rtl = is_rtl();
             </div>
         </div>
     </div>
-    <div class="campaigne-floor4 container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-8">
-                <p class="campaigne-floor4-title text-center"><?php echo get_field('campaigne_floor4_title')?></p>
-                <p class="campaigne-floor4-subtitle text-center"><?php echo get_field('campaigne_floor4_subtitle')?></p>
-                <?php $counter = 0; ?>
-                <?php while (have_rows("campaigne_floor4_services")) : the_row(); ?>
-                        <div class="row campaigne-floor4-service-wrapper flex-column-reverse flex-lg-row<?php echo ($counter%2) ? '-reverse' : ''; ?>">
-                            <div class="col-12 col-lg-5">
-                                <div class="campaigne-floor4-service">
-                                    <div class="campaigne-floor4-service-top-wrapper position-relative">
-                                        <p class="campaigne-floor4-service-top"><?php echo get_sub_field('top_text')?></p>
-                                        <?php if(get_sub_field('gift')): ?>
-                                            <?php echo wp_get_attachment_image(get_sub_field('gift'), 'full', false, array('class'=> 'img-fluid position-absolute campaigne-floor4-service-gift')) ; ?>
-                                        <?php endif; ?>
-
-                                    </div>
-                                    <p class="campaigne-floor4-service-title"><?php echo get_sub_field('title')?></p>
-                                    <p class="campaigne-floor4-service-text"><?php echo get_sub_field('text')?></p>
-                                    <a class="campaigne-floor4-service-link d-flex justify-content-start align-items-center" href="#footer-form">
-                                        <span>דברו איתנו</span>
-                                        <?php echo wp_get_attachment_image(get_field('campaigne_floor4_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-1"></div>
-                            <div class="col-12 col-lg-6 px-lg-0">
-                                <div class="campaigne-floor4-service-image-wrapper mb-4 mb-lg-0 position-relative">
-                                    <?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid campaigne-floor4-service-image')) ; ?>
-                                    <?php if(get_sub_field('lamp')): ?>
-                                        <?php echo wp_get_attachment_image(get_sub_field('lamp'), 'full', false, array('class'=> 'img-fluid position-absolute campaigne-floor4-service-lamp')) ; ?>
-                                    <?php endif; ?>
-                                </div>
+    <div class="campaigne-floor4">
+        <div class="campaigne-floor4-wraper">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-12">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-8">
+                                <p class="campaigne-floor4-title text-center"><?php echo get_field('campaigne_floor4_title')?></p>
+                                <p class="campaigne-floor4-subtitle text-center"><?php echo get_field('campaigne_floor4_subtitle')?></p>
                             </div>
                         </div>
-                    <?php $counter++; ?>
-                <?php endwhile; ?>
+                                <?php $counter = 0; ?>
+                        <?php while (have_rows("campaigne_floor4_services")) : the_row(); ?>
+                                <div class="row campaigne-floor4-service-wrapper flex-column-reverse flex-lg-row<?php echo ($counter%2) ? '-reverse' : ''; ?>">
+                                    <div class="col-12 col-lg-5">
+                                        <div class="campaigne-floor4-service">
+                                            <div class="campaigne-floor4-service-top-wrapper position-relative">
+                                                <p class="campaigne-floor4-service-top"><?php echo get_sub_field('top_text')?></p>
+                                                <?php if(get_sub_field('gift')): ?>
+                                                    <?php echo wp_get_attachment_image(get_sub_field('gift'), 'full', false, array('class'=> 'img-fluid position-absolute campaigne-floor4-service-gift')) ; ?>
+                                                <?php endif; ?>
+
+                                            </div>
+                                            <div class="campaigne-floor4-service-title">
+                                                <?php echo get_sub_field('title')?>
+                                            </div>
+                                            <div class="campaigne-floor4-service-text">
+                                                <?php echo get_sub_field('text')?>
+                                            </div>
+
+                                            <a class="campaigne-floor4-service-link d-flex justify-content-start align-items-center" href="#footer-form">
+                                                <span>דברו איתנו</span>
+                                                <?php echo wp_get_attachment_image(get_field('campaigne_floor4_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 d-none d-lg-block"></div>
+                                    <div class="col-12 col-lg-6 px-lg-0">
+                                        <div class="campaigne-floor4-service-image-wrapper mb-4 mb-lg-0 position-relative">
+                                            <?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid campaigne-floor4-service-image')) ; ?>
+                                            <?php if(get_sub_field('lamp')): ?>
+                                                <?php echo wp_get_attachment_image(get_sub_field('lamp'), 'full', false, array('class'=> 'img-fluid position-absolute campaigne-floor4-service-lamp')) ; ?>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php $counter++; ?>
+                        <?php endwhile; ?>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <?php echo wp_get_attachment_image(get_field('campaigne_floor4_man'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+
+                </div>
             </div>
         </div>
-        <div class="d-flex justify-content-center align-items-center">
-            <?php echo wp_get_attachment_image(get_field('campaigne_floor4_man'), 'full', false, array('class'=> 'img-fluid')) ; ?>
-
-        </div>
-
     </div>
     <div class="campaigne-floor5 container-fluid">
         <div class="row justify-content-center">
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-lg-6">
                 <p class="campaigne-floor5-title text-center"><?php echo get_field('campaigne_floor5_title')?></p>
                 <p class="campaigne-floor5-subtitle text-center"><?php echo get_field('campaigne_floor5_subtitle')?></p>
-
+            </div>
+            <div class="col-12 col-lg-8">
                 <?php
                 $questions = array();
                 if (have_rows('campaigne_floor5_questions')):

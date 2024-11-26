@@ -8,7 +8,7 @@
     color: #FFF;
     font-size: 18px;
     font-weight: 400;
-    width: 220px;
+    width: fit-content;
     font-family: 'OpenSansHebrewCondensed';
     display: block;
     &:hover{
@@ -86,8 +86,10 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 48px;
+      text-align: center;
       @media(min-width: 992px){
         font-size: 3.2vw;
+        text-align: start;
       }
     }
     .campaigne-floor1-text{
@@ -117,6 +119,10 @@
       width: 220px;
       font-family: 'OpenSansHebrewCondensed';
       display: block;
+      margin: 0 auto 3rem;
+      @media(min-width: 992px){
+        margin: 0 0 3rem 0;
+      }
       &:hover{
         text-decoration: none;
       }
@@ -127,10 +133,13 @@
     .campaigne-floor1-arrow-down{
       width: 30px;
       position: absolute;
-      bottom: 0;
+      bottom: 10px;
       left: 0;
       right: 0;
       margin: auto;
+      @media(min-width: 992px){
+        bottom: 25px;
+      }
     }
   }
 
@@ -141,19 +150,26 @@
     padding-bottom: 48px;
     @media (min-width: 992px){
       padding-top: 64px;
-      padding-bottom: 64px;
+      padding-bottom: 0;
     }
     .campaigne-floor2-title{
-      font-size: 48px;
+      font-size: 32px;
       font-weight: 800;
       line-height: 1;
       background: linear-gradient(88deg, #ED1D24 36%, #EE2A7B 45%, #8A5BA5 55%, #00ADDC 62%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      @media (min-width: 992px){
+        font-size: 48px;
+      }
     }
     .campaigne-floor2-subtitle{
+      font-size: 20px;
       margin-bottom: 64px;
+      @media (min-width: 992px){
+        font-size: 22px;
+      }
     }
   }
   .campaigne-floor3{
@@ -165,16 +181,23 @@
       padding-bottom: 64px;
     }
     .campaigne-floor3-title{
-      font-size: 48px;
+      font-size: 32px;
       font-weight: 800;
       line-height: 1;
       background: linear-gradient(88deg, #ED1D24 36%, #EE2A7B 45%, #8A5BA5 55%, #00ADDC 62%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      @media (min-width: 992px){
+        font-size: 48px;
+      }
     }
     .campaigne-floor3-subtitle{
       margin-bottom: 64px;
+      font-size: 20px;
+      @media (min-width: 992px){
+        font-size: 22px;
+      }
     }
     .campaigne-floor3-project{
       border-radius: 20px;
@@ -197,17 +220,30 @@
     @media(min-width: 992px){
       padding-top: 64px;
     }
+    .campaigne-floor4-wraper{
+      margin: 0 auto;
+      max-width: 1200px;
+      position: relative;
+      width: 100%;
+    }
     .campaigne-floor4-title{
-      font-size: 48px;
+      font-size: 32px;
       font-weight: 800;
       line-height: 1;
       background: linear-gradient(88deg, #ED1D24 36%, #EE2A7B 45%, #8A5BA5 55%, #00ADDC 62%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      @media (min-width: 992px){
+        font-size: 48px;
+      }
     }
     .campaigne-floor4-subtitle{
       margin-bottom: 64px;
+      font-size: 20px;
+      @media (min-width: 992px){
+        font-size: 22px;
+      }
     }
     .campaigne-floor4-service-wrapper{
       margin-bottom: 96px;
@@ -255,23 +291,31 @@
         }
 
         .campaigne-floor4-service-title{
-          color: #111;
-          font-size: 32px;
-          font-weight: normal;
-          line-height: 1.5;
-          span{
-            font-weight: bold;
-            background: linear-gradient(88deg, #ED1D24 1%, #EE2A7B 34%, #8A5BA5 75%, #00ADDC 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+          p {
+            color: #111;
+            font-size: 32px;
+            font-weight: normal;
+            line-height: 1.5;
+
+            span, strong {
+              font-weight: bold;
+              background: linear-gradient(88deg, #ED1D24 1%, #EE2A7B 34%, #8A5BA5 75%, #00ADDC 100%);
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
           }
         }
         .campaigne-floor4-service-text{
-          color: #333;
-          font-size: 18px;
-          font-weight: normal;
-          line-height: 1.5;
+          p {
+            color: #333;
+            font-size: 20px;
+            font-weight: normal;
+            line-height: 1.5;
+            @media(min-width: 992px){
+              font-size: 20px;
+            }
+          }
         }
         .campaigne-floor4-service-link{
           width: fit-content;
@@ -341,16 +385,23 @@
       padding-bottom: 64px;
     }
     .campaigne-floor5-title{
-      font-size: 48px;
+      font-size: 32px;
       font-weight: 800;
       line-height: 1;
       background: linear-gradient(88deg, #ED1D24 36%, #EE2A7B 45%, #8A5BA5 55%, #00ADDC 62%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      @media(min-width: 992px){
+        font-size: 48px;
+      }
     }
     .campaigne-floor5-subtitle{
       margin-bottom: 64px;
+      font-size: 20px;
+      @media(min-width: 992px){
+        font-size: 22px;
+      }
     }
     .faq-content {
       .questions-accord {
