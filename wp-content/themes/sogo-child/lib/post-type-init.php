@@ -43,6 +43,20 @@ function sogo_get_post_types(){
                 'thumbnail',
             )
         ),
+        array(
+            'type'         => 'lp',
+            'label'        => __( 'LP', 'sogoc' ),
+            'menu_icon'    => 'dashicons-editor-code',
+            'hierarchical' => true,
+            'slug' => 'product',
+            'has_archive' => true,
+            'supports'     => array(
+                'title',
+                'editor',
+                'excerpt',
+                'thumbnail',
+            )
+        ),
         // declare business
     );
 
@@ -61,6 +75,12 @@ function sogo_get_taxonomies(){
             'label' => __('Project Type','sogoc'),
             'slug' => 'project-cat',
             'post_type' => 'project'
+        ),
+        array(
+            'label'     => __( 'LP Categories', 'sogoc' ),
+            'slug'      => 'lp-cat',
+            'name'      => 'lp-cat',
+            'post_type' => 'lp'
         ),
 
     );
