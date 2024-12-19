@@ -157,47 +157,47 @@ add_action('init', 'sogo_redirect_en');
 
 
 
-function sogo_save_lead($cf7) {
-
-$submission = WPCF7_Submission::get_instance();
-if ( $submission ) {
-    $formdata = $submission->get_posted_data();
-
-
-    $name = isset($formdata['your-name'])?$formdata['your-name']: $formdata['contact-name'];
-    $email = isset($formdata['your-email'])?$formdata['your-email']: $formdata['contact-email'];
-    $phone = isset($formdata['your-phone'])?$formdata['your-phone'] : $formdata['contact-phone'];
-    $comments = isset($formdata['message'])?  $formdata['message']: '';
-
-
-
-    $arr = array(
-        'add_remote_lead' => 'doit',
-        'id' => null,
-        'title' =>$name,
-        'comments' =>$comments,
-        'oh_start_date' =>'',
-        'oh_contact' =>'',
-        'oh_other_contact' =>$name,
-        'oh_email' =>$email,
-        'oh_phone_number' =>$phone,
-    );
-    $response = wp_remote_post( 'http://pm.sogo.co.il/', array(
-            'method' => 'POST',
-            'timeout' => 45,
-            'redirection' => 5,
-            'httpversion' => '1.0',
-            'blocking' => true,
-            'headers' => array(),
-            'body' => $arr,
-            'cookies' => array()
-        )
-    );
-}
-
-}
-
-add_action( 'wpcf7_mail_sent', 'sogo_save_lead' );
+//function sogo_save_lead($cf7) {
+//
+//$submission = WPCF7_Submission::get_instance();
+//if ( $submission ) {
+//    $formdata = $submission->get_posted_data();
+//
+//
+//    $name = isset($formdata['your-name'])?$formdata['your-name']: $formdata['contact-name'];
+//    $email = isset($formdata['your-email'])?$formdata['your-email']: $formdata['contact-email'];
+//    $phone = isset($formdata['your-phone'])?$formdata['your-phone'] : $formdata['contact-phone'];
+//    $comments = isset($formdata['message'])?  $formdata['message']: '';
+//
+//
+//
+//    $arr = array(
+//        'add_remote_lead' => 'doit',
+//        'id' => null,
+//        'title' =>$name,
+//        'comments' =>$comments,
+//        'oh_start_date' =>'',
+//        'oh_contact' =>'',
+//        'oh_other_contact' =>$name,
+//        'oh_email' =>$email,
+//        'oh_phone_number' =>$phone,
+//    );
+//    $response = wp_remote_post( 'http://pm.sogo.co.il/', array(
+//            'method' => 'POST',
+//            'timeout' => 45,
+//            'redirection' => 5,
+//            'httpversion' => '1.0',
+//            'blocking' => true,
+//            'headers' => array(),
+//            'body' => $arr,
+//            'cookies' => array()
+//        )
+//    );
+//}
+//
+//}
+//
+//add_action( 'wpcf7_mail_sent', 'sogo_save_lead' );
 
 
 
