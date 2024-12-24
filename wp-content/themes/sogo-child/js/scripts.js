@@ -350,33 +350,33 @@
         }
     }
 
-    if ($(".menu .current-menu-item")[0]) {
-        var leftPos, newWidth, $magicLine;
-
-        $('.desktop-menu .menu').append("<li id='magic-line'></li>");
-        $magicLine = $('#magic-line');
-        $magicLine.width($('.current-menu-item').width())
-            .css('left', $('.current-menu-item a').position().left)
-            .data('origWidth', $magicLine.width());
-
-        /*Magicline hover animation*/
-        $('.desktop-menu .menu li').find('a').hover(function () {
-            var $thisBar = $(this);
-            console.log($thisBar)
-            leftPos = $thisBar.position().left;
-            console.log(leftPos)
-            newWidth = $thisBar.parent().width();
-            $magicLine.css({
-                "left": leftPos,
-                "width": newWidth
-            });
-        }, function () {
-            $magicLine.css({
-                "left": $('.current-menu-item').position().left,
-                "width": $magicLine.data('origWidth')
-            });
-        });
-    }
+    // if ($(".menu .current-menu-item")[0]) {
+    //     var leftPos, newWidth, $magicLine;
+    //
+    //     $('.desktop-menu .menu').append("<li id='magic-line'></li>");
+    //     $magicLine = $('#magic-line');
+    //     $magicLine.width($('.current-menu-item').width())
+    //         .css('left', $('.current-menu-item a').position().left)
+    //         .data('origWidth', $magicLine.width());
+    //
+    //     /*Magicline hover animation*/
+    //     $('.desktop-menu .menu li').find('a').hover(function () {
+    //         var $thisBar = $(this);
+    //         console.log($thisBar)
+    //         leftPos = $thisBar.position().left;
+    //         console.log(leftPos)
+    //         newWidth = $thisBar.parent().width();
+    //         $magicLine.css({
+    //             "left": leftPos,
+    //             "width": newWidth
+    //         });
+    //     }, function () {
+    //         $magicLine.css({
+    //             "left": $('.current-menu-item').position().left,
+    //             "width": $magicLine.data('origWidth')
+    //         });
+    //     });
+    // }
 
     $('.nav-button').click(function(){
         $('body').toggleClass('nav-open');

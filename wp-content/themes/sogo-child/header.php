@@ -82,9 +82,9 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
 
                             <div class="contact-header position-relative">
                                 <a href="<?php echo get_field('_sogo_header_contact_link', 'option')?>">
-                                    <div class="contact-header-inner d-flex justify-content-center align-items-center">
+<!--                                    <div class="contact-header-inner d-flex justify-content-center align-items-center">-->
                                         <span class="margin-bottom-0">צרו קשר</span>
-                                    </div>
+<!--                                    </div>-->
                                 </a>
                             </div>
                         </div>

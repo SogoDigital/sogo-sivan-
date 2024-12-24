@@ -383,6 +383,22 @@
             padding: 0 15px;
             text-decoration: none;
             padding: 0 15px;
+            position: relative;
+            &:after {
+              transition: all ease-in-out .3s;
+              content: '';
+              width: 0;
+              position: absolute;
+              left: 0;
+              bottom: -20px;
+              border-bottom: solid 5px #ED1D24;
+            }
+            &:hover {
+
+              &:after {
+                width: 100%;
+              }
+            }
           }
         }
 
@@ -426,21 +442,30 @@
       height: 40px;
       border-radius: 2rem;
       background: rgb(237, 29, 36);
-      background: linear-gradient(90deg, rgba(237, 29, 36, 1) 0%, rgba(238, 42, 123, 1) 17%, rgba(138, 91, 165, 1) 38%, rgba(0, 173, 220, 1) 60%, rgba(43, 182, 115, 1) 80%, rgba(255, 201, 6, 1) 100%);
+      background: linear-gradient(88deg, #ED1D24 0%, #EE2A7B 34%, #8A5BA5 75%, #00ADDC 100%);
+      //background: linear-gradient(90deg, rgba(237, 29, 36, 1) 0%, rgba(238, 42, 123, 1) 17%, rgba(138, 91, 165, 1) 38%, rgba(0, 173, 220, 1) 60%, rgba(43, 182, 115, 1) 80%, rgba(255, 201, 6, 1) 100%);
       margin-right: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-      .contact-header-inner {
-        background-color: white;
-        width: calc(100% - 2px);
-        height: calc(100% - 2px);
-        position: absolute;
-        left: 1px;
-        top: 1px;
-        border-radius: 2rem;
-
+      //.contact-header-inner {
+      //  background-color: white;
+      //  width: calc(100% - 2px);
+      //  height: calc(100% - 2px);
+      //  position: absolute;
+      //  left: 1px;
+      //  top: 1px;
+      //  border-radius: 2rem;
+      //}
+      a {
+        &:hover{
+          text-decoration: none;
+        }
         span {
           font-family: 'OpenSansHebrewCondensed';
-          color: #2D2D2F;
+          color: white;
+          //color: #2D2D2F;
           font-size: 18px;
         }
       }

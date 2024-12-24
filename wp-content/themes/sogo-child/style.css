@@ -1159,6 +1159,19 @@ h6 {
   font-weight: 400;
   text-decoration: none;
   padding: 0 15px;
+  position: relative;
+}
+#header .desktop-header .desktop-menu ul.menu li.menu-item a:after {
+  transition: all ease-in-out 0.3s;
+  content: '';
+  width: 0;
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  border-bottom: solid 5px #ED1D24;
+}
+#header .desktop-header .desktop-menu ul.menu li.menu-item a:hover:after {
+  width: 100%;
 }
 #header .desktop-header .desktop-menu ul.menu #magic-line {
   position: absolute;
@@ -1192,21 +1205,18 @@ h6 {
   height: 40px;
   border-radius: 2rem;
   background: #ed1d24;
-  background: linear-gradient(90deg, #ed1d24 0%, #ee2a7b 17%, #8a5ba5 38%, #00addc 60%, #2bb673 80%, #ffc906 100%);
+  background: linear-gradient(88deg, #ED1D24 0%, #EE2A7B 34%, #8A5BA5 75%, #00ADDC 100%);
   margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#header .desktop-header .contact-header .contact-header-inner {
-  background-color: white;
-  width: calc(100% - 2px);
-  height: calc(100% - 2px);
-  position: absolute;
-  left: 1px;
-  top: 1px;
-  border-radius: 2rem;
+#header .desktop-header .contact-header a:hover {
+  text-decoration: none;
 }
-#header .desktop-header .contact-header .contact-header-inner span {
+#header .desktop-header .contact-header a span {
   font-family: 'OpenSansHebrewCondensed';
-  color: #2D2D2F;
+  color: white;
   font-size: 18px;
 }
 #header .mobile-header .nav-button {
@@ -2727,7 +2737,7 @@ ul#menu-primary-menu:before {
   padding: 24px 32px;
   background: linear-gradient(88deg, #ED1D24 0%, #EE2A7B 34%, #8A5BA5 75%, #00ADDC 100%);
   color: #FFF;
-  font-size: 16px;
+  font-size: 26px;
   font-weight: 700;
   width: 300px;
   font-family: 'OpenSansHebrewCondensed';
@@ -3748,8 +3758,15 @@ h2.team-heading {
   padding-bottom: 15px;
 }
 .single-article-wrapper .entry-content p {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
+  margin: 28px 0 24px 0;
+}
+@media (min-width: 768px) {
+  .single-article-wrapper .entry-content p {
+    font-size: 18px;
+    margin: 32px 0 24px 0;
+  }
 }
 .single-article-wrapper .entry-content li {
   font-size: 18px;
@@ -3760,7 +3777,7 @@ h2.team-heading {
   line-height: 1.5;
 }
 .single-article-wrapper .entry-content h1 {
-  font-size: 20px;
+  font-size: 32px;
 }
 @media (min-width: 768px) {
   .single-article-wrapper .entry-content h1 {
@@ -3768,17 +3785,17 @@ h2.team-heading {
   }
 }
 .single-article-wrapper .entry-content h2 {
-  font-size: 18px;
+  font-size: 28px;
 }
 @media (min-width: 768px) {
   .single-article-wrapper .entry-content h2 {
-    font-size: 35px;
+    font-size: 36px;
     font-weight: 600;
     margin: 40px 0 20px;
   }
 }
 .single-article-wrapper .entry-content h3 {
-  font-size: 14px;
+  font-size: 24px;
 }
 @media (min-width: 768px) {
   .single-article-wrapper .entry-content h3 {
@@ -3786,23 +3803,23 @@ h2.team-heading {
   }
 }
 .single-article-wrapper .entry-content h4 {
-  font-size: 14px;
+  font-size: 20px;
 }
 @media (min-width: 768px) {
   .single-article-wrapper .entry-content h4 {
-    font-size: 25px;
+    font-size: 26px;
   }
 }
 .single-article-wrapper .entry-content h5 {
-  font-size: 14px;
+  font-size: 18px;
 }
 @media (min-width: 768px) {
   .single-article-wrapper .entry-content h5 {
-    font-size: 20px;
+    font-size: 22px;
   }
 }
 .single-article-wrapper .entry-content h6 {
-  font-size: 14px;
+  font-size: 16px;
 }
 @media (min-width: 768px) {
   .single-article-wrapper .entry-content h6 {
@@ -3881,19 +3898,25 @@ h2.team-heading {
 }
 .single-article-wrapper .entry-content #ez-toc-container {
   direction: rtl;
-  background: transparent;
   padding: 25px;
   border-radius: 10px;
   margin: 30px 0;
+  box-shadow: 0 22px 27px rgba(0, 0, 0, 0.05);
+  background-color: white;
+  border: 0;
 }
 .single-article-wrapper .entry-content #ez-toc-container .ez-toc-title-container .ez-toc-title {
   font-weight: bold;
+  font-size: 200%;
 }
 .single-article-wrapper .entry-content #ez-toc-container .ez-toc-title-container .ez-toc-title-toggle {
   display: none;
 }
 .single-article-wrapper .entry-content #ez-toc-container nav {
   margin-top: 16px;
+}
+.single-article-wrapper .entry-content #ez-toc-container nav .ez-toc-list li {
+  margin: 8px 0;
 }
 .single-article-wrapper .entry-content #ez-toc-container nav .ez-toc-list li .ez-toc-link {
   font-size: 18px;
