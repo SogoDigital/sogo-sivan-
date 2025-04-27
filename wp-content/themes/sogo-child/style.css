@@ -1533,6 +1533,9 @@ h6 {
   list-style: none;
   padding-right: 0;
 }
+#site-footer .bottom-footer-columns .bottom-footer-menu .widget-content ul li {
+  margin-bottom: 10px;
+}
 #site-footer .bottom-footer-columns .bottom-footer-menu .widget-content ul li a {
   color: #2D2D2F;
   font-family: 'OpenSansHebrewCondensed';

@@ -88,12 +88,12 @@
 <!--                            <a title="--><?php //echo esc_attr( __( 'Go to home page', 'sogoc' ) ) ?><!--" href="--><?php //echo esc_url( home_url( '/' ) ); ?><!--" rel="home"-->
 <!--                               accesskey="H">--><?php //bloginfo( 'name' ); ?><!--</a>-->
 <!--                        </div>-->
-                        <?php if ( has_nav_menu( 'primary_menu' ) ) : ?>
+                        <?php if ( has_nav_menu( 'footer_menu' ) ) : ?>
                             <nav class="navbar" role="navigation">
                                 <div class="footer-navigation">
                                     <?php
                                     wp_nav_menu( array(
-                                        'theme_location' => 'primary_menu',
+                                        'theme_location' => 'footer_menu',
                                         'link_before'    => '<span class="">',
                                         'link_after'     => '</span>',
                                     ) );
