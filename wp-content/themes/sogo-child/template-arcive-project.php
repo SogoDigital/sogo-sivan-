@@ -1,5 +1,5 @@
 <?php $post_id = get_query_var('post_id') ?>
-<div class="col-md-4 col-sm-6 col-lg-4 archive-project">
+<div class="col-md-4 col-sm-6 col-lg-3 archive-project">
     <div class="project-box zoom-in-effect">
         <div itemscope itemtype="http://schema.org/CreativeWork" class="thumbnail-wrapper img-box">
             <a itemprop="url" href="<?php the_permalink($post_id) ?>" title="<?php echo esc_attr(get_the_title($post_id)) ?>">

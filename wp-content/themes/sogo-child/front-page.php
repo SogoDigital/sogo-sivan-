@@ -48,6 +48,7 @@ get_header();
                 ?>
             </ul>
         </footer>
+
     </section> <!-- #home-floor-1 -->
 
     <section id="home-floor-7"
@@ -71,7 +72,7 @@ get_header();
 
                         <?php
                         $homepage_projects = get_posts( array(
-                            'numberposts' => 9,
+                            'numberposts' => 16,
                             'post_type'   => 'project',
                             'suppress_filters' => true,
                         ) );

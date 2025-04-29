@@ -129,7 +129,7 @@ $col = $is_mobile ? 'col-md-12' : 'col-md-4';
 <?php $related = get_field('_sogo_related_projects', $category->taxonomy . '_' . $category->term_id)?>
 <?php unset($related[array_search($post->ID, $related)]);?>
 <?php shuffle($related); ?>
-<?php $related =  array_slice($related, 0, 3); // get first three only; ?>
+<?php $related =  array_slice($related, 0, 4); // get first four only; ?>
 
 <?php if($related) :; ?>
     <div class="container-fluid">
