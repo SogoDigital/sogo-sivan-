@@ -102,6 +102,11 @@ $meta_boxes[] = array(
           'id' => 'title',
           'type' => 'text',
         ),
+          array(
+              'name' => 'title color',
+              'id' => 'title-color',
+              'type' => 'colorpicker',
+          ),
         array(
           'name' => 'text',
           'id' => 'text',

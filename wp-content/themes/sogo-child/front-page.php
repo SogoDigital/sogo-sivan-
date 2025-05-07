@@ -126,10 +126,10 @@ if ($floors) {
                 <div class="row">
                     <div class="<?php echo $floor['col'] ?>">
                         <header class="floor-header homepage-section-header">
-                            <h2 class="floor-title"><?php echo $floor['title'] ?></h2>
+                            <h2 class="floor-title" style="color: <?php echo $floor['title-color'] ?>"><?php echo $floor['title'] ?></h2>
                         </header>
                         <!-- .floor-header -->
-                        <p class="homepage-section-text">
+                        <p class="homepage-section-text" style="color: <?php echo $floor['title-color'] ?>">
                             <?php echo nl2br($floor['text']) ?>
                         </p>
                     </div>
