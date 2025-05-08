@@ -1595,7 +1595,7 @@ a.scrollup:hover:before {
 }
 @media (min-width: 768px) {
   .footer-form {
-    height: 1080px;
+    height: 800px;
   }
 }
 .footer-form .footer-form-wrapper {
