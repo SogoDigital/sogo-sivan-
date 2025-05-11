@@ -3577,6 +3577,48 @@ h2.team-heading {
 }
 /* end list-style.less */
 /* single-article.less */
+.single-recent {
+  margin-bottom: 40px;
+}
+@media (min-width: 768px) {
+  .single-recent {
+    margin-bottom: 80px;
+  }
+}
+.single-recent .single-recent-title {
+  font-weight: 700;
+  margin-bottom: 24px;
+  margin-top: 40px;
+}
+.single-recent .related-posts {
+  display: block;
+}
+@media (min-width: 768px) {
+  .single-recent .related-posts {
+    display: flex;
+  }
+}
+.single-recent .related-posts .related-item {
+  display: block;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+.single-recent .related-posts .related-item img {
+  margin-bottom: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+.single-recent .related-posts .related-item .related-title {
+  color: initial;
+  font-size: 20px;
+}
+@media (min-width: 768px) {
+  .single-recent .related-posts .related-item .related-title {
+    font-size: 16px;
+  }
+}
 #single-floor-1 {
   background: linear-gradient(180deg, #f0f0ee 0%, white 100%);
 }
@@ -3585,48 +3627,6 @@ h2.team-heading {
   max-width: 900px;
   position: relative;
   width: 100%;
-}
-#single-floor-1 .single-recent {
-  margin-bottom: 40px;
-}
-@media (min-width: 768px) {
-  #single-floor-1 .single-recent {
-    margin-bottom: 80px;
-  }
-}
-#single-floor-1 .single-recent .single-recent-title {
-  font-weight: 700;
-  margin-bottom: 24px;
-  margin-top: 40px;
-}
-#single-floor-1 .single-recent .related-posts {
-  display: block;
-}
-@media (min-width: 768px) {
-  #single-floor-1 .single-recent .related-posts {
-    display: flex;
-  }
-}
-#single-floor-1 .single-recent .related-posts .related-item {
-  display: block;
-  margin-bottom: 20px;
-  text-decoration: none;
-}
-#single-floor-1 .single-recent .related-posts .related-item img {
-  margin-bottom: 8px;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: left;
-}
-#single-floor-1 .single-recent .related-posts .related-item .related-title {
-  color: initial;
-  font-size: 20px;
-}
-@media (min-width: 768px) {
-  #single-floor-1 .single-recent .related-posts .related-item .related-title {
-    font-size: 16px;
-  }
 }
 .white-box {
   background: #fff;

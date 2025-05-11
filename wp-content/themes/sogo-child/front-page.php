@@ -72,7 +72,7 @@ get_header();
 
                         <?php
                         $homepage_projects = get_posts( array(
-                            'numberposts' => 16,
+                            'numberposts' => 20,
                             'post_type'   => 'project',
                             'suppress_filters' => true,
                         ) );
@@ -145,6 +145,10 @@ if ($floors) {
     }
 }
 ?>
+
+
+
+
     <section id="home-floor-5" class="section vertical-top cover position-relative">
         <div class="container-fluid home-floor-5-container w-100" style="top: 0">
             <div class="row d-flex justify-content-center">
@@ -162,6 +166,42 @@ if ($floors) {
 
     </section> <!-- #home-floor-5 -->
 
+
+    <section id="recents-posts" class="section vertical-top cover position-relative" style="background-color: #f7fafe">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-8">
+                    <?php
+                    $related = get_posts(
+                        array(
+                            'numberposts'  => 3,
+                        )
+                    );
+                    ?>
+                    <section class="container-fluid pt-2 single-recent">
+                        <div class="row justify-content-center">
+                            <h2 class="single-recent-title col-12 text-center font-weight-bold uppercase">כל מה שחדש בתחום בניית אתרים</h2>
+                            <div class="col-12 col-xl-8 position-relative mt-4">
+                                <div class="container-fluid mb-0 mb-lg-4">
+                                    <div class="row related-posts">
+                                        <?php if( $related ) :
+                                            foreach( $related as $item ) :
+                                                setup_postdata($item);
+                                                set_query_var( 'post_id', $item->ID );
+                                                get_template_part('content', 'excerpt');
+                                                ?>
+                                            <?php endforeach;
+                                            wp_reset_postdata();
+                                        endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
 <!--    <section id="home-floor-6" class="split-floor section floor cover vertical-top">-->
 <!--        <div id="man" class="fadeInLeftBig animated hidden-xs hidden-sm"><img-->
 <!--              src="--><?php //echo get_stylesheet_directory_uri() ?><!--/images/bgs/man.png" alt="man image"/></div>-->

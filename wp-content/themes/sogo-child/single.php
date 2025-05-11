@@ -110,13 +110,10 @@ the_post(); ?>
                         'post__not_in' => array( $post->ID )
                     )
                 );
-
-
                 ?>
                 <section class="container-fluid pt-2 single-recent">
                     <div class="row justify-content-center">
                         <h2 class="single-recent-title col-12 text-center font-weight-bold uppercase">מאמרים נוספים שעשויים לעניין אותך</h2>
-                        <!--                --><?php //var_dump($related) ?>
                         <div class="col-12 col-xl-8 position-relative mt-4">
                             <div class="container-fluid mb-0 mb-lg-4">
                                 <div class="row related-posts">
@@ -126,20 +123,10 @@ the_post(); ?>
                                             set_query_var( 'post_id', $item->ID );
                                             get_template_part('content', 'excerpt');
                                         ?>
-
-<!--                                            <div class="col-12 col-md-4 mb-3 mb-md-0">-->
-<!--                                                <a class="d-block related-item h-100" href="--><?php //echo get_permalink($item->ID)?><!--">-->
-<!--                                                    --><?php //echo get_the_post_thumbnail($item->ID, 'full', array('class'=> 'img-fluid p-0')) ; ?>
-<!--                                                    <span class="related-title">--><?php //echo get_the_title($item->ID); ?><!--</span>-->
-<!--                                                </a>-->
-<!--                                            </div>-->
                                         <?php endforeach;
                                         wp_reset_postdata();
                                     endif; ?>
                                 </div>
-                                <!--                        <div class="row">-->
-                                <!--                            --><?php //yarpp_related(); ?>
-                                <!--                        </div>-->
                             </div>
                         </div>
                     </div>
