@@ -5766,10 +5766,12 @@ p.item-text {
   right: 30px;
   bottom: 30px;
   transition: all 1s;
+  display: none;
 }
 @media (min-width: 992px) {
   .rfq-btn {
     bottom: 110px;
+    display: block;
   }
 }
 .rfq-btn .footer-tell-us-image-hover {
@@ -5780,6 +5782,18 @@ p.item-text {
 }
 .rfq-btn:hover .footer-tell-us-image-hover {
   opacity: 1;
+}
+.footer-tell-us-mobile {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  display: block;
+}
+@media (min-width: 992px) {
+  .footer-tell-us-mobile {
+    display: none;
+  }
 }
 @media (min-width: 768px) {
   .modal-open .modal {

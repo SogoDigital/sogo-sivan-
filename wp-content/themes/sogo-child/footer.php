@@ -128,12 +128,14 @@
     To Top
 </a>
 
-<a class="rfq-btn" data-toggle="modal" data-target="#popup-form" href="#" title="<?php _e( 'Request for quotation', 'sogoc' ) ?>">
+<a class="footer-tell-us-mobile d-block d-lg-none" data-toggle="modal" data-target="#popup-form" href="#" title="<?php _e( 'Request for quotation', 'sogoc' ) ?>">
+    <div class=""><?php echo wp_get_attachment_image(get_field('_sogo_footer_tell_us_mobile', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?></div>
+</a>
+<a class="rfq-btn d-none d-lg-block" data-toggle="modal" data-target="#popup-form" href="#" title="<?php _e( 'Request for quotation', 'sogoc' ) ?>">
     <div class="footer-tell-us-image"><?php echo wp_get_attachment_image(get_field('_sogo_footer_tell_us_image', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?></div>
     <div class="footer-tell-us-image-hover"><?php echo wp_get_attachment_image(get_field('_sogo_footer_tell_us_image_hover', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?></div>
-	<?php //echo get_field('_sogo_get_quote', 'option')?>
-<!--	--><?php //_e( 'Get a Quote', 'sogoc' ) ?>
 </a>
+
 
 <!--<div class="modal" id="popup-form">-->
 <div class="modal fade" id="popup-form">
