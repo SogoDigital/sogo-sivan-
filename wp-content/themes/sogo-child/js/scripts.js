@@ -420,6 +420,192 @@
             }
         });
 
+    /*******************************************/
+    /* CF7 Validation */
+    /*******************************************/
+
+    // Функция валидации номера телефона
+    function validatePhoneNumber(phoneValue) {
+        if (!phoneValue) return true; // Пустое поле - пусть CF7 сам обрабатывает required
+
+        // Убираем все символы кроме цифр
+        const cleanPhone = phoneValue.replace(/\D/g, '');
+
+        // Проверяем: если начинается с 05, то должно быть ровно 10 цифр
+        if (cleanPhone.startsWith('05')) {
+            return cleanPhone.length === 10;
+        }
+
+        // Для других номеров минимум 9 цифр
+        return cleanPhone.length >= 9;
+    }
+
+    // Функция показа ошибки валидации
+    function showPhoneError($phoneInput, message) {
+        const $parent = $phoneInput.parent();
+
+        // Удаляем предыдущие ошибки
+        $parent.find('.phone-validation-error').remove();
+
+        // Добавляем класс ошибки
+        $phoneInput.addClass('phone-invalid wpcf7-not-valid');
+
+        // Добавляем сообщение об ошибке
+        $parent.append('<span class="phone-validation-error wpcf7-not-valid-tip" style="color: #e74c3c; font-size: 12px; display: block; margin-top: 5px;">' + message + '</span>');
+    }
+
+    // Функция очистки ошибок
+    function clearPhoneError($phoneInput) {
+        const $parent = $phoneInput.parent();
+        $parent.find('.phone-validation-error').remove();
+        $phoneInput.removeClass('phone-invalid wpcf7-not-valid');
+    }
+
+    // Валидация при потере фокуса
+    $(document).on('blur', 'input[name="phone"], input[type="tel"]', function() {
+        const $phoneInput = $(this);
+        const phoneValue = $phoneInput.val().trim();
+
+        if (phoneValue && !validatePhoneNumber(phoneValue)) {
+            showPhoneError($phoneInput, 'מספר טלפון שמתחיל ב-05 חייב להכיל בדיוק 10 ספרות');
+        } else {
+            clearPhoneError($phoneInput);
+        }
+    });
+
+    // Очистка ошибок при вводе
+    $(document).on('input', 'input[name="phone"], input[type="tel"]', function() {
+        clearPhoneError($(this));
+    });
+
+    // КРИТИЧНО: Перехватываем событие ПЕРЕД отправкой CF7
+    $(document).on('click', '.wpcf7-submit', function(e) {
+        const $submitBtn = $(this);
+        const $form = $submitBtn.closest('form.wpcf7-form');
+        const $phoneInputs = $form.find('input[name="phone"], input[type="tel"]');
+        let hasPhoneError = false;
+
+        $phoneInputs.each(function() {
+            const $phoneInput = $(this);
+            const phoneValue = $phoneInput.val().trim();
+
+            if (phoneValue && !validatePhoneNumber(phoneValue)) {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                showPhoneError($phoneInput, 'מספר טלפון שמתחיל ב-05 חייב להכיל בדיוק 10 ספרות');
+                hasPhoneError = true;
+                $phoneInput.focus();
+            } else {
+                clearPhoneError($phoneInput);
+            }
+        });
+
+        if (hasPhoneError) {
+            // Добавляем класс invalid к форме чтобы CF7 не отправлял
+            $form.addClass('invalid');
+            return false;
+        } else {
+            $form.removeClass('invalid');
+        }
+    });
+
+    // Дополнительная защита: перехватываем submit формы
+    $(document).on('submit', 'form.wpcf7-form', function(e) {
+        const $form = $(this);
+        const $phoneInputs = $form.find('input[name="phone"], input[type="tel"]');
+        let hasPhoneError = false;
+
+        $phoneInputs.each(function() {
+            const $phoneInput = $(this);
+            const phoneValue = $phoneInput.val().trim();
+
+            if (phoneValue && !validatePhoneNumber(phoneValue)) {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                showPhoneError($phoneInput, 'מספר טלפון שמתחיל ב-05 חייב להכיל בדיוק 10 ספרות');
+                hasPhoneError = true;
+                $phoneInput.focus();
+            }
+        });
+
+        if (hasPhoneError) {
+            $form.addClass('invalid');
+            return false;
+        }
+    });
+
+    // Валидация для кастомных кнопок отправки
+    $(document).on('click', 'form.wpcf7-form button[type="submit"]:not(.wpcf7-submit), form.wpcf7-form input[type="submit"]:not(.wpcf7-submit)', function(e) {
+        const $button = $(this);
+        const $form = $button.closest('form.wpcf7-form');
+        const $phoneInputs = $form.find('input[name="phone"], input[type="tel"]');
+        let hasPhoneError = false;
+
+        $phoneInputs.each(function() {
+            const $phoneInput = $(this);
+            const phoneValue = $phoneInput.val().trim();
+
+            if (phoneValue && !validatePhoneNumber(phoneValue)) {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                showPhoneError($phoneInput, 'מספר טלפון שמתחיל ב-05 חייב להכיל בדיוק 10 ספרות');
+                hasPhoneError = true;
+                $phoneInput.focus();
+            } else {
+                clearPhoneError($phoneInput);
+            }
+        });
+
+        if (hasPhoneError) {
+            return false;
+        }
+
+        // Если валидация прошла, эмулируем нажатие скрытой кнопки CF7
+        setTimeout(function() {
+            $form.find('.wpcf7-submit').click();
+        }, 10);
+    });
+
+    // Перехватываем событие wpcf7beforesubmit (до отправки)
+    $(document).on('wpcf7beforesubmit', function(e) {
+        const $form = $(e.target);
+        const $phoneInputs = $form.find('input[name="phone"], input[type="tel"]');
+        let hasPhoneError = false;
+
+        $phoneInputs.each(function() {
+            const $phoneInput = $(this);
+            const phoneValue = $phoneInput.val().trim();
+
+            if (phoneValue && !validatePhoneNumber(phoneValue)) {
+                showPhoneError($phoneInput, 'מספר טלפון שמתחיל ב-05 חייב להכיל בדיוק 10 ספרות');
+                hasPhoneError = true;
+                $phoneInput.focus();
+            }
+        });
+
+        if (hasPhoneError) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    // Очистка ошибок при успешной отправке
+    $(document).on('wpcf7mailsent', function(event) {
+        const $form = $(event.target);
+        $form.find('input[name="phone"], input[type="tel"]').each(function() {
+            clearPhoneError($(this));
+        });
+        $form.removeClass('invalid');
+    });
+
+    // Очистка ошибок при ошибке отправки CF7
+    $(document).on('wpcf7invalid wpcf7spam wpcf7mailfailed', function(event) {
+        const $form = $(event.target);
+        $form.removeClass('invalid');
+    });
 
 
 })(jQuery);
