@@ -117,9 +117,12 @@ if ($floors) {
             </div>
 
             <?php
-            if ($floor['overlay-image'] != '') {
-                echo '<div class="overlay-image hidden-xs hidden-sm layer contain ' . $floor['overlay-animation'] . ' animated' . $floor['overlay-size'] . '"
-                        style="background-image: url(\'' . $floor['overlay-image'] . '\');"></div>';
+            if (isset($floor['overlay-image']) && $floor['overlay-image'] != '') {
+                $overlay_animation = isset($floor['overlay-animation']) ? $floor['overlay-animation'] : '';
+                $overlay_size = isset($floor['overlay-size']) ? $floor['overlay-size'] : '';
+
+                echo '<div class="overlay-image hidden-xs hidden-sm layer contain ' . $overlay_animation . ' animated ' . $overlay_size . '"
+            style="background-image: url(\'' . $floor['overlay-image'] . '\');"></div>';
             }
             ?>
             <div class="container-fluid w-100">

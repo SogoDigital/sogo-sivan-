@@ -73,7 +73,7 @@ the_post(); ?>
     <!--                                    <span class="publish-wrapper-category"> --><?php //echo sprintf(('%s'), get_the_category_list(' ')); ?><!--</span>-->
                                         <div class="mt-5">
                                             <p class="text-center"><?php echo get_field('_sogo_posts_share_title', 'option'); ?></p>
-                                            <?php echo sharethis_inline_buttons(); ?>
+<!--                                            --><?php //echo sharethis_inline_buttons(); ?>
                                         </div>
                                     </div>
 

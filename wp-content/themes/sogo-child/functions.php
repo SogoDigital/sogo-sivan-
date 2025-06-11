@@ -152,7 +152,7 @@ function sogo_redirect_en(){
 
     }
 }
-add_action('init', 'sogo_redirect_en');
+//add_action('init', 'sogo_redirect_en');
 
 
 
@@ -264,4 +264,55 @@ add_filter('wp_video_shortcode', function ($output) {
     }
     $output = str_replace('<video', '<video playsinline', $output);
     return $output;
+});
+
+function disable_feeds() {
+    wp_die(__('RSS feeds are disabled on this site.'));
+}
+
+add_action('do_feed', 'disable_feeds', 1);
+add_action('do_feed_rdf', 'disable_feeds', 1);
+add_action('do_feed_rss', 'disable_feeds', 1);
+add_action('do_feed_rss2', 'disable_feeds', 1);
+add_action('do_feed_atom', 'disable_feeds', 1);
+add_action('do_feed_rss2_comments', 'disable_feeds', 1);
+add_action('do_feed_atom_comments', 'disable_feeds', 1);
+
+// Удаляем RSS ссылки из head
+remove_action('wp_head', 'feed_links_extra', 3);
+remove_action('wp_head', 'feed_links', 2);
+
+// Перенаправляем RSS запросы
+function redirect_feeds_to_home() {
+    if (is_feed()) {
+        wp_redirect(home_url());
+        exit;
+    }
+}
+add_action('template_redirect', 'redirect_feeds_to_home');
+
+add_action('admin_init', function() {
+    if (isset($_POST['action']) && $_POST['action'] === 'editpost') {
+        error_log('POST data: ' . print_r($_POST, true));
+    }
+});
+
+add_filter('redirect_post_location', function($location, $post_id) {
+    if (isset($_POST['action']) && $_POST['action'] === 'editpost') {
+        error_log("Redirect location: $location");
+        error_log("Post ID: $post_id");
+    }
+    return $location;
+}, 10, 2);
+
+add_action('admin_init', function() {
+    if (isset($_POST['action']) && $_POST['action'] === 'editpost' && isset($_POST['post_ID'])) {
+        add_action('wp_loaded', function() {
+            if (isset($_POST['post_ID'])) {
+                $post_id = $_POST['post_ID'];
+                wp_safe_redirect(admin_url("post.php?post={$post_id}&action=edit&message=1"));
+                exit;
+            }
+        });
+    }
 });
