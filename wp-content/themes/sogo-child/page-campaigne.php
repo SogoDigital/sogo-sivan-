@@ -72,10 +72,10 @@ $rtl = is_rtl();
                 <p class="campaigne-floor3-title text-center"><?php echo get_field('campaigne_floor3_title')?></p>
                 <p class="campaigne-floor3-subtitle text-center"><?php echo get_field('campaigne_floor3_subtitle')?></p>
             </div>
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-md-11">
                 <div class="row mb-5">
                     <?php while (have_rows("campaigne_floor3_projects")) : the_row(); ?>
-                        <div class="col-12 col-md-6 mb-5 mb-md-4">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5 mb-md-4">
                             <a class="campaigne-floor3-project" href="<?php echo get_sub_field('link'); ?>">
                                 <?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid')) ; ?>
                             </a>
