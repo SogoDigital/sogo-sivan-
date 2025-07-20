@@ -4,7 +4,7 @@
 
     var mobile = $('body').hasClass('mobile');
     var fix_floor = function fix_floor() {
-        console.log($(window).width());
+        // console.log($(window).width());
         if ($(window).width() < 992) {
             if ($('.split-floor-2').length === 0) {
                 var f = $('.split-floor');
@@ -431,13 +431,8 @@
         // Убираем все символы кроме цифр
         const cleanPhone = phoneValue.replace(/\D/g, '');
 
-        // Проверяем: если начинается с 05, то должно быть ровно 10 цифр
-        if (cleanPhone.startsWith('05')) {
-            return cleanPhone.length === 10;
-        }
-
-        // Для других номеров минимум 9 цифр
-        return cleanPhone.length >= 9;
+        // Номер должен начинаться с 05 и содержать ровно 10 цифр
+        return cleanPhone.startsWith('05') && cleanPhone.length === 10;
     }
 
     // Функция показа ошибки валидации
@@ -462,27 +457,27 @@
     }
 
     // Валидация при потере фокуса
-    $(document).on('blur', 'input[name="phone"], input[type="tel"]', function() {
+    $(document).on('blur', 'input[type="tel"]', function() {
         const $phoneInput = $(this);
         const phoneValue = $phoneInput.val().trim();
 
         if (phoneValue && !validatePhoneNumber(phoneValue)) {
-            showPhoneError($phoneInput, 'מספר טלפון שמתחיל ב-05 חייב להכיל בדיוק 10 ספרות');
+            showPhoneError($phoneInput, 'מספר טלפון חייב להתחיל ב-05 ולהכיל בדיוק 10 ספרות');
         } else {
             clearPhoneError($phoneInput);
         }
     });
 
     // Очистка ошибок при вводе
-    $(document).on('input', 'input[name="phone"], input[type="tel"]', function() {
+    $(document).on('input', 'input[type="tel"]', function() {
         clearPhoneError($(this));
     });
 
     // КРИТИЧНО: Перехватываем событие ПЕРЕД отправкой CF7
-    $(document).on('click', '.wpcf7-submit', function(e) {
+    $(document).on('click', '.wpcf7-submit input[type="submit"]', function(e) {
         const $submitBtn = $(this);
         const $form = $submitBtn.closest('form.wpcf7-form');
-        const $phoneInputs = $form.find('input[name="phone"], input[type="tel"]');
+        const $phoneInputs = $form.find('input[type="tel"]');
         let hasPhoneError = false;
 
         $phoneInputs.each(function() {
@@ -493,7 +488,7 @@
                 e.preventDefault();
                 e.stopPropagation();
                 e.stopImmediatePropagation();
-                showPhoneError($phoneInput, 'מספר טלפון שמתחיל ב-05 חייב להכיל בדיוק 10 ספרות');
+                showPhoneError($phoneInput, 'מספר טלפון חייב להתחיל ב-05 ולהכיל בדיוק 10 ספרות');
                 hasPhoneError = true;
                 $phoneInput.focus();
             } else {
@@ -513,7 +508,7 @@
     // Дополнительная защита: перехватываем submit формы
     $(document).on('submit', 'form.wpcf7-form', function(e) {
         const $form = $(this);
-        const $phoneInputs = $form.find('input[name="phone"], input[type="tel"]');
+        const $phoneInputs = $form.find('input[type="tel"]');
         let hasPhoneError = false;
 
         $phoneInputs.each(function() {
@@ -524,7 +519,7 @@
                 e.preventDefault();
                 e.stopPropagation();
                 e.stopImmediatePropagation();
-                showPhoneError($phoneInput, 'מספר טלפון שמתחיל ב-05 חייב להכיל בדיוק 10 ספרות');
+                showPhoneError($phoneInput, 'מספר טלפון חייב להתחיל ב-05 ולהכיל בדיוק 10 ספרות');
                 hasPhoneError = true;
                 $phoneInput.focus();
             }
@@ -536,43 +531,10 @@
         }
     });
 
-    // Валидация для кастомных кнопок отправки
-    $(document).on('click', 'form.wpcf7-form button[type="submit"]:not(.wpcf7-submit), form.wpcf7-form input[type="submit"]:not(.wpcf7-submit)', function(e) {
-        const $button = $(this);
-        const $form = $button.closest('form.wpcf7-form');
-        const $phoneInputs = $form.find('input[name="phone"], input[type="tel"]');
-        let hasPhoneError = false;
-
-        $phoneInputs.each(function() {
-            const $phoneInput = $(this);
-            const phoneValue = $phoneInput.val().trim();
-
-            if (phoneValue && !validatePhoneNumber(phoneValue)) {
-                e.preventDefault();
-                e.stopPropagation();
-                e.stopImmediatePropagation();
-                showPhoneError($phoneInput, 'מספר טלפון שמתחיל ב-05 חייב להכיל בדיוק 10 ספרות');
-                hasPhoneError = true;
-                $phoneInput.focus();
-            } else {
-                clearPhoneError($phoneInput);
-            }
-        });
-
-        if (hasPhoneError) {
-            return false;
-        }
-
-        // Если валидация прошла, эмулируем нажатие скрытой кнопки CF7
-        setTimeout(function() {
-            $form.find('.wpcf7-submit').click();
-        }, 10);
-    });
-
     // Перехватываем событие wpcf7beforesubmit (до отправки)
     $(document).on('wpcf7beforesubmit', function(e) {
         const $form = $(e.target);
-        const $phoneInputs = $form.find('input[name="phone"], input[type="tel"]');
+        const $phoneInputs = $form.find('input[type="tel"]');
         let hasPhoneError = false;
 
         $phoneInputs.each(function() {
@@ -580,7 +542,7 @@
             const phoneValue = $phoneInput.val().trim();
 
             if (phoneValue && !validatePhoneNumber(phoneValue)) {
-                showPhoneError($phoneInput, 'מספר טלפון שמתחיל ב-05 חייב להכיל בדיוק 10 ספרות');
+                showPhoneError($phoneInput, 'מספר טלפון חייב להתחיל ב-05 ולהכיל בדיוק 10 ספרות');
                 hasPhoneError = true;
                 $phoneInput.focus();
             }
@@ -595,7 +557,7 @@
     // Очистка ошибок при успешной отправке
     $(document).on('wpcf7mailsent', function(event) {
         const $form = $(event.target);
-        $form.find('input[name="phone"], input[type="tel"]').each(function() {
+        $form.find('input[type="tel"]').each(function() {
             clearPhoneError($(this));
         });
         $form.removeClass('invalid');
@@ -607,12 +569,4 @@
         $form.removeClass('invalid');
     });
 
-
 })(jQuery);
-
-//chat
-// Tawk_API.onLoad = function(){
-//     setTimeout(function(){
-//         Tawk_API.toggle();
-//         }, 5000);
-// };
