@@ -6783,11 +6783,53 @@ form div.wpcf7-mail-sent-ok {
   top: -10px;
 }
 /* end plugins.less */
+#firstfloor {
+  margin-top: 97px;
+}
+@media (min-width: 992px) {
+  #firstfloor {
+    margin-top: 72px;
+  }
+}
+#firstfloor .firstfloor-image {
+  height: 70vh;
+  object-fit: cover;
+  object-position: center;
+}
+@media (min-width: 992px) {
+  #firstfloor .firstfloor-image {
+    width: 100%;
+    height: auto;
+  }
+}
+#firstfloor .firstfloor-info {
+  margin: 4rem 0;
+  padding: 0 4rem;
+}
+#firstfloor .firstfloor-info h2 {
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+  color: #274C8C;
+  font-size: 24px;
+}
+@media (min-width: 768px) {
+  #firstfloor .firstfloor-info h2 {
+    font-size: 30px;
+  }
+}
+#firstfloor .firstfloor-info img {
+  margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  #firstfloor .firstfloor-info {
+    margin: 9rem 0;
+  }
+}
 #floor1 {
   padding: 6rem 4rem 0rem;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-top: 53px;
+  margin-top: 97px;
 }
 @media (min-width: 992px) {
   #floor1 {
@@ -6796,6 +6838,12 @@ form div.wpcf7-mail-sent-ok {
 }
 #floor1 .row {
   min-height: 70vh;
+}
+@media (max-width: 576px) {
+  #floor1 .row {
+    min-height: auto;
+    aspect-ratio: 5 / 7;
+  }
 }
 #floor1 .row .floor1-right {
   display: none;
