@@ -107,11 +107,20 @@ $meta_boxes[] = array(
               'id' => 'title-color',
               'type' => 'colorpicker',
           ),
-        array(
-          'name' => 'text',
-          'id' => 'text',
-          'type' => 'textarea',
-        ),
+//        array(
+//          'name' => 'text',
+//          'id' => 'text',
+//          'type' => 'textarea',
+//        ),
+          array(
+              'name' => 'text',
+              'id' => 'text',
+              'type' => 'wysiwyg',
+//              'options' => array(
+//                  'media_buttons' => true,
+//                  'teeny' => false,
+//              ),
+          ),
         array(
           'name' => 'Vertical Align',
           'id' => "align",
