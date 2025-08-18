@@ -424,39 +424,30 @@
     /* CF7 Validation */
     /*******************************************/
 
-    // Функция валидации номера телефона
     function validatePhoneNumber(phoneValue) {
         if (!phoneValue) return true; // Пустое поле - пусть CF7 сам обрабатывает required
 
-        // Убираем все символы кроме цифр
         const cleanPhone = phoneValue.replace(/\D/g, '');
 
-        // Номер должен начинаться с 05 и содержать ровно 10 цифр
         return cleanPhone.startsWith('05') && cleanPhone.length === 10;
     }
 
-    // Функция показа ошибки валидации
     function showPhoneError($phoneInput, message) {
         const $parent = $phoneInput.parent();
 
-        // Удаляем предыдущие ошибки
         $parent.find('.phone-validation-error').remove();
 
-        // Добавляем класс ошибки
         $phoneInput.addClass('phone-invalid wpcf7-not-valid');
 
-        // Добавляем сообщение об ошибке
         $parent.append('<span class="phone-validation-error wpcf7-not-valid-tip" style="color: #e74c3c; font-size: 12px; display: block; margin-top: 5px;">' + message + '</span>');
     }
 
-    // Функция очистки ошибок
     function clearPhoneError($phoneInput) {
         const $parent = $phoneInput.parent();
         $parent.find('.phone-validation-error').remove();
         $phoneInput.removeClass('phone-invalid wpcf7-not-valid');
     }
 
-    // Валидация при потере фокуса
     $(document).on('blur', 'input[type="tel"]', function() {
         const $phoneInput = $(this);
         const phoneValue = $phoneInput.val().trim();
@@ -468,12 +459,10 @@
         }
     });
 
-    // Очистка ошибок при вводе
     $(document).on('input', 'input[type="tel"]', function() {
         clearPhoneError($(this));
     });
 
-    // КРИТИЧНО: Перехватываем событие ПЕРЕД отправкой CF7
     $(document).on('click', '.wpcf7-submit input[type="submit"]', function(e) {
         const $submitBtn = $(this);
         const $form = $submitBtn.closest('form.wpcf7-form');
@@ -497,7 +486,6 @@
         });
 
         if (hasPhoneError) {
-            // Добавляем класс invalid к форме чтобы CF7 не отправлял
             $form.addClass('invalid');
             return false;
         } else {
@@ -505,7 +493,6 @@
         }
     });
 
-    // Дополнительная защита: перехватываем submit формы
     $(document).on('submit', 'form.wpcf7-form', function(e) {
         const $form = $(this);
         const $phoneInputs = $form.find('input[type="tel"]');
@@ -531,7 +518,6 @@
         }
     });
 
-    // Перехватываем событие wpcf7beforesubmit (до отправки)
     $(document).on('wpcf7beforesubmit', function(e) {
         const $form = $(e.target);
         const $phoneInputs = $form.find('input[type="tel"]');
@@ -554,7 +540,6 @@
         }
     });
 
-    // Очистка ошибок при успешной отправке
     $(document).on('wpcf7mailsent', function(event) {
         const $form = $(event.target);
         $form.find('input[type="tel"]').each(function() {
@@ -563,10 +548,115 @@
         $form.removeClass('invalid');
     });
 
-    // Очистка ошибок при ошибке отправки CF7
     $(document).on('wpcf7invalid wpcf7spam wpcf7mailfailed', function(event) {
         const $form = $(event.target);
         $form.removeClass('invalid');
     });
+
+
+    // ===== Config =====
+    var policyUrl   = "https://yourdomain.com/privacy-policy";
+    var consentId   = "form-field-privacy_consent";   // Elementor-friendly ID
+    var consentName = "form_fields[privacy_consent]"; // Elementor-friendly name
+    var errorText   = "יש לאשר את מדיניות הפרטיות לפני שליחת הטופס.";
+
+    // Build checkbox markup
+    function consentMarkup(){
+        return `
+      <div class="custom-privacy-consent elementor-field-group elementor-col-100 elementor-field-type-acceptance" data-inserted="yes">
+        <label class="custom-privacy-label">
+          <input type="checkbox" id="${consentId}" name="${consentName}" value="yes" />
+          <span>אני מאשר/ת את <a href="${policyUrl}" target="_blank" rel="noopener">מדיניות הפרטיות</a> ומסכים/ה שהמידע ישמש למענה לפנייה ולמטרות המפורטות בה</span>
+        </label>
+        <div class="custom-privacy-error" aria-live="polite" style="display:none;"></div>
+      </div>
+    `;
+    }
+
+    // Inject checkbox before submit areas in common form plugins
+    function addPrivacyUI(){
+        var formSelectors = [
+            'form.elementor-form',      // Elementor Pro
+            'form.wpcf7-form',          // Contact Form 7
+            'form.wpforms-form',        // WPForms
+            'form.gform_wrapper form',  // Gravity Forms (inner form)
+            'form.nf-form'              // Ninja Forms
+        ];
+
+        $(formSelectors.join(',')).each(function(){
+            var $form = $(this);
+
+            // avoid duplicates
+            if ($form.data('privacy-injected')) return;
+
+            // detect submit wrapper
+            var $submitWrap = $form.find(
+                '.elementor-field-type-submit, .gform_footer, .wpforms-submit-container, .nf-form-cont .submit-container'
+            ).first();
+
+            if (!$submitWrap.length){
+                var $btn = $form.find('button[type="submit"], input[type="submit"]').last();
+                $submitWrap = $btn.length ? $btn.parent() : $form;
+            }
+
+            // inject only if not present
+            if ($form.find('#'+consentId+', [name="'+consentName+'"]').length === 0){
+                $(consentMarkup()).insertBefore($submitWrap);
+            }
+
+            $form.data('privacy-injected', true);
+        });
+    }
+
+    // Block submission if not checked (works with AJAX too)
+    function bindValidation(){
+        $(document).on('submit','form',function(e){
+            var $form = $(this);
+            var $cb   = $form.find('#'+consentId+', [name="'+consentName+'"]').first();
+
+            if (!$cb.length) return; // no checkbox in this form
+
+            if (!$cb.is(':checked')){
+                e.preventDefault();
+                e.stopImmediatePropagation();
+
+                var $err = $form.find('.custom-privacy-error').first();
+                if (!$err.length){
+                    $err = $('<div class="custom-privacy-error" aria-live="polite"></div>')
+                        .insertAfter($cb.closest('.custom-privacy-consent'));
+                }
+                $err.text(errorText).show();
+
+                $cb[0].scrollIntoView({behavior:'smooth', block:'center'});
+                return false;
+            } else {
+                $form.find('.custom-privacy-error').hide().empty();
+            }
+        });
+
+        // clear error on change
+        $(document).on('change', '#'+consentId+', [name="'+consentName+'"]', function(){
+            $(this).closest('form').find('.custom-privacy-error').hide().empty();
+        });
+    }
+
+    // Init
+    function initUI(){ addPrivacyUI(); }
+    initUI();
+    bindValidation();
+
+    // Re-run for dynamic loads/popups/AJAX 22
+    $(window).on('load', function(){ setTimeout(initUI, 300); });
+    $(document).ajaxComplete(function(){ setTimeout(initUI, 300); });
+    $(document).on('elementor/popup/show', function(){ setTimeout(initUI, 300); });
+
+    if (window.MutationObserver){
+        var observer = new MutationObserver(function(muts){
+            var add = muts.some(function(m){ return m.addedNodes && m.addedNodes.length; });
+            if (add){ setTimeout(initUI, 200); }
+        });
+        observer.observe(document.body, {childList:true, subtree:true});
+    }
+
 
 })(jQuery);

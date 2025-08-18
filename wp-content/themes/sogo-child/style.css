@@ -6390,6 +6390,41 @@ form div.wpcf7-mail-sent-ok {
   border: none;
   color: #2bb673;
 }
+/* Heebo + clean visuals for the consent unit */
+.custom-privacy-consent,
+.custom-privacy-consent * {
+  font-family: 'Heebo', sans-serif !important;
+}
+.custom-privacy-consent {
+  margin: 10px 0 6px;
+}
+.custom-privacy-consent .custom-privacy-label {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.custom-privacy-consent input[type="checkbox"] {
+  width: 18px !important;
+  height: 18px !important;
+  margin-top: 2px;
+}
+.custom-privacy-consent a {
+  text-decoration: underline;
+}
+/* Error message */
+.custom-privacy-error {
+  margin-top: 6px;
+  color: #c62828;
+  font-size: 13px;
+}
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .custom-privacy-consent .custom-privacy-label {
+    font-size: 13px;
+  }
+}
 /* end contact.less */
 /* zoom-in-effect.less */
 /*
