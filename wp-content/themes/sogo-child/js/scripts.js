@@ -555,7 +555,7 @@
 
 
     // ===== Config =====
-    var policyUrl   = "https://sogo.co.il/מדיניות-פרטיות";
+    var policyUrl   = "https://sogomatic.com/מדיניות-פרטיות";
     var consentId   = "form-field-privacy_consent";   // Elementor-friendly ID
     var consentName = "form_fields[privacy_consent]"; // Elementor-friendly name
     var errorText   = "יש לאשר את מדיניות הפרטיות לפני שליחת הטופס.";
@@ -565,10 +565,10 @@
         return `
       <div class="custom-privacy-consent elementor-field-group elementor-col-100 elementor-field-type-acceptance" data-inserted="yes">
         <label class="custom-privacy-label">
-          <input type="checkbox" id="${consentId}" name="${consentName}" value="yes" />
+          <input type="checkbox" id="${consentId}" name="${consentName}" value="yes" required />
           <span>אני מאשר/ת את <a href="${policyUrl}" target="_blank" rel="noopener">מדיניות הפרטיות</a> ומסכים/ה שהמידע ישמש למענה לפנייה ולמטרות המפורטות בה</span>
         </label>
-        <div class="custom-privacy-error" aria-live="polite" style="display:none;"></div>
+        <div class="custom-privacy-error" aria-live="polite" style="display:none; color: red; font-size: 14px; margin-top: 5px;"></div>
       </div>
     `;
     }
@@ -608,8 +608,9 @@
         });
     }
 
-    // Block submission if not checked (works with AJAX too)
+    // More aggressive validation - blocks all form submission methods
     function bindValidation(){
+        // Primary submit handler - highest priority
         $(document).on('submit','form',function(e){
             var $form = $(this);
             var $cb   = $form.find('#'+consentId+', [name="'+consentName+'"]').first();
@@ -618,34 +619,115 @@
 
             if (!$cb.is(':checked')){
                 e.preventDefault();
+                e.stopPropagation();
                 e.stopImmediatePropagation();
 
-                var $err = $form.find('.custom-privacy-error').first();
-                if (!$err.length){
-                    $err = $('<div class="custom-privacy-error" aria-live="polite"></div>')
-                        .insertAfter($cb.closest('.custom-privacy-consent'));
-                }
-                $err.text(errorText).show();
-
-                $cb[0].scrollIntoView({behavior:'smooth', block:'center'});
+                showError($form, $cb);
                 return false;
             } else {
-                $form.find('.custom-privacy-error').hide().empty();
+                hideError($form);
             }
         });
 
-        // clear error on change
+        // Block button clicks before they trigger submit
+        $(document).on('click','button[type="submit"], input[type="submit"]',function(e){
+            var $form = $(this).closest('form');
+            var $cb   = $form.find('#'+consentId+', [name="'+consentName+'"]').first();
+
+            if ($cb.length && !$cb.is(':checked')){
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+
+                showError($form, $cb);
+                return false;
+            }
+        });
+
+        // Handle AJAX form submissions (like Contact Form 7)
+        $(document).on('wpcf7beforesubmit', function(e) {
+            var $form = $(e.target);
+            var $cb   = $form.find('#'+consentId+', [name="'+consentName+'"]').first();
+
+            if ($cb.length && !$cb.is(':checked')){
+                showError($form, $cb);
+                return false;
+            }
+        });
+
+        // Handle Elementor Pro forms
+        $(document).on('elementor/forms/submit', function(e, $form) {
+            var $cb = $form.find('#'+consentId+', [name="'+consentName+'"]').first();
+
+            if ($cb.length && !$cb.is(':checked')){
+                showError($form, $cb);
+                return false;
+            }
+        });
+
+        // Clear error on checkbox change
         $(document).on('change', '#'+consentId+', [name="'+consentName+'"]', function(){
-            $(this).closest('form').find('.custom-privacy-error').hide().empty();
+            hideError($(this).closest('form'));
+        });
+    }
+
+    // Show error message
+    function showError($form, $cb) {
+        var $err = $form.find('.custom-privacy-error').first();
+        if (!$err.length){
+            $err = $('<div class="custom-privacy-error" aria-live="polite" style="color: red; font-size: 14px; margin-top: 5px;"></div>')
+                .insertAfter($cb.closest('.custom-privacy-consent'));
+        }
+        $err.text(errorText).show();
+
+        // Scroll to checkbox with error
+        $cb[0].scrollIntoView({behavior:'smooth', block:'center'});
+
+        // Focus on checkbox for accessibility
+        setTimeout(function() {
+            $cb.focus();
+        }, 500);
+    }
+
+    // Hide error message
+    function hideError($form) {
+        $form.find('.custom-privacy-error').hide().empty();
+    }
+
+    // Disable form submission programmatically if checkbox not checked
+    function preventFormSubmission() {
+        $('form').each(function() {
+            var $form = $(this);
+            var originalAction = $form.attr('action');
+            var $cb = $form.find('#'+consentId+', [name="'+consentName+'"]').first();
+
+            if ($cb.length) {
+                // Override form action temporarily if checkbox not checked
+                $form.on('submit', function(e) {
+                    if (!$cb.is(':checked')) {
+                        $form.attr('action', 'javascript:void(0);');
+                        setTimeout(function() {
+                            $form.attr('action', originalAction);
+                        }, 100);
+                    }
+                });
+            }
         });
     }
 
     // Init
-    function initUI(){ addPrivacyUI(); }
-    initUI();
-    bindValidation();
+    function initUI(){
+        addPrivacyUI();
+        preventFormSubmission();
+    }
 
-    // Re-run for dynamic loads/popups/AJAX 22
+    // Initialize everything
+    $(document).ready(function() {
+        initUI();
+        bindValidation();
+    });
+
+    // Re-run for dynamic loads/popups/AJAX
     $(window).on('load', function(){ setTimeout(initUI, 300); });
     $(document).ajaxComplete(function(){ setTimeout(initUI, 300); });
     $(document).on('elementor/popup/show', function(){ setTimeout(initUI, 300); });
