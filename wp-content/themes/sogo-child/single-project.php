@@ -1,54 +1,14 @@
 <?php
-//$template =  get_field('_sogo_template');
-//
-//
-//if(!$template ||$template === 'single-project.php' ){
-//    $template = 'template-single-1.php';
-//}
-//
-// include $template;
 
-
-//global $fullpage;
-//$fullpage = '';
 get_header();
 //the_post();
 $is_mobile = wp_is_mobile();
-//$bg_desktop = get_field('_sogo_ver3_floor1_bg');
-//$bg_mobile = (get_field('_sogo_ver3_floor1_bg_mobile'));
-//$bg = $is_mobile ? $bg_mobile : $bg_desktop;
-//$col = $is_mobile ? 'col-md-12' : 'col-md-4';
-//$bg = $bg_desktop;
-
 
 ?>
-    <section id="firstfloor">
-        <img class="firstfloor-image" src="<?php echo get_field('_sogo_ver3_floor1_bg'); ?>" alt="">
-        <div class="firstfloor-info relative">
-            <div class="continer-fluid">
-                <div class="row d-flex align-items-center justify-content-center">
-                    <div class="col-xs-12 col-lg-6 text-center">
-
-                        <?php $floor1_title_color = (get_field('_sogo_ver3_floor1_title_desktop_color')) ? get_field('_sogo_ver3_floor1_title_desktop_color') : '#274c8c'; ?>
-
-                        <h2 class="" style="color: <?php echo $floor1_title_color ?>"><?php echo get_field('_sogo_ver3_floor1_title') ?></h2>
-<!--                        --><?php //$floor3_image = get_field('_sogo_ver3_floor3_line'); ?>
-<!--                        --><?php //if($floor3_image) : ?>
-<!--                            --><?php //echo wp_get_attachment_image($floor3_image, 'full', false, array('class'=> 'img-fluid')) ; ?>
-<!--                        --><?php //else: ?>
-                            <img src="<?php echo get_stylesheet_directory_uri();?>/images/floor3-divider.png">
-<!--                        --><?php //endif; ?>
-                        <div><?php echo get_field('_sogo_ver3_floor1_text') ?></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section id="floor1" class="relative"
              style="background: url('<?php echo get_field('_sogo_ver3_floor1_bg'); ?>'); background-repeat: no-repeat;
                      background-size: cover; background-position: center right">
-
         <div class="container-fluid">
             <div class="row d-flex align-items-center justify-content-center">
                 <div class="col-12 col-lg-6 floor1-right"></div>
@@ -149,12 +109,16 @@ $is_mobile = wp_is_mobile();
     <?php endwhile; ?>
 
 <?php $category = get_the_terms( $post->ID, 'project-cat' )[0]; ?>
-<?php $related = get_field('_sogo_related_projects', $category->taxonomy . '_' . $category->term_id)?>
-<?php unset($related[array_search($post->ID, $related)]);?>
-<?php shuffle($related); ?>
-<?php $related =  array_slice($related, 0, 4); // get first four only; ?>
+<?php if($category): ?>
+    <?php $related = get_field('_sogo_related_projects', $category->taxonomy . '_' . $category->term_id)?>
+    <?php if($related): ?>
+        <?php unset($related[array_search($post->ID, $related)]);?>
+        <?php shuffle($related); ?>
+        <?php $related =  array_slice($related, 0, 4); // get first four only; ?>
+    <?php endif; ?>
+<?php endif; ?>
 
-<?php if($related) :; ?>
+<?php if($related) : ?>
     <div class="container-fluid">
         <div class="row projects_grid_con">
             <div class="col-md-11">

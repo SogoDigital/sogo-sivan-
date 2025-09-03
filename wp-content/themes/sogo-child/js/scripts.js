@@ -555,7 +555,7 @@
 
 
     // ===== Config =====
-    var policyUrl   = "https://sogomatic.com/מדיניות-פרטיות";
+    var policyUrl   = "https://sogo.co.il/מדיניות-פרטיות";
     var consentId   = "form-field-privacy_consent";   // Elementor-friendly ID
     var consentName = "form_fields[privacy_consent]"; // Elementor-friendly name
     var errorText   = "יש לאשר את מדיניות הפרטיות לפני שליחת הטופס.";
