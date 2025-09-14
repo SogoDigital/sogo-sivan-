@@ -270,6 +270,40 @@
         // this is for the city page
      //   $('a[rel="prettyPhoto"]').fancybox();
 
+        /*
+         *  Mobile Menu
+         * */
+
+        $('.dineuron-menu .menu-item-has-children > a').on('click', function(e) {
+            e.preventDefault();
+
+            var $parentLi = $(this).parent();
+            var $subMenu = $parentLi.find('.sub-menu');
+
+            if ($subMenu.length) {
+                $parentLi.toggleClass('open');
+
+                if ($parentLi.hasClass('open')) {
+                    $subMenu.slideDown(300);
+                } else {
+                    $subMenu.slideUp(300);
+                }
+
+                $parentLi.siblings('.menu-item-has-children').removeClass('open').find('.sub-menu').slideUp(300);
+            }
+        });
+
+        // Initialization - hide all submenus on boot
+        $('.dineuron-menu .sub-menu').hide();
+        console.log('test')
+
+        // Reset submenus when main menu is closed (if you have another script for nav-open)
+        $(document).on('click', function() {
+            if (!$('html').hasClass('nav-open') && !$('body').hasClass('nav-open')) {
+                $('.dineuron-menu .menu-item-has-children').removeClass('open');
+                $('.dineuron-menu .sub-menu').hide();
+            }
+        });
 
         /*
          *  do header fixed animation on scroll

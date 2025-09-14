@@ -1173,6 +1173,54 @@ h6 {
 #header .desktop-header .desktop-menu ul.menu li.menu-item a:hover:after {
   width: 100%;
 }
+#header .desktop-header .desktop-menu ul.menu li.menu-item .sub-menu {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 10px 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+#header .desktop-header .desktop-menu ul.menu li.menu-item .sub-menu li.menu-item {
+  padding: 10px 0;
+  line-height: 1;
+  width: 100%;
+}
+#header .desktop-header .desktop-menu ul.menu li.menu-item .sub-menu li.menu-item:hover {
+  background-color: #eee;
+}
+#header .desktop-header .desktop-menu ul.menu li.menu-item .sub-menu li.menu-item a {
+  white-space: nowrap;
+}
+#header .desktop-header .desktop-menu ul.menu li.menu-item .sub-menu li.menu-item a:after {
+  border: 0;
+}
+#header .desktop-header .desktop-menu ul.menu li.menu-item:hover .sub-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+#header .desktop-header .desktop-menu ul.menu li.menu-item.menu-item-has-children {
+  position: relative;
+}
+#header .desktop-header .desktop-menu ul.menu li.menu-item.menu-item-has-children a:after {
+  border: 0;
+}
+#header .desktop-header .desktop-menu ul.menu li.menu-item.menu-item-has-children:after {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #ED1D24;
+}
 #header .desktop-header .desktop-menu ul.menu #magic-line {
   position: absolute;
   bottom: -10px;
@@ -1278,9 +1326,9 @@ h6 {
   height: calc(100vh - 82px);
   opacity: 0;
   visibility: hidden;
-  position: absolute;
-  z-index: 1;
-  right: 0;
+  top: 82px !important;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .dineuron-menu .flex-center {
   display: -webkit-box;
@@ -1291,16 +1339,18 @@ h6 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 100%;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 0 20px;
 }
 .dineuron-menu .flex-center .menu {
   padding: 30px 0;
   text-align: center;
   margin: 0;
+  width: 100%;
 }
 .dineuron-menu .flex-center .menu li {
   list-style: none;
@@ -1317,6 +1367,42 @@ h6 {
   color: #FFF;
   font-size: 4vh;
   font-weight: 600;
+}
+.dineuron-menu .flex-center .menu li .sub-menu {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+.dineuron-menu .flex-center .menu li .sub-menu li {
+  line-height: 1.5;
+  opacity: 0.8;
+  transform: none;
+}
+.dineuron-menu .flex-center .menu li .sub-menu li a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 3vh;
+  font-weight: 400;
+}
+.dineuron-menu .flex-center .menu li .sub-menu li a:hover {
+  color: #FFF;
+}
+.dineuron-menu .flex-center .menu li.menu-item-has-children > a {
+  position: relative;
+}
+.dineuron-menu .flex-center .menu li.menu-item-has-children > a:after {
+  content: '+';
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3vh;
+  transition: transform 0.3s ease;
+}
+.dineuron-menu .flex-center .menu li.menu-item-has-children.open > a:after {
+  content: '-';
+}
+.nav-open body {
+  overflow: hidden;
 }
 .nav-open .dineuron-menu {
   opacity: 1;
