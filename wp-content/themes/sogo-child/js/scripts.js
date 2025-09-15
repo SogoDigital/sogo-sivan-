@@ -274,8 +274,19 @@
          *  Mobile Menu
          * */
 
-        $('.dineuron-menu .menu-item-has-children > a').on('click', function(e) {
+        // Initialization - hide all submenus on boot
+        $('.dineuron-menu .sub-menu').each(function() {
+            $(this).css({
+                'display': 'none',
+                'opacity': '0',
+                'visibility': 'hidden'
+            });
+        });
+
+        // Handling clicks on menu items with submenus
+        $('.dineuron-menu .menu-item-has-children > a').on('click touchstart', function(e) {
             e.preventDefault();
+            e.stopPropagation(); // Preventing an event from surfacing
 
             var $parentLi = $(this).parent();
             var $subMenu = $parentLi.find('.sub-menu');
@@ -284,25 +295,55 @@
                 $parentLi.toggleClass('open');
 
                 if ($parentLi.hasClass('open')) {
-                    $subMenu.slideDown(300);
+                    $subMenu.css('visibility', 'visible').slideDown(300, function() {
+                        $(this).css('opacity', '1');
+                    });
                 } else {
-                    $subMenu.slideUp(300);
+                    $subMenu.css('opacity', '0').slideUp(300, function() {
+                        $(this).css('visibility', 'hidden');
+                    });
                 }
 
-                $parentLi.siblings('.menu-item-has-children').removeClass('open').find('.sub-menu').slideUp(300);
+                // Close other submenus
+                $parentLi.siblings('.menu-item-has-children').removeClass('open').find('.sub-menu').each(function() {
+                    $(this).css('opacity', '0').slideUp(300, function() {
+                        $(this).css('visibility', 'hidden');
+                    });
+                });
             }
         });
 
-        // Initialization - hide all submenus on boot
-        $('.dineuron-menu .sub-menu').hide();
-        console.log('test')
-
-        // Reset submenus when main menu is closed (if you have another script for nav-open)
-        $(document).on('click', function() {
-            if (!$('html').hasClass('nav-open') && !$('body').hasClass('nav-open')) {
-                $('.dineuron-menu .menu-item-has-children').removeClass('open');
-                $('.dineuron-menu .sub-menu').hide();
+        // Reset submenus when closing main menu
+        $(document).on('click touchstart', function(e) {
+            // Проверяем, что клик не по меню
+            if (!$(e.target).closest('.dineuron-menu').length) {
+                if (!$('html').hasClass('nav-open') && !$('body').hasClass('nav-open')) {
+                    $('.dineuron-menu .menu-item-has-children').removeClass('open');
+                    $('.dineuron-menu .sub-menu').each(function() {
+                        $(this).css({
+                            'display': 'none',
+                            'opacity': '0',
+                            'visibility': 'hidden'
+                        });
+                    });
+                }
             }
+        });
+
+        // Additional check when changing screen size
+        $(window).on('resize orientationchange', function() {
+            setTimeout(function() {
+                if ($(window).width() > 991) {
+                    $('.dineuron-menu .menu-item-has-children').removeClass('open');
+                    $('.dineuron-menu .sub-menu').each(function() {
+                        $(this).css({
+                            'display': 'none',
+                            'opacity': '0',
+                            'visibility': 'hidden'
+                        });
+                    });
+                }
+            }, 100);
         });
 
         /*
