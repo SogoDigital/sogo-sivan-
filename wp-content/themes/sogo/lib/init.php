@@ -25,6 +25,18 @@ function sogo_setup() {
     register_nav_menus(array(
         'social_menu' => __('Social Navigation', 'sogo')
     ));
+    register_nav_menus( array(
+        'footer_menu_1' => __( 'Footer Navigation 1', 'sogo' )
+    ) );
+    register_nav_menus( array(
+        'footer_menu_2' => __( 'Footer Navigation 2', 'sogo' )
+    ) );
+    register_nav_menus( array(
+        'footer_menu_3' => __( 'Footer Navigation 3', 'sogo' )
+    ) );
+    register_nav_menus( array(
+        'footer_menu_4' => __( 'Footer Navigation 4', 'sogo' )
+    ) );
     // Add post thumbnails
     // http://codex.wordpress.org/Post_Thumbnails
     // http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size

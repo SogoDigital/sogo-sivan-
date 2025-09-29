@@ -34,7 +34,7 @@
 function autoadd_scripts() {
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'jquery-ui-autocomplete' , get_template_directory_uri().'/admin/js/autocomplete.js');
-    wp_register_style( 'jquery-ui-styles','http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css' );
+    wp_register_style( 'jquery-ui-styles','https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css' );
     wp_enqueue_style( 'jquery-ui-styles' );
     wp_enqueue_style( 'sogo-admin-meta' , get_template_directory_uri().'/admin/css/admin.css');
 

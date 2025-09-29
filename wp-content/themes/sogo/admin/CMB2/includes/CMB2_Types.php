@@ -250,7 +250,7 @@ class CMB2_Types {
 	 * @param  int    $i    Iterator value
 	 * @return string       Gnerated list item html
 	 */
-	public function list_input( $args = array(), $i ) {
+	public function list_input( $i, $args = array() ) {
 		$a = $this->parse_args( $args, 'list_input', array(
 			'type'  => 'radio',
 			'class' => 'cmb2-option',

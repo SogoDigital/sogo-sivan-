@@ -18,7 +18,7 @@ $sogo_includes = array(
     'admin/CMB2/init.php',                          // CMB2
     'lib/cmb2-ext/meta_filters.php',                // CMB2
     'lib/cmb2-ext/autocomplete.php',                // CMB2
-    'lib/cmb2-ext/chosen.php',                      // CMB2
+//    'lib/cmb2-ext/chosen.php',                      // CMB2
     'lib/cmb2-ext/meta_box_additional_fields.php',  // CMB2
     'lib/init.php',                                 // register items
     'lib/enqueue.php',                              // load scripts

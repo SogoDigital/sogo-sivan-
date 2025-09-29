@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="79cefc45-2a4e-4014-89e8-3336ddc0bb41" name="Sandbox" url="http://sandbox.sogo.co.il">
+        <fileTransfer rootFolder="/public_html/sogo" host="sandbox.sogo.co.il" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="dcdec801-15af-4d94-8900-843cc134b8c9" name="Live" url="http://89.36.197.5">
+        <fileTransfer rootFolder="/public_html" host="89.36.197.5" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
