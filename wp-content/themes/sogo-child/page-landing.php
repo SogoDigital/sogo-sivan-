@@ -99,15 +99,18 @@ get_header('landing');
         </div>
     <?php endif; ?>
     <?php if (get_field('_sogo_landing_floor3_show_hide') !== false): ?>
-        <div class="landing-floor3" style="background-image: url('<?php echo get_field('_sogo_landing_floor3_bg') ?>')">
-            <div class="container-fluid">
+        <div class="landing-floor3 mt-5 mt-xl-0" style="background-image: url('<?php echo get_field('_sogo_landing_floor3_bg') ?>')">
+            <div class="container-fluid px-0 px-lg-4">
+                <div class="d-flex d-xl-none justify-content-center landing-image-column">
+                    <?php echo wp_get_attachment_image(get_field('_sogo_landing_floor3_image'), 'full', false, array('class' => 'img-fluid')); ?>
+                </div>
                 <div class="landing-floor3-wrapper">
                     <div class="landing-floor3-bg-lines" style="background-image: url('<?php echo get_field('_sogo_landing_floor3_bg_lines') ?>'); ">
                         <div class="landing-floor3-top-section text-center">
-                            <p class="landing-floor3-title mb-0"><?php echo get_field('_sogo_landing_floor3_title') ?></p>
+                            <p class="landing-floor3-title mb-4"><?php echo get_field('_sogo_landing_floor3_title') ?></p>
                             <p class="landing-floor3-subtitle mb-0"><?php echo get_field('_sogo_landing_floor3_subtitle') ?></p>
                         </div>
-                        <div class="row justify-content-center">
+                        <div class="d-flex justify-content-center">
                             <div class="d-none d-xl-flex col-6 landing-image-column">
                                 <?php echo wp_get_attachment_image(get_field('_sogo_landing_floor3_image'), 'full', false, array('class' => 'img-fluid')); ?>
                             </div>
@@ -189,7 +192,7 @@ get_header('landing');
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12 col-lg-8">
-                            <div>
+                            <div class="mb-5 mb-lg-0">
                                 <p class="landing-floor5-title"><?php echo get_field('_sogo_landing_floor5_title') ?></p>
                                 <p class="landing-floor5-subtitle"><?php echo get_field('_sogo_landing_floor5_subtitle') ?></p>
                                 <a class="gradient-btn" href="<?php echo get_field('_sogo_landing_floor5_button_link') ?>">
@@ -203,6 +206,9 @@ get_header('landing');
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="landing-floor5-mobile-bg d-flex d-lg-none justify-content-center">
+                    <?php echo wp_get_attachment_image(get_field('_sogo_landing_floor5_mobile_bg'), 'full', false, array('class' => 'img-fluid')); ?>
                 </div>
             </div>
         </div>
@@ -300,6 +306,9 @@ get_header('landing');
     <?php if (get_field('_sogo_landing_floor8_show_hide') !== false): ?>
         <div class="landing-floor8 py-4" style="background-image: url('<?php echo get_field('_sogo_landing_floor8_left_bg') ?>')">
             <div class="landing-floor8-wrapper">
+                <div class="d-flex d-lg-none justify-content-center p-5">
+                    <?php echo wp_get_attachment_image(get_field('_sogo_landing_floor8_image'), 'full', false, array('class' => 'img-fluid')); ?>
+                </div>
                 <div class="container-fluid">
                     <div class="row justify-content-between flex-column-reverse flex-lg-row">
                         <div class="col-12 col-lg-5 offset-lg-1">
@@ -311,7 +320,6 @@ get_header('landing');
                                 <div class="accordion accordion-flush" id="faqAccordion">
                                     <?php
                                     while (have_rows('_sogo_faq_questions')): the_row();
-                                        // Проверяем, является ли это первым элементом
                                         $isFirst = ($counter === 0);
                                     ?>
                                         <div class="accordion-item">

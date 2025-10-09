@@ -6183,7 +6183,7 @@ p.item-text {
 }
 /* contact.less */
 #contact-floor-1 {
-  background: url("images/contact-bg-mobile.jpg") no-repeat;
+  background: url("images/BG-Contact-Mobile.png") no-repeat;
   background-size: cover;
 }
 @media (min-width: 768px) {
@@ -6193,7 +6193,7 @@ p.item-text {
 }
 @media (min-width: 992px) {
   #contact-floor-1 {
-    background: url("images/contact-bg.png") no-repeat;
+    background: url("images/BG-Contact.png") no-repeat;
     height: 360px;
   }
 }
@@ -6312,6 +6312,37 @@ p.item-text {
     font-size: 25px;
   }
 }
+.contact-form-main input[type="submit"] {
+  border: none;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100px;
+  height: 40px;
+  border-radius: 2rem;
+  background: #ed1d24;
+  background: linear-gradient(88deg, #ED1D24 0%, #EE2A7B 34%, #8A5BA5 75%, #00ADDC 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 992px) {
+  .contact-form-main input[type="submit"] {
+    right: auto;
+  }
+}
+.contact-form-main .custom-privacy-consent {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 20px;
+}
+.contact-form-main .custom-privacy-consent label span a {
+  color: initial;
+}
 .contact-form-main .btn-link {
   padding: 10px;
   float: right;
@@ -6325,27 +6356,6 @@ p.item-text {
   .contact-form-main .btn-link {
     margin-bottom: 0;
   }
-}
-.contact-form-main .btn-link input[type="submit"] {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  z-index: 5;
-  color: #a4a4a4;
-  position: absolute;
-  display: block;
-  bottom: 0;
-  text-transform: uppercase;
-  line-height: 2.4;
-  text-align: center;
-  min-width: 100%;
-  left: 0;
-}
-.contact-form-main .btn-link input[type="submit"]:hover {
-  color: #ed1c24;
-  font-weight: 400;
 }
 .contact-form-main .group {
   margin-bottom: 10px;
@@ -7660,7 +7670,6 @@ form div.wpcf7-mail-sent-ok {
     display: block;
   }
 }
-
 #landing .gradient-btn {
   padding: 24px 48px;
   border-radius: 16px;
@@ -7671,9 +7680,11 @@ form div.wpcf7-mail-sent-ok {
   border: 1px solid #DED8B9;
   box-shadow: 0 133px 37px 0 rgba(0, 0, 0, 0), 0 85px 34px 0 rgba(0, 0, 0, 0.02), 0 48px 29px 0 rgba(0, 0, 0, 0.08), 0 21px 21px 0 rgba(0, 0, 0, 0.14), 0 5px 12px 0 rgba(0, 0, 0, 0.16);
 }
-
-
-
+@media (max-width: 600px) {
+  #landing .gradient-btn {
+    padding: 16px 28px;
+  }
+}
 #landing .gradient-btn .gradient-btn-text {
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   font-family: Rubik;
@@ -7717,8 +7728,8 @@ form div.wpcf7-mail-sent-ok {
   font-size: 18px;
   font-weight: 500;
   width: fit-content;
-  border: 1px solid #D4D4D4;
-  outline: 1px solid #D4D4D4;
+  border: 1px solid #EAC954;
+  outline: 1px solid #AE8323;
   outline-offset: 4px;
   border-radius: 100px;
   padding: 8px 24px;
@@ -7737,6 +7748,11 @@ form div.wpcf7-mail-sent-ok {
   box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.25) inset;
   border-radius: 56px;
   overflow: hidden;
+}
+@media (max-width: 1200px) {
+  #landing .landing-floor1 .landing-floor1-wrapper {
+    min-height: 85vh;
+  }
 }
 #landing .landing-floor1 .landing-floor1-wrapper .landing-floor1-info {
   padding: 20px 0;
@@ -7798,14 +7814,6 @@ form div.wpcf7-mail-sent-ok {
     margin-bottom: 64px;
   }
 }
-@media (max-width: 600px) {
-  #landing .gradient-btn {
-  padding: 16px 28px;
-  }
-  #landing .landing-floor1 .landing-floor1-wrapper{
-    height: 85vh;
-  }
-}
 #landing .landing-floor2 .landing-floor2-top-section .landing-floor2-subtitle {
   color: #212427;
   text-align: center;
@@ -7856,28 +7864,24 @@ form div.wpcf7-mail-sent-ok {
   }
 }
 #landing .landing-floor3 .landing-floor3-wrapper {
-  border-radius: 32px;
   background: linear-gradient(90deg, #1F1F1F 0%, #333 100%);
   padding-top: 64px;
-  margin: 24px 0;
+  margin: 0 0 24px 0;
 }
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   #landing .landing-floor3 .landing-floor3-wrapper {
     margin: 80px 0;
+    border-radius: 32px;
   }
 }
 #landing .landing-floor3 .landing-floor3-wrapper .landing-floor3-bg-lines {
   background-repeat: no-repeat;
   background-position: right bottom;
-  background-size: 0;
-}
-@media (min-width: 1200px) {
-  #landing .landing-floor3 .landing-floor3-wrapper .landing-floor3-bg-lines {
-    background-size: auto;
-  }
+  background-size: auto;
 }
 #landing .landing-floor3 .landing-floor3-wrapper .landing-floor3-top-section {
   margin-bottom: 64px;
+  padding: 0 24px;
 }
 #landing .landing-floor3 .landing-floor3-wrapper .landing-floor3-top-section .landing-floor3-title {
   color: #fff;
@@ -7917,6 +7921,7 @@ form div.wpcf7-mail-sent-ok {
   overflow-y: auto;
   padding-right: 10px;
   direction: ltr;
+  margin-bottom: 35px;
 }
 #landing .landing-floor3 .landing-floor3-wrapper .landing-items-scrollable > * {
   direction: rtl;
@@ -7925,7 +7930,7 @@ form div.wpcf7-mail-sent-ok {
   width: 6px;
 }
 #landing .landing-floor3 .landing-floor3-wrapper .landing-items-scrollable::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 3px;
 }
 @media (min-width: 1200px) {
@@ -8003,12 +8008,12 @@ form div.wpcf7-mail-sent-ok {
   }
 }
 #landing .landing-floor5 .landing-floor5-wrapper {
-  background: linear-gradient(90deg, #E7A8B5 0%, #C37A89 100%);
-  padding: 50px 5px;
+  background: linear-gradient(90deg, #1F1F1F 0%, #333 100%);
+  padding: 50px 5px 0 5px;
 }
 @media (min-width: 600px) {
   #landing .landing-floor5 .landing-floor5-wrapper {
-    padding: 75px;
+    padding: 75px 75px 0 75px;
   }
 }
 @media (min-width: 992px) {
@@ -8183,7 +8188,6 @@ form div.wpcf7-mail-sent-ok {
 #landing .landing-floor8 .landing-floor8-wrapper .landing-floor8-title {
   color: #212427;
   width: fit-content;
-  text-align: center;
   font-size: 40px;
   font-weight: 900;
   line-height: 1.5;
@@ -8207,6 +8211,7 @@ form div.wpcf7-mail-sent-ok {
   font-size: 20px;
   font-weight: 900;
   line-height: 1.6;
+  padding-left: 1rem;
 }
 #landing .landing-floor8 .landing-floor8-wrapper .accordion-item .accordion-header .accordion-button:not(.collapsed) {
   background-color: transparent;
@@ -8377,7 +8382,7 @@ form div.wpcf7-mail-sent-ok {
 #landing .landing-floor11 .landing-floor11-wrapper .accordion-item {
   padding: 24px;
   border-radius: 16px;
-  border: 1px solid #8A38F5;
+  border: 1px solid #EAC954;
   background: #FFF;
   box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08), 0 3.153px 18.916px 0 rgba(242, 64, 64, 0.05);
   margin-bottom: 24px;
@@ -8455,15 +8460,10 @@ form div.wpcf7-mail-sent-ok {
   backdrop-filter: blur(25px);
 }
 #landing .landing-floor12 .landing-floor12-wrapper .landing-floor12-form .landing-form .landing-form-title {
-  width: fit-content;
-  text-align: center;
+  color: #212427;
   font-size: 24px;
   font-weight: 900;
   line-height: 1.5;
-  background: linear-gradient(90deg, #051C51 11.25%, #003ABF 48.91%, #051C51 84.81%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 #landing .landing-floor12 .landing-floor12-wrapper .landing-floor12-form .landing-form .landing-form-subtitle {
   color: #67717C;
@@ -8478,8 +8478,16 @@ form div.wpcf7-mail-sent-ok {
   background: #FFF;
   height: 50px;
 }
+#landing .landing-floor12 .landing-floor12-wrapper .landing-floor12-form .landing-form input[type="url"],
+#landing .landing-floor12 .landing-floor12-wrapper .landing-floor12-form .landing-form input[type="email"],
+#landing .landing-floor12 .landing-floor12-wrapper .landing-floor12-form .landing-form input[type="tel"] {
+  direction: rtl;
+}
 #landing .landing-floor12 .landing-floor12-wrapper .landing-floor12-form .landing-form .wpcf7-submit {
   border: 0;
   width: 100%;
   justify-content: center;
+}
+#landing .landing-floor12 .landing-floor12-wrapper .landing-floor12-form .landing-form .custom-privacy-consent label span a {
+  color: initial;
 }

@@ -34,7 +34,7 @@
                         <?php echo do_shortcode(sogo_meta('section-1-form')) ?>
                     </div>
                 </div>
-                <div itemscope itemtype="http://schema.org/LocalBusiness"  class="col-md-2 col-sm-6 col-md-offset-1 text-center">
+                <div itemscope itemtype="http://schema.org/LocalBusiness"  class="col-md-2 col-sm-6 text-center">
                     <div class="contact-box-wrapper">
                         <div class="contact-box">
                             <a href="<?php echo sogo_meta('google-map') ?>" target="_blank">
@@ -68,24 +68,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2 col-sm-6 col-md-offset-1 text-center">
+                <div class="col-md-2 col-sm-6 text-center">
                     <div class="contact-box">
-                        <a href="tel:+97297719393" onclick="goog_report_conversion ()">
+                        <a href="https://api.whatsapp.com/send/?phone=972796998815&text=%D7%A9%D7%9C%D7%95%D7%9D,%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%90%D7%9C%D7%99%D7%9B%D7%9D%20%D7%9E%D7%A2%D7%9E%D7%95%D7%93%20%D7%A6%D7%95%D7%A8%20%D7%A7%D7%A9%D7%A8%20%D7%91%D7%90%D7%AA%D7%A8.%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D" onclick="goog_report_conversion ()">
                             <div class="contact-label">
-                                <span><?php _e('Phone:','sogoc')?></span>
+                                <span><?php echo esc_html('וואטסאפ')?></span>
+<!--                                <span>--><?php //_e('Phone:','sogoc')?><!--</span>-->
                             </div>
                             <div class="contact-icon bg-green full-radius">
-                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <i class="fa fa-whatsapp" aria-hidden="true"></i>
                             </div>
                             <div itemprop="telephone" class="text">
-                                <p><?php _e('Office: 09-7719393','sogoc')?>  </p>
-<!--                                <p>--><?php //_e('Fax: 09-7665724','sogoc')?><!--  </p>-->
+                                <p><?php echo esc_html('שלחו הודעה')?>  </p>
+<!--                                <p>--><?php //_e('Office: 09-7719393','sogoc')?><!--  </p>-->
 
                             </div>
                         </a>
                     </div>
                     <div class="contact-box">
-                        <a target="_blank" href="https://www.facebook.com/sogopage/?fref=ts">
+                        <a target="_blank" href="https://www.facebook.com/sogo.co.il/">
                             <div class="contact-label">
                                 <span><?php _e('Facebook:','sogoc')?></span>
                             </div>
@@ -135,3 +136,32 @@
 <!--    </footer>-->
 
 <?php get_footer() ?>
+
+<div class="contact-label">
+    <label>צור קשר:</label>
+</div>
+<div class="group">
+    [text* your-name id:your-name]<label for="your-name">שם מלא</label>
+</div>
+<div class="group">
+    [email* your-email id:your-email]<label for="your-email">כתובת אימייל</label>
+</div>
+<div class="group">
+    [tel* your-phone maxlength:10 id:your-phone]<label for="your-phone">טלפון</label>
+</div>
+<div class="group">
+    <label for="message">הודעה</label>[textarea* message id:message]
+</div>
+<div class="row">
+    <div class="col-md-6">
+        [recaptcha]
+    </div>
+    <div class="col-md-6 btn-link">
+        [submit "שלח" ]
+    </div>
+</div>
+[hidden utm_source default:get]
+[hidden utm_medium default:get]
+[hidden utm_campaign default:get]
+[hidden utm_term default:get]
+[hidden utm_content default:get]
