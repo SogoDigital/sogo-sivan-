@@ -61,14 +61,17 @@
 }
 
 .thanks-floor {
-  background: url("images/thanks-bg-en.jpg");
-  z-index: 1;
   background-size: cover;
-  background-position: 52% 50%;
+  background-position: center;
+
+  //background: url("images/thanks-bg-en.jpg");
+  z-index: 1;
+  //background-size: cover;
+  //background-position: 52% 50%;
   padding-bottom: 96vh;
   @media (min-width: 992px) {
     height: 100vh;
-    background-position: 50% 50%;
+    //background-position: 50% 50%;
     padding-bottom: 0;
   }
   .page-title {
@@ -102,6 +105,15 @@
       background: transparent;
       border: 1px solid @color-green;
       color: @color-green;
+    }
+  }
+  .gradient-btn{
+    position: absolute;
+    bottom: 60px;
+    left: 15%;
+    right: auto;
+    .gradient-btn-text{
+      font-family: inherit;
     }
   }
 }

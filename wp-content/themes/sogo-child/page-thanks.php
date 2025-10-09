@@ -3,7 +3,7 @@
 the_post();
 ?>
 
-<section class="thanks-floor floor section vertical-top">
+<section class="thanks-floor floor section vertical-top" style="background-image: url('<?php echo get_field('_sogo_thanks_bg')?>')">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 text-center">

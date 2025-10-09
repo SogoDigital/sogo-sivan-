@@ -4090,16 +4090,14 @@ h2.team-heading {
   top: 80px;
 }
 .thanks-floor {
-  background: url("images/thanks-bg-en.jpg");
-  z-index: 1;
   background-size: cover;
-  background-position: 52% 50%;
+  background-position: center;
+  z-index: 1;
   padding-bottom: 96vh;
 }
 @media (min-width: 992px) {
   .thanks-floor {
     height: 100vh;
-    background-position: 50% 50%;
     padding-bottom: 0;
   }
 }
@@ -4143,6 +4141,15 @@ h2.team-heading {
   background: transparent;
   border: 1px solid #2bb673;
   color: #2bb673;
+}
+.thanks-floor .gradient-btn {
+  position: absolute;
+  bottom: 60px;
+  left: 15%;
+  right: auto;
+}
+.thanks-floor .gradient-btn .gradient-btn-text {
+  font-family: inherit;
 }
 /* end thank-you.less */
 /* blog.less */
@@ -7645,6 +7652,38 @@ form div.wpcf7-mail-sent-ok {
 .campaigne-page .campaigne-floor5 .faq-content .questions-accord .panel .panel-body ul li {
   font-size: 18px;
 }
+.gradient-btn {
+  padding: 24px 48px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  background: #1F1F1F;
+  border: 1px solid #DED8B9;
+  box-shadow: 0 133px 37px 0 rgba(0, 0, 0, 0), 0 85px 34px 0 rgba(0, 0, 0, 0.02), 0 48px 29px 0 rgba(0, 0, 0, 0.08), 0 21px 21px 0 rgba(0, 0, 0, 0.14), 0 5px 12px 0 rgba(0, 0, 0, 0.16);
+}
+@media (max-width: 600px) {
+  .gradient-btn {
+    padding: 16px 28px;
+  }
+}
+.gradient-btn .gradient-btn-text {
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Rubik;
+  font-size: 20px;
+  font-weight: 900;
+  padding-left: 8px;
+  background: linear-gradient(225deg, #C49337 10.03%, #FCF7CD 31.51%, #EDCD78 48.7%, #A7602B 59.25%, #FDF8D0 74.48%, #BB9138 88.16%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-btn .gradient-btn-arrow {
+  filter: drop-shadow(0 2.422px 2.422px rgba(0, 0, 0, 0.25));
+}
+.gradient-btn:hover {
+  text-decoration: none;
+}
 #landing {
   font-family: Rubik;
 }
@@ -7669,38 +7708,6 @@ form div.wpcf7-mail-sent-ok {
   #landing .landing-floor2-left-arrow {
     display: block;
   }
-}
-#landing .gradient-btn {
-  padding: 24px 48px;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  background: #1F1F1F;
-  border: 1px solid #DED8B9;
-  box-shadow: 0 133px 37px 0 rgba(0, 0, 0, 0), 0 85px 34px 0 rgba(0, 0, 0, 0.02), 0 48px 29px 0 rgba(0, 0, 0, 0.08), 0 21px 21px 0 rgba(0, 0, 0, 0.14), 0 5px 12px 0 rgba(0, 0, 0, 0.16);
-}
-@media (max-width: 600px) {
-  #landing .gradient-btn {
-    padding: 16px 28px;
-  }
-}
-#landing .gradient-btn .gradient-btn-text {
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: Rubik;
-  font-size: 20px;
-  font-weight: 900;
-  padding-left: 8px;
-  background: linear-gradient(225deg, #C49337 10.03%, #FCF7CD 31.51%, #EDCD78 48.7%, #A7602B 59.25%, #FDF8D0 74.48%, #BB9138 88.16%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-#landing .gradient-btn .gradient-btn-arrow {
-  filter: drop-shadow(0 2.422px 2.422px rgba(0, 0, 0, 0.25));
-}
-#landing .gradient-btn:hover {
-  text-decoration: none;
 }
 #landing .video-cubic {
   padding-bottom: 56.25%;
@@ -8212,6 +8219,7 @@ form div.wpcf7-mail-sent-ok {
   font-weight: 900;
   line-height: 1.6;
   padding-left: 1rem;
+  text-align: start;
 }
 #landing .landing-floor8 .landing-floor8-wrapper .accordion-item .accordion-header .accordion-button:not(.collapsed) {
   background-color: transparent;
@@ -8264,7 +8272,12 @@ form div.wpcf7-mail-sent-ok {
   width: 260px;
   height: 260px;
   flex: none;
-  margin-left: 24px;
+  margin: auto;
+}
+@media (min-width: 768px) {
+  #landing .landing-floor9 .landing-floor9-wrapper .landing-floor9-team .landing-floor9-item .landing-floor9-item-image-wrapper {
+    margin-left: 24px;
+  }
 }
 #landing .landing-floor9 .landing-floor9-wrapper .landing-floor9-team .landing-floor9-item .landing-floor9-item-image-wrapper img {
   width: 100%;
@@ -8490,4 +8503,7 @@ form div.wpcf7-mail-sent-ok {
 }
 #landing .landing-floor12 .landing-floor12-wrapper .landing-floor12-form .landing-form .custom-privacy-consent label span a {
   color: initial;
+}
+#landing .landing-floor12 .landing-floor12-wrapper .landing-floor12-form .wpcf7-response-output {
+  display: none;
 }

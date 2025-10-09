@@ -62,7 +62,7 @@ get_header('landing');
                         </div>
                         <div class="row">
                             <?php while (have_rows('_sogo_landing_floor2_items')) : the_row(); ?>
-                                <div class="col-6 col-md-4 col-lg-3">
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                                     <div class="landing-floor2-item position-relative">
                                         <div class="landing-floor2-item-icon">
                                             <?php echo wp_get_attachment_image(get_sub_field('icon'), 'full', false, array('class' => 'img-fluid')); ?>
@@ -102,7 +102,7 @@ get_header('landing');
         <div class="landing-floor3 mt-5 mt-xl-0" style="background-image: url('<?php echo get_field('_sogo_landing_floor3_bg') ?>')">
             <div class="container-fluid px-0 px-lg-4">
                 <div class="d-flex d-xl-none justify-content-center landing-image-column">
-                    <?php echo wp_get_attachment_image(get_field('_sogo_landing_floor3_image'), 'full', false, array('class' => 'img-fluid')); ?>
+                    <?php echo wp_get_attachment_image(get_field('_sogo_landing_floor3_image_mobile'), 'full', false, array('class' => 'img-fluid')); ?>
                 </div>
                 <div class="landing-floor3-wrapper">
                     <div class="landing-floor3-bg-lines" style="background-image: url('<?php echo get_field('_sogo_landing_floor3_bg_lines') ?>'); ">
@@ -146,7 +146,7 @@ get_header('landing');
                             </div>
                             <div class="row">
                                 <?php while (have_rows('_sogo_landing_floor4_items')) : the_row(); ?>
-                                    <div class="col-6 col-lg-4">
+                                    <div class="col-12 col-sm-6 col-lg-4">
                                         <div class="landing-floor4-item position-relative">
                                             <div class="landing-floor4-item-icon">
                                                 <?php echo wp_get_attachment_image(get_sub_field('icon'), 'full', false, array('class' => 'img-fluid')); ?>
@@ -424,7 +424,7 @@ get_header('landing');
                             </div>
                             <div class="row">
                                 <?php while (have_rows('_sogo_landing_floor10_items')) : the_row(); ?>
-                                    <div class="col-6 col-lg-4">
+                                    <div class="col-12 col-lg-4">
                                         <div class="landing-floor10-item position-relative">
                                             <div class="landing-floor10-item-icon">
                                                 <?php echo wp_get_attachment_image(get_sub_field('icon'), 'full', false, array('class' => 'img-fluid')); ?>

@@ -221,7 +221,7 @@ function mycustom_wp_footer() {
                 location = 'https://sogo.co.il/תודה-רבה/';
             }
             else if ( '4171' == event.detail.contactFormId ) {
-                location = 'https://sogo.co.il/תודה-רבה/';
+                location = 'https://sogo.co.il/thanks_landing/';
             }
             else if ( '2748' == event.detail.contactFormId ) {
                 location = 'https://sogo.co.il/תודה-רבה/';

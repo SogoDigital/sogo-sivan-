@@ -127,9 +127,9 @@ span.wpcf7-not-valid-tip {
 }
 
 .thanks-floor {
-    background: url('images/thanks-page-bg.jpg');
-    background-size: cover;
-    background-position: 48% 50%;
+    /*background: url('images/thanks-page-bg.jpg');*/
+    /*background-size: cover;*/
+    /*background-position: 48% 50%;*/
 }
 
 .call-now {
