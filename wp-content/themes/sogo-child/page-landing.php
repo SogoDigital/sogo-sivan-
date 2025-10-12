@@ -54,7 +54,7 @@ get_header('landing');
         <div class="landing-floor2">
             <div class="container-fluid position-relative">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-lg-10">
+                    <div class="col-12 col-lg-10 mb-5">
                         <div class="landing-floor2-top-section text-center">
                             <?php echo wp_get_attachment_image(get_field('_sogo_landing_floor2_top_image'), 'full', false, array('class' => 'img-fluid')); ?>
                             <p class="landing-section-title mb-0"><?php echo get_field('_sogo_landing_floor2_title') ?></p>
@@ -82,6 +82,42 @@ get_header('landing');
                                     <a class="gradient-btn" href="<?php echo get_field('_sogo_landing_floor2_button_link') ?>">
                                         <span class="gradient-btn-text">
                                             <?php echo get_field('_sogo_landing_floor2_button_text') ?>
+                                        </span>
+                                        <span class="gradient-btn-arrow">
+                                            <?php echo wp_get_attachment_image(get_field('_sogo_landing_floor1_button_arrow'), 'full', false, array('class' => 'img-fluid')); ?>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="landing-floor2-left-arrow">
+                                    <?php echo wp_get_attachment_image(get_field('_sogo_landing_floor2_button_left_arrow'), 'full', false, array('class' => 'img-fluid')); ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Logos-->
+
+                    <div class="col-12 col-lg-8">
+                        <div class="landing-floor2-top-section text-center">
+                            <p class="landing-section-title mb-0"><?php echo get_field('_sogo_landing_floor2_logos_title') ?></p>
+                            <p class="landing-floor2-subtitle mb-0"><?php echo get_field('_sogo_landing_floor2_logos_subtitle') ?></p>
+                        </div>
+                        <div class="row mb-5">
+                            <?php while (have_rows("_sogo_landing_floor2_logos")) : the_row(); ?>
+                                <div class="col-4 col-md-2 text-center mb-5 campaigne-floor2-logos-item">
+                                    <?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid px-3')) ; ?>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                        <div class="text-center">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="landing-floor2-right-arrow">
+                                    <?php echo wp_get_attachment_image(get_field('_sogo_landing_floor2_button_right_arrow'), 'full', false, array('class' => 'img-fluid')); ?>
+                                </div>
+                                <div class="landing-button">
+                                    <a class="gradient-btn" href="<?php echo get_field('_sogo_landing_floor2_logos_button_link') ?>">
+                                        <span class="gradient-btn-text">
+                                            <?php echo get_field('_sogo_landing_floor2_logos_button_text') ?>
                                         </span>
                                         <span class="gradient-btn-arrow">
                                             <?php echo wp_get_attachment_image(get_field('_sogo_landing_floor1_button_arrow'), 'full', false, array('class' => 'img-fluid')); ?>

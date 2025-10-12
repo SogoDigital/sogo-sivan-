@@ -7829,12 +7829,13 @@ form div.wpcf7-mail-sent-ok {
   font-weight: 500;
 }
 #landing .landing-floor2 .landing-floor2-item {
-  margin-bottom: 0;
+  margin-bottom: 32px;
   padding: 0 2vw;
+  text-align: center;
 }
-@media (min-width: 600px) {
+@media (min-width: 576px) {
   #landing .landing-floor2 .landing-floor2-item {
-    margin-bottom: 32px;
+    text-align: start;
   }
 }
 @media (min-width: 992px) {
@@ -7843,9 +7844,11 @@ form div.wpcf7-mail-sent-ok {
   }
 }
 #landing .landing-floor2 .landing-floor2-item .landing-floor2-item-icon {
+  margin-bottom: 14px;
+}
+#landing .landing-floor2 .landing-floor2-item .landing-floor2-item-icon img {
   width: 70px;
   height: 70px;
-  margin-bottom: 14px;
 }
 #landing .landing-floor2 .landing-floor2-item .landing-floor2-item-title {
   color: #212427;
@@ -7981,6 +7984,12 @@ form div.wpcf7-mail-sent-ok {
 #landing .landing-floor4 .landing-floor4-item {
   margin-bottom: 32px;
   padding: 0 2vw;
+  text-align: center;
+}
+@media (min-width: 576px) {
+  #landing .landing-floor4 .landing-floor4-item {
+    text-align: start;
+  }
 }
 @media (min-width: 992px) {
   #landing .landing-floor4 .landing-floor4-item {
@@ -7988,9 +7997,11 @@ form div.wpcf7-mail-sent-ok {
   }
 }
 #landing .landing-floor4 .landing-floor4-item .landing-floor4-item-icon {
+  margin-bottom: 14px;
+}
+#landing .landing-floor4 .landing-floor4-item .landing-floor4-item-icon img {
   width: 70px;
   height: 70px;
-  margin-bottom: 14px;
 }
 #landing .landing-floor4 .landing-floor4-item .landing-floor4-item-title {
   color: #212427;
@@ -8344,6 +8355,12 @@ form div.wpcf7-mail-sent-ok {
 #landing .landing-floor10 .landing-floor10-item {
   margin-bottom: 32px;
   padding: 0 2vw;
+  text-align: center;
+}
+@media (min-width: 576px) {
+  #landing .landing-floor10 .landing-floor10-item {
+    text-align: start;
+  }
 }
 @media (min-width: 992px) {
   #landing .landing-floor10 .landing-floor10-item {
@@ -8351,9 +8368,11 @@ form div.wpcf7-mail-sent-ok {
   }
 }
 #landing .landing-floor10 .landing-floor10-item .landing-floor10-item-icon {
+  margin-bottom: 14px;
+}
+#landing .landing-floor10 .landing-floor10-item .landing-floor10-item-icon img {
   width: 70px;
   height: 70px;
-  margin-bottom: 14px;
 }
 #landing .landing-floor10 .landing-floor10-item .landing-floor10-item-title {
   color: #212427;
