@@ -37,7 +37,7 @@
                 <div itemscope itemtype="http://schema.org/LocalBusiness"  class="col-md-2 col-sm-6 text-center">
                     <div class="contact-box-wrapper">
                         <div class="contact-box">
-                            <a href="<?php echo sogo_meta('google-map') ?>" target="_blank">
+<!--                            <a href="--><?php //echo sogo_meta('google-map') ?><!--" target="_blank">-->
                                 <div class="contact-label">
                                     <span itemprop="name"><?php _e('address:','sogoc')?></span>
                                 </div>
@@ -46,10 +46,10 @@
                                 </div>
                                 <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="text">
                                     <p itemprop="addressLocality"><?php _e('Israel, Kfar Saaba,','sogoc')?></p>
-                                    <p  itemprop="streetAddress"><?php _e('Atir Yeda 1','sogoc')?></p>
+                                    <p  itemprop="streetAddress"><?php _e('סדנה 6','sogoc')?></p>
 
                                 </div>
-                            </a>
+<!--                            </a>-->
                         </div>
                         <div class="contact-box">
                             <a href="mailto:Support@sogo.co.il?subject=hello" target="_top">
@@ -136,32 +136,3 @@
 <!--    </footer>-->
 
 <?php get_footer() ?>
-
-<div class="contact-label">
-    <label>צור קשר:</label>
-</div>
-<div class="group">
-    [text* your-name id:your-name]<label for="your-name">שם מלא</label>
-</div>
-<div class="group">
-    [email* your-email id:your-email]<label for="your-email">כתובת אימייל</label>
-</div>
-<div class="group">
-    [tel* your-phone maxlength:10 id:your-phone]<label for="your-phone">טלפון</label>
-</div>
-<div class="group">
-    <label for="message">הודעה</label>[textarea* message id:message]
-</div>
-<div class="row">
-    <div class="col-md-6">
-        [recaptcha]
-    </div>
-    <div class="col-md-6 btn-link">
-        [submit "שלח" ]
-    </div>
-</div>
-[hidden utm_source default:get]
-[hidden utm_medium default:get]
-[hidden utm_campaign default:get]
-[hidden utm_term default:get]
-[hidden utm_content default:get]

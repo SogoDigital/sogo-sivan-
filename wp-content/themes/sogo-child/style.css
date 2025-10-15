@@ -6319,7 +6319,11 @@ p.item-text {
     font-size: 25px;
   }
 }
-.contact-form-main input[type="submit"] {
+.contact-form-main .contact-submit {
+  margin: 0 15px;
+  position: relative;
+}
+.contact-form-main .contact-submit input[type="submit"] {
   border: none;
   color: white;
   position: absolute;
@@ -6328,7 +6332,7 @@ p.item-text {
   left: 0;
   right: 0;
   margin: auto;
-  width: 100px;
+  width: 100%;
   height: 40px;
   border-radius: 2rem;
   background: #ed1d24;
@@ -6337,8 +6341,13 @@ p.item-text {
   justify-content: center;
   align-items: center;
 }
+@media (min-width: 500px) {
+  .contact-form-main .contact-submit input[type="submit"] {
+    width: 200px;
+  }
+}
 @media (min-width: 992px) {
-  .contact-form-main input[type="submit"] {
+  .contact-form-main .contact-submit input[type="submit"] {
     right: auto;
   }
 }
