@@ -3,7 +3,26 @@
 
 get_header();
 ?>
+
+<!--    <section id="homepage-floor1">-->
+<!--        <div class="homepage-floor1-slider js-homepage-floor1-slider h-100">-->
+<!--            --><?php //while ( have_rows( '_sogo_mainpage_floor1_slider' ) ) : the_row(); ?>
+<!--                <div class="homepage-floor1-slide-wrapper h-100 position-relative">-->
+<!--                    --><?php //echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid homepage-floor1-image')) ; ?>
+<!--                    <div class="homepage-floor1-slide-info">-->
+<!--                        <p class="homepage-floor1-slide-title">--><?php //echo get_sub_field('title')?><!--</p>-->
+<!--                        <p class="homepage-floor1-slide-subtitle">--><?php //echo get_sub_field('subtitle')?><!--</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            --><?php //endwhile; ?>
+<!--        </div>-->
+<!--    </section>-->
+
+
     <section id="home-floor-1" class="section floor active vertical-middle d-flex justify-content-center align-items-center">
+
+
+
         <div class="">
             <?php if (!wp_is_mobile()): ?>
                 <video loop muted autoplay class="home-floor1-video hidden-xs hidden-sm">
@@ -21,7 +40,7 @@ get_header();
 <!--                    <header class="floor-header mobile-middle">-->
 <!--                        <h1 class="page-title color-white" lang="en">Welcome to Sogo</h1>-->
 <!--                    </header>-->
-                    <!-- .page-header -->
+<!--                     .page-header -->
 <!--                    <p class="sub-title">-->
 <!--                        --><?php //echo nl2br(sogo_meta('text')) ?>
 <!--                    </p>-->
@@ -49,7 +68,8 @@ get_header();
             </ul>
         </footer>
 
-    </section> <!-- #home-floor-1 -->
+    </section>
+    <!-- #home-floor-1 -->
 
     <section id="home-floor-7"
              class="section floor text-center cover fp-auto-height vertical-top">
@@ -246,6 +266,5 @@ if ($floors) {
 <!--        </div>-->
 <!--    </section>
  #home-floor-6 -->
-
 
 <?php get_footer() ?>

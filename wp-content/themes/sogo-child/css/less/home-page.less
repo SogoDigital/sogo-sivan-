@@ -17,45 +17,115 @@
   }
 }
 
+#homepage-floor1{
+  position: relative;
+  width: 100%;
+  height: calc( 70vh);
+  @media (min-width: 992px) {
+    height: 100vh;
+    padding: initial;
+  }
+  .homepage-floor1-slider {
+    height: 100%;
+    .slick-list{
+      height: 100%;
+      .slick-track{
+        height: 100%;
+        .homepage-floor1-slide-wrapper {
+          width: 100%;
+          height: 100%;
+          .homepage-floor1-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+          .homepage-floor1-slide-info{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10%;
+            width: 30%;
+            .homepage-floor1-slide-title{
+              color: #FFF;
+              font-size: 40px;
+              font-weight: 900;
+              line-height: 150%;
+            }
+            .homepage-floor1-slide-subtitle{
+              color: #FFF;
+              font-size: 20px;
+              font-weight: 500;
+              line-height: 150%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 #home-floor-2 {
-  background-image: url("images/home-floor-2-tablet.png");
-  background-position: 50% 100%;
-  padding-bottom: 330px;
-  background-size: contain;
-  background-color: #F7FAFF;
+  background-image: url("images/floor-1-mobile.webp");
+  //background-image: url("images/home-floor-2-tablet.png");
+  //background-position: 50% 100%;
+  padding-bottom: 0;
+  //padding-bottom: 330px;
+  background-size: cover;
+  //background-size: contain;
+  //background-color: #F7FAFF;
+  min-height: 750px;
+  align-items: flex-start;
+  @media (min-width: 768px) {
+    min-height: 900px;
+  }
   @media (min-width: 992px) {
     background-image: none;
     padding-bottom: 0;
     background-size: cover;
+    align-items: center;
   }
 }
 
 #home-floor-3 {
-  background-image: url("images/bgs/tablet/home-floor-3-tablet.jpg");
+  background-image: url("images/floor-2-mobile.webp");
+  //background-image: url("images/bgs/tablet/home-floor-3-tablet.jpg");
   overflow: hidden;
-  padding-bottom: 360px;
-  background-size: contain;
-  background-position: 50% 100%;
-  background-color: #f6f6f6;
+  padding-bottom: 0;
+  //padding-bottom: 360px;
+  background-size: cover;
+  //background-size: contain;
+  //background-position: 50% 100%;
+  //background-color: #f6f6f6;
+  min-height: 600px;
+  align-items: flex-start;
   @media (min-width: 768px) {
-    padding-bottom: 777px;
+    padding-bottom: 0;
+    min-height: 750px;
+    //padding-bottom: 777px;
   }
   @media (min-width: 992px) {
     background-color: white;
     background-image: none;
     padding-bottom: 0;
     background-size: cover;
+    align-items: center;
+    min-height: 100vh;
   }
 }
 
 #home-floor-4 {
-  background-image: url("images/bgs/tablet/home-floor-4-tablet.jpg");
-  background-size: contain;
-  background-position: 50% 100%;
-  padding-bottom: 330px;
-  background-color: #e4e1da;
+  background-image: url("images/main-desktop-floor3.webp");
+  background-size: cover;
+  //background-size: contain;
+  //background-position: 50% 100%;
+  padding-bottom: 0;
+  //padding-bottom: 330px;
+  //background-color: #e4e1da;
+  min-height: 600px;
   @media (min-width: 768px) {
-    padding-bottom: 325px;
+    padding-bottom: 0;
+    //padding-bottom: 325px;
   }
   @media (min-width: 992px) {
     background: none;

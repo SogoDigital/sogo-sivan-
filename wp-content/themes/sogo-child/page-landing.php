@@ -97,18 +97,25 @@ get_header('landing');
 
                     <!-- Logos-->
 
-                    <div class="col-12 col-lg-8">
-                        <div class="landing-floor2-top-section text-center">
+                    <div class="col-12 col-lg-10 px-0 px-lg-3">
+                        <div class="landing-floor2-top-section text-center px-3 px-lg-0">
                             <p class="landing-section-title mb-0"><?php echo get_field('_sogo_landing_floor2_logos_title') ?></p>
                             <p class="landing-floor2-subtitle mb-0"><?php echo get_field('_sogo_landing_floor2_logos_subtitle') ?></p>
                         </div>
-                        <div class="row mb-5">
+
+                        <div class="row mb-5 boxes">
                             <?php while (have_rows("_sogo_landing_floor2_logos")) : the_row(); ?>
-                                <div class="col-4 col-md-2 text-center mb-5 campaigne-floor2-logos-item">
-                                    <?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid px-3')) ; ?>
+                                <div class="box col-4 col-md-3 col-lg-2">
+                                    <div class="inner">
+                                        <?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid px-0 px-md-3')) ; ?>
+                                    </div>
                                 </div>
+<!--                                <div class="col-4 col-md-2 text-center mb-5 campaigne-floor2-logos-item px-0 px-md-3">-->
+<!--                                    --><?php //echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid px-0 px-md-3')) ; ?>
+<!--                                </div>-->
                             <?php endwhile; ?>
                         </div>
+
                         <div class="text-center">
                             <div class="d-flex justify-content-center align-items-center">
                                 <div class="landing-floor2-right-arrow">
@@ -130,6 +137,7 @@ get_header('landing');
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

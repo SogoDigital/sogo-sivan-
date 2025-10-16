@@ -210,6 +210,39 @@
             max = 5;
             aaa = 353;
         }
+
+        $('.js-homepage-floor1-slider').slick({
+            rtl: true,
+            arrows: false,
+            dots: false,
+            autoplay: false,
+            autoplaySpeed: 3000,
+            speed: 1000,
+            // cssEase: 'linear',
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            // nextArrow: '<i class="icon-nav-left icon-s y-align cursor-pointer z-index-2 w-auto pos-l-4 pos-l-lg-5 text-white"></i>',
+            // prevArrow: '<i class="icon-nav-right icon-s y-align cursor-pointer z-index-2 w-auto pos-r-4 pos-r-lg-5 text-white"></i>',
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+
         $('.team-wrapper').bxSlider({
             controls: false,
             minSlides: min,
@@ -249,6 +282,30 @@
             // prevArrow: $('.homepage-slider-prev.homepage-testimonial-prev'),
             nextArrow: '<i class="blog-cat-slider-arrow blog-cat-next fa fa-angle-left"></i>',
             prevArrow: '<i class="blog-cat-slider-arrow blog-cat-prev fa fa-angle-right"></i>',
+        });
+
+        $('.js-logos-slider-ltr').slick({
+            rtl: true,
+            speed: 9000,
+            autoplay: true,
+            autoplaySpeed: 0,
+            cssEase: 'linear',
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            variableWidth: true,
+            arrows: false,
+            dots: false,
+        });
+        $('.js-logos-slider-rtl').slick({
+            speed: 9000,
+            autoplay: true,
+            autoplaySpeed: 0,
+            cssEase: 'linear',
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            variableWidth: true,
+            arrows: false,
+            dots: false,
         });
 
         $("form :input").focus(function () {
