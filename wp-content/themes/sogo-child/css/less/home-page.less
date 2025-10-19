@@ -20,13 +20,17 @@
 #homepage-floor1{
   position: relative;
   width: 100%;
-  height: calc( 70vh);
+  //height: calc( 70vh);
   @media (min-width: 992px) {
     height: 100vh;
     padding: initial;
   }
   .homepage-floor1-slider {
     height: 100%;
+    margin-top: 140px;
+    @media (min-width: 992px) {
+      margin-top: 0;
+    }
     .slick-list{
       height: 100%;
       .slick-track{
@@ -35,30 +39,106 @@
           width: 100%;
           height: 100%;
           .homepage-floor1-image {
+            display: none;
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center;
+            @media (min-width: 992px) {
+              display: block;
+            }
+          }
+          .homepage-floor1-image-mobile{
+            display: block;
+            height: 546px;
+            object-fit: cover;
+            @media (min-width: 992px) {
+              display: none;
+            }
           }
           .homepage-floor1-slide-info{
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: 10%;
-            width: 30%;
+            padding: 0 20px;
+            @media (min-width: 992px) {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              right: 10%;
+              width: 30%;
+              padding: 0;
+            }
             .homepage-floor1-slide-title{
-              color: #FFF;
               font-size: 40px;
               font-weight: 900;
-              line-height: 150%;
+              line-height: 1.5;
+              background: linear-gradient(90deg, #ED1D24 1%, #EE2A7B 34%, #8A5BA5 75%, #00ADDC 100%);
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              //margin-bottom: 48px;
+              //text-align: center;
+              @media (min-width: 992px) {
+                color: #FFF;
+                font-size: 40px;
+                font-weight: 900;
+                line-height: 150%;
+                background: transparent;
+                -webkit-text-fill-color: unset;
+              }
             }
             .homepage-floor1-slide-subtitle{
-              color: #FFF;
+              color: #212427;
               font-size: 20px;
               font-weight: 500;
-              line-height: 150%;
+              line-height: 1.5;
+              margin-bottom: 20px;
+              @media (min-width: 992px) {
+                color: #FFF;
+              }
+            }
+            .homepage-floor1-slide-button{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: fit-content;
+              background-color: white;
+              padding: 8px;
+              margin-bottom: 20px;
+              a{
+                text-decoration: none;
+                color: #212427;
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 1.5;
+                padding-left: 8px;
+              }
             }
           }
+        }
+      }
+    }
+    .slick-custom-dots{
+      position: absolute;
+      top: 15%;
+      right: 10%;
+      display: none !important;
+      padding: 0;
+      @media (min-width: 992px) {
+        display: flex !important;
+      }
+      li {
+        height: 4px;
+        width: 55px;
+        cursor: pointer;
+        background: #D9D9D9;
+        display: block;
+        margin: 0 6px;
+        &.slick-active {
+          height: 4px;
+          width: 55px;
+          background: white;
+        }
+        button{
+          display: none;
         }
       }
     }
@@ -84,6 +164,76 @@
     padding-bottom: 0;
     background-size: cover;
     align-items: center;
+  }
+}
+
+.home-desktop-floors{
+  display: none;
+  @media (min-width: 992px) {
+    display: block;
+  }
+}
+.home-mobile-floors{
+  display: block;
+  @media (min-width: 992px) {
+    display: none;
+  }
+  .home-mobile-floor{
+    .home-mobile-floor-info{
+      padding: 0 20px;
+      .home-mobile-floor-title{
+        font-size: 40px;
+        font-weight: 900;
+        line-height: 1.2;
+        background: linear-gradient(90deg, #ED1D24 1%, #EE2A7B 34%, #8A5BA5 75%, #00ADDC 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 24px;
+      }
+      .home-mobile-floor-subtitle{
+        color: #23445A;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.5;
+        margin-bottom: 24px;
+      }
+
+
+    }
+    .home-mobile-floor-button{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      background-color: white;
+      padding: 8px;
+      margin: 0 auto 80px;
+      a{
+        text-decoration: none;
+        line-height: 1.5;
+        color: #FFF;
+        font-size: 18px;
+        font-weight: 700;
+        border-radius: 100px;
+        padding: 8px 24px 8px 10px;
+        background: linear-gradient(88deg, #ED1D24 1%, #EE2A7B 34%, #8A5BA5 75%, #00ADDC 100%);
+        font-family: 'OpenSansHebrewCondensed';
+        display: block;
+        margin: 0 auto;
+        img{
+          margin-right: 16px;
+        }
+
+      }
+    }
+    .homepage-mobile-floor-image{
+      margin-bottom: 24px;
+      display: block;
+      height: 546px;
+      object-fit: cover;
+      width: 100%;
+    }
   }
 }
 
@@ -201,22 +351,7 @@
 }
 
 #home-floor-7 {
-  .homepage-all-projects{
-    border-radius: 100px;
-    padding: 24px 32px;
-    background: linear-gradient(88deg, #ED1D24 0%, #EE2A7B 34%, #8A5BA5 75%, #00ADDC 100%);
-    color: #FFF;
-    font-size: 26px;
-    font-weight: 700;
-    width: 300px;
-    font-family: 'OpenSansHebrewCondensed';
-    display: block;
-    margin: auto;
-    &:hover{
-      text-decoration: none;
-    }
 
-  }
   //background-image: url("images/home-floor-7-mobile.jpg");
   //padding-bottom: 70vh;
   //@media (min-width: 768px) {
@@ -257,6 +392,23 @@
       cursor: pointer;
     }
   }
+}
+
+.homepage-all-projects{
+  border-radius: 100px;
+  padding: 24px 32px;
+  background: linear-gradient(88deg, #ED1D24 0%, #EE2A7B 34%, #8A5BA5 75%, #00ADDC 100%);
+  color: #FFF;
+  font-size: 26px;
+  font-weight: 700;
+  width: 300px;
+  font-family: 'OpenSansHebrewCondensed';
+  display: block;
+  margin: auto;
+  &:hover{
+    text-decoration: none;
+  }
+
 }
 
 #home-floor-8 {

@@ -4,55 +4,49 @@
 get_header();
 ?>
 
-<!--    <section id="homepage-floor1">-->
-<!--        <div class="homepage-floor1-slider js-homepage-floor1-slider h-100">-->
-<!--            --><?php //while ( have_rows( '_sogo_mainpage_floor1_slider' ) ) : the_row(); ?>
-<!--                <div class="homepage-floor1-slide-wrapper h-100 position-relative">-->
-<!--                    --><?php //echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid homepage-floor1-image')) ; ?>
-<!--                    <div class="homepage-floor1-slide-info">-->
-<!--                        <p class="homepage-floor1-slide-title">--><?php //echo get_sub_field('title')?><!--</p>-->
-<!--                        <p class="homepage-floor1-slide-subtitle">--><?php //echo get_sub_field('subtitle')?><!--</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            --><?php //endwhile; ?>
-<!--        </div>-->
-<!--    </section>-->
+    <section id="homepage-floor1">
+        <div class="homepage-floor1-slider js-homepage-floor1-slider h-100">
+            <?php while ( have_rows( '_sogo_mainpage_floor1_slider' ) ) : the_row(); ?>
+                <div class="homepage-floor1-slide-wrapper h-100 position-relative">
+                    <div class="homepage-floor1-slide-info">
+                        <p class="homepage-floor1-slide-title"><?php echo get_sub_field('title')?></p>
+                        <p class="homepage-floor1-slide-subtitle"><?php echo get_sub_field('subtitle')?></p>
+                        <div class="homepage-floor1-slide-button">
+                            <a class="" href="<?php echo get_sub_field('button_link')?>"><?php echo get_sub_field('button_text')?></a>
+                            <?php echo wp_get_attachment_image(get_field('_sogo_mainpage_floor1_slider_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
 
+                        </div>
+                    </div>
+                    <?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid homepage-floor1-image')) ; ?>
+                    <?php echo wp_get_attachment_image(get_sub_field('image_mobile'), 'full', false, array('class'=> 'img-fluid homepage-floor1-image-mobile')) ; ?>
 
-    <section id="home-floor-1" class="section floor active vertical-middle d-flex justify-content-center align-items-center">
-
-
-
-        <div class="">
-            <?php if (!wp_is_mobile()): ?>
-                <video loop muted autoplay class="home-floor1-video hidden-xs hidden-sm">
-                    <source src="<?php echo get_stylesheet_directory_uri() ?>/images/main-video.mp4" type="video/mp4">
-                </video>
-            <?php else: ?>
-                <video playsinline loop muted autoplay class="home-floor1-video">
-                    <source src="<?php echo get_stylesheet_directory_uri() ?>/images/main-video-mobile.mp4" type="video/mp4">
-                </video>
-            <?php endif; ?>
+                </div>
+            <?php endwhile; ?>
         </div>
-<!--        <div class="container-fluid">-->
-<!--            <div class="row">-->
-<!--                <div class="col-md-12 col-lg-12 text-center animated fadeInUp">-->
-<!--                    <header class="floor-header mobile-middle">-->
-<!--                        <h1 class="page-title color-white" lang="en">Welcome to Sogo</h1>-->
-<!--                    </header>-->
-<!--                     .page-header -->
-<!--                    <p class="sub-title">-->
-<!--                        --><?php //echo nl2br(sogo_meta('text')) ?>
-<!--                    </p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-        <a href="#home-floor-7" style="cursor: pointer;" class="call-to-action hidden-xs hidden-sm">
-            <span class="scroll-to animated bounce infinite">
-                <span class="fa fa-angle-down" aria-hidden="true"></span>
-            </span>
-        </a>
+    </section>
 
+
+<!--    <section id="home-floor-1" class="section floor active vertical-middle d-flex justify-content-center align-items-center">-->
+<!---->
+<!---->
+<!---->
+<!--        <div class="">-->
+<!--            --><?php //if (!wp_is_mobile()): ?>
+<!--                <video loop muted autoplay class="home-floor1-video hidden-xs hidden-sm">-->
+<!--                    <source src="--><?php //echo get_stylesheet_directory_uri() ?><!--/images/main-video.mp4" type="video/mp4">-->
+<!--                </video>-->
+<!--            --><?php //else: ?>
+<!--                <video playsinline loop muted autoplay class="home-floor1-video">-->
+<!--                    <source src="--><?php //echo get_stylesheet_directory_uri() ?><!--/images/main-video-mobile.mp4" type="video/mp4">-->
+<!--                </video>-->
+<!--            --><?php //endif; ?>
+<!--        </div>-->
+<!--        <a href="#home-floor-7" style="cursor: pointer;" class="call-to-action hidden-xs hidden-sm">-->
+<!--            <span class="scroll-to animated bounce infinite">-->
+<!--                <span class="fa fa-angle-down" aria-hidden="true"></span>-->
+<!--            </span>-->
+<!--        </a>-->
+<!---->
         <footer id="customers-logos" class="hidden-xs hidden-sm">
             <ul class="flex-slider">
                 <?php
@@ -67,8 +61,8 @@ get_header();
                 ?>
             </ul>
         </footer>
-
-    </section>
+<!---->
+<!--    </section>-->
     <!-- #home-floor-1 -->
 
     <section id="home-floor-7"
@@ -122,54 +116,67 @@ get_header();
         <!--        </div>-->
     </section> <!-- #home-floor-7 -->
 
+<div class="home-desktop-floors">
+    <?php
+    $floors = sogo_meta('floors');
 
-<?php
-$floors = sogo_meta('floors');
-
-if ($floors) {
-    foreach ($floors as $key => $floor) {
-        ?>
-        <section id="<?php echo $floor['id'] ?>"
-                 class="d-flex justify-content-start <?php echo ($floor['id'] != 'home-floor-4') ? 'align-items-center' : ''; ?> section floor <?php echo $floor['align'] . " " . $floor['background-size'] ?>">
-            <div
-              class="bg-image hidden-xs hidden-sm moving-bg  <?php echo $floor['align'] . " " . $floor['background-size'] ?>"
-              style="background-image: url('<?php echo $floor['background'] ?>')">
-            </div>
-
-            <?php
-            if (isset($floor['overlay-image']) && $floor['overlay-image'] != '') {
-                $overlay_animation = isset($floor['overlay-animation']) ? $floor['overlay-animation'] : '';
-                $overlay_size = isset($floor['overlay-size']) ? $floor['overlay-size'] : '';
-
-                echo '<div class="overlay-image hidden-xs hidden-sm layer contain ' . $overlay_animation . ' animated ' . $overlay_size . '"
-            style="background-image: url(\'' . $floor['overlay-image'] . '\');"></div>';
-            }
+    if ($floors) {
+        foreach ($floors as $key => $floor) {
             ?>
-            <div class="container-fluid w-100">
-                <div class="row">
-                    <div class="<?php echo $floor['col'] ?>">
-                        <header class="floor-header homepage-section-header">
-                            <h2 class="floor-title" style="color: <?php echo $floor['title-color'] ?>"><?php echo $floor['title'] ?></h2>
-                        </header>
-                        <!-- .floor-header -->
-                        <p class="homepage-section-text" style="color: <?php echo $floor['title-color'] ?>">
-                            <?php echo nl2br($floor['text']) ?>
-                        </p>
+            <section id="<?php echo $floor['id'] ?>"
+                     class="d-flex justify-content-start <?php echo ($floor['id'] != 'home-floor-4') ? 'align-items-center' : ''; ?> section floor <?php echo $floor['align'] . " " . $floor['background-size'] ?>">
+                <div
+                  class="bg-image hidden-xs hidden-sm moving-bg  <?php echo $floor['align'] . " " . $floor['background-size'] ?>"
+                  style="background-image: url('<?php echo $floor['background'] ?>')">
+                </div>
+
+                <?php
+                if (isset($floor['overlay-image']) && $floor['overlay-image'] != '') {
+                    $overlay_animation = isset($floor['overlay-animation']) ? $floor['overlay-animation'] : '';
+                    $overlay_size = isset($floor['overlay-size']) ? $floor['overlay-size'] : '';
+
+                    echo '<div class="overlay-image hidden-xs hidden-sm layer contain ' . $overlay_animation . ' animated ' . $overlay_size . '"
+                style="background-image: url(\'' . $floor['overlay-image'] . '\');"></div>';
+                }
+                ?>
+                <div class="container-fluid w-100">
+                    <div class="row">
+                        <div class="<?php echo $floor['col'] ?>">
+                            <header class="floor-header homepage-section-header">
+                                <h2 class="floor-title" style="color: <?php echo $floor['title-color'] ?>"><?php echo $floor['title'] ?></h2>
+                            </header>
+                            <!-- .floor-header -->
+                            <p class="homepage-section-text" style="color: <?php echo $floor['title-color'] ?>">
+                                <?php echo nl2br($floor['text']) ?>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-<!--            <div class="continue-down hidden-xs hidden-sm">-->
-<!--                     <span class="scroll-to continue" aria-hidden="true">-->
-<!--                         <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>-->
-<!--                     </span>-->
-<!--            </div>-->
-        </section> <!-- /floor- -->
-        <?php
+            </section>
+
+            <?php
+        }
     }
-}
-?>
+    ?>
+</div>
 
-
+<div class="home-mobile-floors">
+    <?php while ( have_rows( '_sogo_home_mobile_floors' ) ) : the_row(); ?>
+        <div class="home-mobile-floor position-relative">
+            <div class="home-mobile-floor-info">
+                <p class="home-mobile-floor-title"><?php echo get_sub_field('title')?></p>
+                <p class="home-mobile-floor-subtitle"><?php echo get_sub_field('subtitle')?></p>
+            </div>
+            <?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid homepage-mobile-floor-image')) ; ?>
+            <div class="home-mobile-floor-button">
+                <a class="d-flex justify-content-center align-items-center" href="<?php echo get_sub_field('button_link')?>">
+                    <span><?php echo get_sub_field('button_text')?></span>
+                    <?php echo wp_get_attachment_image(get_field('_sogo_home_mobile_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+                </a>
+            </div>
+        </div>
+    <?php endwhile; ?>
+</div>
 
 
     <section id="home-floor-5" class="section vertical-top cover position-relative">

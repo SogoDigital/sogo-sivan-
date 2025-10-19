@@ -214,14 +214,16 @@
         $('.js-homepage-floor1-slider').slick({
             rtl: true,
             arrows: false,
-            dots: false,
-            autoplay: false,
+            dots: true,
+            autoplay: true,
             autoplaySpeed: 3000,
             speed: 1000,
             // cssEase: 'linear',
             slidesToShow: 1,
             slidesToScroll: 1,
             infinite: true,
+            dotsClass: 'slick-custom-dots',
+
             // nextArrow: '<i class="icon-nav-left icon-s y-align cursor-pointer z-index-2 w-auto pos-l-4 pos-l-lg-5 text-white"></i>',
             // prevArrow: '<i class="icon-nav-right icon-s y-align cursor-pointer z-index-2 w-auto pos-r-4 pos-r-lg-5 text-white"></i>',
             responsive: [
