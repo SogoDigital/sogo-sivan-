@@ -2966,6 +2966,14 @@ ul#menu-primary-menu:before {
     background-size: cover;
   }
 }
+#home-floor-5 {
+  display: none;
+}
+@media (min-width: 992px) {
+  #home-floor-5 {
+    display: block;
+  }
+}
 #home-floor-5 .home-floor-5-container {
   position: relative;
 }
