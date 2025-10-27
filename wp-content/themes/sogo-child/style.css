@@ -2864,6 +2864,30 @@ ul#menu-primary-menu:before {
     display: block;
   }
 }
+.home-desktop-floors .home-desktop-floor .home-desktop-floor-info .home-desktop-floor-title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.5;
+  background: linear-gradient(88deg, #ED1D24 0.78%, #EE2A7B 33.91%, #8A5BA5 74.46%, #00ADDC 99.68%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 24px;
+}
+.home-desktop-floors .home-desktop-floor .home-desktop-floor-info .home-desktop-floor-subtitle {
+  color: #23445A;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.home-desktop-floors .home-desktop-floor .home-desktop-floor-info.light .home-desktop-floor-title {
+  color: white;
+  background: none;
+  -webkit-text-fill-color: white;
+}
+.home-desktop-floors .home-desktop-floor .home-desktop-floor-info.light .home-desktop-floor-subtitle {
+  color: white;
+}
 .home-mobile-floors {
   display: block;
 }
@@ -7417,11 +7441,7 @@ form div.wpcf7-mail-sent-ok {
   color: black;
   font-weight: 700;
 }
-.campaigne-page {
-  font-family: 'OpenSansHebrewCondensed';
-  background-color: #f6f7f8;
-}
-.campaigne-page .campaigne-floor-button {
+.campaigne-floor-button {
   border-radius: 100px;
   padding: 16px 32px;
   background: linear-gradient(88deg, #ED1D24 1%, #EE2A7B 34%, #8A5BA5 75%, #00ADDC 100%);
@@ -7432,11 +7452,15 @@ form div.wpcf7-mail-sent-ok {
   font-family: 'OpenSansHebrewCondensed';
   display: block;
 }
-.campaigne-page .campaigne-floor-button:hover {
+.campaigne-floor-button:hover {
   text-decoration: none;
 }
-.campaigne-page .campaigne-floor-button img {
+.campaigne-floor-button img {
   margin-right: 16px;
+}
+.campaigne-page {
+  font-family: 'OpenSansHebrewCondensed';
+  background-color: #f6f7f8;
 }
 .campaigne-page .campaigne-floor1 {
   background-color: white;

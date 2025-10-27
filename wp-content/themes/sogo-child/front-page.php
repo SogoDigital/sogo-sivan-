@@ -116,6 +116,33 @@ get_header();
         <!--        </div>-->
     </section> <!-- #home-floor-7 -->
 
+
+<div class="home-desktop-floors">
+    <?php $counter = 0; ?>
+    <?php while (have_rows("_sogo_home_desktop_floors")) : the_row(); ?>
+        <section class="home-desktop-floor" style="height: 900px; background-repeat: no-repeat;
+                background-size: cover; background-image: url('<?php echo get_sub_field('background_image')?>')">
+            <div class="container-fluid h-100">
+                <div class="row h-100">
+                    <div class="h-100 d-flex align-items-center <?php echo ($counter%2) ? 'col-lg-4 col-lg-offset-1' : 'col-lg-5 col-lg-offset-6'; ?>">
+                        <div class="home-desktop-floor-info <?php echo (get_sub_field('dark_light')) ? 'dark' : 'light'; ?>">
+                            <p class="home-desktop-floor-title"><?php echo get_sub_field('title')?></p>
+                            <p class="home-desktop-floor-subtitle"><?php echo get_sub_field('subtitle')?></p>
+                            <a class="campaigne-floor-button m-auto" href="<?php echo get_sub_field('gradient_button_link')?>">
+                                <span><?php echo get_sub_field('gradient_button_text')?></span>
+                                <?php echo wp_get_attachment_image(get_field('_sogo_home_mobile_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!--        <div class="col-4 col-md-2 text-center mb-5 campaigne-floor2-logos-item">-->
+    <!--            --><?php //echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid px-3')) ; ?>
+    <!--        </div>-->
+        <?php $counter++; ?>
+    <?php endwhile; ?>
+</div>
 <div class="home-desktop-floors">
     <?php
     $floors = sogo_meta('floors');
