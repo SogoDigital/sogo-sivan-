@@ -120,71 +120,31 @@ get_header();
 <div class="home-desktop-floors">
     <?php $counter = 0; ?>
     <?php while (have_rows("_sogo_home_desktop_floors")) : the_row(); ?>
-        <section class="home-desktop-floor" style="height: 900px; background-repeat: no-repeat;
-                background-size: cover; background-image: url('<?php echo get_sub_field('background_image')?>')">
+        <section class="home-desktop-floor" style="background-image: url('<?php echo get_sub_field('background_image')?>')">
             <div class="container-fluid h-100">
                 <div class="row h-100">
-                    <div class="h-100 d-flex align-items-center <?php echo ($counter%2) ? 'col-lg-4 col-lg-offset-1' : 'col-lg-5 col-lg-offset-6'; ?>">
+                    <div class="h-100 d-flex align-items-center <?php echo ($counter%2) ? 'col-md-5 col-lg-4 col-md-offset-7' : 'col-md-5 col-lg-4 col-md-offset-1'; ?>">
                         <div class="home-desktop-floor-info <?php echo (get_sub_field('dark_light')) ? 'dark' : 'light'; ?>">
                             <p class="home-desktop-floor-title"><?php echo get_sub_field('title')?></p>
                             <p class="home-desktop-floor-subtitle"><?php echo get_sub_field('subtitle')?></p>
-                            <a class="campaigne-floor-button m-auto" href="<?php echo get_sub_field('gradient_button_link')?>">
-                                <span><?php echo get_sub_field('gradient_button_text')?></span>
-                                <?php echo wp_get_attachment_image(get_field('_sogo_home_mobile_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
-                            </a>
+                            <div class="d-flex align-items-center justify-content-start">
+                                <a class="campaigne-floor-button m-auto" href="<?php echo get_sub_field('gradient_button_link')?>">
+                                    <span><?php echo get_sub_field('gradient_button_text')?></span>
+                                    <?php echo wp_get_attachment_image(get_field('_sogo_home_mobile_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+                                </a>
+                                <a class="home-whatsapp-button m-auto" href="<?php echo get_sub_field('whatsapp_button_link')?>">
+                                    <span><?php echo get_sub_field('whatsapp_button_text')?></span>
+                                    <?php echo wp_get_attachment_image(get_field('_sogo_home_mobile_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+                                </a>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    <!--        <div class="col-4 col-md-2 text-center mb-5 campaigne-floor2-logos-item">-->
-    <!--            --><?php //echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid px-3')) ; ?>
-    <!--        </div>-->
         <?php $counter++; ?>
     <?php endwhile; ?>
-</div>
-<div class="home-desktop-floors">
-    <?php
-    $floors = sogo_meta('floors');
-
-    if ($floors) {
-        foreach ($floors as $key => $floor) {
-            ?>
-            <section id="<?php echo $floor['id'] ?>"
-                     class="d-flex justify-content-start <?php echo ($floor['id'] != 'home-floor-4') ? 'align-items-center' : ''; ?> section floor <?php echo $floor['align'] . " " . $floor['background-size'] ?>">
-                <div
-                  class="bg-image hidden-xs hidden-sm moving-bg  <?php echo $floor['align'] . " " . $floor['background-size'] ?>"
-                  style="background-image: url('<?php echo $floor['background'] ?>')">
-                </div>
-
-                <?php
-                if (isset($floor['overlay-image']) && $floor['overlay-image'] != '') {
-                    $overlay_animation = isset($floor['overlay-animation']) ? $floor['overlay-animation'] : '';
-                    $overlay_size = isset($floor['overlay-size']) ? $floor['overlay-size'] : '';
-
-                    echo '<div class="overlay-image hidden-xs hidden-sm layer contain ' . $overlay_animation . ' animated ' . $overlay_size . '"
-                style="background-image: url(\'' . $floor['overlay-image'] . '\');"></div>';
-                }
-                ?>
-                <div class="container-fluid w-100">
-                    <div class="row">
-                        <div class="<?php echo $floor['col'] ?>">
-                            <header class="floor-header homepage-section-header">
-                                <h2 class="floor-title" style="color: <?php echo $floor['title-color'] ?>"><?php echo $floor['title'] ?></h2>
-                            </header>
-                            <!-- .floor-header -->
-                            <p class="homepage-section-text" style="color: <?php echo $floor['title-color'] ?>">
-                                <?php echo nl2br($floor['text']) ?>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <?php
-        }
-    }
-    ?>
 </div>
 
 <div class="home-mobile-floors">
@@ -204,25 +164,6 @@ get_header();
         </div>
     <?php endwhile; ?>
 </div>
-
-
-    <section id="home-floor-5" class="section vertical-top cover position-relative">
-        <div class="container-fluid home-floor-5-container w-100" style="top: 0">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-6 text-center">
-                    <header class="homepage-section-header">
-                        <h2 class="home-floor5-title"><?php echo sogo_meta('section-5-title') ?></h2>
-                    </header>
-                    <p class="home-floor5-subtitle"><?php echo nl2br(sogo_meta('section-5-text')) ?></p>
-                </div>
-            </div>
-        </div>
-
-        <?php echo wp_get_attachment_image(get_field('_sogo_homepage_floor5_circles'), 'full', false, array('class'=> 'img-fluid w-100 home-floor5-desktop-bg')) ; ?>
-        <?php echo wp_get_attachment_image(get_field('_sogo_homepage_floor5_circles_mobile'), 'full', false, array('class'=> 'img-fluid w-100 home-floor5-mobile-bg')) ; ?>
-
-    </section> <!-- #home-floor-5 -->
-
 
     <section id="recents-posts" class="section vertical-top cover position-relative" style="background-color: #f7fafe">
         <div class="container-fluid">
@@ -259,46 +200,6 @@ get_header();
             </div>
         </div>
     </section>
-<!--    <section id="home-floor-6" class="split-floor section floor cover vertical-top">-->
-<!--        <div id="man" class="fadeInLeftBig animated hidden-xs hidden-sm"><img-->
-<!--              src="--><?php //echo get_stylesheet_directory_uri() ?><!--/images/bgs/man.png" alt="man image"/></div>-->
-<!--        <div id="woman" class="fadeInRightBig animated hidden-xs hidden-sm"><img-->
-<!--              src="--><?php //echo get_stylesheet_directory_uri() ?><!--/images/bgs/woman.png" alt="woman image"/></div>-->
-<!---->
-<!--        <div class="container-fluid">-->
-<!--            <div class="row">-->
-<!--                <div class="side-padding-text">-->
-<!--                    <div class="col-md-6 text-center">-->
-<!--                        <div class="fadeInLeftBig animated">-->
-<!--                            <header class="floor-header">-->
-<!--                                <p class="floor-title color-white">--><?php //echo sogo_meta('section-6-title-1') ?><!--</p>-->
-<!--                            </header>-->
-                            <!-- .floor-header -->
-<!--                            <p class="color-white">-->
-<!--                                --><?php //echo nl2br(sogo_meta('section-6-text-1')) ?>
-<!--                            </p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-md-6 text-center">-->
-<!--                        <div class="fadeInRightBig animated">-->
-<!--                            <header class="floor-header">-->
-<!--                                <p class="floor-title color-white">--><?php //echo sogo_meta('section-6-title-2') ?><!--</p>-->
-<!--                            </header>-->
-                            <!-- .floor-header -->
-<!--                            <p class="color-white">-->
-<!--                                --><?php //echo nl2br(sogo_meta('section-6-text-2')) ?>
-<!--                            </p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="continue-down hidden-xs hidden-sm">-->
-<!--         <span class="scroll-to continue">-->
-<!--             <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>-->
-<!--         </span>-->
-<!--        </div>-->
-<!--    </section>
- #home-floor-6 -->
+
 
 <?php get_footer() ?>
