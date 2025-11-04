@@ -16,7 +16,7 @@
                     <div class="footer-blur-image">
                         <?php echo wp_get_attachment_image(get_field('_sogo_footer_blur_image', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?>
                     </div>
-                    <p class="footer-blur-title"><?php echo get_field('_sogo_footer_blur_title', 'option') ?></p>
+                    <h3 class="footer-blur-title"><?php echo get_field('_sogo_footer_blur_title', 'option') ?></h3>
                     <p class="footer-blur-subtitle"><?php echo get_field('_sogo_footer_blur_subtitle', 'option') ?></p>
                     <p class="footer-blur-address"><?php echo get_field('_sogo_footer_blur_address', 'option') ?></p>
                     <div class="footer-blur-social d-flex justify-content-center align-items-center">
