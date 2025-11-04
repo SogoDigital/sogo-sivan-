@@ -72,7 +72,7 @@ get_header();
             <div class="row">
                 <div class="col-xs-12 text-center">
                     <header class="floor-header">
-                        <h1 class="floor-title"><?php echo sogo_meta('section-7-title') ?></h1>
+                        <h2 class="floor-title"><?php echo sogo_meta('section-7-title') ?></h2>
                     </header>
                     <!-- .floor-header -->
                     <p>
@@ -126,7 +126,7 @@ get_header();
                 <div class="row h-100">
                     <div class="h-100 d-flex align-items-center <?php echo ($counter%2) ? 'col-md-5 col-lg-4 col-md-offset-7' : 'col-md-5 col-lg-4 col-md-offset-1'; ?>">
                         <div class="home-desktop-floor-info <?php echo (get_sub_field('dark_light')) ? 'dark' : 'light'; ?>">
-                            <p class="home-desktop-floor-title"><?php echo get_sub_field('title')?></p>
+                            <h2 class="home-desktop-floor-title"><?php echo get_sub_field('title')?></h2>
                             <p class="home-desktop-floor-subtitle"><?php echo get_sub_field('subtitle')?></p>
                             <div class="d-flex align-items-center justify-content-start">
                                 <a class="campaigne-floor-button m-auto" href="<?php echo get_sub_field('gradient_button_link')?>">
@@ -202,5 +202,16 @@ get_header();
         </div>
     </section>
 
+      <section id="more-info" class="section vertical-top cover position-relative">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-8">
+                    <div class="more-info-text"> 
+                         <?php echo get_field('_sogo_home_more_info') ?>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </section>
 
 <?php get_footer() ?>
