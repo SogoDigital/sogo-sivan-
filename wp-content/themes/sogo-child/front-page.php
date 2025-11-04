@@ -72,7 +72,7 @@ get_header();
             <div class="row">
                 <div class="col-xs-12 text-center">
                     <header class="floor-header">
-                        <h2 class="floor-title"><?php echo sogo_meta('section-7-title') ?></h2>
+                        <h3 class="floor-title"><?php echo sogo_meta('section-7-title') ?></h3>
                     </header>
                     <!-- .floor-header -->
                     <p>
