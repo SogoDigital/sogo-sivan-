@@ -6461,6 +6461,13 @@ p.item-text {
   bottom: 3rem;
   display: none;
 }
+
+#popup-form .popup-title {
+  text-wrap: balance;
+  max-width: 16ch;       /* adjust until it wraps nicely on 1920px */
+  margin-inline: auto;
+}
+
 @media (min-width: 992px) {
   #popup-form .modal-dialog .modal-content .modal-body .popup-airplane {
     display: block;
