@@ -150,7 +150,7 @@
                     <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
                     <div class="text-center">
                         <p class="popup-top-text"><?php echo get_field('_sogo_footer_popup_top_text', 'option')?></p>
-                        <p class="popup-title"><?php echo get_field('_sogo_footer_popup_title', 'option')?></p>
+                        <h2 class="popup-title"><?php echo get_field('_sogo_footer_popup_title', 'option')?></h2>
                         <div class="modal-form">
                             <?php echo do_shortcode( '[contact-form-7 id="07fdc94" title="Popup Form"]' ) ?>
                         </div>

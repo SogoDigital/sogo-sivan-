@@ -10,8 +10,8 @@ get_header();
             <?php while ( have_rows( '_sogo_mainpage_floor1_slider' ) ) : the_row(); ?>
                 <div class="homepage-floor1-slide-wrapper h-100 position-relative">
                     <div class="homepage-floor1-slide-info">
-                        <p class="homepage-floor1-slide-title"><?php echo get_sub_field('title')?></p>
-                        <p class="homepage-floor1-slide-subtitle"><?php echo get_sub_field('subtitle')?></p>
+                        <h2 class="homepage-floor1-slide-title"><?php echo get_sub_field('title')?></h2>
+                        <h3 class="homepage-floor1-slide-subtitle"><?php echo get_sub_field('subtitle')?></h3>
                         <div class="homepage-floor1-slide-button">
                             <a class="" href="<?php echo get_sub_field('button_link')?>"><?php echo get_sub_field('button_text')?></a>
                             <?php echo wp_get_attachment_image(get_field('_sogo_mainpage_floor1_slider_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
@@ -72,7 +72,7 @@ get_header();
             <div class="row">
                 <div class="col-xs-12 text-center">
                     <header class="floor-header">
-                        <h3 class="floor-title"><?php echo sogo_meta('section-7-title') ?></h3>
+                        <h1 class="floor-title"><?php echo sogo_meta('section-7-title') ?></h1>
                     </header>
                     <!-- .floor-header -->
                     <p>
@@ -127,7 +127,7 @@ get_header();
                     <div class="h-100 d-flex align-items-center <?php echo ($counter%2) ? 'col-md-5 col-lg-4 col-md-offset-7' : 'col-md-5 col-lg-4 col-md-offset-1'; ?>">
                         <div class="home-desktop-floor-info <?php echo (get_sub_field('dark_light')) ? 'dark' : 'light'; ?>">
                             <h2 class="home-desktop-floor-title"><?php echo get_sub_field('title')?></h2>
-                            <p class="home-desktop-floor-subtitle"><?php echo get_sub_field('subtitle')?></p>
+                            <h4 class="home-desktop-floor-subtitle"><?php echo get_sub_field('subtitle')?></h4>
                             <div class="d-flex align-items-center justify-content-start">
                                 <a class="campaigne-floor-button m-auto" href="<?php echo get_sub_field('gradient_button_link')?>">
                                     <span><?php echo get_sub_field('gradient_button_text')?></span>
@@ -293,6 +293,7 @@ get_header();
                         )
                     );
                     ?>
+                    
                     <section class="container-fluid pt-2 single-recent">
                         <div class="row justify-content-center">
                             <h2 class="single-recent-title col-12 text-center font-weight-bold uppercase">כל מה שחדש בתחום בניית אתרים</h2>

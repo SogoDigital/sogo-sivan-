@@ -1616,7 +1616,7 @@ h6 {
 #site-footer .bottom-footer-columns .bottom-footer-menu .footer-widget-title {
   color: #2D2D2F;
   font-family: 'OpenSansHebrewCondensed';
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
 }
 #site-footer .bottom-footer-columns .bottom-footer-menu .widget-content ul {
@@ -1629,7 +1629,7 @@ h6 {
 #site-footer .bottom-footer-columns .bottom-footer-menu .widget-content ul li a {
   color: #2D2D2F;
   font-family: 'OpenSansHebrewCondensed';
-  font-size: 18px;
+  font-size: 20px;
   font-weight: normal;
 }
 .single-project #site-footer a.scrollup {
@@ -1962,6 +1962,7 @@ a.scrollup:hover:before {
   -moz-transform: translate3d(-100%, 0, 0);
   -ms-transform: translate3d(-100%, 0, 0);
   -o-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
 }
 @media (min-width: 768px) {
   .push-nav .social-navigation {
@@ -6461,6 +6462,13 @@ p.item-text {
   bottom: 3rem;
   display: none;
 }
+
+#popup-form .popup-title {
+  text-wrap: balance;
+  max-width: 16ch;       /* adjust until it wraps nicely on 1920px */
+  margin-inline: auto;
+}
+
 @media (min-width: 992px) {
   #popup-form .modal-dialog .modal-content .modal-body .popup-airplane {
     display: block;
@@ -6691,6 +6699,7 @@ p.item-text {
 }
 .group input {
   -webkit-appearance: none;
+  appearance: none;
   font-size: 18px;
   display: block;
   background: 0 0;
@@ -6795,7 +6804,8 @@ form div.wpcf7-mail-sent-ok {
 /* Heebo + clean visuals for the consent unit */
 .custom-privacy-consent,
 .custom-privacy-consent * {
-  font-family: 'Heebo', sans-serif !important;
+  /* font-family: 'Heebo', sans-serif !important; */
+  font-family: 'OpenSansHebrewCondensed' !important
 }
 .custom-privacy-consent {
   margin: 10px 0 6px;
@@ -6882,7 +6892,6 @@ form div.wpcf7-mail-sent-ok {
   position: absolute;
 }
 .info-box .info-content {
-  display: inline-block;
   margin: 0;
   height: 345px;
   padding: 50px 15px;
@@ -6894,6 +6903,7 @@ form div.wpcf7-mail-sent-ok {
   -moz-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
   -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
   /* transform: translateX(-50%) translateY(-50%); */
 }
 .separator {
