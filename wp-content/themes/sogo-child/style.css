@@ -1962,6 +1962,7 @@ a.scrollup:hover:before {
   -moz-transform: translate3d(-100%, 0, 0);
   -ms-transform: translate3d(-100%, 0, 0);
   -o-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
 }
 @media (min-width: 768px) {
   .push-nav .social-navigation {
@@ -6690,6 +6691,7 @@ p.item-text {
 }
 .group input {
   -webkit-appearance: none;
+  appearance: none;
   font-size: 18px;
   display: block;
   background: 0 0;
@@ -6882,7 +6884,6 @@ form div.wpcf7-mail-sent-ok {
   position: absolute;
 }
 .info-box .info-content {
-  display: inline-block;
   margin: 0;
   height: 345px;
   padding: 50px 15px;
@@ -6894,6 +6895,7 @@ form div.wpcf7-mail-sent-ok {
   -moz-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
   -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
   /* transform: translateX(-50%) translateY(-50%); */
 }
 .separator {
