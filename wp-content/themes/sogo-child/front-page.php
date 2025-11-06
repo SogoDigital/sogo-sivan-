@@ -166,14 +166,130 @@ get_header();
     <?php endwhile; ?>
 </div>
 
-    <section id="recents-posts" class="section vertical-top cover position-relative" style="background-color: #f7fafe">
+<!--<div class="campaigne-floor4">-->
+<!--    <div class="campaigne-floor4-wraper">-->
+<!--        <div class="container-fluid">-->
+<!--            <div class="row justify-content-center">-->
+<!--                <div class="col-12 col-lg-12">-->
+<!--                    <div class="row justify-content-center d-flex">-->
+<!--                        <div class="col-12 col-lg-8">-->
+<!--                            <p class="campaigne-floor4-title text-center">--><?php //echo get_field('_sogo_home_chess_title')?><!--</p>-->
+<!--                            <p class="campaigne-floor4-subtitle text-center">--><?php //echo get_field('_sogo_home_chess_subtitle')?><!--</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    --><?php //$counter = 0; ?>
+<!--                    --><?php //while (have_rows("_sogo_home_chess_services")) : the_row(); ?>
+<!--                        <div class="row campaigne-floor4-service-wrapper flex-column-reverse flex-lg-row--><?php //echo ($counter%2) ? '-reverse' : ''; ?><!--">-->
+<!--                            <div class="col-12 col-lg-5">-->
+<!--                                <div class="campaigne-floor4-service">-->
+<!--                                    <div class="campaigne-floor4-service-top-wrapper position-relative">-->
+<!--                                        <p class="campaigne-floor4-service-top">--><?php //echo get_sub_field('top_text')?><!--</p>-->
+<!--                                        --><?php //if(get_sub_field('gift')): ?>
+<!--                                            --><?php //echo wp_get_attachment_image(get_sub_field('gift'), 'full', false, array('class'=> 'img-fluid position-absolute campaigne-floor4-service-gift')) ; ?>
+<!--                                        --><?php //endif; ?>
+<!---->
+<!--                                    </div>-->
+<!--                                    <div class="campaigne-floor4-service-title">-->
+<!--                                        --><?php //echo get_sub_field('title')?>
+<!--                                    </div>-->
+<!--                                    <div class="campaigne-floor4-service-text">-->
+<!--                                        --><?php //echo get_sub_field('text')?>
+<!--                                    </div>-->
+<!---->
+<!--                                    <a class="campaigne-floor4-service-link d-flex justify-content-start align-items-center" href="#footer-form">-->
+<!--                                        <span>דברו איתנו</span>-->
+<!--                                        --><?php //echo wp_get_attachment_image(get_field('_sogo_home_chess_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-1 d-none d-lg-block"></div>-->
+<!--                            <div class="col-12 col-lg-6 px-lg-0">-->
+<!--                                <div class="campaigne-floor4-service-image-wrapper mb-4 mb-lg-0 position-relative">-->
+<!--                                    --><?php //echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid campaigne-floor4-service-image')) ; ?>
+<!--                                    --><?php //if(get_sub_field('lamp')): ?>
+<!--                                        --><?php //echo wp_get_attachment_image(get_sub_field('lamp'), 'full', false, array('class'=> 'img-fluid position-absolute campaigne-floor4-service-lamp')) ; ?>
+<!--                                    --><?php //endif; ?>
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        --><?php //$counter++; ?>
+<!--                    --><?php //endwhile; ?>
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="d-flex justify-content-center align-items-center">-->
+<!--                --><?php //echo wp_get_attachment_image(get_field('_sogo_home_chess_man'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+<!---->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<div class="campaigne-floor5 container-fluid">
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-12">
+            <div class="row justify-content-center d-flex">
+                <div class="col-12 col-lg-8">
+                    <p class="campaigne-floor5-title text-center"><?php echo get_field('_sogo_home_faq_title')?></p>
+                    <p class="campaigne-floor5-subtitle text-center"><?php echo get_field('_sogo_home_faq_subtitle')?></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center d-flex">
+<!--        <div class="col-12 col-lg-6">-->
+<!--            <div class="row justify-content-center d-flex">-->
+<!--                <div class="col-12 col-lg-8">-->
+<!--                    <p class="campaigne-floor5-title text-center">--><?php //echo get_field('_sogo_home_faq_title')?><!--</p>-->
+<!--                    <p class="campaigne-floor5-subtitle text-center">--><?php //echo get_field('_sogo_home_faq_subtitle')?><!--</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+        <div class="col-12 col-lg-8">
+            <?php
+            $questions = array();
+            if (have_rows('_sogo_home_faq')):
+                $counter = 0;
+                while (have_rows('_sogo_home_faq')): the_row(); ?>
+                    <div class="faq-content">
+                        <div class="accordion panel-group h-100 questions-accord rounded">
+                            <div class="panel" data-target="#panelBody<?= $counter ?>" data-toggle="collapse"
+                                 data-parent=".accordion">
+                                <div class="panel-heading cursor-pointer">
+                                    <h4 class="panel-title mb-0 d-flex align-items-center justify-content-start">
+                                        <i class="fa fa-close ms-3"></i>
+                                        <a class="font-weight-semibold accordion-toggle collapsed jobs-custom-icon-style text-color-1">
+                                            <?php the_sub_field('question') ?>
+                                        </a>
+
+                                    </h4>
+                                </div>
+                                <div id="panelBody<?php echo $counter; ?>" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <div class="">
+                                            <?php the_sub_field('answer'); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                    $counter++;
+                endwhile;
+            endif; ?>
+        </div>
+    </div>
+</div>
+
+<section id="recents-posts" class="section vertical-top cover position-relative" style="background-color: #f7fafe">
         <div class="container-fluid">
             <div class="row d-flex justify-content-center">
-                <div class="col-md-8">
+                <div class="col-md-12 col-lg-10 col-xl-8">
                     <?php
                     $related = get_posts(
                         array(
-                            'numberposts'  => 3,
+                            'numberposts'  => 4,
                         )
                     );
                     ?>

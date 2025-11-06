@@ -3971,6 +3971,7 @@ h2.team-heading {
 @media (min-width: 768px) {
   .single-recent .related-posts {
     display: flex;
+    flex-wrap: wrap;
   }
 }
 .single-recent .related-posts .related-item {
@@ -7711,21 +7712,21 @@ form div.wpcf7-mail-sent-ok {
   height: 100%;
   object-fit: cover;
 }
-.campaigne-page .campaigne-floor4 {
+.campaigne-floor4 {
   background: linear-gradient(180deg, #F6F7F8 0%, #FFF 24.57%);
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor4 {
+  .campaigne-floor4 {
     padding-top: 64px;
   }
 }
-.campaigne-page .campaigne-floor4 .campaigne-floor4-wraper {
+.campaigne-floor4 .campaigne-floor4-wraper {
   margin: 0 auto;
   max-width: 1200px;
   position: relative;
   width: 100%;
 }
-.campaigne-page .campaigne-floor4 .campaigne-floor4-title {
+.campaigne-floor4 .campaigne-floor4-title {
   font-size: 32px;
   font-weight: 800;
   line-height: 1;
@@ -7735,23 +7736,23 @@ form div.wpcf7-mail-sent-ok {
   -webkit-text-fill-color: transparent;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor4 .campaigne-floor4-title {
+  .campaigne-floor4 .campaigne-floor4-title {
     font-size: 48px;
   }
 }
-.campaigne-page .campaigne-floor4 .campaigne-floor4-subtitle {
+.campaigne-floor4 .campaigne-floor4-subtitle {
   margin-bottom: 64px;
   font-size: 20px;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor4 .campaigne-floor4-subtitle {
+  .campaigne-floor4 .campaigne-floor4-subtitle {
     font-size: 22px;
   }
 }
-.campaigne-page .campaigne-floor4 .campaigne-floor4-service-wrapper {
+.campaigne-floor4 .campaigne-floor4-service-wrapper {
   margin-bottom: 96px;
 }
-.campaigne-page .campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-top-wrapper {
+.campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-top-wrapper {
   width: fit-content;
   background: #F0F0F0;
   border: 1px solid #EEDDE5;
@@ -7759,7 +7760,7 @@ form div.wpcf7-mail-sent-ok {
   padding: 16px 24px;
   margin-bottom: 25px;
 }
-.campaigne-page .campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-top-wrapper .campaigne-floor4-service-top {
+.campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-top-wrapper .campaigne-floor4-service-top {
   margin-bottom: 0;
   font-size: 18px;
   font-weight: bold;
@@ -7770,7 +7771,7 @@ form div.wpcf7-mail-sent-ok {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.campaigne-page .campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-top-wrapper .campaigne-floor4-service-gift {
+.campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-top-wrapper .campaigne-floor4-service-gift {
   display: none;
   max-width: 50%;
   top: 0%;
@@ -7779,7 +7780,7 @@ form div.wpcf7-mail-sent-ok {
   animation: giftfloat 2s ease-in-out infinite;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-top-wrapper .campaigne-floor4-service-gift {
+  .campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-top-wrapper .campaigne-floor4-service-gift {
     display: block;
   }
 }
@@ -7794,44 +7795,44 @@ form div.wpcf7-mail-sent-ok {
     transform: translateY(-70%) translateX(50%);
   }
 }
-.campaigne-page .campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-title p {
+.campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-title p {
   color: #111;
   font-size: 32px;
   font-weight: normal;
   line-height: 1.5;
 }
-.campaigne-page .campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-title p span,
-.campaigne-page .campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-title p strong {
+.campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-title p span,
+.campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-title p strong {
   font-weight: bold;
   background: linear-gradient(88deg, #ED1D24 1%, #EE2A7B 34%, #8A5BA5 75%, #00ADDC 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.campaigne-page .campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-text p {
+.campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-text p {
   color: #333;
   font-size: 20px;
   font-weight: normal;
   line-height: 1.5;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-text p {
+  .campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-text p {
     font-size: 20px;
   }
 }
-.campaigne-page .campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-link {
+.campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-link {
   width: fit-content;
   position: relative;
   text-decoration: none;
 }
-.campaigne-page .campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-link span {
+.campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-link span {
   font-size: 18px;
   font-weight: bold;
   line-height: 1;
   color: #111;
   margin-left: 16px;
 }
-.campaigne-page .campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-link:after {
+.campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service .campaigne-floor4-service-link:after {
   content: '';
   display: block;
   width: 100%;
@@ -7841,11 +7842,11 @@ form div.wpcf7-mail-sent-ok {
   position: absolute;
   bottom: -16px;
 }
-.campaigne-page .campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service-image-wrapper .campaigne-floor4-service-image {
+.campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service-image-wrapper .campaigne-floor4-service-image {
   width: 100%;
   border-radius: 32px;
 }
-.campaigne-page .campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service-image-wrapper .campaigne-floor4-service-lamp {
+.campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service-image-wrapper .campaigne-floor4-service-lamp {
   display: none;
   max-width: 15%;
   top: 0%;
@@ -7854,7 +7855,7 @@ form div.wpcf7-mail-sent-ok {
   animation: float 2s ease-in-out infinite;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service-image-wrapper .campaigne-floor4-service-lamp {
+  .campaigne-floor4 .campaigne-floor4-service-wrapper .campaigne-floor4-service-image-wrapper .campaigne-floor4-service-lamp {
     display: block;
   }
 }
@@ -7869,18 +7870,18 @@ form div.wpcf7-mail-sent-ok {
     transform: translateY(-50%) translateX(-50%);
   }
 }
-.campaigne-page .campaigne-floor5 {
+.campaigne-floor5 {
   background-color: #f6f7f8;
   padding-top: 48px;
   padding-bottom: 48px;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor5 {
+  .campaigne-floor5 {
     padding-top: 64px;
     padding-bottom: 64px;
   }
 }
-.campaigne-page .campaigne-floor5 .campaigne-floor5-title {
+.campaigne-floor5 .campaigne-floor5-title {
   font-size: 32px;
   font-weight: 800;
   line-height: 1;
@@ -7890,41 +7891,41 @@ form div.wpcf7-mail-sent-ok {
   -webkit-text-fill-color: transparent;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor5 .campaigne-floor5-title {
+  .campaigne-floor5 .campaigne-floor5-title {
     font-size: 48px;
   }
 }
-.campaigne-page .campaigne-floor5 .campaigne-floor5-subtitle {
+.campaigne-floor5 .campaigne-floor5-subtitle {
   margin-bottom: 64px;
   font-size: 20px;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor5 .campaigne-floor5-subtitle {
+  .campaigne-floor5 .campaigne-floor5-subtitle {
     font-size: 22px;
   }
 }
-.campaigne-page .campaigne-floor5 .faq-content .questions-accord .panel {
+.campaigne-floor5 .faq-content .questions-accord .panel {
   border-radius: 8px;
   box-shadow: 0px 3.153px 18.916px 0px rgba(242, 64, 64, 0.05);
 }
-.campaigne-page .campaigne-floor5 .faq-content .questions-accord .panel .panel-heading {
+.campaigne-floor5 .faq-content .questions-accord .panel .panel-heading {
   cursor: pointer;
   padding: 12px 24px;
 }
-.campaigne-page .campaigne-floor5 .faq-content .questions-accord .panel .panel-heading .panel-title a {
+.campaigne-floor5 .faq-content .questions-accord .panel .panel-heading .panel-title a {
   font-size: 18px;
   font-weight: bold;
   text-decoration: none;
   margin-right: 10px;
   line-height: 1.5;
 }
-.campaigne-page .campaigne-floor5 .faq-content .questions-accord .panel .panel-heading .panel-title span {
+.campaigne-floor5 .faq-content .questions-accord .panel .panel-heading .panel-title span {
   transition: 0.2s ease-in-out;
   transform-origin: center center;
   transform: rotate(45deg);
   line-height: 0;
 }
-.campaigne-page .campaigne-floor5 .faq-content .questions-accord .panel .panel-heading .panel-title .fa-close {
+.campaigne-floor5 .faq-content .questions-accord .panel .panel-heading .panel-title .fa-close {
   transition: 0.2s ease-in-out;
   transform-origin: center center;
   transform: rotate(45deg);
@@ -7932,18 +7933,18 @@ form div.wpcf7-mail-sent-ok {
   color: #FF3434;
   font-size: 24px;
 }
-.campaigne-page .campaigne-floor5 .faq-content .questions-accord .panel[aria-expanded="true"] .panel-heading .panel-title .fa-close {
+.campaigne-floor5 .faq-content .questions-accord .panel[aria-expanded="true"] .panel-heading .panel-title .fa-close {
   transform: rotate(180deg);
 }
-.campaigne-page .campaigne-floor5 .faq-content .questions-accord .panel .panel-body {
+.campaigne-floor5 .faq-content .questions-accord .panel .panel-body {
   border: 0;
   padding: 12px 24px;
 }
-.campaigne-page .campaigne-floor5 .faq-content .questions-accord .panel .panel-body p {
+.campaigne-floor5 .faq-content .questions-accord .panel .panel-body p {
   font-size: 18px;
   color: black;
 }
-.campaigne-page .campaigne-floor5 .faq-content .questions-accord .panel .panel-body ul li {
+.campaigne-floor5 .faq-content .questions-accord .panel .panel-body ul li {
   font-size: 18px;
 }
 .gradient-btn {
