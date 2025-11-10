@@ -108,6 +108,65 @@ $is_mobile = wp_is_mobile();
         </section>
     <?php endwhile; ?>
 
+<div class="campaigne-floor5 container-fluid">
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-12">
+            <div class="row justify-content-center d-flex">
+                <div class="col-12 col-lg-8">
+                    <h2 class="campaigne-floor5-title text-center"><?php echo get_field('_sogo_project_faq_title')?></h2>
+                    <h3 class="campaigne-floor5-subtitle text-center"><?php echo get_field('_sogo_project_faq_subtitle')?></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center d-flex">
+<!--        <div class="col-12 col-lg-6">-->
+<!--            <div class="row justify-content-center d-flex">-->
+<!--                <div class="col-12 col-lg-8">-->
+<!--                    <p class="campaigne-floor5-title text-center">--><?php //echo get_field('_sogo_home_faq_title')?><!--</p>-->
+<!--                    <p class="campaigne-floor5-subtitle text-center">--><?php //echo get_field('_sogo_home_faq_subtitle')?><!--</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+        <div class="col-12 col-lg-8">
+            <?php
+            $questions = array();
+            if (have_rows('_sogo_project_faq')):
+                $counter = 0;
+                while (have_rows('_sogo_project_faq')): the_row(); ?>
+                    <div class="faq-content">
+                        <div class="accordion panel-group h-100 questions-accord rounded">
+                            <div class="panel" data-target="#panelBody<?= $counter ?>" data-toggle="collapse"
+                                 data-parent=".accordion">
+                                <div class="panel-heading cursor-pointer">
+                                    <h4 class="panel-title mb-0 d-flex align-items-center justify-content-start">
+                                        <i class="fa fa-close ms-3"></i>
+                                        <a class="font-weight-semibold accordion-toggle collapsed jobs-custom-icon-style text-color-1">
+                                            <?php the_sub_field('question') ?>
+                                        </a>
+
+                                    </h4>
+                                </div>
+                                <div id="panelBody<?php echo $counter; ?>" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <div class="">
+                                            <?php the_sub_field('answer'); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                    $counter++;
+                endwhile;
+            endif; ?>
+        </div>
+    </div>
+</div>
+
 <?php $category = get_the_terms( $post->ID, 'project-cat' )[0]; ?>
 <?php if($category): ?>
     <?php $related = get_field('_sogo_related_projects', $category->taxonomy . '_' . $category->term_id)?>
@@ -122,7 +181,7 @@ $is_mobile = wp_is_mobile();
     <div class="container-fluid">
         <div class="row projects_grid_con">
             <div class="col-md-11">
-                <p class="page-title text-center margin-top-60">פרויקטים נוספים</p>
+                <h2 class="page-title text-center margin-top-60">פרויקטים נוספים</h2>
                 <div class="row d-flex archive-projects">
                     <?php foreach ($related as $post_id) { ?>
                         <?php set_query_var( 'post_id', $post_id );; ?>
