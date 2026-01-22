@@ -166,63 +166,6 @@ get_header();
     <?php endwhile; ?>
 </div>
 
-<!--<div class="campaigne-floor4">-->
-<!--    <div class="campaigne-floor4-wraper">-->
-<!--        <div class="container-fluid">-->
-<!--            <div class="row justify-content-center">-->
-<!--                <div class="col-12 col-lg-12">-->
-<!--                    <div class="row justify-content-center d-flex">-->
-<!--                        <div class="col-12 col-lg-8">-->
-<!--                            <p class="campaigne-floor4-title text-center">--><?php //echo get_field('_sogo_home_chess_title')?><!--</p>-->
-<!--                            <p class="campaigne-floor4-subtitle text-center">--><?php //echo get_field('_sogo_home_chess_subtitle')?><!--</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    --><?php //$counter = 0; ?>
-<!--                    --><?php //while (have_rows("_sogo_home_chess_services")) : the_row(); ?>
-<!--                        <div class="row campaigne-floor4-service-wrapper flex-column-reverse flex-lg-row--><?php //echo ($counter%2) ? '-reverse' : ''; ?><!--">-->
-<!--                            <div class="col-12 col-lg-5">-->
-<!--                                <div class="campaigne-floor4-service">-->
-<!--                                    <div class="campaigne-floor4-service-top-wrapper position-relative">-->
-<!--                                        <p class="campaigne-floor4-service-top">--><?php //echo get_sub_field('top_text')?><!--</p>-->
-<!--                                        --><?php //if(get_sub_field('gift')): ?>
-<!--                                            --><?php //echo wp_get_attachment_image(get_sub_field('gift'), 'full', false, array('class'=> 'img-fluid position-absolute campaigne-floor4-service-gift')) ; ?>
-<!--                                        --><?php //endif; ?>
-<!---->
-<!--                                    </div>-->
-<!--                                    <div class="campaigne-floor4-service-title">-->
-<!--                                        --><?php //echo get_sub_field('title')?>
-<!--                                    </div>-->
-<!--                                    <div class="campaigne-floor4-service-text">-->
-<!--                                        --><?php //echo get_sub_field('text')?>
-<!--                                    </div>-->
-<!---->
-<!--                                    <a class="campaigne-floor4-service-link d-flex justify-content-start align-items-center" href="#footer-form">-->
-<!--                                        <span>דברו איתנו</span>-->
-<!--                                        --><?php //echo wp_get_attachment_image(get_field('_sogo_home_chess_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
-<!--                                    </a>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="col-1 d-none d-lg-block"></div>-->
-<!--                            <div class="col-12 col-lg-6 px-lg-0">-->
-<!--                                <div class="campaigne-floor4-service-image-wrapper mb-4 mb-lg-0 position-relative">-->
-<!--                                    --><?php //echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid campaigne-floor4-service-image')) ; ?>
-<!--                                    --><?php //if(get_sub_field('lamp')): ?>
-<!--                                        --><?php //echo wp_get_attachment_image(get_sub_field('lamp'), 'full', false, array('class'=> 'img-fluid position-absolute campaigne-floor4-service-lamp')) ; ?>
-<!--                                    --><?php //endif; ?>
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        --><?php //$counter++; ?>
-<!--                    --><?php //endwhile; ?>
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="d-flex justify-content-center align-items-center">-->
-<!--                --><?php //echo wp_get_attachment_image(get_field('_sogo_home_chess_man'), 'full', false, array('class'=> 'img-fluid')) ; ?>
-<!---->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
 <div class="campaigne-floor5 container-fluid">
 
     <div class="row justify-content-center">
@@ -282,42 +225,58 @@ get_header();
     </div>
 </div>
 
-<section id="recents-posts" class="section vertical-top cover position-relative" style="background-color: #f7fafe">
+<div class="campaigne-floor-editor">
+    <div class="campaigne-floor-editor-wrapper">
         <div class="container-fluid">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-12 col-lg-10 col-xl-8">
-                    <?php
-                    $related = get_posts(
-                        array(
-                            'numberposts'  => 4,
-                        )
-                    );
-                    ?>
-                    
-                    <section class="container-fluid pt-2 single-recent">
-                        <div class="row justify-content-center">
-                            <h2 class="single-recent-title col-12 text-center font-weight-bold uppercase">כל מה שחדש בתחום בניית אתרים</h2>
-                            <div class="col-12 col-xl-8 position-relative mt-4">
-                                <div class="container-fluid mb-0 mb-lg-4">
-                                    <div class="row related-posts">
-                                        <?php if( $related ) :
-                                            foreach( $related as $item ) :
-                                                setup_postdata($item);
-                                                set_query_var( 'post_id', $item->ID );
-                                                get_template_part('content', 'excerpt');
-                                                ?>
-                                            <?php endforeach;
-                                            wp_reset_postdata();
-                                        endif; ?>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="single-article-wrapper">
+                        <div class="entry-content">
+                            <?php echo get_field('_sogo_home_editor_content') ?>
                         </div>
-                    </section>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</div>
+
+<section id="recents-posts" class="section vertical-top cover position-relative" style="background-color: #f7fafe">
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-12 col-lg-10 col-xl-8">
+                <?php
+                $related = get_posts(
+                    array(
+                        'numberposts'  => 4,
+                    )
+                );
+                ?>
+
+                <section class="container-fluid pt-2 single-recent">
+                    <div class="row justify-content-center">
+                        <h2 class="single-recent-title col-12 text-center font-weight-bold uppercase">כל מה שחדש בתחום בניית אתרים</h2>
+                        <div class="col-12 col-xl-8 position-relative mt-4">
+                            <div class="container-fluid mb-0 mb-lg-4">
+                                <div class="row related-posts">
+                                    <?php if( $related ) :
+                                        foreach( $related as $item ) :
+                                            setup_postdata($item);
+                                            set_query_var( 'post_id', $item->ID );
+                                            get_template_part('content', 'excerpt');
+                                            ?>
+                                        <?php endforeach;
+                                        wp_reset_postdata();
+                                    endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
 
       <section id="more-info" class="section vertical-top cover position-relative">
         <div class="container-fluid">

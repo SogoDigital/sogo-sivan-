@@ -7947,6 +7947,22 @@ form div.wpcf7-mail-sent-ok {
 .campaigne-floor5 .faq-content .questions-accord .panel .panel-body ul li {
   font-size: 18px;
 }
+.campaigne-floor-editor {
+  background-color: #f6f7f8;
+}
+.campaigne-floor-editor .campaigne-floor-editor-wrapper {
+  margin: 0 auto;
+  max-width: 900px;
+  position: relative;
+  width: 100%;
+}
+.campaigne-floor-editor .campaigne-floor-editor-wrapper .single-article-wrapper {
+  margin: 0;
+}
+.campaigne-floor-editor .campaigne-floor-editor-wrapper .single-article-wrapper .entry-content {
+  border: 0;
+  padding: 0;
+}
 .gradient-btn {
   padding: 24px 48px;
   border-radius: 16px;
