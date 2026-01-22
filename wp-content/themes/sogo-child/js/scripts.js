@@ -696,16 +696,17 @@
 
     // Build checkbox markup
     function consentMarkup(){
-        return `
-      <div class="custom-privacy-consent elementor-field-group elementor-col-100 elementor-field-type-acceptance" data-inserted="yes">
+    return `
+      <div class="custom-privacy-consent elementor-field-group elementor-col-100" data-inserted="yes">
         <label class="custom-privacy-label">
-          <input type="checkbox" id="${consentId}" name="${consentName}" value="yes" required />
+          <input type="checkbox" id="${consentId}" name="${consentName}" value="yes" />
           <span>אני מאשר/ת את <a href="${policyUrl}" target="_blank" rel="noopener">מדיניות הפרטיות</a> ומסכים/ה שהמידע ישמש למענה לפנייה ולמטרות המפורטות בה</span>
         </label>
         <div class="custom-privacy-error" aria-live="polite" style="display:none; color: red; font-size: 14px; margin-top: 5px;"></div>
       </div>
     `;
-    }
+}
+
 
     // Inject checkbox before submit areas in common form plugins
     function addPrivacyUI(){
@@ -850,29 +851,28 @@
     }
 
     // Init
-    function initUI(){
-        addPrivacyUI();
-        preventFormSubmission();
-    }
+        function initUI(){
+            addPrivacyUI();
+            // preventFormSubmission(); // make sure this stays removed
+        }
 
-    // Initialize everything
     $(document).ready(function() {
         initUI();
-        bindValidation();
+        // bindValidation(); // make sure this stays removed
     });
 
-    // Re-run for dynamic loads/popups/AJAX
-    $(window).on('load', function(){ setTimeout(initUI, 300); });
-    $(document).ajaxComplete(function(){ setTimeout(initUI, 300); });
-    $(document).on('elementor/popup/show', function(){ setTimeout(initUI, 300); });
+   // Re-run for dynamic loads/popups/AJAX
+        $(window).on('load', function(){ setTimeout(initUI, 300); });
+        $(document).ajaxComplete(function(){ setTimeout(initUI, 300); });
+        $(document).on('elementor/popup/show', function(){ setTimeout(initUI, 300); });
 
     if (window.MutationObserver){
-        var observer = new MutationObserver(function(muts){
-            var add = muts.some(function(m){ return m.addedNodes && m.addedNodes.length; });
-            if (add){ setTimeout(initUI, 200); }
-        });
-        observer.observe(document.body, {childList:true, subtree:true});
-    }
+         var observer = new MutationObserver(function(muts){
+         var add = muts.some(function(m){ return m.addedNodes && m.addedNodes.length; });
+             if (add){ setTimeout(initUI, 200); }
+         });
+         observer.observe(document.body, {childList:true, subtree:true});
+}
 
 
 })(jQuery);

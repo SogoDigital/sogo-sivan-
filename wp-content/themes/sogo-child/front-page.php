@@ -172,8 +172,8 @@ get_header();
         <div class="col-12 col-lg-12">
             <div class="row justify-content-center d-flex">
                 <div class="col-12 col-lg-8">
-                    <p class="campaigne-floor5-title text-center"><?php echo get_field('_sogo_home_faq_title')?></p>
-                    <p class="campaigne-floor5-subtitle text-center"><?php echo get_field('_sogo_home_faq_subtitle')?></p>
+                    <h2 class="campaigne-floor5-title text-center"><?php echo get_field('_sogo_home_faq_title')?></h2>
+                    <h3 class="campaigne-floor5-subtitle text-center"><?php echo get_field('_sogo_home_faq_subtitle')?></h3>
                 </div>
             </div>
         </div>
