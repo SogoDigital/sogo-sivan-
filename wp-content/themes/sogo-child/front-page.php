@@ -4,8 +4,9 @@
 get_header();
 ?>
 
-    <section id="homepage-floor1">
 
+    <section id="homepage-floor1">
+<!--        --><?php //echo do_shortcode('[rev_slider alias="slider-1"][/rev_slider]');?>
         <div class="homepage-floor1-slider js-homepage-floor1-slider h-100">
             <?php while ( have_rows( '_sogo_mainpage_floor1_slider' ) ) : the_row(); ?>
                 <div class="homepage-floor1-slide-wrapper h-100 position-relative">
