@@ -6,25 +6,25 @@ get_header();
 
 
     <section id="homepage-floor1">
-<!--        --><?php //echo do_shortcode('[rev_slider alias="slider-1"][/rev_slider]');?>
-        <div class="homepage-floor1-slider js-homepage-floor1-slider h-100">
-            <?php while ( have_rows( '_sogo_mainpage_floor1_slider' ) ) : the_row(); ?>
-                <div class="homepage-floor1-slide-wrapper h-100 position-relative">
-                    <div class="homepage-floor1-slide-info">
-                        <h2 class="homepage-floor1-slide-title"><?php echo get_sub_field('title')?></h2>
-                        <h3 class="homepage-floor1-slide-subtitle"><?php echo get_sub_field('subtitle')?></h3>
-                        <div class="homepage-floor1-slide-button">
-                            <a class="" href="<?php echo get_sub_field('button_link')?>"><?php echo get_sub_field('button_text')?></a>
-                            <?php echo wp_get_attachment_image(get_field('_sogo_mainpage_floor1_slider_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
-
-                        </div>
-                    </div>
-                    <?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid homepage-floor1-image')) ; ?>
-                    <?php echo wp_get_attachment_image(get_sub_field('image_mobile'), 'full', false, array('class'=> 'img-fluid homepage-floor1-image-mobile')) ; ?>
-
-                </div>
-            <?php endwhile; ?>
-        </div>
+        <?php echo do_shortcode('[rev_slider alias="slider-1"][/rev_slider]');?>
+<!--        <div class="homepage-floor1-slider js-homepage-floor1-slider h-100">-->
+<!--            --><?php //while ( have_rows( '_sogo_mainpage_floor1_slider' ) ) : the_row(); ?>
+<!--                <div class="homepage-floor1-slide-wrapper h-100 position-relative">-->
+<!--                    <div class="homepage-floor1-slide-info">-->
+<!--                        <h2 class="homepage-floor1-slide-title">--><?php //echo get_sub_field('title')?><!--</h2>-->
+<!--                        <h3 class="homepage-floor1-slide-subtitle">--><?php //echo get_sub_field('subtitle')?><!--</h3>-->
+<!--                        <div class="homepage-floor1-slide-button">-->
+<!--                            <a class="" href="--><?php //echo get_sub_field('button_link')?><!--">--><?php //echo get_sub_field('button_text')?><!--</a>-->
+<!--                            --><?php //echo wp_get_attachment_image(get_field('_sogo_mainpage_floor1_slider_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+<!---->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    --><?php //echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid homepage-floor1-image')) ; ?>
+<!--                    --><?php //echo wp_get_attachment_image(get_sub_field('image_mobile'), 'full', false, array('class'=> 'img-fluid homepage-floor1-image-mobile')) ; ?>
+<!---->
+<!--                </div>-->
+<!--            --><?php //endwhile; ?>
+<!--        </div>-->
     </section>
 
 
