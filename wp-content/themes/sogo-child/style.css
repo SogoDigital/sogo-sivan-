@@ -7973,6 +7973,7 @@ form div.wpcf7-mail-sent-ok {
   background: #1F1F1F;
   border: 1px solid #DED8B9;
   box-shadow: 0 133px 37px 0 rgba(0, 0, 0, 0), 0 85px 34px 0 rgba(0, 0, 0, 0.02), 0 48px 29px 0 rgba(0, 0, 0, 0.08), 0 21px 21px 0 rgba(0, 0, 0, 0.14), 0 5px 12px 0 rgba(0, 0, 0, 0.16);
+  text-decoration: none;
 }
 @media (max-width: 600px) {
   .gradient-btn {

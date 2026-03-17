@@ -42,7 +42,7 @@
         } else {
             $('.fullpage #page').fullpage({
 
-            //    fixedElements: '#main-header',
+                //    fixedElements: '#main-header',
                 navigation: true,
                 navigationPosition: 'right',
                 onLeave: function (index, nextIndex, direction) {
@@ -327,7 +327,7 @@
         });
 
         // this is for the city page
-     //   $('a[rel="prettyPhoto"]').fancybox();
+        //   $('a[rel="prettyPhoto"]').fancybox();
 
         /*
          *  Mobile Menu
@@ -458,7 +458,7 @@
     });
 
     $(document).on('click','.selectProjectType', function(){
-       console.log($(this).attr('name'));
+        console.log($(this).attr('name'));
     });
 
     function fix_portfolio_controls() {
@@ -553,6 +553,17 @@
                 }
             }
         });
+
+    /*******************************************/
+    /* AOS */
+    /*******************************************/
+
+    AOS.init({
+        // duration: 800,
+        // offset: 120,
+        // anchorPlacement: 'top-bottom',
+        // disable: false
+    });
 
     /*******************************************/
     /* CF7 Validation */
@@ -696,7 +707,7 @@
 
     // Build checkbox markup
     function consentMarkup(){
-    return `
+        return `
       <div class="custom-privacy-consent elementor-field-group elementor-col-100" data-inserted="yes">
         <label class="custom-privacy-label">
           <input type="checkbox" id="${consentId}" name="${consentName}" value="yes" />
@@ -705,7 +716,7 @@
         <div class="custom-privacy-error" aria-live="polite" style="display:none; color: red; font-size: 14px; margin-top: 5px;"></div>
       </div>
     `;
-}
+    }
 
 
     // Inject checkbox before submit areas in common form plugins
@@ -851,28 +862,27 @@
     }
 
     // Init
-        function initUI(){
-            addPrivacyUI();
-            // preventFormSubmission(); // make sure this stays removed
-        }
+    function initUI(){
+        addPrivacyUI();
+        // preventFormSubmission(); // make sure this stays removed
+    }
 
     $(document).ready(function() {
         initUI();
         // bindValidation(); // make sure this stays removed
     });
 
-   // Re-run for dynamic loads/popups/AJAX
-        $(window).on('load', function(){ setTimeout(initUI, 300); });
-        $(document).ajaxComplete(function(){ setTimeout(initUI, 300); });
-        $(document).on('elementor/popup/show', function(){ setTimeout(initUI, 300); });
+    // Re-run for dynamic loads/popups/AJAX
+    $(window).on('load', function(){ setTimeout(initUI, 300); });
+    $(document).ajaxComplete(function(){ setTimeout(initUI, 300); });
+    $(document).on('elementor/popup/show', function(){ setTimeout(initUI, 300); });
 
     if (window.MutationObserver){
-         var observer = new MutationObserver(function(muts){
-         var add = muts.some(function(m){ return m.addedNodes && m.addedNodes.length; });
-             if (add){ setTimeout(initUI, 200); }
-         });
-         observer.observe(document.body, {childList:true, subtree:true});
-}
-
+        var observer = new MutationObserver(function(muts){
+            var add = muts.some(function(m){ return m.addedNodes && m.addedNodes.length; });
+            if (add){ setTimeout(initUI, 200); }
+        });
+        observer.observe(document.body, {childList:true, subtree:true});
+    }
 
 })(jQuery);
