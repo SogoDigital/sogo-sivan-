@@ -44,9 +44,9 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
 
 <header id="header">
 <!--  Desktop Header -->
-    <div class="desktop-header container-fluid hidden-xs hidden-sm visible-md-block visible-lg-block">
-        <div class="row d-flex justify-content-center">
-            <div class="col-12 col-lg-10">
+    <div class="desktop-header container-fluid hidden-xs hidden-sm hidden-md visible-lg-block">
+        <div class="row">
+            <div class="col-12 padding-x-16">
                 <div class="d-flex justify-content-between align-items-center">
 <!--                    <div class="col-md-2 d-flex">-->
                         <div id="logo">
@@ -94,7 +94,7 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
         </div>
     </div>
     <!--  Mobile Header -->
-    <div class="mobile-header container-fluid visible-xs-block visible-sm-block hidden-md hidden-lg">
+    <div class="mobile-header container-fluid visible-xs-block visible-sm-block visible-md-block hidden-lg">
         <div class="row d-flex">
             <div class="col-xs-12 position-relative">
                 <div class="d-flex justify-content-between h-100">
