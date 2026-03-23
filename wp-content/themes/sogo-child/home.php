@@ -77,12 +77,18 @@ $blog_page = get_post($blog_page_id);
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-lg-8">
                 <div class="row d-flex flex-wrap">
-                    <?php
-                    while (have_posts()): the_post();
-                        get_template_part('content', 'excerpt');
-                    endwhile;
+<!--                    --><?php
+//                    while (have_posts()): the_post();
+//                        get_template_part('content', 'excerpt');
+//                    endwhile;
+//                    ?>
 
-                    ?>
+                    <?php $counter = 0; ?>
+                    <?php while (have_posts()): the_post(); ?>
+                        <?php set_query_var('counter', $counter); ?>
+                        <?php echo get_template_part('content', 'excerpt');; ?>
+                        <?php $counter++; ?>
+                    <?php endwhile; ?>
                 </div>
             </div>
 
