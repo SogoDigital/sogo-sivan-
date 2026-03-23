@@ -8,7 +8,10 @@
  * Time: 6:32 PM
  */ ?>
 <?php $post_id = get_query_var('post_id') ?>
-<div class="col-12 col-sm-6 col-md-6 col-lg-3" style="margin-bottom: 30px">
+<?php $counter = get_query_var('counter') ?>
+<?php $delay = ($counter % 4) * 200; ?>
+
+<div class="col-12 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="<?php echo $delay; ?>" style="margin-bottom: 30px">
     <div class="plugin-box">
         <div itemscope itemtype="http://schema.org/CreativeWork" class="thumbnail-wrapper">
             <a href="<?php the_permalink($post_id)?>" title="<?php echo esc_attr(get_the_title($post_id))?>">

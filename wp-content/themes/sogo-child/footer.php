@@ -7,13 +7,13 @@
             <div class="footer-form-circle text-center">
                 <div class="footer-form-circle-blur"></div>
                 <div class="position-relative">
-                    <div class="red-ball-wrapper">
+                    <div class="red-ball-wrapper" data-aos="zoom-in" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
                         <?php echo wp_get_attachment_image(get_field('_sogo_footer_red_ball', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?>
                     </div>
-                    <div class="green-ball-wrapper">
+                    <div class="green-ball-wrapper" data-aos="zoom-in" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
                         <?php echo wp_get_attachment_image(get_field('_sogo_footer_green_ball', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?>
                     </div>
-                    <div class="footer-blur-image">
+                    <div class="footer-blur-image" data-aos="fade-up-right" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
                         <?php echo wp_get_attachment_image(get_field('_sogo_footer_blur_image', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?>
                     </div>
                     <h3 class="footer-blur-title"><?php echo get_field('_sogo_footer_blur_title', 'option') ?></h3>

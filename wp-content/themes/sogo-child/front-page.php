@@ -93,10 +93,13 @@ get_header();
                             'suppress_filters' => true,
                         ) );
                         global $post;
+                        $counter = 0;
                         foreach( $homepage_projects as $post ){
                             setup_postdata( $post );
                             set_query_var('post_id', $post->ID);
-                            echo get_template_part('template-arcive-project');
+                            set_query_var('counter', $counter); ?>
+                                <?php echo get_template_part('template-arcive-project'); ?>
+                            <?php $counter++;
                         }
 
                         wp_reset_postdata();
@@ -119,17 +122,17 @@ get_header();
     </section> <!-- #home-floor-7 -->
 
 
-<div class="home-desktop-floors">
-    <?php $counter = 0; ?>
-    <?php while (have_rows("_sogo_home_desktop_floors")) : the_row(); ?>
-        <section class="home-desktop-floor" style="background-image: url('<?php echo get_sub_field('background_image')?>')">
+    <div class="home-desktop-floors">
+        <?php $counter = 0; ?>
+        <?php while (have_rows("_sogo_home_desktop_floors")) : the_row(); ?>
+            <section class="home-desktop-floor" style="background-image: url('<?php echo get_sub_field('background_image')?>'); z-index: <?php echo $counter + 1; ?>;">
             <div class="container-fluid h-100">
                 <div class="row h-100">
                     <div class="h-100 d-flex align-items-center <?php echo ($counter%2) ? 'col-md-5 col-lg-4 col-md-offset-7' : 'col-md-5 col-lg-4 col-md-offset-1'; ?>">
                         <div class="home-desktop-floor-info <?php echo (get_sub_field('dark_light')) ? 'dark' : 'light'; ?>">
-                            <h2 class="home-desktop-floor-title"><?php echo get_sub_field('title')?></h2>
-                            <h4 class="home-desktop-floor-subtitle"><?php echo get_sub_field('subtitle')?></h4>
-                            <div class="d-flex align-items-center justify-content-start">
+                            <h2 class="home-desktop-floor-title" data-aos="fade-up" data-aos-duration="1000"><?php echo get_sub_field('title')?></h2>
+                            <h4 class="home-desktop-floor-subtitle" data-aos="fade-up" data-aos-duration="1000"><?php echo get_sub_field('subtitle')?></h4>
+                            <div class="d-flex align-items-center justify-content-start" data-aos="fade-up" data-aos-duration="1000">
                                 <a class="campaigne-floor-button m-auto" href="<?php echo get_sub_field('gradient_button_link')?>">
                                     <span><?php echo get_sub_field('gradient_button_text')?></span>
                                     <?php echo wp_get_attachment_image(get_field('_sogo_home_mobile_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
@@ -194,8 +197,10 @@ get_header();
             $questions = array();
             if (have_rows('_sogo_home_faq')):
                 $counter = 0;
+                $delay = ($counter % 4) * 200;
+
                 while (have_rows('_sogo_home_faq')): the_row(); ?>
-                    <div class="faq-content">
+                    <div class="faq-content" data-aos="fade-up" data-aos-delay="<?php echo $delay; ?>">
                         <div class="accordion panel-group h-100 questions-accord rounded">
                             <div class="panel" data-target="#panelBody<?= $counter ?>" data-toggle="collapse"
                                  data-parent=".accordion">
@@ -261,12 +266,14 @@ get_header();
                             <div class="container-fluid mb-0 mb-lg-4">
                                 <div class="row related-posts">
                                     <?php if( $related ) :
+                                        $counter = 0;
                                         foreach( $related as $item ) :
                                             setup_postdata($item);
                                             set_query_var( 'post_id', $item->ID );
+                                            set_query_var( 'counter', $counter );
                                             get_template_part('content', 'excerpt');
-                                            ?>
-                                        <?php endforeach;
+                                            $counter++;
+                                        endforeach;
                                         wp_reset_postdata();
                                     endif; ?>
                                 </div>

@@ -68,8 +68,11 @@
         <div class="row projects_grid_con">
             <div class="col-md-11">
                 <div class="row d-flex justify-content-center archive-projects">
+                <?php $counter = 0; ?>
                 <?php while (have_posts()): the_post(); ?>
+                    <?php set_query_var('counter', $counter); ?>
                     <?php echo get_template_part('template-arcive-project'); ?>
+                    <?php $counter++; ?>
                 <?php endwhile; ?>
                 </div>
             </div>
