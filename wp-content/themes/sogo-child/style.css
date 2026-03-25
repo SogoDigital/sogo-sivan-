@@ -1381,7 +1381,6 @@ h6 {
   margin: 10px 0 0 0;
 }
 .dineuron-menu .flex-center .menu li .sub-menu li {
-  line-height: 1.5;
   opacity: 0.8;
   transform: none;
 }
@@ -4105,7 +4104,7 @@ h2.team-heading {
   box-shadow: 0 0 3px #acacac;
 }
 .single-article-wrapper .publish-wrapper .publish-wrapper-author {
-  font-size: 18px;
+  font-size: 20px;
 }
 .single-article-wrapper .publish-wrapper .publish-wrapper-calendar img {
   width: 18px;
@@ -4144,7 +4143,7 @@ h2.team-heading {
   padding-bottom: 15px;
 }
 .single-article-wrapper .entry-content p {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.5;
   margin: 28px 0 24px 0;
 }
@@ -4155,12 +4154,20 @@ h2.team-heading {
   }
 }
 .single-article-wrapper .entry-content li {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.5;
 }
 .single-article-wrapper .entry-content li span {
   font-size: 18px;
   line-height: 1.5;
+}
+.single-article-wrapper .entry-content h1,
+.single-article-wrapper .entry-content h2,
+.single-article-wrapper .entry-content h3,
+.single-article-wrapper .entry-content h4,
+.single-article-wrapper .entry-content h5,
+.single-article-wrapper .entry-content h6 {
+  line-height: 1.3;
 }
 .single-article-wrapper .entry-content h1 {
   font-size: 32px;
