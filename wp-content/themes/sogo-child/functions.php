@@ -297,20 +297,6 @@ function redirect_feeds_to_home() {
 add_action('template_redirect', 'redirect_feeds_to_home');
 
 add_action('admin_init', function() {
-    if (isset($_POST['action']) && $_POST['action'] === 'editpost') {
-        error_log('POST data: ' . print_r($_POST, true));
-    }
-});
-
-add_filter('redirect_post_location', function($location, $post_id) {
-    if (isset($_POST['action']) && $_POST['action'] === 'editpost') {
-        error_log("Redirect location: $location");
-        error_log("Post ID: $post_id");
-    }
-    return $location;
-}, 10, 2);
-
-add_action('admin_init', function() {
     if (isset($_POST['action']) && $_POST['action'] === 'editpost' && isset($_POST['post_ID'])) {
         add_action('wp_loaded', function() {
             if (isset($_POST['post_ID'])) {
