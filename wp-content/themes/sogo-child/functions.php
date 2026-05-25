@@ -225,6 +225,9 @@ function mycustom_wp_footer() {
             else if ( '4171' == event.detail.contactFormId ) {
                 location = 'https://sogo.co.il/thanks_landing/';
             }
+            else if ( '5418' == event.detail.contactFormId ) {
+                location = 'https://sogo.co.il/thanks-startup/';
+            }
             else if ( '2748' == event.detail.contactFormId ) {
                 location = 'https://sogo.co.il/תודה-רבה/';
             }
