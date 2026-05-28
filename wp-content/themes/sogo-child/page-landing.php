@@ -573,7 +573,7 @@ get_header('landing');
                                             // Проверяем, является ли это первым элементом
                                             $isFirst = ($floor11_counter === 0);
                                             ?>
-                                            <div class="accordion-item" data-aos="fade-up">
+                                            <div class="accordion-item">
                                                 <h2 class="accordion-header">
                                                     <button class="accordion-button <?= $isFirst ? '' : 'collapsed' ?>" type="button" data-bs-toggle="collapse"
                                                             data-bs-target="#flush-collapse<?= $floor11_counter ?>" aria-expanded="<?= $isFirst ? 'true' : 'false' ?>"
