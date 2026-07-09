@@ -5,7 +5,7 @@ $counter = (int) get_query_var('counter');
 $delay   = ($counter % 4) * 200;
 ?>
 
-<div class="col-12 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="<?php echo $delay; ?>" style="margin-bottom: 30px">
+<div class="col-12 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="<?php echo $delay; ?>" style="margin-bottom: 30px">
     <div class="plugin-box">
         <div itemscope itemtype="http://schema.org/CreativeWork" class="thumbnail-wrapper">
             <a href="<?php the_permalink($post_id)?>" title="<?php echo esc_attr(get_the_title($post_id))?>">

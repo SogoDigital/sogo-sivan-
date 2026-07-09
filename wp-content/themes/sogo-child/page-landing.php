@@ -17,7 +17,7 @@ get_header('landing');
                                     <div class="col-12 h-100 m-0">
                                         <div class="row justify-content-center h-100">
                                             <div class="col-11 col-lg-6">
-                                                <div class="landing-floor1-info h-100 d-flex flex-column justify-content-center">
+                                                <div class="landing-floor1-info px-5 h-100 d-flex flex-column justify-content-center">
                                                     <div class="">
                                                         <div class="landing-floor1-logo">
                                                             <?php echo wp_get_attachment_image(get_field('_sogo_landing_floor1_logo'), 'full', false, array('class' => 'img-fluid')); ?>
@@ -29,15 +29,15 @@ get_header('landing');
                                                             <span class="gradient-btn-text">
                                                                 <?php echo esc_html(get_field('_sogo_landing_floor1_button_text')) ?>
                                                             </span>
-                                                                <span class="gradient-btn-arrow">
+                                                            <span class="gradient-btn-arrow">
                                                                 <?php echo wp_get_attachment_image(get_field('_sogo_landing_floor1_button_arrow'), 'full', false, array('class' => 'img-fluid')); ?>
                                                             </span>
                                                         </a>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-12 col-xl-6">
-                                                <div class="landing-floor1-ronit-wrapper h-100 d-flex align-items-end">
+                                            <div class="col-12 col-lg-6 d-none d-lg-block">
+                                                <div class="landing-floor1-ronit-wrapper px-5 h-100 d-flex align-items-end">
                                                     <?php echo wp_get_attachment_image(get_field('_sogo_landing_floor1_ronit'), 'full', false, array('class' => 'img-fluid')); ?>
                                                 </div>
                                             </div>
@@ -105,7 +105,7 @@ get_header('landing');
 
                         <!-- Logos-->
 
-                        <div class="col-12 col-lg-10 px-0 px-lg-3">
+                        <div class="col-12 col-lg-10 px-lg-3">
                             <div class="landing-floor2-top-section text-center px-3 px-lg-0">
                                 <p class="landing-section-title mb-0"><?php echo esc_html(get_field('_sogo_landing_floor2_logos_title')) ?></p>
                                 <p class="landing-floor2-subtitle mb-0"><?php echo esc_html(get_field('_sogo_landing_floor2_logos_subtitle')) ?></p>

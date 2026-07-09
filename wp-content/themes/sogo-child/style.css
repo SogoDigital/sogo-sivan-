@@ -2890,7 +2890,7 @@ ul#menu-primary-menu:before {
 }
 .home-desktop-floors .home-desktop-floor .home-desktop-floor-info .home-desktop-floor-subtitle {
   color: #23445A;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: 24px;
@@ -7064,6 +7064,8 @@ form div.wpcf7-mail-sent-ok {
   }
 }
 .plugin-nav {
+  opacity: 0;
+  transition: opacity 0.3s;
   margin-top: 30px;
   padding: 0;
   direction: ltr;
@@ -7128,6 +7130,9 @@ form div.wpcf7-mail-sent-ok {
 }
 .plugin-nav .active a {
   color: #ed1c24;
+}
+.plugin-nav.slick-initialized {
+  opacity: 1;
 }
 #post-category-select {
   display: block;
@@ -8156,6 +8161,14 @@ form div.wpcf7-mail-sent-ok {
   line-height: 150%;
   /* 27px */
 }
+#landing .landing-floor1 .landing-floor1-wrapper .landing-floor1-ronit-wrapper {
+  justify-content: flex-end;
+}
+@media (min-width: 1400px) {
+  #landing .landing-floor1 .landing-floor1-wrapper .landing-floor1-ronit-wrapper {
+    justify-content: flex-start;
+  }
+}
 #landing .landing-floor2 .landing-floor2-top-section {
   margin-bottom: 32px;
 }
@@ -8271,10 +8284,12 @@ form div.wpcf7-mail-sent-ok {
   font-size: 18px;
   font-weight: 500;
 }
-#landing .landing-floor3 .landing-floor3-wrapper .landing-image-column,
-#landing .landing-floor3 .landing-floor3-wrapper .landing-items-column {
-  height: 800px;
-  /* фиксированная высота */
+@media (min-width: 1200px) {
+  #landing .landing-floor3 .landing-floor3-wrapper .landing-image-column,
+  #landing .landing-floor3 .landing-floor3-wrapper .landing-items-column {
+    height: 800px;
+    /* фиксированная высота */
+  }
 }
 #landing .landing-floor3 .landing-floor3-wrapper .landing-image-column {
   display: flex;
@@ -8314,6 +8329,13 @@ form div.wpcf7-mail-sent-ok {
 #landing .landing-floor3 .landing-floor3-wrapper .landing-floor3-items .landing-floor3-item {
   padding: 24px;
   border-radius: 12px;
+}
+@media (max-width: 1199.98px) {
+  #landing .landing-floor3 .landing-floor3-wrapper .landing-floor3-items .landing-floor3-item[data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
 #landing .landing-floor3 .landing-floor3-wrapper .landing-floor3-items .landing-floor3-item .landing-floor3-item-icon {
   flex: none;

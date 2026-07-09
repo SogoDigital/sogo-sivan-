@@ -271,20 +271,27 @@
             prevArrow: '<i class="portfolio-slider-next fa fa-angle-right"></i>',
         });
 
-        $('.js-blog-cats-slider').slick({
-            rtl: true,
-            arrows: true,
-            dots: false,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            infinite: true,
-            centerMode: true,
-            variableWidth: true,
-            // nextArrow: $('.homepage-slider-next.homepage-testimonial-next'),
-            // prevArrow: $('.homepage-slider-prev.homepage-testimonial-prev'),
-            nextArrow: '<i class="blog-cat-slider-arrow blog-cat-next fa fa-angle-left"></i>',
-            prevArrow: '<i class="blog-cat-slider-arrow blog-cat-prev fa fa-angle-right"></i>',
-        });
+        $('.js-blog-cats-slider')
+            .on('init', function () {
+                if (typeof AOS !== 'undefined') {
+                    AOS.refresh();
+                }
+            })
+            .slick({
+                rtl: true,
+                arrows: true,
+                dots: false,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                centerMode: true,
+                variableWidth: true,
+                // nextArrow: $('.homepage-slider-next.homepage-testimonial-next'),
+                // prevArrow: $('.homepage-slider-prev.homepage-testimonial-prev'),
+                nextArrow: '<i class="blog-cat-slider-arrow blog-cat-next fa fa-angle-left"></i>',
+                prevArrow: '<i class="blog-cat-slider-arrow blog-cat-prev fa fa-angle-right"></i>',
+            });
+
 
         $('.js-logos-slider-ltr').slick({
             rtl: true,

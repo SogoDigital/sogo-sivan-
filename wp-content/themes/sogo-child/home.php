@@ -86,7 +86,7 @@ $blog_page = get_post($blog_page_id);
                     <?php $counter = 0; ?>
                     <?php while (have_posts()): the_post(); ?>
                         <?php set_query_var('counter', $counter); ?>
-                        <?php echo get_template_part('content', 'excerpt');; ?>
+                        <?php get_template_part('content', 'excerpt'); ?>
                         <?php $counter++; ?>
                     <?php endwhile; ?>
                 </div>

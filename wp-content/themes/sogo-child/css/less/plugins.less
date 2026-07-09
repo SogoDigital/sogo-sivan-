@@ -12,6 +12,8 @@
 }
 
 .plugin-nav {
+  opacity: 0;
+  transition: opacity 0.3s;
   //display: none;
   margin-top: 30px;
   padding: 0;
@@ -87,6 +89,9 @@
       color: @color-red;
     }
   }
+}
+.plugin-nav.slick-initialized {
+  opacity: 1;
 }
 
 #post-category-select{
