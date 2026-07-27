@@ -9,7 +9,7 @@ get_header('landing');
     <div id="landing">
         <?php if (get_field('_sogo_landing_floor1_show_hide') !== false): ?>
             <div class="landing-floor1">
-                <div class="p-3">
+                <div class="p-3 d-none d-lg-block">
                     <div class="landing-floor1-wrapper" style="background-image: url('<?php echo esc_url(get_field('_sogo_landing_floor1_bg')) ?>')">
                         <div class="landing-floor1-nofluid h-100">
                             <div class="container-fluid position-relative h-100">
@@ -46,6 +46,32 @@ get_header('landing');
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="landing-floor1-mobile d-lg-none">
+                    <div class="landing-floor1-mobile-lines">
+                        <?php echo wp_get_attachment_image(get_field('_sogo_landing_floor1_mobile_lines'), 'full', false, array('class' => 'img-fluid')); ?>
+                    </div>
+                    <div class="landing-floor1-mobile-stars">
+                        <?php echo wp_get_attachment_image(get_field('_sogo_landing_floor1_mobile_stars'), 'full', false, array('class' => 'img-fluid')); ?>
+                    </div>
+                    <div class="landing-floor1-mobile-sivan">
+                        <?php echo wp_get_attachment_image(get_field('_sogo_landing_floor1_mobile_sivan'), 'full', false, array('class' => 'img-fluid')); ?>
+                    </div>
+                    <div class="landing-floor1-mobile-content">
+                        <p class="landing-floor1-top-text"><?php echo esc_html(get_field('_sogo_landing_floor1_top_text')) ?></p>
+                        <div class="landing-floor1-divider"></div>
+                        <p class="landing-floor1-title"><?php echo esc_html(get_field('_sogo_landing_floor1_title')) ?></p>
+                        <div class="landing-floor1-divider"></div>
+                        <p class="landing-floor1-subtitle"><?php echo esc_html(get_field('_sogo_landing_floor1_subtitle')) ?></p>
+                        <a class="gradient-btn" href="<?php echo esc_url(get_field('_sogo_landing_floor1_button_link')) ?>" data-aos="zoom-in">
+                            <span class="gradient-btn-text">
+                                <?php echo esc_html(get_field('_sogo_landing_floor1_button_text')) ?>
+                            </span>
+                            <span class="gradient-btn-arrow">
+                                <?php echo wp_get_attachment_image(get_field('_sogo_landing_floor1_button_arrow'), 'full', false, array('class' => 'img-fluid')); ?>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
