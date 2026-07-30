@@ -8026,6 +8026,12 @@ form div.wpcf7-mail-sent-ok {
 .gradient-btn:hover {
   text-decoration: none;
 }
+.gradient-btn.is-sending,
+.gradient-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
 #landing {
   font-family: Rubik;
   padding-top: 97px;

@@ -668,6 +668,8 @@
             $form.addClass('invalid');
             return false;
         }
+
+        $form.find('.wpcf7-submit').prop('disabled', true).addClass('is-sending');
     });
 
     $(document).on('wpcf7beforesubmit', function(e) {
@@ -703,6 +705,7 @@
     $(document).on('wpcf7invalid wpcf7spam wpcf7mailfailed', function(event) {
         const $form = $(event.target);
         $form.removeClass('invalid');
+        $form.find('.wpcf7-submit').prop('disabled', false).removeClass('is-sending');
     });
 
 
