@@ -7517,11 +7517,11 @@ form div.wpcf7-mail-sent-ok {
   font-size: 18px;
   font-weight: 400;
   width: fit-content;
-  font-family: 'OpenSansHebrewCondensed';
   display: block;
 }
 .campaigne-floor-button:hover {
   text-decoration: none;
+  color: #FFF;
 }
 .campaigne-floor-button img {
   margin-right: 16px;
@@ -7530,38 +7530,38 @@ form div.wpcf7-mail-sent-ok {
   font-family: 'OpenSansHebrewCondensed';
   background-color: #f6f7f8;
 }
-.campaigne-page .campaigne-floor1 {
+.campaigne-floor1 {
   background-color: white;
 }
-.campaigne-page .campaigne-floor1 .video-container {
+.campaigne-floor1 .video-container {
   position: relative;
 }
-.campaigne-page .campaigne-floor1 .video-container .wp-video {
+.campaigne-floor1 .video-container .wp-video {
   width: 100% !important;
   position: relative;
   z-index: 1;
   margin: auto;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor1 .video-container .wp-video {
+  .campaigne-floor1 .video-container .wp-video {
     width: 100% !important;
   }
 }
-.campaigne-page .campaigne-floor1 .video-container .wp-video .full-width-video {
+.campaigne-floor1 .video-container .wp-video .full-width-video {
   width: 100%;
   max-width: 100%;
   height: auto;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor1 .video-container {
+  .campaigne-floor1 .video-container {
     height: 700px;
     overflow: hidden;
     position: relative;
   }
-  .campaigne-page .campaigne-floor1 .video-container .wp-video {
+  .campaigne-floor1 .video-container .wp-video {
     position: unset;
   }
-  .campaigne-page .campaigne-floor1 .video-container .wp-video .full-width-video {
+  .campaigne-floor1 .video-container .wp-video .full-width-video {
     position: absolute;
     top: 0%;
     left: 50%;
@@ -7569,16 +7569,16 @@ form div.wpcf7-mail-sent-ok {
     min-width: 100%;
   }
 }
-.campaigne-page .campaigne-floor1 .campaigne-floor1-wrapper {
+.campaigne-floor1 .campaigne-floor1-wrapper {
   padding-top: 48px;
   padding-bottom: 64px;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor1 .campaigne-floor1-wrapper {
+  .campaigne-floor1 .campaigne-floor1-wrapper {
     padding-top: 64px;
   }
 }
-.campaigne-page .campaigne-floor1 .campaigne-floor1-top {
+.campaigne-floor1 .campaigne-floor1-top {
   font-size: 48px;
   font-weight: normal;
   line-height: 1.1;
@@ -7588,11 +7588,11 @@ form div.wpcf7-mail-sent-ok {
   -webkit-text-fill-color: transparent;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor1 .campaigne-floor1-top {
+  .campaigne-floor1 .campaigne-floor1-top {
     font-size: 3.2vw;
   }
 }
-.campaigne-page .campaigne-floor1 .campaigne-floor1-title {
+.campaigne-floor1 .campaigne-floor1-title {
   font-size: 48px;
   font-weight: 800;
   line-height: 1.1;
@@ -7604,27 +7604,27 @@ form div.wpcf7-mail-sent-ok {
   text-align: center;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor1 .campaigne-floor1-title {
+  .campaigne-floor1 .campaigne-floor1-title {
     font-size: 3.2vw;
     text-align: start;
   }
 }
-.campaigne-page .campaigne-floor1 .campaigne-floor1-text {
+.campaigne-floor1 .campaigne-floor1-text {
   margin-bottom: 48px;
 }
-.campaigne-page .campaigne-floor1 .campaigne-floor1-text p {
+.campaigne-floor1 .campaigne-floor1-text p {
   color: #333;
   font-size: 20px;
   font-weight: normal;
   line-height: 1.2;
 }
-.campaigne-page .campaigne-floor1 .campaigne-floor1-text ul li {
+.campaigne-floor1 .campaigne-floor1-text ul li {
   color: #333;
   font-size: 20px;
   font-weight: normal;
   line-height: 1.2;
 }
-.campaigne-page .campaigne-floor1 .campaigne-floor1-button {
+.campaigne-floor1 .campaigne-floor1-button {
   border-radius: 100px;
   padding: 16px 32px;
   background: linear-gradient(88deg, #ED1D24 1%, #EE2A7B 34%, #8A5BA5 75%, #00ADDC 100%);
@@ -7637,17 +7637,17 @@ form div.wpcf7-mail-sent-ok {
   margin: 0 auto 3rem;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor1 .campaigne-floor1-button {
+  .campaigne-floor1 .campaigne-floor1-button {
     margin: 0 0 3rem 0;
   }
 }
-.campaigne-page .campaigne-floor1 .campaigne-floor1-button:hover {
+.campaigne-floor1 .campaigne-floor1-button:hover {
   text-decoration: none;
 }
-.campaigne-page .campaigne-floor1 .campaigne-floor1-button img {
+.campaigne-floor1 .campaigne-floor1-button img {
   margin-right: 16px;
 }
-.campaigne-page .campaigne-floor1 .campaigne-floor1-arrow-down {
+.campaigne-floor1 .campaigne-floor1-arrow-down {
   width: 30px;
   position: absolute;
   bottom: 10px;
@@ -7656,23 +7656,23 @@ form div.wpcf7-mail-sent-ok {
   margin: auto;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor1 .campaigne-floor1-arrow-down {
+  .campaigne-floor1 .campaigne-floor1-arrow-down {
     bottom: 25px;
   }
 }
-.campaigne-page .campaigne-floor2 {
+.campaigne-floor2 {
   background-color: white;
   background: linear-gradient(180deg, #F6F7F8 0%, #FFF 24.57%);
   padding-top: 48px;
   padding-bottom: 48px;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor2 {
+  .campaigne-floor2 {
     padding-top: 64px;
     padding-bottom: 0;
   }
 }
-.campaigne-page .campaigne-floor2 .campaigne-floor2-title {
+.campaigne-floor2 .campaigne-floor2-title {
   font-size: 32px;
   font-weight: 800;
   line-height: 1;
@@ -7682,31 +7682,31 @@ form div.wpcf7-mail-sent-ok {
   -webkit-text-fill-color: transparent;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor2 .campaigne-floor2-title {
+  .campaigne-floor2 .campaigne-floor2-title {
     font-size: 48px;
   }
 }
-.campaigne-page .campaigne-floor2 .campaigne-floor2-subtitle {
+.campaigne-floor2 .campaigne-floor2-subtitle {
   font-size: 20px;
   margin-bottom: 64px;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor2 .campaigne-floor2-subtitle {
+  .campaigne-floor2 .campaigne-floor2-subtitle {
     font-size: 22px;
   }
 }
-.campaigne-page .campaigne-floor3 {
+.campaigne-floor3 {
   background-color: #f6f7f8;
   padding-top: 48px;
   padding-bottom: 48px;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor3 {
+  .campaigne-floor3 {
     padding-top: 64px;
     padding-bottom: 64px;
   }
 }
-.campaigne-page .campaigne-floor3 .campaigne-floor3-title {
+.campaigne-floor3 .campaigne-floor3-title {
   font-size: 32px;
   font-weight: 800;
   line-height: 1;
@@ -7716,20 +7716,20 @@ form div.wpcf7-mail-sent-ok {
   -webkit-text-fill-color: transparent;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor3 .campaigne-floor3-title {
+  .campaigne-floor3 .campaigne-floor3-title {
     font-size: 48px;
   }
 }
-.campaigne-page .campaigne-floor3 .campaigne-floor3-subtitle {
+.campaigne-floor3 .campaigne-floor3-subtitle {
   margin-bottom: 64px;
   font-size: 20px;
 }
 @media (min-width: 992px) {
-  .campaigne-page .campaigne-floor3 .campaigne-floor3-subtitle {
+  .campaigne-floor3 .campaigne-floor3-subtitle {
     font-size: 22px;
   }
 }
-.campaigne-page .campaigne-floor3 .campaigne-floor3-project {
+.campaigne-floor3 .campaigne-floor3-project {
   border-radius: 20px;
   background: #FFF;
   box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.08);
@@ -7737,7 +7737,7 @@ form div.wpcf7-mail-sent-ok {
   display: block;
   height: 100%;
 }
-.campaigne-page .campaigne-floor3 .campaigne-floor3-project img {
+.campaigne-floor3 .campaigne-floor3-project img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -7976,22 +7976,6 @@ form div.wpcf7-mail-sent-ok {
 }
 .campaigne-floor5 .faq-content .questions-accord .panel .panel-body ul li {
   font-size: 18px;
-}
-.campaigne-floor-editor {
-  background-color: #f6f7f8;
-}
-.campaigne-floor-editor .campaigne-floor-editor-wrapper {
-  margin: 0 auto;
-  max-width: 900px;
-  position: relative;
-  width: 100%;
-}
-.campaigne-floor-editor .campaigne-floor-editor-wrapper .single-article-wrapper {
-  margin: 0;
-}
-.campaigne-floor-editor .campaigne-floor-editor-wrapper .single-article-wrapper .entry-content {
-  border: 0;
-  padding: 0;
 }
 .gradient-btn {
   padding: 24px 48px;

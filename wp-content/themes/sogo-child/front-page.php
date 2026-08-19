@@ -7,48 +7,6 @@ get_header();
 
     <section id="homepage-floor1">
         <?php echo do_shortcode('[rev_slider alias="slider-1"][/rev_slider]');?>
-<!--        <div class="homepage-floor1-slider js-homepage-floor1-slider h-100">-->
-<!--            --><?php //while ( have_rows( '_sogo_mainpage_floor1_slider' ) ) : the_row(); ?>
-<!--                <div class="homepage-floor1-slide-wrapper h-100 position-relative">-->
-<!--                    <div class="homepage-floor1-slide-info">-->
-<!--                        <h2 class="homepage-floor1-slide-title">--><?php //echo get_sub_field('title')?><!--</h2>-->
-<!--                        <h3 class="homepage-floor1-slide-subtitle">--><?php //echo get_sub_field('subtitle')?><!--</h3>-->
-<!--                        <div class="homepage-floor1-slide-button">-->
-<!--                            <a class="" href="--><?php //echo get_sub_field('button_link')?><!--">--><?php //echo get_sub_field('button_text')?><!--</a>-->
-<!--                            --><?php //echo wp_get_attachment_image(get_field('_sogo_mainpage_floor1_slider_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
-<!---->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    --><?php //echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid homepage-floor1-image')) ; ?>
-<!--                    --><?php //echo wp_get_attachment_image(get_sub_field('image_mobile'), 'full', false, array('class'=> 'img-fluid homepage-floor1-image-mobile')) ; ?>
-<!---->
-<!--                </div>-->
-<!--            --><?php //endwhile; ?>
-<!--        </div>-->
-    </section>
-
-
-<!--    <section id="home-floor-1" class="section floor active vertical-middle d-flex justify-content-center align-items-center">-->
-<!---->
-<!---->
-<!---->
-<!--        <div class="">-->
-<!--            --><?php //if (!wp_is_mobile()): ?>
-<!--                <video loop muted autoplay class="home-floor1-video hidden-xs hidden-sm">-->
-<!--                    <source src="--><?php //echo get_stylesheet_directory_uri() ?><!--/images/main-video.mp4" type="video/mp4">-->
-<!--                </video>-->
-<!--            --><?php //else: ?>
-<!--                <video playsinline loop muted autoplay class="home-floor1-video">-->
-<!--                    <source src="--><?php //echo get_stylesheet_directory_uri() ?><!--/images/main-video-mobile.mp4" type="video/mp4">-->
-<!--                </video>-->
-<!--            --><?php //endif; ?>
-<!--        </div>-->
-<!--        <a href="#home-floor-7" style="cursor: pointer;" class="call-to-action hidden-xs hidden-sm">-->
-<!--            <span class="scroll-to animated bounce infinite">-->
-<!--                <span class="fa fa-angle-down" aria-hidden="true"></span>-->
-<!--            </span>-->
-<!--        </a>-->
-<!---->
         <footer id="customers-logos" class="hidden-xs hidden-sm">
             <ul class="flex-slider">
                 <?php
@@ -63,9 +21,7 @@ get_header();
                 ?>
             </ul>
         </footer>
-<!---->
-<!--    </section>-->
-    <!-- #home-floor-1 -->
+    </section>
 
     <section id="home-floor-7"
              class="section floor text-center cover fp-auto-height vertical-top">
@@ -114,11 +70,6 @@ get_header();
                 </a>
             </div>
         </div>
-        <!--        <div class="continue-down hidden-xs hidden-sm">-->
-        <!--         <span class="scroll-to continue" data-target="end">-->
-        <!--             <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>-->
-        <!--         </span>-->
-        <!--        </div>-->
     </section> <!-- #home-floor-7 -->
 
 
@@ -171,7 +122,6 @@ get_header();
 </div>
 
 <div class="campaigne-floor5 container-fluid">
-
     <div class="row justify-content-center">
         <div class="col-12 col-lg-12">
             <div class="row justify-content-center d-flex">
@@ -184,14 +134,6 @@ get_header();
     </div>
 
     <div class="row justify-content-center d-flex">
-<!--        <div class="col-12 col-lg-6">-->
-<!--            <div class="row justify-content-center d-flex">-->
-<!--                <div class="col-12 col-lg-8">-->
-<!--                    <p class="campaigne-floor5-title text-center">--><?php //echo get_field('_sogo_home_faq_title')?><!--</p>-->
-<!--                    <p class="campaigne-floor5-subtitle text-center">--><?php //echo get_field('_sogo_home_faq_subtitle')?><!--</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
         <div class="col-12 col-lg-8">
             <?php
             $questions = array();
@@ -227,22 +169,6 @@ get_header();
                     $counter++;
                 endwhile;
             endif; ?>
-        </div>
-    </div>
-</div>
-
-<div class="campaigne-floor-editor">
-    <div class="campaigne-floor-editor-wrapper">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <div class="single-article-wrapper">
-                        <div class="entry-content">
-                            <?php echo get_field('_sogo_home_editor_content') ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -290,9 +216,9 @@ get_header();
         <div class="container-fluid">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-8">
-                    <div class="more-info-text"> 
+                    <div class="more-info-text">
                          <?php echo get_field('_sogo_home_more_info') ?>
-                    </div>  
+                    </div>
                 </div>
             </div>
         </div>

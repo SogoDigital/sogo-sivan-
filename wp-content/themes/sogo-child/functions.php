@@ -20,6 +20,8 @@ function sogo_child_theme_setup()
 {
     // load child text domain
     load_child_theme_textdomain('sogoc', get_stylesheet_directory() . '/languages');
+
+
     // load external files
     $sogo_includes = array(
         'admin/options.php',   // Utility functions
@@ -34,6 +36,8 @@ function sogo_child_theme_setup()
 }
 
 add_action('after_setup_theme', 'sogo_child_theme_setup');
+
+
 
 
 
@@ -73,9 +77,9 @@ function sogo_extra_class($key){
     }
 }
 
-/**
+/*
  * remove editor from pages
- */
+ *
 function hide_editor () {
 
     // Get the Post ID.
@@ -93,6 +97,7 @@ function hide_editor () {
 
 }
 add_action('admin_init', 'hide_editor');
+*/
 
 
 
