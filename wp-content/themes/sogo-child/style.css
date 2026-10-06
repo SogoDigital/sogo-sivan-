@@ -15,6 +15,7 @@ Text Domain: sogo
   font-style: italic;
   font-weight: 400;
   font-stretch: normal;
+  font-display: swap;
   src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWVAexQ.ttf) format('truetype');
 }
 @font-face {
@@ -22,6 +23,7 @@ Text Domain: sogo
   font-style: italic;
   font-weight: 600;
   font-stretch: normal;
+  font-display: swap;
   src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjWVAexQ.ttf) format('truetype');
 }
 @font-face {
@@ -29,6 +31,7 @@ Text Domain: sogo
   font-style: normal;
   font-weight: 400;
   font-stretch: normal;
+  font-display: swap;
   src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVc.ttf) format('truetype');
 }
 @font-face {
@@ -36,6 +39,7 @@ Text Domain: sogo
   font-style: normal;
   font-weight: 600;
   font-stretch: normal;
+  font-display: swap;
   src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4gaVc.ttf) format('truetype');
 }
 /*  variables.less  */
@@ -2040,6 +2044,7 @@ a.scrollup:hover:before {
 /* end flip-mobile-btn.less */
 /* fonts-style.less */
 @font-face {
+  font-display: swap;
   font-family: 'Open Sans Hebrew Regular';
   src: url('css/fonts/open_sans_hebrew/opensanshebrew-regular-webfont.eot');
   src: url('css/fonts/open_sans_hebrew/opensanshebrew-regular-webfont.eot?#iefix') format('embedded-opentype'), url('css/fonts/open_sans_hebrew/opensanshebrew-regular-webfont.woff') format('woff'), url('css/fonts/open_sans_hebrew/opensanshebrew-regular-webfont.ttf') format('truetype'), url('css/fonts/open_sans_hebrew/opensanshebrew-regular-webfont.svg#open_sans_hebrewregular') format('svg');
@@ -2047,6 +2052,7 @@ a.scrollup:hover:before {
   font-style: normal;
 }
 @font-face {
+  font-display: swap;
   font-family: 'Open Sans Hebrew Regular';
   src: url('css/fonts/open_sans_hebrew/opensanshebrew-light-webfont.eot');
   src: url('css/fonts/open_sans_hebrew/opensanshebrew-light-webfont.eot?#iefix') format('embedded-opentype'), url('css/fonts/open_sans_hebrew/opensanshebrew-light-webfont.woff') format('woff'), url('css/fonts/open_sans_hebrew/opensanshebrew-light-webfont.ttf') format('truetype'), url('css/fonts/open_sans_hebrew/opensanshebrew-light-webfont.svg#open_sans_hebrewlight') format('svg');
@@ -2054,6 +2060,7 @@ a.scrollup:hover:before {
   font-style: normal;
 }
 @font-face {
+  font-display: swap;
   font-family: 'Open Sans Hebrew Regular';
   src: url('css/fonts/open_sans_hebrew/opensanshebrew-lightitalic-webfont.eot');
   src: url('css/fonts/open_sans_hebrew/opensanshebrew-lightitalic-webfont.eot?#iefix') format('embedded-opentype'), url('css/fonts/open_sans_hebrew/opensanshebrew-lightitalic-webfont.woff') format('woff'), url('fonts/open_sans_hebrew/opensanshebrew-lightitalic-webfont.ttf') format('truetype'), url('fonts/open_sans_hebrew/opensanshebrew-lightitalic-webfont.svg#open_sans_hebrewlight_italic') format('svg');
@@ -2061,6 +2068,7 @@ a.scrollup:hover:before {
   font-style: italic;
 }
 @font-face {
+  font-display: swap;
   font-family: 'Open Sans Hebrew Regular';
   src: url('css/fonts/open_sans_hebrew/opensanshebrew-italic-webfont.eot');
   src: url('css/fonts/open_sans_hebrew/opensanshebrew-italic-webfont.eot?#iefix') format('embedded-opentype'), url('css/fonts/open_sans_hebrew/opensanshebrew-italic-webfont.woff') format('woff'), url('css/fonts/open_sans_hebrew/opensanshebrew-italic-webfont.ttf') format('truetype'), url('css/fonts/open_sans_hebrew/opensanshebrew-italic-webfont.svg#open_sans_hebrewitalic') format('svg');
@@ -2068,6 +2076,7 @@ a.scrollup:hover:before {
   font-style: italic;
 }
 @font-face {
+  font-display: swap;
   font-family: 'Open Sans Hebrew Regular';
   src: url('css/fonts/open_sans_hebrew/opensanshebrew-bold-webfont.eot');
   src: url('css/fonts/open_sans_hebrew/opensanshebrew-bold-webfont.eot?#iefix') format('embedded-opentype'), url('css/fonts/open_sans_hebrew/opensanshebrew-bold-webfont.woff') format('woff'), url('css/fonts/open_sans_hebrew/opensanshebrew-bold-webfont.ttf') format('truetype'), url('css/fonts/open_sans_hebrew/opensanshebrew-bold-webfont.svg#open_sans_hebrewbold') format('svg');
@@ -2075,6 +2084,7 @@ a.scrollup:hover:before {
   font-style: normal;
 }
 @font-face {
+  font-display: swap;
   font-family: 'Open Sans Hebrew Regular';
   src: url('css/fonts/open_sans_hebrew/opensanshebrew-bolditalic-webfont.eot');
   src: url('css/fonts/open_sans_hebrew/opensanshebrew-bolditalic-webfont.eot?#iefix') format('embedded-opentype'), url('css/fonts/open_sans_hebrew/opensanshebrew-bolditalic-webfont.woff') format('woff'), url('css/fonts/open_sans_hebrew/opensanshebrew-bolditalic-webfont.ttf') format('truetype'), url('css/fonts/open_sans_hebrew/opensanshebrew-bolditalic-webfont.svg#open_sans_hebrewbold_italic') format('svg');
@@ -2082,6 +2092,7 @@ a.scrollup:hover:before {
   font-style: italic;
 }
 @font-face {
+  font-display: swap;
   font-family: 'Open Sans Hebrew Regular';
   src: url('css/fonts/open_sans_hebrew/opensanshebrew-extrabold-webfont.eot');
   src: url('css/fonts/open_sans_hebrew/opensanshebrew-extrabold-webfont.eot?#iefix') format('embedded-opentype'), url('css/fonts/open_sans_hebrew/opensanshebrew-extrabold-webfont.woff') format('woff'), url('css/fonts/open_sans_hebrew/opensanshebrew-extrabold-webfont.ttf') format('truetype'), url('css/fonts/open_sans_hebrew/opensanshebrew-extrabold-webfont.svg#open_sans_hebrewextra_bold') format('svg');
@@ -2090,6 +2101,7 @@ a.scrollup:hover:before {
 }
 /* Generated by Font Squirrel (http://www.fontsquirrel.com) on May 4, 2014 */
 @font-face {
+  font-display: swap;
   font-family: 'Open Sans Hebrew Regular';
   src: url('css/fonts/open_sans_hebrew/opensanshebrew-extrabolditalic-webfont.eot');
   src: url('css/fonts/open_sans_hebrew/opensanshebrew-extrabolditalic-webfont.eot?#iefix') format('embedded-opentype'), url('css/fonts/open_sans_hebrew/opensanshebrew-extrabolditalic-webfont.woff') format('woff'), url('css/fonts/open_sans_hebrew/opensanshebrew-extrabolditalic-webfont.ttf') format('truetype'), url('css/fonts/open_sans_hebrew/opensanshebrew-extrabolditalic-webfont.svg#open_sans_hebrewXBdIt') format('svg');
@@ -2098,6 +2110,7 @@ a.scrollup:hover:before {
 }
 /* OpenSansHebrewCondensed-400 */
 @font-face {
+  font-display: swap;
   font-family: 'OpenSansHebrewCondensed';
   font-style: normal;
   font-weight: 400;
@@ -2106,6 +2119,7 @@ a.scrollup:hover:before {
 }
 /* OpenSansHebrewCondensed-light */
 @font-face {
+  font-display: swap;
   font-family: 'OpenSansHebrewCondensed';
   font-style: normal;
   font-weight: 300;
@@ -2114,6 +2128,7 @@ a.scrollup:hover:before {
 }
 /* OpenSansHebrewCondensed-extra-bold */
 @font-face {
+  font-display: swap;
   font-family: 'OpenSansHebrewCondensed';
   font-style: normal;
   font-weight: 900;
@@ -2122,6 +2137,7 @@ a.scrollup:hover:before {
 }
 /* OpenSansHebrewCondensed-Bold */
 @font-face {
+  font-display: swap;
   font-family: 'OpenSansHebrewCondensed';
   font-style: normal;
   font-weight: 700;
@@ -6887,6 +6903,7 @@ form div.wpcf7-mail-sent-ok {
   backface-visibility: hidden;
 }
 .img-box img,
+.img-box video,
 .info-box img {
   display: block;
   position: relative;
@@ -7008,6 +7025,13 @@ form div.wpcf7-mail-sent-ok {
   opacity: 1;
 }
 /* end zoom-in-effect.less */
+.img-box video {
+  object-fit: cover;
+  max-width: none;
+  width: calc(100% + 6px);
+  margin: -3px;
+  clip-path: inset(2px);
+}
 /* case-study.less */
 #case-floor-1 {
   background-image: url("images/case-floor-1.jpg");
@@ -7256,6 +7280,11 @@ form div.wpcf7-mail-sent-ok {
   top: -10px;
 }
 /* end plugins.less */
+/* Slider Revolution 7 parks its font-test box at left:-1500px; on RTL pages that overflow is scrollable (Firefox) */
+.rtl sr7-fonttest-wrap {
+  left: auto !important;
+  right: -1500px;
+}
 #floor1 {
   padding: 6rem 4rem 0rem;
   background-repeat: no-repeat;

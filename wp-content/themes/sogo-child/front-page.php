@@ -7,6 +7,7 @@ get_header();
 
     <section id="homepage-floor1">
         <?php echo do_shortcode('[rev_slider alias="slider-1"][/rev_slider]');?>
+        <?php if ( ! wp_is_mobile() ) : // hidden on mobile anyway, skip loading the logos ?>
         <footer id="customers-logos" class="hidden-xs hidden-sm">
             <ul class="flex-slider">
                 <?php
@@ -21,6 +22,7 @@ get_header();
                 ?>
             </ul>
         </footer>
+        <?php endif; ?>
     </section>
 
     <section id="home-floor-7"
@@ -76,7 +78,7 @@ get_header();
     <div class="home-desktop-floors">
         <?php $counter = 0; ?>
         <?php while (have_rows("_sogo_home_desktop_floors")) : the_row(); ?>
-            <section class="home-desktop-floor" style="background-image: url('<?php echo get_sub_field('background_image')?>'); z-index: <?php echo $counter + 1; ?>;">
+            <section class="home-desktop-floor" data-lazy-bg="<?php echo esc_url(get_sub_field('background_image'))?>" style="z-index: <?php echo $counter + 1; ?>;">
             <div class="container-fluid h-100">
                 <div class="row h-100">
                     <div class="h-100 d-flex align-items-center <?php echo ($counter%2) ? 'col-md-5 col-lg-4 col-md-offset-7' : 'col-md-5 col-lg-4 col-md-offset-1'; ?>">
@@ -86,11 +88,11 @@ get_header();
                             <div class="d-flex align-items-center justify-content-start" data-aos="fade-up" data-aos-duration="1000">
                                 <a class="campaigne-floor-button m-auto" href="<?php echo get_sub_field('gradient_button_link')?>">
                                     <span><?php echo get_sub_field('gradient_button_text')?></span>
-                                    <?php echo wp_get_attachment_image(get_field('_sogo_home_mobile_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+                                    <?php echo wp_get_attachment_image(get_field('_sogo_home_mobile_arrow'), 'full', false, array('class'=> 'img-fluid', 'loading' => 'lazy')) ; ?>
                                 </a>
                                 <a class="home-whatsapp-button m-auto" href="<?php echo get_sub_field('whatsapp_button_link')?>">
                                     <span><?php echo get_sub_field('whatsapp_button_text')?></span>
-                                    <?php echo wp_get_attachment_image(get_field('_sogo_home_mobile_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+                                    <?php echo wp_get_attachment_image(get_field('_sogo_home_mobile_arrow'), 'full', false, array('class'=> 'img-fluid', 'loading' => 'lazy')) ; ?>
                                 </a>
                             </div>
 
@@ -110,11 +112,11 @@ get_header();
                 <p class="home-mobile-floor-title"><?php echo get_sub_field('title')?></p>
                 <p class="home-mobile-floor-subtitle"><?php echo get_sub_field('subtitle')?></p>
             </div>
-            <?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid homepage-mobile-floor-image')) ; ?>
+            <?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid homepage-mobile-floor-image', 'loading' => 'lazy')) ; ?>
             <div class="home-mobile-floor-button">
                 <a class="d-flex justify-content-center align-items-center" href="<?php echo get_sub_field('button_link')?>">
                     <span><?php echo get_sub_field('button_text')?></span>
-                    <?php echo wp_get_attachment_image(get_field('_sogo_home_mobile_arrow'), 'full', false, array('class'=> 'img-fluid')) ; ?>
+                    <?php echo wp_get_attachment_image(get_field('_sogo_home_mobile_arrow'), 'full', false, array('class'=> 'img-fluid', 'loading' => 'lazy')) ; ?>
                 </a>
             </div>
         </div>

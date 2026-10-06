@@ -13,12 +13,26 @@
                 'gtm.start':
                     new Date().getTime(), event: 'gtm.js'
             });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
+            // Performance: load GTM on first real user interaction, or 5s after window load.
+            // No 'scroll': scripts (fullPage, sliders) fire it without a user, e.g. in Lighthouse.
+            var loaded = false,
+                events = ['touchstart', 'pointerdown', 'wheel', 'keydown', 'mousemove'];
+            function addScript(src) {
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s);
+                j.async = true;
+                j.src = src;
+                f.parentNode.insertBefore(j, f);
+            }
+            function load() {
+                if (loaded) return;
+                loaded = true;
+                events.forEach(function (e) { w.removeEventListener(e, load, {passive: true}); });
+                var dl = l != 'dataLayer' ? '&l=' + l : '';
+                addScript('https://www.googletagmanager.com/gtm.js?id=' + i + dl);
+            }
+            events.forEach(function (e) { w.addEventListener(e, load, {passive: true}); });
+            w.addEventListener('load', function () { setTimeout(load, 5000); });
         })(window, document, 'script', 'dataLayer', 'GTM-PVP2NT');</script>
     <!-- End Google Tag Manager -->
 
@@ -81,7 +95,7 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
                             <?php endwhile; ?>
 
                             <div class="contact-header position-relative">
-                                <a href="<?php echo get_field('_sogo_header_contact_link', 'option')?>">
+                                <a data-toggle="modal" data-target="#popup-form" href="#" title="<?php _e( 'Request for quotation', 'sogoc' ) ?>">
 <!--                                    <div class="contact-header-inner d-flex justify-content-center align-items-center">-->
                                         <span class="margin-bottom-0">צרו קשר</span>
 <!--                                    </div>-->

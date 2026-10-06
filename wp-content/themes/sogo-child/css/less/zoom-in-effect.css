@@ -32,6 +32,7 @@
   backface-visibility: hidden;
 }
 .img-box img,
+.img-box video,
 .info-box img {
   display: block;
   position: relative;
@@ -152,3 +153,11 @@
   opacity: 1;
 }
 /* end zoom-in-effect.less */
+
+.img-box video {
+  object-fit: cover;
+  max-width: none;
+  width: calc(100% + 6px);
+  margin: -3px;
+  clip-path: inset(2px);
+}

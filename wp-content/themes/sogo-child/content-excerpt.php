@@ -9,7 +9,7 @@ $delay   = ($counter % 4) * 200;
     <div class="plugin-box">
         <div itemscope itemtype="http://schema.org/CreativeWork" class="thumbnail-wrapper">
             <a href="<?php the_permalink($post_id)?>" title="<?php echo esc_attr(get_the_title($post_id))?>">
-                <img itemprop="image" src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post_id)) ?>" alt="<?php echo esc_attr(get_the_title($post_id))?>">
+                <img itemprop="image" loading="lazy" decoding="async" src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post_id)) ?>" alt="<?php echo esc_attr(get_the_title($post_id))?>">
             </a>
         </div>
         <div class="publish-wrapper">

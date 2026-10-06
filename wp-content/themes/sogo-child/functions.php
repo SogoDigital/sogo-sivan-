@@ -44,8 +44,10 @@ add_action('after_setup_theme', 'sogo_child_theme_setup');
 function sogo_child_scripts()
 {
     if (!is_admin()) {
-        wp_enqueue_script('aos-script', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array('jquery'), '', true);
-        wp_enqueue_style( 'aos-style', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array(), uniqid() );
+        $dir = get_stylesheet_directory();
+        $uri = get_stylesheet_directory_uri();
+        wp_enqueue_script('aos-script', $uri . '/vendor/aos/aos.js', array('jquery'), '2.3.1', true);
+        wp_enqueue_style( 'aos-style', $uri . '/vendor/aos/aos.css', array(), '2.3.1' );
 
         add_action( 'wp_enqueue_scripts', 'sogo_load_bxslider' );
 //        add_action( 'wp_enqueue_scripts', 'sogo_load_slickslider' );
@@ -60,9 +62,9 @@ function sogo_child_scripts()
                 'prev' => __("click to move to previous slide","sogoc"),
 
         ));
-	    wp_enqueue_style( 'sogo-style', get_stylesheet_uri(), array(), uniqid() );
-        wp_enqueue_style('slickslider-css', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', array(), '', 'all');
-        wp_enqueue_script('slickslider', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), '', true);
+	    wp_enqueue_style( 'sogo-style', get_stylesheet_uri(), array(), filemtime( $dir . '/style.css' ) );
+        wp_enqueue_style('slickslider-css', $uri . '/vendor/slick/slick.css', array(), '1.8.1', 'all');
+        wp_enqueue_script('slickslider', $uri . '/vendor/slick/slick.min.js', array('jquery'), '1.8.1', true);
 
     }
 }
@@ -315,3 +317,104 @@ add_action('admin_init', function() {
         });
     }
 });
+// Performance: load Google reCAPTCHA (CF7) only when the visitor interacts with a form.
+// A stub grecaptcha queues ready() callbacks via Google's documented ___grecaptcha_cfg.fns,
+// and execute() (called by CF7 on change/submit) triggers the real api.js load.
+add_filter('script_loader_tag', function ($tag, $handle, $src) {
+    if ($handle !== 'google-recaptcha' || is_admin()) {
+        return $tag;
+    }
+    ob_start(); ?>
+    <script id="google-recaptcha-lazy">
+        (function (w, d, src) {
+            var cfg = w.___grecaptcha_cfg = w.___grecaptcha_cfg || {};
+            cfg.fns = cfg.fns || [];
+            var loaded = false;
+            function load() {
+                if (loaded) return;
+                loaded = true;
+                var s = d.createElement('script');
+                s.src = src;
+                s.async = true;
+                d.head.appendChild(s);
+            }
+            var stubExecute = function (key, opts) {
+                load();
+                return new Promise(function (resolve, reject) {
+                    cfg.fns.push(function () {
+                        if (w.grecaptcha.execute === stubExecute) {
+                            return reject(new Error('reCAPTCHA failed to load'));
+                        }
+                        w.grecaptcha.execute(key, opts).then(resolve, reject);
+                    });
+                });
+            };
+            w.grecaptcha = {
+                ready: function (cb) { cfg.fns.push(cb); },
+                execute: stubExecute
+            };
+            function onInteract(e) {
+                var t = e.target;
+                if (t && t.closest && t.closest('form.wpcf7-form, [data-target="#popup-form"]')) {
+                    load();
+                }
+            }
+            ['focusin', 'pointerdown', 'touchstart'].forEach(function (type) {
+                d.addEventListener(type, onInteract, {passive: true, capture: true});
+            });
+        })(window, document, <?php echo wp_json_encode($src); ?>);
+    </script>
+    <?php
+    return ob_get_clean();
+}, 10, 3);
+
+// Performance: Simple Floating Menu loads 5 icon fonts, only icofont (WhatsApp icon) is used.
+add_action('wp_enqueue_scripts', function () {
+    foreach (array('fontawesome-6.3.0', 'eleganticons', 'essentialicon', 'materialdesignicons', 'sfm-fonts') as $handle) {
+        wp_dequeue_style($handle);
+    }
+
+    // Performance: Font Awesome 4 (sogo-accessibility / parent theme) from the theme instead of maxcdn.
+    if (wp_style_is('fontawsome', 'enqueued')) {
+        wp_deregister_style('fontawsome');
+        wp_enqueue_style('fontawsome', get_stylesheet_directory_uri() . '/vendor/font-awesome/css/font-awesome.min.css', array(), '4.6.3');
+    }
+}, 100);
+
+// Performance: ShareThis is render-blocking in <head>, load it deferred.
+add_filter('script_loader_tag', function ($tag, $handle) {
+    if ($handle === 'share-this-share-buttons-mu' && strpos($tag, ' defer') === false) {
+        $tag = str_replace('<script ', '<script defer ', $tag);
+    }
+    return $tag;
+}, 10, 2);
+
+// Performance: lazy background images. Elements with data-lazy-bg get their background
+// only when they come within 300px of the viewport (desktop floors, footer form).
+add_action('wp_footer', function () { ?>
+    <script>
+        (function () {
+            var els = document.querySelectorAll('[data-lazy-bg]');
+            function show(el) {
+                var url = el.getAttribute('data-lazy-bg');
+                if (url) {
+                    el.style.backgroundImage = 'url("' + url + '")';
+                }
+                el.removeAttribute('data-lazy-bg');
+            }
+            if (!('IntersectionObserver' in window)) {
+                Array.prototype.forEach.call(els, show);
+                return;
+            }
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        io.unobserve(entry.target);
+                        show(entry.target);
+                    }
+                });
+            }, {rootMargin: '300px 0px'});
+            Array.prototype.forEach.call(els, function (el) { io.observe(el); });
+        })();
+    </script>
+<?php }, 5);

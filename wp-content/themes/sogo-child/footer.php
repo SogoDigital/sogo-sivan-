@@ -1,7 +1,7 @@
 <?php echo sogo_option( 'google_remarketing' ) ?>
 
 <?php if(!(is_page_template('page-contact.php') || is_page_template('page-thanks.php') || is_page_template('page-thanks-sivan.php'))) { ?>
-    <div id="footer-form" class="footer-form" style="background-image: url(<?php echo get_field('_sogo_footer_bg', 'option'); ?>); ">
+    <div id="footer-form" class="footer-form" data-lazy-bg="<?php echo esc_url(get_field('_sogo_footer_bg', 'option')); ?>">
         <div class="footer-form-wrapper">
 
             <div class="footer-form-circle text-center">
@@ -129,10 +129,10 @@
 </a>
 
 <a class="footer-tell-us-mobile d-block d-lg-none" data-toggle="modal" data-target="#popup-form" href="#" title="<?php _e( 'Request for quotation', 'sogoc' ) ?>">
-    <div class=""><?php echo wp_get_attachment_image(get_field('_sogo_footer_tell_us_mobile', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?></div>
+    <div class=""><?php echo wp_get_attachment_image(get_field('_sogo_footer_tell_us_mobile', 'option'), 'full', false, array('class'=> 'img-fluid', 'loading' => 'eager')) ; ?></div>
 </a>
 <a class="rfq-btn d-none d-lg-block" data-toggle="modal" data-target="#popup-form" href="#" title="<?php _e( 'Request for quotation', 'sogoc' ) ?>">
-    <div class="footer-tell-us-image"><?php echo wp_get_attachment_image(get_field('_sogo_footer_tell_us_image', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?></div>
+    <div class="footer-tell-us-image"><?php echo wp_get_attachment_image(get_field('_sogo_footer_tell_us_image', 'option'), 'full', false, array('class'=> 'img-fluid', 'loading' => 'eager', 'fetchpriority' => 'high')) ; ?></div>
     <div class="footer-tell-us-image-hover"><?php echo wp_get_attachment_image(get_field('_sogo_footer_tell_us_image_hover', 'option'), 'full', false, array('class'=> 'img-fluid')) ; ?></div>
 </a>
 
