@@ -6,7 +6,48 @@ get_header();
 
 
     <section id="homepage-floor1">
-        <?php echo do_shortcode('[rev_slider alias="slider-1"][/rev_slider]');?>
+        <?php
+        $slides = get_field('_sogo_mainpage_floor1_slider');
+        if ($slides) : ?>
+            <div class="homepage-floor1-slider js-homepage-floor1-slider">
+                <?php foreach ($slides as $i => $slide) :
+                    // First slide is the LCP: real H1, loaded eagerly with high priority. The rest load after window load.
+                    $first     = (0 === $i);
+                    $title_tag = $first ? 'h1' : 'h2';
+                    $alt       = get_post_meta($slide['image'], '_wp_attachment_image_alt', true) ?: wp_strip_all_tags($slide['title']);
+                    $mobile    = $slide['image_mobile'] ? (wp_get_attachment_image_srcset($slide['image_mobile'], 'full') ?: wp_get_attachment_image_url($slide['image_mobile'], 'full')) : '';
+                    ?>
+                    <div class="homepage-floor1-slide-wrapper position-relative<?php echo $first ? ' is-active' : '' ?>"<?php echo $first ? '' : ' inert' ?>>
+                        <picture>
+                            <?php if ($mobile) : ?>
+                                <source media="(max-width: 991px)" srcset="<?php echo esc_attr($mobile) ?>" sizes="100vw">
+                            <?php endif; ?>
+                            <?php echo wp_get_attachment_image($slide['image'], 'full', false, array(
+                                'class'         => 'homepage-floor1-picture',
+                                'alt'           => $alt,
+                                'sizes'         => '100vw',
+                                'loading'       => $first ? 'eager' : 'lazy',
+                                'fetchpriority' => $first ? 'high' : 'low',
+                            )); ?>
+                        </picture>
+                        <div class="homepage-floor1-slide-info">
+                            <<?php echo $title_tag ?> class="homepage-floor1-slide-title"><?php echo wp_kses_post($slide['title']) ?></<?php echo $title_tag ?>>
+                            <?php if ($slide['subtitle']) : ?>
+                                <p class="homepage-floor1-slide-subtitle"><?php echo wp_kses_post($slide['subtitle']) ?></p>
+                            <?php endif; ?>
+                            <?php if ($slide['button_text'] && $slide['button_link']) : ?>
+                                <a class="homepage-floor1-slide-button" href="<?php echo esc_url($slide['button_link']) ?>">
+                                    <span><?php echo esc_html($slide['button_text']) ?></span>
+                                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                                </a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php else : ?>
+            <?php echo do_shortcode('[rev_slider alias="slider-1"][/rev_slider]'); // fallback until the slides are filled in ?>
+        <?php endif; ?>
         <?php if ( ! wp_is_mobile() ) : // hidden on mobile anyway, skip loading the logos ?>
         <footer id="customers-logos" class="hidden-xs hidden-sm">
             <ul class="flex-slider">
@@ -15,7 +56,13 @@ get_header();
                 if ($logos) {
                     foreach ($logos as $id => $logo) {
                         echo "<li>";
-                        sogo_print_image($id, $logo);
+                        // width/height attributes reserve the space (no layout shift when the logos load)
+                        $logo_img = wp_get_attachment_image($id, 'full', false, array('loading' => false, 'decoding' => 'async')); // visible in the first screen: no lazy
+                        if ($logo_img) {
+                            echo $logo_img;
+                        } else {
+                            sogo_print_image($id, $logo);
+                        }
                         echo "</li>";
                     }
                 }
@@ -84,7 +131,7 @@ get_header();
                     <div class="h-100 d-flex align-items-center <?php echo ($counter%2) ? 'col-md-5 col-lg-4 col-md-offset-7' : 'col-md-5 col-lg-4 col-md-offset-1'; ?>">
                         <div class="home-desktop-floor-info <?php echo (get_sub_field('dark_light')) ? 'dark' : 'light'; ?>">
                             <h2 class="home-desktop-floor-title" data-aos="fade-up" data-aos-duration="1000"><?php echo get_sub_field('title')?></h2>
-                            <h4 class="home-desktop-floor-subtitle" data-aos="fade-up" data-aos-duration="1000"><?php echo get_sub_field('subtitle')?></h4>
+                            <p class="home-desktop-floor-subtitle" data-aos="fade-up" data-aos-duration="1000"><?php echo get_sub_field('subtitle')?></p>
                             <div class="d-flex align-items-center justify-content-start" data-aos="fade-up" data-aos-duration="1000">
                                 <a class="campaigne-floor-button m-auto" href="<?php echo get_sub_field('gradient_button_link')?>">
                                     <span><?php echo get_sub_field('gradient_button_text')?></span>
@@ -112,7 +159,10 @@ get_header();
                 <p class="home-mobile-floor-title"><?php echo get_sub_field('title')?></p>
                 <p class="home-mobile-floor-subtitle"><?php echo get_sub_field('subtitle')?></p>
             </div>
-            <?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid homepage-mobile-floor-image', 'loading' => 'lazy')) ; ?>
+            <?php
+            // alt from the media library, falling back to the floor title
+            $floor_alt = get_post_meta(get_sub_field('image'), '_wp_attachment_image_alt', true) ?: wp_strip_all_tags(get_sub_field('title'));
+            echo wp_get_attachment_image(get_sub_field('image'), 'full', false, array('class'=> 'img-fluid homepage-mobile-floor-image', 'loading' => 'lazy', 'alt' => $floor_alt)) ; ?>
             <div class="home-mobile-floor-button">
                 <a class="d-flex justify-content-center align-items-center" href="<?php echo get_sub_field('button_link')?>">
                     <span><?php echo get_sub_field('button_text')?></span>
@@ -149,13 +199,13 @@ get_header();
                             <div class="panel" data-target="#panelBody<?= $counter ?>" data-toggle="collapse"
                                  data-parent=".accordion">
                                 <div class="panel-heading cursor-pointer">
-                                    <h4 class="panel-title mb-0 d-flex align-items-center justify-content-start">
+                                    <h3 class="panel-title mb-0 d-flex align-items-center justify-content-start">
                                         <i class="fa fa-close ms-3"></i>
                                         <a class="font-weight-semibold accordion-toggle collapsed jobs-custom-icon-style text-color-1">
                                             <?php the_sub_field('question') ?>
                                         </a>
 
-                                    </h4>
+                                    </h3>
                                 </div>
                                 <div id="panelBody<?php echo $counter; ?>" class="panel-collapse collapse">
                                     <div class="panel-body">

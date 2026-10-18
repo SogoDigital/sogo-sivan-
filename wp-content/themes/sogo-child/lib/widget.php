@@ -29,32 +29,32 @@
             'id'            => 'footer-col-1',
             'before_widget' => '<aside>',
             'after_widget'  => '</div></aside>',
-            'before_title'  => '<div class=""><h4 class="footer-widget-title">',
-            'after_title'   => '</h4></div><div class="widget-content">'
+            'before_title'  => '<div class=""><h2 class="footer-widget-title">',
+            'after_title'   => '</h2></div><div class="widget-content">'
         ) );
         register_sidebar( array(
             'name'          => __( 'Footer column 2', 'sogoc' ),
             'id'            => 'footer-col-2',
             'before_widget' => '<aside class="">',
             'after_widget'  => '</div></aside>',
-            'before_title'  => '<div class=""><h4 class="footer-widget-title">',
-            'after_title'   => '</h4></span></div><div class="widget-content">'
+            'before_title'  => '<div class=""><h2 class="footer-widget-title">',
+            'after_title'   => '</h2></div><div class="widget-content">'
         ) );
         register_sidebar( array(
             'name'          => __( 'Footer column 3', 'sogoc' ),
             'id'            => 'footer-col-3',
             'before_widget' => '<aside class="">',
             'after_widget'  => '</div></aside>',
-            'before_title'  => '<div class=""><h4 class="footer-widget-title">',
-            'after_title'   => '</h4></div><div class="widget-content">'
+            'before_title'  => '<div class=""><h2 class="footer-widget-title">',
+            'after_title'   => '</h2></div><div class="widget-content">'
         ) );
         register_sidebar( array(
             'name'          => __( 'Footer column 4', 'sogoc' ),
             'id'            => 'footer-col-4',
             'before_widget' => '<aside class="">',
             'after_widget'  => '</div></aside>',
-            'before_title'  => '<div class=""><h4 class="footer-widget-title">',
-            'after_title'   => '</h4></div><div class="widget-content">'
+            'before_title'  => '<div class=""><h2 class="footer-widget-title">',
+            'after_title'   => '</h2></div><div class="widget-content">'
         ) );
 
     }

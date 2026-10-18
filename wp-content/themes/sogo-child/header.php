@@ -95,7 +95,9 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
                             <?php endwhile; ?>
 
                             <div class="contact-header position-relative">
-                                <a data-toggle="modal" data-target="#popup-form" href="#" title="<?php _e( 'Request for quotation', 'sogoc' ) ?>">
+                                <?php // Real contact URL for crawlers; "#popup-form" stops Bootstrap 3 from loading it as remote modal content
+                                $contact_page = get_page_by_path('יצירת-קשר'); ?>
+                                <a data-toggle="modal" data-target="#popup-form" href="<?php echo $contact_page ? esc_url(get_permalink($contact_page)) : '' ?>#popup-form" title="<?php _e( 'Request for quotation', 'sogoc' ) ?>">
 <!--                                    <div class="contact-header-inner d-flex justify-content-center align-items-center">-->
                                         <span class="margin-bottom-0">צרו קשר</span>
 <!--                                    </div>-->
@@ -114,14 +116,14 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
                 <div class="d-flex justify-content-between h-100">
                     <div class="h-100">
                         <div class="h-100 d-flex align-items-center">
-                                <a class="nav-button ml-auto mr-4">
+                                <button type="button" class="nav-button ml-auto mr-4" aria-label="תפריט" aria-expanded="false">
                                     <span id="nav-icon3">
                                         <span></span>
                                         <span></span>
                                         <span></span>
                                         <span></span>
                                     </span>
-                                </a>
+                                </button>
                         </div> <!--navbar end-->
                         <div class="fixed-top dineuron-menu">
                             <div class="flex-center p-5">
@@ -246,5 +248,5 @@ $fullpage .= wp_is_mobile() ? " mobile " : '';
 <!--</header>-->
 <!-- #home-floor-1 -->
 
-<div id="page" class="site">
+<div id="page" class="site" role="main">
 

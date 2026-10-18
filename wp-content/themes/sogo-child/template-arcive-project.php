@@ -28,7 +28,7 @@ if ('image/gif' === get_post_mime_type($thumb_id)) {
             <a itemprop="url" href="<?php the_permalink($post_id) ?>" title="<?php echo esc_attr(get_the_title($post_id)) ?>">
                 <figure>
                     <?php if ($videos) : ?>
-                        <video autoplay muted loop playsinline preload="metadata"
+                        <video class="js-lazy-video" muted loop playsinline preload="none"
                                <?php if ($poster) : ?>poster="<?php echo esc_url($poster) ?>"<?php endif; ?>
                                aria-label="<?php echo esc_attr(get_the_title($post_id)) ?>">
                             <?php foreach ($videos as $type => $url) : ?>
@@ -36,9 +36,15 @@ if ('image/gif' === get_post_mime_type($thumb_id)) {
                             <?php endforeach; ?>
                         </video>
                     <?php else : ?>
-                        <img itemprop="image" loading="lazy" decoding="async"
-                             src="<?php echo esc_url($thumb_url) ?>"
-                             alt="<?php echo esc_attr(get_the_title($post_id)) ?>">
+                        <?php // srcset + sizes: the grid shows ~256px on desktop, so the browser picks the 300w copy, not the original
+                        echo wp_get_attachment_image($thumb_id, 'full', false, array(
+                            'itemprop'      => 'image',
+                            'loading'       => 'lazy',
+                            'decoding'      => 'async',
+                            'fetchpriority' => 'low',
+                            'alt'           => get_the_title($post_id),
+                            'sizes'         => '(min-width: 1200px) 260px, (min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw',
+                        )); ?>
                     <?php endif; ?>
                 </figure>
             </a>

@@ -54,7 +54,7 @@ function sogo_child_scripts()
         add_action( 'wp_enqueue_scripts', 'sogo_load_fancybox' );
         add_action( 'wp_enqueue_scripts', 'sogo_load_fullPage' );
         add_action( 'wp_enqueue_scripts', 'sogo_load_parallax' );
-        wp_enqueue_script('sogo-child-scripts', get_stylesheet_directory_uri() . '/js/scripts.js', array('jquery'),'', true);
+        wp_enqueue_script('sogo-child-scripts', $uri . '/js/scripts.js', array('jquery'), filemtime($dir . '/js/scripts.js'), true);
 
 
         wp_localize_script('sogo-child-scripts', 'sogoc', array(
@@ -370,14 +370,39 @@ add_filter('script_loader_tag', function ($tag, $handle, $src) {
 
 // Performance: Simple Floating Menu loads 5 icon fonts, only icofont (WhatsApp icon) is used.
 add_action('wp_enqueue_scripts', function () {
-    foreach (array('fontawesome-6.3.0', 'eleganticons', 'essentialicon', 'materialdesignicons', 'sfm-fonts') as $handle) {
+    // icofont too: 112 KB of CSS + 538 KB font for one icon. The WhatsApp glyph comes from Font Awesome (see below).
+    foreach (array('fontawesome-6.3.0', 'eleganticons', 'essentialicon', 'materialdesignicons', 'sfm-fonts', 'iconfont') as $handle) {
         wp_dequeue_style($handle);
     }
 
     // Performance: Font Awesome 4 (sogo-accessibility / parent theme) from the theme instead of maxcdn.
-    if (wp_style_is('fontawsome', 'enqueued')) {
-        wp_deregister_style('fontawsome');
-        wp_enqueue_style('fontawsome', get_stylesheet_directory_uri() . '/vendor/font-awesome/css/font-awesome.min.css', array(), '4.6.3');
+    // Always enqueued now: it also draws the floating WhatsApp button icon instead of icofont.
+    wp_deregister_style('fontawsome');
+    wp_enqueue_style('fontawsome', get_stylesheet_directory_uri() . '/vendor/font-awesome/css/font-awesome.min.css', array(), '4.6.3');
+    wp_add_inline_style('fontawsome', '.sfm-floating-menu .icofont-whatsapp:before{content:"\f232";font-family:FontAwesome;font-style:normal;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased}'
+        // Tooltip font: the plugin sets "Open Sans" (its Google font, dequeued above, had Hebrew).
+        // The theme's own "Open Sans" @font-face is Latin-only, so use the site's Hebrew font.
+        . ".sfm-floating-menu .sfm-button .sfm-tool-tip a{font-family:'Open Sans Hebrew Regular',Arial,sans-serif}");
+}, 100);
+
+// A11y: the plugin's floating WhatsApp link has only an icon, give it an accessible name.
+add_action('wp_footer', function () { ?>
+    <script>
+        document.querySelectorAll('.sfm-floating-menu a.sfm-shape-button:not([aria-label])').forEach(function (a) {
+            a.setAttribute('aria-label', 'שליחת הודעה בוואטסאפ');
+        });
+    </script>
+<?php }, 100);
+
+// Performance: WordPress emoji script (the site uses no emoji, browsers render them natively).
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+
+// Performance: no share buttons on the home page, skip ShareThis there (53 KB + tracking request).
+add_action('wp_enqueue_scripts', function () {
+    if (is_front_page()) {
+        wp_dequeue_script('share-this-share-buttons-mu');
+        wp_dequeue_style('share-this-share-buttons-sticky');
     }
 }, 100);
 
@@ -416,5 +441,100 @@ add_action('wp_footer', function () { ?>
             }, {rootMargin: '300px 0px'});
             Array.prototype.forEach.call(els, function (el) { io.observe(el); });
         })();
+
+        // Portfolio videos (preload="none", no autoplay): download and play only while on screen.
+        (function () {
+            var videos = document.querySelectorAll('.js-lazy-video');
+            if (!videos.length) return;
+            var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduce || !('IntersectionObserver' in window)) return; // poster only
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    var v = entry.target;
+                    if (entry.isIntersecting) {
+                        var p = v.play();
+                        if (p && p.catch) p.catch(function () {});
+                    } else if (!v.paused) {
+                        v.pause();
+                    }
+                });
+            }, {rootMargin: '100px 0px'});
+            Array.prototype.forEach.call(videos, function (v) { io.observe(v); });
+        })();
     </script>
 <?php }, 5);
+
+// SEO: FAQPage schema from the ACF FAQ on the home page and on campaign (service) pages.
+add_action('wp_head', function () {
+    $post_id = get_queried_object_id();
+    if (is_front_page()) {
+        $rows = get_field('_sogo_home_faq', $post_id);
+    } elseif (is_page_template('page-campaigne.php')) {
+        $rows = get_field('campaigne_floor5_questions', $post_id);
+    } else {
+        return;
+    }
+    if (empty($rows) || !is_array($rows)) {
+        return;
+    }
+    $items = array();
+    foreach ($rows as $row) {
+        $q = trim(wp_strip_all_tags($row['question'] ?? ''));
+        $a = trim(wp_kses($row['answer'] ?? '', array('a' => array('href' => true), 'br' => array(), 'p' => array(), 'strong' => array(), 'b' => array(), 'ul' => array(), 'ol' => array(), 'li' => array())));
+        if ($q && $a) {
+            $items[] = array(
+                '@type'          => 'Question',
+                'name'           => $q,
+                'acceptedAnswer' => array('@type' => 'Answer', 'text' => $a),
+            );
+        }
+    }
+    if ($items) {
+        echo '<script type="application/ld+json">' . wp_json_encode(array(
+            '@context'   => 'https://schema.org',
+            '@type'      => 'FAQPage',
+            'mainEntity' => $items,
+        ), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . "</script>\n";
+    }
+}, 20);
+
+// A11y: the CF7 forms show their field names as text next to the inputs, not as <label>, so screen readers get no name.
+add_filter('wpcf7_form_elements', function ($html) {
+    $labels = array(
+        'your-name'    => 'שם מלא',
+        'your-email'   => 'אימייל',
+        'your-phone'   => 'טלפון',
+        'your-company' => 'שם החברה',
+        'your-message' => 'הודעה',
+    );
+    foreach ($labels as $name => $label) {
+        $html = preg_replace('/<(input|textarea)(?![^>]*aria-label)([^>]*\bname="' . preg_quote($name, '/') . '")/', '<$1 aria-label="' . esc_attr($label) . '"$2', $html);
+    }
+    return $html;
+});
+
+// Performance: stylesheets not needed for the first paint load without blocking render (media=print, then all).
+// Matched by URL because some come from plugins. Kept blocking: bootstrap, style.css, rtl.css, fullPage
+// (desktop layout), consent + accessibility (visible UI on load).
+add_filter('style_loader_tag', function ($tag, $handle, $href) {
+    if (is_admin()) {
+        return $tag;
+    }
+    $async = array(
+        '/vendor/aos/aos.css',
+        '/vendor/slick/slick.css',
+        '/vendor/font-awesome/',
+        '/catch-scroll-progress-bar/',
+        '/contact-form-7/',
+        '/simple-floating-menu/',
+        '/fancybox/',
+    );
+    foreach ($async as $part) {
+        if (false !== strpos($href, $part)) {
+            $noscript = '<noscript>' . trim($tag) . '</noscript>';
+            $tag = preg_replace('/media=([\x27"])[^\x27"]*\1/','media="print" onload="this.media=\'all\';this.onload=null"', $tag, 1);
+            return $tag . $noscript . "\n";
+        }
+    }
+    return $tag;
+}, 10, 3);

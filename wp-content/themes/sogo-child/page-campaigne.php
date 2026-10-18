@@ -46,7 +46,7 @@ $rtl = is_rtl();
     <div class="campaigne-floor2 container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-6">
-                <p class="campaigne-floor2-title text-center"><?php echo get_field('campaigne_floor2_title')?></p>
+                <h2 class="campaigne-floor2-title text-center"><?php echo get_field('campaigne_floor2_title')?></h2>
                 <p class="campaigne-floor2-subtitle text-center"><?php echo get_field('campaigne_floor2_subtitle')?></p>
             </div>
             <div class="col-12 col-lg-8">
@@ -69,7 +69,7 @@ $rtl = is_rtl();
     <div class="campaigne-floor3 container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-6">
-                <p class="campaigne-floor3-title text-center"><?php echo get_field('campaigne_floor3_title')?></p>
+                <h2 class="campaigne-floor3-title text-center"><?php echo get_field('campaigne_floor3_title')?></h2>
                 <p class="campaigne-floor3-subtitle text-center"><?php echo get_field('campaigne_floor3_subtitle')?></p>
             </div>
             <div class="col-12 col-md-11">
@@ -96,7 +96,7 @@ $rtl = is_rtl();
                     <div class="col-12 col-lg-12">
                         <div class="row justify-content-center">
                             <div class="col-12 col-lg-8">
-                                <p class="campaigne-floor4-title text-center"><?php echo get_field('campaigne_floor4_title')?></p>
+                                <h2 class="campaigne-floor4-title text-center"><?php echo get_field('campaigne_floor4_title')?></h2>
                                 <p class="campaigne-floor4-subtitle text-center"><?php echo get_field('campaigne_floor4_subtitle')?></p>
                             </div>
                         </div>
@@ -149,7 +149,7 @@ $rtl = is_rtl();
     <div class="campaigne-floor5 container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-6">
-                <p class="campaigne-floor5-title text-center"><?php echo get_field('campaigne_floor5_title')?></p>
+                <h2 class="campaigne-floor5-title text-center"><?php echo get_field('campaigne_floor5_title')?></h2>
                 <p class="campaigne-floor5-subtitle text-center"><?php echo get_field('campaigne_floor5_subtitle')?></p>
             </div>
             <div class="col-12 col-lg-8">
@@ -163,13 +163,13 @@ $rtl = is_rtl();
                                 <div class="panel" data-target="#panelBody<?= $counter ?>" data-toggle="collapse"
                                      data-parent=".accordion">
                                     <div class="panel-heading cursor-pointer">
-                                        <h4 class="panel-title mb-0 d-flex align-items-center justify-content-start">
+                                        <h3 class="panel-title mb-0 d-flex align-items-center justify-content-start">
                                             <i class="fa fa-close ms-3"></i>
                                             <a class="font-weight-semibold accordion-toggle collapsed jobs-custom-icon-style text-color-1">
                                                 <?php the_sub_field('question') ?>
                                             </a>
 
-                                        </h4>
+                                        </h3>
                                     </div>
                                     <div id="panelBody<?php echo $counter; ?>" class="panel-collapse collapse">
                                         <div class="panel-body">

@@ -43,7 +43,10 @@
   transition: all 0.4s ease-in-out;
   width: 100%;
 }
-
+/* img has width/height attributes (srcset), keep its ratio */
+.img-box img {
+  height: auto;
+}
 .img-box {
   position: relative;
 }

@@ -211,38 +211,25 @@
             aaa = 353;
         }
 
-        $('.js-homepage-floor1-slider').slick({
-            rtl: true,
-            arrows: false,
-            dots: true,
-            autoplay: true,
-            autoplaySpeed: 4000,
-            speed: 2000,
-            cssEase: 'ease-in-out',
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,
-            dotsClass: 'slick-custom-dots',
-
-            // nextArrow: '<i class="icon-nav-left icon-s y-align cursor-pointer z-index-2 w-auto pos-l-4 pos-l-lg-5 text-white"></i>',
-            // prevArrow: '<i class="icon-nav-right icon-s y-align cursor-pointer z-index-2 w-auto pos-r-4 pos-r-lg-5 text-white"></i>',
-            responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                },
-
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
+        // Home hero slider: a tiny fade that only toggles classes. Slick re-inserted the slides on init,
+        // which Chrome counted as a new LCP paint (~1s). Starts on window load so slides 2+ (lazy) wait.
+        $(window).on('load', function () {
+            var slider = document.querySelector('.js-homepage-floor1-slider');
+            if (!slider || slider.children.length < 2) return;
+            var slides = slider.children, current = 0, timer;
+            slider.classList.add('is-ready');
+            function show(next) {
+                slides[current].classList.remove('is-active');
+                slides[current].setAttribute('inert', '');
+                current = (next + slides.length) % slides.length;
+                slides[current].classList.add('is-active');
+                slides[current].removeAttribute('inert');
+            }
+            function stop() { clearInterval(timer); }
+            function play() { stop(); timer = setInterval(function () { show(current + 1); }, 5000); }
+            slider.addEventListener('mouseenter', stop);
+            slider.addEventListener('mouseleave', play);
+            play();
         });
 
         $('.team-wrapper').bxSlider({
@@ -521,6 +508,7 @@
 
     $('.nav-button').click(function(){
         $('body').toggleClass('nav-open');
+        $(this).attr('aria-expanded', $('body').hasClass('nav-open') ? 'true' : 'false');
     });
 
     // Smooth Scrolling
@@ -529,6 +517,8 @@
         // Remove links that don't actually link to anything
         .not('[href="#"]')
         .not('[href="#0"]')
+        // Modal / collapse triggers are handled by Bootstrap
+        .not('[data-toggle]')
         .click(function(event) {
             // On-page links
             if (
