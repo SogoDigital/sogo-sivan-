@@ -1,0 +1,13 @@
+/*
+Theme Name: Sogo 2026
+Theme URI: https://sogo.co.il
+Author: Sogo Digital
+Description: ערכת הנושא החדשה של סוגו. עיצוב נקי עם נקודות צבע, אנימציות גלילה (GSAP + Lenis), ועריכה פשוטה בעברית דרך שדות ACF.
+Version: 0.1.0
+Requires at least: 6.0
+Requires PHP: 7.4
+Text Domain: sogo2026
+Tags: rtl-language-support, custom-logo, custom-menu, featured-images
+*/
+
+/* כל העיצוב נמצא ב-assets/css/main.css. הקובץ הזה נדרש רק כדי שוורדפרס יזהה את הערכה. */
