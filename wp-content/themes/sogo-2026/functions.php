@@ -120,4 +120,29 @@ function sogo26_logo_svg($static = true)
     return file_get_contents($file); // phpcs:ignore WordPress.WP.AlternativeFunctions
 }
 
+/**
+ * עריכת עמוד הבית: במקום עורך הבלוקים ושדה תוכן, מוצגות רק הלשוניות של השדות.
+ * כך הממשק פשוט וברור, גם למי שלא מכיר את וורדפרס.
+ */
+function sogo26_is_front_page_edit($post = null)
+{
+    $front = (int) get_option('page_on_front');
+    if (!$front) {
+        return false;
+    }
+    if ($post && !empty($post->ID)) {
+        return (int) $post->ID === $front;
+    }
+    $id = isset($_GET['post']) ? (int) $_GET['post'] : (isset($_POST['post_ID']) ? (int) $_POST['post_ID'] : 0); // phpcs:ignore WordPress.Security.NonceVerification
+    return $id === $front;
+}
+add_filter('use_block_editor_for_post', function ($use, $post) {
+    return sogo26_is_front_page_edit($post) ? false : $use;
+}, 10, 2);
+add_action('admin_init', function () {
+    if (sogo26_is_front_page_edit()) {
+        remove_post_type_support('page', 'editor');
+    }
+});
+
 require_once SOGO26_DIR . '/inc/acf-fields.php';
