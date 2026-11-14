@@ -74,6 +74,52 @@
     });
   }
 
+  /* ---------- סליידר הפתיחה (וידאו / תמונה) ---------- */
+  (function initHeroSlider() {
+    var hero = qs('[data-hero]');
+    if (!hero) { return; }
+    var slides = qsa('[data-slide]', hero);
+    if (!slides.length) { return; }
+    var caps = qsa('[data-caption]', hero);
+    var dots = qsa('[data-dot]', hero);
+    var seconds = parseInt(hero.getAttribute('data-seconds'), 10) || 7;
+    var idx = 0, timer = null;
+
+    function playVideos() {
+      slides.forEach(function (s, k) {
+        var v = qs('video', s);
+        if (!v) { return; }
+        if (k === idx && !reduceMotion) {
+          var p = v.play();
+          if (p && p.catch) { p.catch(function () {}); }
+        } else {
+          v.pause();
+        }
+      });
+    }
+    function go(i) {
+      idx = (i + slides.length) % slides.length;
+      slides.forEach(function (s, k) { s.classList.toggle('is-active', k === idx); });
+      caps.forEach(function (c, k) { c.classList.toggle('is-active', k === idx); });
+      dots.forEach(function (d, k) { d.classList.toggle('is-active', k === idx); });
+      playVideos();
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function start() {
+      stop();
+      if (reduceMotion || slides.length < 2) { return; }
+      timer = setInterval(function () { go(idx + 1); }, seconds * 1000);
+    }
+    dots.forEach(function (d) {
+      d.addEventListener('click', function () { go(parseInt(d.getAttribute('data-dot'), 10) || 0); start(); });
+    });
+    hero.addEventListener('mouseenter', stop);
+    hero.addEventListener('mouseleave', start);
+    document.addEventListener('visibilitychange', function () { if (document.hidden) { stop(); } else { start(); } });
+    go(0);
+    start();
+  })();
+
   if (!hasLibs || reduceMotion) {
     // הדף מוצג במצבו הסופי, בלי אנימציות.
     doc.classList.remove('js');
@@ -182,7 +228,7 @@
     /* ---------- כותרת וצבעי לוגו מעל אזורים כהים ---------- */
     qsa('[data-dark], [data-clients], [data-footer]').forEach(function (el) {
       ScrollTrigger.create({
-        trigger: el, start: 'top 70px', end: 'bottom top',
+        trigger: el, start: 'top 70px', end: el.hasAttribute('data-clients') ? 'bottom-=48 top' : 'bottom top',
         onToggle: function (self) { darkCount += self.isActive ? 1 : -1; updateHeader(); }
       });
     });

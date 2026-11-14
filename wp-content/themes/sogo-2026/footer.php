@@ -31,7 +31,7 @@ $arrow = '<svg class="arrow" viewBox="0 0 24 24" width="22" height="22" aria-hid
             <?php if ($phone) : ?>
                 <a class="big-link" href="tel:<?php echo esc_attr(preg_replace('/[^0-9+]/', '', $phone)); ?>"><span><?php echo esc_html($phone); ?></span><?php echo $arrow; // phpcs:ignore ?></a>
             <?php endif; ?>
-            <?php if (!$email && !$phone) : ?>
+            <?php if (!$email && !$phone && current_user_can('edit_posts')) : ?>
                 <p class="site-footer__hint">פרטי יצירת הקשר מוזנים ב"הגדרות האתר" בלוח הבקרה.</p>
             <?php endif; ?>
 
@@ -54,9 +54,9 @@ $arrow = '<svg class="arrow" viewBox="0 0 24 24" width="22" height="22" aria-hid
     </div>
 
     <div class="site-footer__bottom">
-        <small>© <?php echo esc_html(date_i18n('Y')); ?> <?php echo esc_html(get_bloginfo('name')); ?></small>
+        <small><?php echo esc_html(str_replace('{year}', date_i18n('Y'), sogo26_option('text_copyright', '© {year} סוגו'))); ?></small>
         <?php if ($privacy) : ?>
-            <a href="<?php echo esc_url($privacy); ?>">מדיניות פרטיות</a>
+            <a href="<?php echo esc_url($privacy); ?>"><?php echo esc_html(sogo26_option('text_privacy', 'מדיניות פרטיות')); ?></a>
         <?php endif; ?>
     </div>
 </footer>

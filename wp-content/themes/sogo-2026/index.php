@@ -16,9 +16,9 @@ get_header();
             } elseif (is_archive()) {
                 the_archive_title();
             } elseif (is_search()) {
-                printf('תוצאות חיפוש: %s', esc_html(get_search_query()));
+                echo esc_html(sogo26_option('text_search_title', 'תוצאות חיפוש') . ': ' . get_search_query());
             } else {
-                echo 'הבלוג';
+                echo esc_html(sogo26_option('text_blog_title', 'הבלוג'));
             }
             ?>
         </h1>
@@ -43,9 +43,9 @@ get_header();
                 </article>
             <?php endwhile; ?>
         </div>
-        <div class="pagination"><?php the_posts_pagination(['prev_text' => 'הקודם', 'next_text' => 'הבא']); ?></div>
+        <div class="pagination"><?php the_posts_pagination(['prev_text' => sogo26_option('text_prev', 'הקודם'), 'next_text' => sogo26_option('text_next', 'הבא')]); ?></div>
     <?php else : ?>
-        <p class="posts__empty">לא נמצא תוכן להצגה.</p>
+        <p class="posts__empty"><?php echo esc_html(sogo26_option('text_no_posts', 'לא נמצא תוכן להצגה.')); ?></p>
     <?php endif; ?>
 </section>
 <?php

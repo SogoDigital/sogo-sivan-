@@ -18,7 +18,7 @@ $cta_url  = sogo26_option('header_cta_url', '#contact');
 <body <?php body_class('sogo26'); ?>>
 <?php wp_body_open(); ?>
 
-<a class="skip-link" href="#main">דלג לתוכן</a>
+<a class="skip-link" href="#main"><?php echo esc_html(sogo26_option('text_skip', 'דלג לתוכן')); ?></a>
 
 <header class="site-header" id="site-header">
     <a class="site-header__logo" href="<?php echo esc_url(home_url('/')); ?>" aria-label="סוגו, לעמוד הבית">
@@ -28,7 +28,7 @@ $cta_url  = sogo26_option('header_cta_url', '#contact');
     <div class="site-header__card">
         <a class="btn btn--ghost btn--small" href="<?php echo esc_url($cta_url); ?>"><?php echo esc_html($cta_text); ?></a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="fullscreen-menu">
-            <span class="menu-toggle__label screen-reader-text">תפריט</span>
+            <span class="menu-toggle__label screen-reader-text"><?php echo esc_html(sogo26_option('text_menu', 'תפריט')); ?></span>
             <span class="menu-toggle__bars" aria-hidden="true"><i></i><i></i></span>
         </button>
     </div>
