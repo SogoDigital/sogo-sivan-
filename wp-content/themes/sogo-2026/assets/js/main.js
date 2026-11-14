@@ -180,7 +180,7 @@
     }
 
     /* ---------- כותרת וצבעי לוגו מעל אזורים כהים ---------- */
-    qsa('[data-clients], [data-footer]').forEach(function (el) {
+    qsa('[data-dark], [data-clients], [data-footer]').forEach(function (el) {
       ScrollTrigger.create({
         trigger: el, start: 'top 70px', end: 'bottom top',
         onToggle: function (self) { darkCount += self.isActive ? 1 : -1; updateHeader(); }

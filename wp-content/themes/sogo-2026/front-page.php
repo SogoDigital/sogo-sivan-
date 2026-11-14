@@ -34,19 +34,24 @@ $clients_title = sogo26_field('clients_title', 'עם מי אנחנו עובדי�
 $clients_logos = sogo26_field('clients_logos', []);
 ?>
 
-<!-- ============ פתיחה ============ -->
-<section class="hero" data-hero>
-    <?php if ($hero_video) : ?>
-        <video class="hero__video" autoplay muted loop playsinline <?php echo $hero_poster ? 'poster="' . esc_url($hero_poster) . '"' : ''; ?>>
-            <source src="<?php echo esc_url($hero_video); ?>">
-        </video>
-        <div class="hero__shade" aria-hidden="true"></div>
-    <?php endif; ?>
+<!-- ============ פתיחה (וידאו במסך מלא) ============ -->
+<section class="hero hero--dark" data-hero data-dark>
+    <div class="hero__media"<?php echo $hero_poster ? ' style="background-image:url(' . esc_url($hero_poster) . ')"' : ''; ?> aria-hidden="true">
+        <?php if ($hero_video) : ?>
+            <video class="hero__video" autoplay muted loop playsinline preload="auto" disablepictureinpicture<?php echo $hero_poster ? ' poster="' . esc_url($hero_poster) . '"' : ''; ?>>
+                <source src="<?php echo esc_url($hero_video); ?>">
+            </video>
+        <?php else : ?>
+            <!-- רקע זז זמני עד שמעלים וידאו בשדה "וידאו רקע" -->
+            <div class="hero__ambient"><i></i><i></i><i></i><i></i><i></i></div>
+        <?php endif; ?>
+        <div class="hero__shade"></div>
+    </div>
 
     <div class="hero__inner" data-hero-inner>
         <p class="hero__kicker"><?php echo esc_html($kicker); ?></p>
-        <h1 class="hero__logo">
-            <img src="<?php echo esc_url(SOGO26_URI . '/assets/img/logo-animated.svg'); ?>" alt="<?php echo esc_attr(get_bloginfo('name') ?: 'סוגו'); ?>" width="568" height="318">
+        <h1 class="hero__logo" aria-label="<?php echo esc_attr(get_bloginfo('name') ?: 'סוגו'); ?>">
+            <?php echo sogo26_logo_svg(false); // phpcs:ignore WordPress.Security.EscapeOutput ?>
         </h1>
     </div>
 
