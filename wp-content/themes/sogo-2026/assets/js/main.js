@@ -242,24 +242,34 @@
         var clamp01 = gsap.utils.clamp(0, 1);
         var enterSign = isRTL ? -1 : 1; // ב-RTL הפאנל נכנס משמאל, ב-LTR מימין
         var moveSign = isRTL ? 1 : -1;  // ב-RTL הכרטיסים נעים ימינה, ב-LTR שמאלה
+        var phase0 = function () { return window.innerHeight * 0.8; };                         // הוידאו גדל ממלבן למסך מלא
         var phaseA = function () { return window.innerHeight * 0.9; };                         // הפאנל נכנס
         var dist = function () { return Math.max(0, track.scrollWidth - panel.clientWidth); }; // הכרטיסים נגללים עד האחרון
+        var startInset = function () { return window.innerWidth < 900 ? [14, 7] : [11, 14]; }; // המלבן ההתחלתי (אחוזים: למעלה/למטה, בצדדים)
 
         function render(progress) {
+          var z = phase0();
           var a = phaseA();
           var d = dist();
-          var y = progress * (a + d);
-          var pa = clamp01(y / a);
-          var pb = d > 0 ? clamp01((y - a) / d) : 1;
+          var y = progress * (z + a + d);
+          var p0 = clamp01(y / z);
+          var pa = clamp01((y - z) / a);
+          var pb = d > 0 ? clamp01((y - z - a) / d) : 1;
+          var g = ease(p0);
           var e = ease(pa);
+          var ins = startInset();
+          var iy = ins[0] * (1 - g), ix = ins[1] * (1 - g), r = 32 * (1 - g);
+          gsap.set(intro, {
+            clipPath: 'inset(' + iy + '% ' + ix + '% round ' + r + 'px)',
+            xPercent: -enterSign * 16 * e, filter: 'brightness(' + (1 - 0.5 * e) + ')'
+          });
           gsap.set(panel, { xPercent: enterSign * 100 * (1 - e) });
-          gsap.set(intro, { xPercent: -enterSign * 16 * e, filter: 'brightness(' + (1 - 0.5 * e) + ')' });
           gsap.set(track, { x: moveSign * d * pb });
           if (prog) { gsap.set(prog, { scaleX: pb }); }
         }
 
         ScrollTrigger.create({
-          trigger: pin, start: 'top top', end: function () { return '+=' + (phaseA() + dist()); },
+          trigger: pin, start: 'top top', end: function () { return '+=' + (phase0() + phaseA() + dist()); },
           pin: true, scrub: true, anticipatePin: 1, invalidateOnRefresh: true,
           onUpdate: function (self) { render(self.progress); },
           onRefresh: function (self) { render(self.progress); }
