@@ -32,6 +32,9 @@ $about_text   = sogo26_field('about_text', 'שלום, *אנחנו סוגו.* א�
 
 $svc_title    = sogo26_field('services_title', "אנחנו יוצרים אתרים וקמפיינים\nשקשה להתעלם מהם.");
 $svc_image    = sogo26_field('services_image');
+$svc_mtype    = sogo26_field('services_media_type', 'image');
+$svc_video    = sogo26_field('services_video');
+$svc_intro    = sogo26_field('services_intro_title');
 $svc_items    = sogo26_field('services_items', $default_services);
 
 $clients_title = sogo26_field('clients_title', 'עם מי אנחנו עובדים?');
@@ -134,35 +137,41 @@ $arrow = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" foc
     </div>
 </section>
 
-<!-- ============ שירותים ============ -->
+<!-- ============ שירותים: מסך מלא (וידאו/תמונה), ואז כרטיסים שנגללים לרוחב ============ -->
 <section class="services" data-services>
-    <div class="services__bg" aria-hidden="true">
-        <i class="orb orb--red"></i><i class="orb orb--green"></i><i class="orb orb--yellow"></i>
-    </div>
-    <div class="services__pin">
-        <div class="services__media">
-            <?php if (!empty($svc_image['url'])) : ?>
-                <img src="<?php echo esc_url($svc_image['url']); ?>" alt="<?php echo esc_attr($svc_image['alt'] ?? ''); ?>" loading="lazy">
+    <div class="services__pin" data-pin>
+        <div class="services__intro" data-intro>
+            <?php if ($svc_mtype === 'video' && $svc_video) : ?>
+                <video class="services__intro-media" muted loop playsinline preload="auto" data-autoplay<?php echo !empty($svc_image['url']) ? ' poster="' . esc_url($svc_image['url']) . '"' : ''; ?>>
+                    <source src="<?php echo esc_url($svc_video); ?>">
+                </video>
+            <?php elseif (!empty($svc_image['url'])) : ?>
+                <img class="services__intro-media" src="<?php echo esc_url($svc_image['url']); ?>" alt="<?php echo esc_attr($svc_image['alt'] ?? ''); ?>" loading="lazy">
             <?php else : ?>
-                <div class="services__placeholder" aria-hidden="true">
-                    <i class="big-dot big-dot--red"></i><i class="big-dot big-dot--green"></i>
-                </div>
+                <div class="services__placeholder" aria-hidden="true"><i class="big-dot big-dot--red"></i><i class="big-dot big-dot--green"></i></div>
             <?php endif; ?>
+            <span class="services__intro-shade" aria-hidden="true"></span>
+            <?php if ($svc_intro) : ?><p class="services__intro-title"><?php echo esc_html($svc_intro); ?></p><?php endif; ?>
         </div>
 
-        <div class="services__content">
-            <h2 class="services__title"><?php echo nl2br(esc_html($svc_title)); ?></h2>
-
-            <div class="services__viewport">
-                <div class="services__track" data-track>
+        <div class="services__panel" data-panel>
+            <div class="services__bg" aria-hidden="true"><i class="orb orb--red"></i><i class="orb orb--green"></i><i class="orb orb--yellow"></i></div>
+            <div class="services__track" data-track>
+                <h2 class="services__title"><?php echo nl2br(esc_html($svc_title)); ?></h2>
+                <div class="services__cards">
                     <?php foreach ((array) $svc_items as $item) :
-                        $color = !empty($item['color']) ? $item['color'] : 'red';
-                        $link  = !empty($item['link']) ? $item['link'] : '';
-                        $image = $item['image']['url'] ?? '';
-                        $tag   = $link ? 'a' : 'div';
+                        $color    = !empty($item['color']) ? $item['color'] : 'red';
+                        $link     = !empty($item['link']) ? $item['link'] : '';
+                        $image    = $item['image']['url'] ?? '';
+                        $video    = (($item['type'] ?? 'image') === 'video' && !empty($item['video'])) ? $item['video'] : '';
+                        $has_media = $video || $image;
+                        $tag      = $link ? 'a' : 'div';
                         ?>
-                        <<?php echo $tag; ?> class="svc-card svc-card--<?php echo esc_attr($color); ?><?php echo $image ? ' svc-card--img' : ' svc-card--noimg'; ?>"<?php echo $link ? ' href="' . esc_url($link) . '"' : ''; ?>>
-                            <?php if ($image) : ?>
+                        <<?php echo $tag; ?> class="svc-card svc-card--<?php echo esc_attr($color); ?><?php echo $has_media ? ' svc-card--img' : ' svc-card--noimg'; ?>"<?php echo $link ? ' href="' . esc_url($link) . '"' : ''; ?>>
+                            <?php if ($video) : ?>
+                                <video class="svc-card__img" muted loop playsinline preload="metadata" data-autoplay<?php echo $image ? ' poster="' . esc_url($image) . '"' : ''; ?>><source src="<?php echo esc_url($video); ?>"></video>
+                                <span class="svc-card__shade" aria-hidden="true"></span>
+                            <?php elseif ($image) : ?>
                                 <img class="svc-card__img" src="<?php echo esc_url($image); ?>" alt="" loading="lazy">
                                 <span class="svc-card__shade" aria-hidden="true"></span>
                             <?php else : ?>
@@ -174,7 +183,6 @@ $arrow = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" foc
                     <?php endforeach; ?>
                 </div>
             </div>
-
             <div class="services__progress" aria-hidden="true"><span data-progress></span></div>
         </div>
     </div>

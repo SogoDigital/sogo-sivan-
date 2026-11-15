@@ -210,63 +210,56 @@ html.js .hero__kicker, html.js .hero__logo, html.js .hero__scroll { opacity: 0; 
 html.js .about__text .w { color: #d3cec3; }
 html.js .about__text .w--hl { color: #f3b9b6; }
 
-/* ---------- שירותים ---------- */
+/* ---------- שירותים: מסך מלא (וידאו/תמונה) ואז כרטיסים שנגללים לרוחב ---------- */
 .services { position: relative; background: var(--paper-2); overflow: clip; }
+.services__pin { position: relative; }
+.services__intro { position: relative; height: 56vh; min-height: 320px; background: var(--dark); overflow: hidden; }
+.services__intro-media { display: block; width: 100%; height: 100%; object-fit: cover; }
+.services__intro-shade { position: absolute; inset: 0; background: rgba(20, 19, 17, 0.26); pointer-events: none; }
+.services__intro-title {
+  position: absolute; inset: 0; display: grid; place-items: center; margin: 0; padding: 0 var(--gutter); text-align: center; color: #fff;
+  font-size: clamp(2.6rem, 10vw, 9rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1;
+}
+.services__placeholder { position: absolute; inset: 0; background: var(--paper); }
+.big-dot { position: absolute; border-radius: 50%; }
+.big-dot--red { width: 46%; aspect-ratio: 1; background: var(--red); inset-block-start: 8%; inset-inline-start: 30%; }
+.big-dot--green { width: 38%; aspect-ratio: 1; background: var(--green); inset-block-end: 6%; inset-inline-end: 22%; }
+
+.services__panel { position: relative; background: var(--paper-2); padding: 56px 0 64px; overflow: hidden; }
 .services__bg { position: absolute; inset: 0; pointer-events: none; }
 .orb { position: absolute; border-radius: 50%; opacity: 0.16; will-change: transform; }
 .orb--red { width: 46vw; height: 46vw; background: var(--red); inset-block-start: -10vw; inset-inline-end: -12vw; }
 .orb--green { width: 38vw; height: 38vw; background: var(--green); inset-block-end: -14vw; inset-inline-start: 30%; }
 .orb--yellow { width: 18vw; height: 18vw; background: var(--yellow); inset-block-start: 40%; inset-inline-start: -6vw; }
-
-.services__pin {
-  position: relative; z-index: 1; min-height: 100svh;
-  display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr); align-items: center;
-  gap: clamp(24px, 4vw, 64px); padding: calc(var(--header-h) - 20px) 0 56px; padding-inline-start: var(--gutter);
-}
-.services__media {
-  position: relative; align-self: stretch; margin-block: 8px; border-radius: var(--radius-lg); overflow: hidden;
-  background: var(--paper); min-height: 52vh;
-}
-.services__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.services__placeholder { position: absolute; inset: 0; display: grid; place-items: center; }
-.big-dot { position: absolute; border-radius: 50%; }
-.big-dot--red { width: 62%; aspect-ratio: 1; background: var(--red); inset-block-start: 14%; inset-inline-start: 8%; }
-.big-dot--green { width: 54%; aspect-ratio: 1; background: var(--green); inset-block-end: 10%; inset-inline-end: 6%; }
-
-.services__content { min-width: 0; display: grid; gap: clamp(22px, 4vh, 40px); align-content: center; }
-.services__title { font-size: clamp(2rem, 4.6vw, 4.4rem); font-weight: 600; line-height: 1.08; letter-spacing: -0.01em; padding-inline-end: var(--gutter); text-wrap: balance; }
-.services__viewport { overflow: hidden; }
-.services__track { display: flex; gap: 20px; width: max-content; will-change: transform; padding-inline-end: var(--gutter); }
+.services__track { position: relative; display: grid; gap: clamp(22px, 4vh, 40px); padding: 0 var(--gutter); }
+.services__title { font-size: clamp(2rem, 4.6vw, 4.4rem); font-weight: 600; line-height: 1.08; letter-spacing: -0.01em; text-wrap: balance; max-width: 18ch; }
+.services__cards { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-block: 4px; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); }
+.services__cards::-webkit-scrollbar { display: none; }
+.services__progress { display: none; }
 
 .svc-card {
   --c: var(--red);
-  position: relative; display: grid; grid-template-rows: auto auto 1fr; gap: 10px; align-content: start;
-  width: clamp(240px, 24vw, 340px); min-height: clamp(340px, 46vh, 440px); padding: 22px;
+  position: relative; flex: none; display: block; width: min(74vw, 320px); min-height: clamp(320px, 44vh, 440px); padding: 0;
   border-radius: var(--radius); background: #fff; background: color-mix(in srgb, var(--c) 13%, #fff);
-  overflow: hidden; transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+  overflow: hidden; scroll-snap-align: start; transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
 }
 a.svc-card:hover, .svc-card:hover { transform: translateY(-6px); box-shadow: 0 22px 50px rgba(29, 28, 25, 0.14); }
 .svc-card--red { --c: var(--red); } .svc-card--green { --c: var(--green); } .svc-card--yellow { --c: var(--yellow); }
 .svc-card--orange { --c: var(--orange); } .svc-card--magenta { --c: var(--magenta); } .svc-card--purple { --c: var(--purple); }
 .svc-card--blue { --c: var(--blue); }
-.svc-card__media { position: relative; display: grid; place-items: center; aspect-ratio: 4 / 3; border-radius: calc(var(--radius) - 10px); overflow: hidden; }
-.svc-card__media img { width: 100%; height: 100%; object-fit: cover; }
-.svc-card__dot { display: block; height: 78%; aspect-ratio: 1; border-radius: 50%; background: var(--c); }
-.svc-card__title { font-size: clamp(1.35rem, 2vw, 1.8rem); font-weight: 600; line-height: 1.15; }
-.svc-card__text { font-size: 1rem; line-height: 1.5; color: var(--ink-soft); }
 
-.services__progress { height: 4px; border-radius: 4px; background: var(--line); margin-inline-end: var(--gutter); overflow: hidden; }
-.services__progress span { display: block; height: 100%; width: 100%; background: var(--red); transform: scaleX(0); transform-origin: right center; }
-html[dir="ltr"] .services__progress span { transform-origin: left center; }
-
-@media (max-width: 899px) {
-  .services__pin { grid-template-columns: 1fr; padding-inline-end: 0; padding-top: 110px; }
-  .services__media { min-height: 34vh; margin-inline-end: var(--gutter); }
-  .services__viewport { overflow-x: auto; scroll-snap-type: x mandatory; padding-inline-end: var(--gutter); scrollbar-width: none; }
-  .services__viewport::-webkit-scrollbar { display: none; }
-  .services__track { width: max-content; padding-inline-end: 0; }
-  .svc-card { scroll-snap-align: start; width: 74vw; }
-  .services__progress { display: none; }
+/* מחשב: הכרטיסים נכנסים מהצד ומכסים את הקומה הראשונה, ואז נגללים לרוחב המסך (נשלט בגלילה) */
+@media (min-width: 900px) {
+  html.js .services__pin { height: 100svh; overflow: hidden; }
+  html.js .services__intro { position: absolute; inset: 0; height: auto; min-height: 0; will-change: transform; }
+  html.js .services__panel { position: absolute; inset: 0; padding: 0; display: grid; align-content: center; will-change: transform; }
+  html.js .services__track { width: max-content; gap: clamp(22px, 4.5vh, 44px); will-change: transform; }
+  html.js .services__title { max-width: none; font-size: clamp(2.2rem, 4.4vw, 4.6rem); }
+  html.js .services__cards { overflow: visible; margin-inline: 0; padding-inline: 0; scroll-snap-type: none; }
+  html.js .svc-card { width: clamp(260px, 20vw, 320px); min-height: clamp(340px, 50vh, 460px); }
+  html.js .services__progress { position: absolute; display: block; inset-inline: var(--gutter); inset-block-end: 34px; height: 4px; border-radius: 4px; background: var(--line); overflow: hidden; }
+  html.js .services__progress span { display: block; height: 100%; width: 100%; background: var(--red); transform: scaleX(0); transform-origin: right center; }
+  html[dir="ltr"].js .services__progress span { transform-origin: left center; }
 }
 
 /* ---------- לקוחות ---------- */

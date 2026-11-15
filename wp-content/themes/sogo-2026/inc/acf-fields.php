@@ -118,16 +118,23 @@ add_action('acf/init', function () {
             ['key' => 'field_h26_about_label', 'name' => 'about_label', 'label' => 'כותרת קטנה', 'type' => 'text', 'default_value' => 'סוכנות דיגיטל לבניית אתרים, קמפיינים ומיתוג'],
             ['key' => 'field_h26_about_text', 'name' => 'about_text', 'label' => 'המשפט הגדול', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'שלום, *אנחנו סוגו.* אנחנו בונים אתרים, מנהלים קמפיינים ויוצרים מותגים שאי אפשר להתעלם מהם.', 'instructions' => 'המשפט נחשף מילה אחרי מילה בגלילה. כדי להדגיש מילים באדום, הקיפו אותן בכוכביות, למשל: שלום, *אנחנו סוגו.*'],
 
-            /* ===== שירותים (כרטיסים: תמונה + שם + קישור) ===== */
+            /* ===== שירותים: וידאו/תמונה במסך מלא, ואחריו כרטיסים שנגללים לרוחב ===== */
             $tab('field_h26_tab_services', 'שירותים'),
-            ['key' => 'field_h26_services_title', 'name' => 'services_title', 'label' => 'כותרת האזור', 'type' => 'textarea', 'rows' => 2, 'default_value' => "אנחנו יוצרים אתרים וקמפיינים\nשקשה להתעלם מהם.", 'instructions' => 'אפשר לרדת שורה בלחיצה על Enter.'],
-            ['key' => 'field_h26_services_image', 'name' => 'services_image', 'label' => 'תמונה גדולה בצד', 'type' => 'image', 'return_format' => 'array', 'preview_size' => 'medium', 'instructions' => 'נשארת במקום בזמן שהכרטיסים זזים. מומלץ תמונה אנכית.'],
+            ['key' => 'field_h26_svc_intro_type', 'name' => 'services_media_type', 'label' => 'הקומה הראשונה (במסך מלא)', 'type' => 'select', 'choices' => ['image' => 'תמונה', 'video' => 'וידאו'], 'default_value' => 'image', 'ui' => 0, 'instructions' => 'במסך מלא, לפני שהכרטיסים נכנסים. בגלילה הכרטיסים נכנסים מהצד ומכסים אותה.'],
+            ['key' => 'field_h26_svc_video', 'name' => 'services_video', 'label' => 'וידאו (MP4)', 'type' => 'file', 'return_format' => 'url', 'mime_types' => 'mp4,webm', 'instructions' => 'עד כ-8MB, בלי קול.',
+                'conditional_logic' => [[['field' => 'field_h26_svc_intro_type', 'operator' => '==', 'value' => 'video']]]],
+            ['key' => 'field_h26_services_image', 'name' => 'services_image', 'label' => 'תמונה (או תמונה לפני טעינת הווידאו)', 'type' => 'image', 'return_format' => 'array', 'preview_size' => 'medium'],
+            ['key' => 'field_h26_svc_intro_title', 'name' => 'services_intro_title', 'label' => 'כותרת גדולה על המסך (לא חובה)', 'type' => 'text', 'instructions' => 'למשל "מה אנחנו עושים". אם הכיתוב כבר בתוך הוידאו או התמונה, השאירו ריק.'],
+            ['key' => 'field_h26_services_title', 'name' => 'services_title', 'label' => 'כותרת מעל הכרטיסים', 'type' => 'textarea', 'rows' => 2, 'default_value' => "אנחנו יוצרים אתרים וקמפיינים\nשקשה להתעלם מהם.", 'instructions' => 'אפשר לרדת שורה בלחיצה על Enter.'],
             [
                 'key' => 'field_h26_services_items', 'name' => 'services_items', 'label' => 'כרטיסי השירותים', 'type' => 'repeater',
                 'layout' => 'table', 'button_label' => 'הוספת שירות', 'min' => 0,
-                'instructions' => 'כל כרטיס מציג תמונה עם שם השירות. לחיצה עליו פותחת את עמוד השירות.',
+                'instructions' => 'הכרטיסים נגללים לרוחב המסך עד הכרטיס האחרון, ואז הדף ממשיך למטה. לחיצה על כרטיס פותחת את עמוד השירות. כל כרטיס יכול להיות תמונה או וידאו.',
                 'sub_fields' => [
+                    ['key' => 'field_h26_si_type', 'name' => 'type', 'label' => 'סוג', 'type' => 'select', 'choices' => ['image' => 'תמונה', 'video' => 'וידאו'], 'default_value' => 'image', 'ui' => 0],
                     ['key' => 'field_h26_si_image', 'name' => 'image', 'label' => 'תמונה', 'type' => 'image', 'return_format' => 'array', 'preview_size' => 'thumbnail'],
+                    ['key' => 'field_h26_si_video', 'name' => 'video', 'label' => 'וידאו (MP4)', 'type' => 'file', 'return_format' => 'url', 'mime_types' => 'mp4,webm',
+                        'conditional_logic' => [[['field' => 'field_h26_si_type', 'operator' => '==', 'value' => 'video']]]],
                     ['key' => 'field_h26_si_title', 'name' => 'title', 'label' => 'שם השירות', 'type' => 'text'],
                     ['key' => 'field_h26_si_link', 'name' => 'link', 'label' => 'קישור לעמוד השירות', 'type' => 'url'],
                     ['key' => 'field_h26_si_color', 'name' => 'color', 'label' => 'צבע (כשאין תמונה)', 'type' => 'select', 'choices' => ['red' => 'אדום', 'green' => 'ירוק', 'yellow' => 'צהוב', 'orange' => 'כתום', 'magenta' => 'מג׳נטה', 'purple' => 'סגול', 'blue' => 'תכלת'], 'default_value' => 'red', 'ui' => 0],

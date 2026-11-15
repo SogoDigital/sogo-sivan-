@@ -226,36 +226,61 @@
       tl.to({}, { duration: 1.2 }); // החזקה קצרה בסוף, כדי שהמשפט המלא יישאר על המסך
     }
 
-    /* ---------- שירותים ---------- */
+    /* ---------- שירותים: מסך מלא ← הכרטיסים נכנסים מהצד ← נגללים לרוחב ← ורק אז יורדים קומה ---------- */
     var services = qs('[data-services]');
     if (services) {
-      // עיגולי הרקע נעים לאט יותר מהגלילה
-      gsap.to('.orb--red', { yPercent: -28, ease: 'none', scrollTrigger: { trigger: services, start: 'top bottom', end: 'bottom top', scrub: true } });
-      gsap.to('.orb--green', { yPercent: 24, ease: 'none', scrollTrigger: { trigger: services, start: 'top bottom', end: 'bottom top', scrub: true } });
-      gsap.to('.orb--yellow', { yPercent: -50, ease: 'none', scrollTrigger: { trigger: services, start: 'top bottom', end: 'bottom top', scrub: true } });
-
-      var mm = gsap.matchMedia();
-      mm.add('(min-width: 900px)', function () {
-        var pin = qs('.services__pin', services);
-        var viewport = qs('.services__viewport', services);
+      gsap.matchMedia().add('(min-width: 900px)', function () {
+        var pin = qs('[data-pin]', services);
+        var intro = qs('[data-intro]', services);
+        var panel = qs('[data-panel]', services);
         var track = qs('[data-track]', services);
-        var progress = qs('[data-progress]', services);
-        if (!pin || !viewport || !track) { return; }
+        var prog = qs('[data-progress]', services);
+        if (!pin || !intro || !panel || !track) { return; }
 
-        var distance = function () { return Math.max(0, track.scrollWidth - viewport.clientWidth); };
-        var dir = isRTL ? 1 : -1; // ב-RTL הכרטיסים מתחילים בימין ונגללים שמאלה
+        var ease = gsap.parseEase('power2.inOut');
+        var clamp01 = gsap.utils.clamp(0, 1);
+        var enterSign = isRTL ? -1 : 1; // ב-RTL הפאנל נכנס משמאל, ב-LTR מימין
+        var moveSign = isRTL ? 1 : -1;  // ב-RTL הכרטיסים נעים ימינה, ב-LTR שמאלה
+        var phaseA = function () { return window.innerHeight * 0.9; };                         // הפאנל נכנס
+        var dist = function () { return Math.max(0, track.scrollWidth - panel.clientWidth); }; // הכרטיסים נגללים עד האחרון
 
-        var st = gsap.timeline({
-          defaults: { ease: 'none' },
-          scrollTrigger: {
-            trigger: pin, start: 'top top', end: function () { return '+=' + distance(); },
-            pin: true, scrub: true, anticipatePin: 1, invalidateOnRefresh: true
-          }
+        function render(progress) {
+          var a = phaseA();
+          var d = dist();
+          var y = progress * (a + d);
+          var pa = clamp01(y / a);
+          var pb = d > 0 ? clamp01((y - a) / d) : 1;
+          var e = ease(pa);
+          gsap.set(panel, { xPercent: enterSign * 100 * (1 - e) });
+          gsap.set(intro, { xPercent: -enterSign * 16 * e, filter: 'brightness(' + (1 - 0.5 * e) + ')' });
+          gsap.set(track, { x: moveSign * d * pb });
+          if (prog) { gsap.set(prog, { scaleX: pb }); }
+        }
+
+        ScrollTrigger.create({
+          trigger: pin, start: 'top top', end: function () { return '+=' + (phaseA() + dist()); },
+          pin: true, scrub: true, anticipatePin: 1, invalidateOnRefresh: true,
+          onUpdate: function (self) { render(self.progress); },
+          onRefresh: function (self) { render(self.progress); }
         });
-        st.to(track, { x: function () { return dir * distance(); } }, 0);
-        if (progress) { st.to(progress, { scaleX: 1 }, 0); }
+        render(0);
+
+        return function () { gsap.set([panel, intro, track].concat(prog ? [prog] : []), { clearProps: 'all' }); };
       });
     }
+
+    /* ---------- סרטונים שמתנגנים רק כשרואים אותם ---------- */
+    (function () {
+      var vids = qsa('video[data-autoplay]');
+      if (!vids.length || !('IntersectionObserver' in window)) { return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          var v = en.target;
+          if (en.isIntersecting) { var p = v.play(); if (p && p.catch) { p.catch(function () {}); } } else { v.pause(); }
+        });
+      }, { threshold: 0.25 });
+      vids.forEach(function (v) { io.observe(v); });
+    })();
 
     /* ---------- לקוחות ---------- */
     var clients = qs('[data-clients]');
