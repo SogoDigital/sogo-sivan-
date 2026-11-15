@@ -174,6 +174,7 @@
 
   try {
     gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.config({ ignoreMobileResize: true }); // שורת הכתובת בנייד לא תקפיץ את הנעיצה
     var isRTL = (document.dir || getComputedStyle(doc).direction) === 'rtl';
 
     /* ---------- גלילה חלקה ---------- */
@@ -229,7 +230,7 @@
     /* ---------- שירותים: מסך מלא ← הכרטיסים נכנסים מהצד ← נגללים לרוחב ← ורק אז יורדים קומה ---------- */
     var services = qs('[data-services]');
     if (services) {
-      gsap.matchMedia().add('(min-width: 900px)', function () {
+      gsap.matchMedia().add('(min-width: 0px)', function () {
         var pin = qs('[data-pin]', services);
         var intro = qs('[data-intro]', services);
         var panel = qs('[data-panel]', services);

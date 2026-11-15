@@ -248,18 +248,19 @@ a.svc-card:hover, .svc-card:hover { transform: translateY(-6px); box-shadow: 0 2
 .svc-card--orange { --c: var(--orange); } .svc-card--magenta { --c: var(--magenta); } .svc-card--purple { --c: var(--purple); }
 .svc-card--blue { --c: var(--blue); }
 
-/* מחשב: הכרטיסים נכנסים מהצד ומכסים את הקומה הראשונה, ואז נגללים לרוחב המסך (נשלט בגלילה) */
+/* בכל המכשירים: הכרטיסים נכנסים מהצד ומכסים את הקומה הראשונה, ואז נגללים לרוחב המסך (נשלט בגלילה) */
+html.js .services__pin { height: 100vh; height: 100svh; overflow: hidden; }
+html.js .services__intro { position: absolute; inset: 0; height: auto; min-height: 0; will-change: transform; }
+html.js .services__panel { position: absolute; inset: 0; padding: 0; display: grid; align-content: center; will-change: transform; }
+html.js .services__track { width: max-content; gap: clamp(22px, 4.5vh, 44px); will-change: transform; }
+html.js .services__title { max-width: none; font-size: clamp(1.9rem, 4.4vw, 4.6rem); }
+html.js .services__cards { overflow: visible; margin-inline: 0; padding-inline: 0; scroll-snap-type: none; }
+html.js .svc-card { width: clamp(240px, 72vw, 320px); min-height: clamp(300px, 50vh, 460px); }
+html.js .services__progress { position: absolute; display: block; inset-inline: var(--gutter); inset-block-end: 34px; height: 4px; border-radius: 4px; background: var(--line); overflow: hidden; }
+html.js .services__progress span { display: block; height: 100%; width: 100%; background: var(--red); transform: scaleX(0); transform-origin: right center; }
+html[dir="ltr"].js .services__progress span { transform-origin: left center; }
 @media (min-width: 900px) {
-  html.js .services__pin { height: 100svh; overflow: hidden; }
-  html.js .services__intro { position: absolute; inset: 0; height: auto; min-height: 0; will-change: transform; }
-  html.js .services__panel { position: absolute; inset: 0; padding: 0; display: grid; align-content: center; will-change: transform; }
-  html.js .services__track { width: max-content; gap: clamp(22px, 4.5vh, 44px); will-change: transform; }
-  html.js .services__title { max-width: none; font-size: clamp(2.2rem, 4.4vw, 4.6rem); }
-  html.js .services__cards { overflow: visible; margin-inline: 0; padding-inline: 0; scroll-snap-type: none; }
-  html.js .svc-card { width: clamp(260px, 20vw, 320px); min-height: clamp(340px, 50vh, 460px); }
-  html.js .services__progress { position: absolute; display: block; inset-inline: var(--gutter); inset-block-end: 34px; height: 4px; border-radius: 4px; background: var(--line); overflow: hidden; }
-  html.js .services__progress span { display: block; height: 100%; width: 100%; background: var(--red); transform: scaleX(0); transform-origin: right center; }
-  html[dir="ltr"].js .services__progress span { transform-origin: left center; }
+  html.js .svc-card { width: clamp(260px, 20vw, 320px); }
 }
 
 /* ---------- לקוחות ---------- */
