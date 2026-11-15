@@ -291,8 +291,9 @@ html:not(.js) .clients__title { color: #fff; }
   border-radius: var(--radius-lg) var(--radius-lg) 0 0; overflow: hidden;
   background: var(--dark) var(--footer-bg, none) center / cover no-repeat; color: #fff;
 }
-.site-footer::before { content: ""; position: absolute; inset: 0; background: rgba(20, 19, 17, 0.78); }
-.site-footer__inner, .site-footer__bottom { position: relative; max-width: 1400px; margin-inline: auto; padding-inline: var(--gutter); }
+.site-footer::before { content: ""; position: absolute; inset: 0; z-index: 1; background: rgba(20, 19, 17, 0.78); }
+.site-footer__video { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; }
+.site-footer__inner, .site-footer__bottom { position: relative; z-index: 2; max-width: 1400px; margin-inline: auto; padding-inline: var(--gutter); }
 .site-footer__inner {
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 96px);
   padding-block: clamp(80px, 12vh, 140px) clamp(40px, 6vh, 72px);
@@ -444,4 +445,56 @@ html[dir="rtl"] .faq__item summary i::after { transform: translate(50%, -50%) ro
   .clients__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .clients__item { aspect-ratio: 3 / 2; padding: 14px; border-radius: 18px; }
   .clients__item img { max-width: 76%; max-height: 66%; }
+}
+
+
+/* ==========================================================================
+   אפקטים: מסך טעינה, מספרים, תמונה מתרחבת
+   ========================================================================== */
+
+/* ---------- מסך טעינה ---------- */
+.preloader {
+  position: fixed; inset: 0; z-index: 300; display: grid; place-items: center; background: var(--dark); color: #fff;
+  animation: preloader-failsafe 0s linear 10s forwards; /* אם משהו נתקע, המסך נעלם בכל מקרה */
+}
+@keyframes preloader-failsafe { to { visibility: hidden; opacity: 0; pointer-events: none; } }
+html:not(.js) .preloader { display: none; }
+html.is-loading { overflow: hidden; }
+.preloader__inner { display: grid; justify-items: center; gap: 26px; width: min(420px, 70vw); }
+.preloader__logo { width: 100%; }
+.preloader__logo svg { width: 100%; height: auto; }
+.preloader__logo .sogo-logo-text { fill: #fff; }
+.preloader__counter { display: flex; align-items: baseline; gap: 2px; direction: ltr; font-weight: 600; font-size: clamp(1.4rem, 3vw, 2.2rem); letter-spacing: 0.04em; }
+.preloader__counter b { font-weight: 500; color: var(--yellow); }
+.preloader__bar { width: 100%; height: 3px; border-radius: 3px; overflow: hidden; background: rgba(255, 255, 255, 0.18); }
+.preloader__bar i { display: block; height: 100%; width: 100%; transform: scaleX(0); transform-origin: left center; background: linear-gradient(90deg, var(--red), var(--yellow), var(--green), var(--blue)); }
+html[dir="rtl"] .preloader__bar i { transform-origin: right center; }
+@media (prefers-reduced-motion: reduce) { .preloader { display: none; } }
+
+/* ---------- מספרים ---------- */
+.stats { position: relative; z-index: 1; background: var(--paper); padding: clamp(80px, 12vh, 140px) var(--gutter); }
+.stats__inner { max-width: 1200px; margin-inline: auto; }
+.stats__title { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 600; margin-bottom: 48px; }
+.stats__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px 32px; }
+.stat { display: grid; gap: 10px; align-content: start; padding-top: 22px; border-top: 2px solid var(--ink); }
+.stat__value { display: flex; align-items: baseline; gap: 4px; font-weight: 600; font-size: clamp(3rem, 7vw, 6rem); line-height: 1; letter-spacing: -0.02em; }
+html[dir="rtl"] .stat__value { justify-content: flex-end; }
+.stat__fix { font-size: 0.5em; color: var(--red-btn); }
+.stat__label { font-size: 1.15rem; color: var(--ink-soft); }
+
+/* ---------- תמונה שמתרחבת למסך מלא ---------- */
+.zoom { position: relative; height: 220vh; background: var(--paper); }
+.zoom__sticky { position: sticky; inset-block-start: 0; height: 100svh; overflow: hidden; display: grid; }
+.zoom__media { position: relative; width: 100%; height: 100%; overflow: hidden; }
+html.js .zoom__media { clip-path: inset(16% 26% round 44px); }
+.zoom__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.zoom__caption {
+  position: absolute; inset-inline: 0; inset-block-end: 0; display: grid; gap: 10px; justify-items: start;
+  padding: clamp(24px, 5vw, 64px); color: #fff; background: linear-gradient(to top, rgba(20, 19, 17, 0.72), rgba(20, 19, 17, 0));
+}
+.zoom__title { font-size: clamp(2rem, 5vw, 4.4rem); font-weight: 600; line-height: 1.05; margin: 0; }
+.zoom__text { font-size: clamp(1rem, 1.8vw, 1.4rem); max-width: 50ch; margin: 0; color: rgba(255, 255, 255, 0.9); }
+@media (max-width: 640px) {
+  .zoom { height: 180vh; }
+  html.js .zoom__media { clip-path: inset(12% 6% round 28px); }
 }

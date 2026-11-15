@@ -39,6 +39,14 @@ $clients       = array_values(array_filter((array) sogo26_field('clients_logos',
     return !empty($c['logo']['url']);
 }));
 
+$zoom_image  = sogo26_field('zoom_image');
+$zoom_title  = sogo26_field('zoom_title');
+$zoom_text   = sogo26_field('zoom_text');
+$stats_title = sogo26_field('stats_title');
+$stats       = array_values(array_filter((array) sogo26_field('stats_items', []), function ($s) {
+    return isset($s['number']) && $s['number'] !== '';
+}));
+
 $faq_title   = sogo26_field('faq_title', 'שאלות נפוצות');
 $faq_items   = array_values(array_filter((array) sogo26_field('faq_items', []), function ($f) {
     return !empty($f['question']) && !empty($f['answer']);
@@ -171,6 +179,47 @@ $arrow = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" foc
         </div>
     </div>
 </section>
+
+<?php if (!empty($zoom_image['url'])) : ?>
+<!-- ============ תמונה שמתרחבת למסך מלא ============ -->
+<section class="zoom" data-zoom>
+    <div class="zoom__sticky">
+        <div class="zoom__media" data-zoom-media>
+            <img class="zoom__img" src="<?php echo esc_url($zoom_image['url']); ?>" alt="<?php echo esc_attr($zoom_image['alt'] ?? ''); ?>" loading="lazy">
+            <?php if ($zoom_title || $zoom_text) : ?>
+                <div class="zoom__caption">
+                    <?php if ($zoom_title) : ?><h2 class="zoom__title"><?php echo esc_html($zoom_title); ?></h2><?php endif; ?>
+                    <?php if ($zoom_text) : ?><p class="zoom__text"><?php echo esc_html($zoom_text); ?></p><?php endif; ?>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<?php if ($stats) : ?>
+<!-- ============ מספרים שרצים מאפס ============ -->
+<section class="stats" data-stats>
+    <div class="stats__inner">
+        <?php if ($stats_title) : ?><h2 class="stats__title"><?php echo esc_html($stats_title); ?></h2><?php endif; ?>
+        <ul class="stats__grid">
+            <?php foreach ($stats as $s) :
+                $n   = (float) $s['number'];
+                $dec = (floor($n) == $n) ? 0 : 1;
+                ?>
+                <li class="stat">
+                    <span class="stat__value" dir="ltr">
+                        <?php if (!empty($s['prefix'])) : ?><span class="stat__fix"><?php echo esc_html($s['prefix']); ?></span><?php endif; ?>
+                        <span class="stat__num" data-count="<?php echo esc_attr($n); ?>" data-decimals="<?php echo (int) $dec; ?>"><?php echo esc_html(number_format($n, $dec)); ?></span>
+                        <?php if (!empty($s['suffix'])) : ?><span class="stat__fix"><?php echo esc_html($s['suffix']); ?></span><?php endif; ?>
+                    </span>
+                    <?php if (!empty($s['label'])) : ?><span class="stat__label"><?php echo esc_html($s['label']); ?></span><?php endif; ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</section>
+<?php endif; ?>
 
 <!-- ============ לקוחות ============ -->
 <section class="clients" data-clients>

@@ -76,6 +76,13 @@ function sogo26_field($name, $default = '', $source = false)
     return $value;
 }
 
+/** האם להציג מסך טעינה (ברירת מחדל: כן). */
+function sogo26_preloader_on()
+{
+    $v = function_exists('get_field') ? get_field('preloader_on', 'option') : null;
+    return ($v === null) ? true : (bool) $v;
+}
+
 /** שדה מתוך "הגדרות האתר" (עמוד האפשרויות). */
 function sogo26_option($name, $default = '')
 {

@@ -17,7 +17,13 @@ $arrow = '<svg class="arrow" viewBox="0 0 24 24" width="22" height="22" aria-hid
 ?>
 </main>
 
+<?php $footer_video = sogo26_option('footer_video'); ?>
 <footer class="site-footer" id="contact" data-footer<?php echo $bg_url ? ' style="--footer-bg:url(' . esc_url($bg_url) . ')"' : ''; ?>>
+    <?php if ($footer_video) : ?>
+        <video class="site-footer__video" muted playsinline preload="auto" aria-hidden="true" data-scrub-video>
+            <source src="<?php echo esc_url($footer_video); ?>">
+        </video>
+    <?php endif; ?>
     <div class="site-footer__inner">
         <div class="site-footer__brand">
             <div class="site-footer__logo"><?php echo sogo26_logo_svg(true); // phpcs:ignore WordPress.Security.EscapeOutput ?></div>

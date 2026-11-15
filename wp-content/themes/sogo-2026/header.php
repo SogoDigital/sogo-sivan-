@@ -18,6 +18,16 @@ $cta_url  = sogo26_option('header_cta_url', '#contact');
 <body <?php body_class('sogo26'); ?>>
 <?php wp_body_open(); ?>
 
+<?php if (sogo26_preloader_on()) : ?>
+<div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+        <div class="preloader__logo"><?php echo sogo26_logo_svg(true); // phpcs:ignore WordPress.Security.EscapeOutput ?></div>
+        <div class="preloader__counter"><span data-preloader-count>0</span><b>%</b></div>
+        <div class="preloader__bar"><i data-preloader-bar></i></div>
+    </div>
+</div>
+<?php endif; ?>
+
 <a class="skip-link" href="#main"><?php echo esc_html(sogo26_option('text_skip', 'דלג לתוכן')); ?></a>
 
 <header class="site-header" id="site-header">

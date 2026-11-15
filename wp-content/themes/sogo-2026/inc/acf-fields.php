@@ -67,6 +67,10 @@ add_action('acf/init', function () {
             ['key' => 'field_s26_t_404', 'name' => 'text_404_title', 'label' => 'כותרת עמוד שגיאה 404', 'type' => 'text', 'default_value' => 'העמוד שחיפשתם לא נמצא.'],
             ['key' => 'field_s26_t_404b', 'name' => 'text_404_button', 'label' => 'כפתור בעמוד שגיאה 404', 'type' => 'text', 'default_value' => 'חזרה לעמוד הבית'],
 
+            $tab('field_s26_tab_fx', 'אפקטים'),
+            ['key' => 'field_s26_preloader', 'name' => 'preloader_on', 'label' => 'מסך טעינה', 'type' => 'true_false', 'ui' => 1, 'default_value' => 1, 'ui_on_text' => 'פעיל', 'ui_off_text' => 'כבוי', 'instructions' => 'לוגו ומונה אחוזים שמוצגים בכניסה לאתר, פעם אחת בכל ביקור.'],
+            ['key' => 'field_s26_footer_video', 'name' => 'footer_video', 'label' => 'וידאו לתחתית (נשלט בגלילה)', 'type' => 'file', 'return_format' => 'url', 'mime_types' => 'mp4,webm', 'instructions' => 'הווידאו מתקדם קדימה ואחורה לפי הגלילה. מומלץ וידאו קצר (5-10 שניות), בלי קול, עד כ-6MB. אם ריק, מוצגת תמונת הרקע.'],
+
             $tab('field_s26_tab_social', 'רשתות חברתיות'),
             ['key' => 'field_s26_facebook', 'name' => 'social_facebook', 'label' => 'פייסבוק', 'type' => 'url'],
             ['key' => 'field_s26_instagram', 'name' => 'social_instagram', 'label' => 'אינסטגרם', 'type' => 'url'],
@@ -141,6 +145,27 @@ add_action('acf/init', function () {
                     ['key' => 'field_h26_cl_logo', 'name' => 'logo', 'label' => 'לוגו', 'type' => 'image', 'return_format' => 'array', 'preview_size' => 'thumbnail'],
                     ['key' => 'field_h26_cl_name', 'name' => 'name', 'label' => 'שם הלקוח', 'type' => 'text'],
                     ['key' => 'field_h26_cl_link', 'name' => 'link', 'label' => 'קישור (לא חובה)', 'type' => 'url'],
+                ],
+            ],
+
+            /* ===== תמונה במסך מלא (מתרחבת בגלילה) ===== */
+            $tab('field_h26_tab_zoom', 'תמונה במסך מלא'),
+            ['key' => 'field_h26_zoom_image', 'name' => 'zoom_image', 'label' => 'תמונה', 'type' => 'image', 'return_format' => 'array', 'preview_size' => 'medium', 'instructions' => 'תמונה רחבה. בגלילה היא מתרחבת ממסגרת קטנה למסך מלא. אם ריק, האזור לא מוצג.'],
+            ['key' => 'field_h26_zoom_title', 'name' => 'zoom_title', 'label' => 'כותרת על התמונה', 'type' => 'text'],
+            ['key' => 'field_h26_zoom_text', 'name' => 'zoom_text', 'label' => 'טקסט על התמונה', 'type' => 'text'],
+
+            /* ===== מספרים (רצים מאפס) ===== */
+            $tab('field_h26_tab_stats', 'מספרים'),
+            ['key' => 'field_h26_stats_title', 'name' => 'stats_title', 'label' => 'כותרת (לא חובה)', 'type' => 'text'],
+            [
+                'key' => 'field_h26_stats_items', 'name' => 'stats_items', 'label' => 'מספרים', 'type' => 'repeater',
+                'layout' => 'table', 'button_label' => 'הוספת מספר', 'min' => 0,
+                'instructions' => 'המספר "רץ" מאפס כשמגיעים אליו בגלילה. אם אין שורות, האזור לא מוצג.',
+                'sub_fields' => [
+                    ['key' => 'field_h26_st_num', 'name' => 'number', 'label' => 'מספר', 'type' => 'number', 'step' => 'any'],
+                    ['key' => 'field_h26_st_prefix', 'name' => 'prefix', 'label' => 'לפני המספר', 'type' => 'text', 'instructions' => 'למשל ₪'],
+                    ['key' => 'field_h26_st_suffix', 'name' => 'suffix', 'label' => 'אחרי המספר', 'type' => 'text', 'instructions' => 'למשל + או %'],
+                    ['key' => 'field_h26_st_label', 'name' => 'label', 'label' => 'כיתוב', 'type' => 'text'],
                 ],
             ],
 
