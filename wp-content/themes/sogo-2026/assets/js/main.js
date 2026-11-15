@@ -194,25 +194,48 @@
       });
     }
 
-    /* ---------- פתיחה ---------- */
-    introFn = function () {
-      gsap.fromTo(['.hero__kicker', '.hero__logo'], { y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2, stagger: 0.14, ease: 'expo.out', delay: 0.15 });
-      gsap.fromTo('.hero__scroll', { opacity: 0 }, { opacity: 1, duration: 1, delay: 1.1 });
-    };
-    if (introReady) { triggerIntro(); }
-    // פרלקסה: הרקע של הפתיחה מתקרב ויורד לאט יותר מהגלילה
-    gsap.to('.hero__media', {
-      scale: 1.16, yPercent: 10, ease: 'none',
-      scrollTrigger: { trigger: '[data-hero]', start: 'top top', end: 'bottom top', scrub: true }
-    });
-    gsap.to('[data-hero-inner]', {
-      scale: 1.18, y: -70, opacity: 0, ease: 'none',
-      scrollTrigger: { trigger: '[data-hero]', start: 'top top', end: 'bottom 25%', scrub: true }
-    });
-    gsap.to('.hero__scroll', {
-      opacity: 0, ease: 'none',
-      scrollTrigger: { trigger: '[data-hero]', start: 'top top', end: '25% top', scrub: true }
-    });
+    /* ---------- פתיחה: אחרי הטעינה הוידאו מופיע כמלבן קטן וגדל לבדו עד שממלא את המסך, ואז הכותרות והתפריט ---------- */
+    (function () {
+      var hero = qs('[data-hero]');
+      if (!hero) { gsap.set('.site-header', { clearProps: 'opacity,transform' }); return; }
+      var s = window.innerWidth < 900 ? [14, 6, 28] : [12, 10, 36]; // למעלה/למטה (vh), בצדדים (vw), עיגול פינות
+      var st = { g: 0 };
+      function renderHero() {
+        var g = st.g;
+        var hy = s[0] * (1 - g), hx = s[1] * (1 - g), r = s[2] * (1 - g);
+        hero.style.setProperty('--hy', (hy * window.innerHeight / 100) + 'px');
+        hero.style.setProperty('--hx', (hx * window.innerWidth / 100) + 'px');
+        hero.style.clipPath = g >= 1 ? 'none' : 'inset(' + hy + 'vh ' + hx + 'vw round ' + r + 'px)';
+      }
+      renderHero();
+      gsap.set('.hero__media', { opacity: 0.55 });
+      gsap.set(['.hero__captions', '.hero__dots'], { opacity: 0 });
+      var heroIntro = gsap.timeline({ paused: true });
+      heroIntro
+        .to(st, { g: 1, duration: 1.4, ease: 'power3.inOut', onUpdate: renderHero }, 0.25)
+        .to('.hero__media', { opacity: 1, duration: 1.2, ease: 'power2.out' }, 0.25)
+        .to('.site-header', { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, 1.15)
+        .fromTo(['.hero__kicker', '.hero__logo'], { y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2, stagger: 0.14, ease: 'expo.out' }, 1.25)
+        .fromTo('.hero__captions', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'expo.out' }, 1.55)
+        .to('.hero__dots', { opacity: 1, duration: 0.6 }, 1.8)
+        .fromTo('.hero__scroll', { opacity: 0 }, { opacity: 1, duration: 1 }, 2.1);
+      introFn = function () { heroIntro.play(0); };
+      if (introReady) { triggerIntro(); }
+
+      // פרלקסה: הרקע של הפתיחה מתקרב ויורד לאט יותר מהגלילה, והתוכן נמוג
+      gsap.to('.hero__media', {
+        scale: 1.16, yPercent: 10, ease: 'none',
+        scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true }
+      });
+      gsap.to('[data-hero-inner]', {
+        scale: 1.18, y: -70, opacity: 0, ease: 'none',
+        scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom 25%', scrub: true }
+      });
+      gsap.to('.hero__scroll', {
+        opacity: 0, ease: 'none',
+        scrollTrigger: { trigger: hero, start: 'top top', end: '25% top', scrub: true }
+      });
+    })();
 
     /* ---------- אודות: המשפט נחשף מילה אחרי מילה ---------- */
     var words = qsa('.about__text .w');
